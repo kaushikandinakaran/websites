@@ -1,0 +1,28 @@
+Maison Claire (sample design by Website Studio) - asset credits
+
+FONTS (saved locally in this folder, no CDN)
+
+1. Cormorant Garamond (400 and 500, normal and italic, latin subset)
+   Copyright 2015 The Cormorant Project Authors (github.com/CatharsisFonts/Cormorant)
+   Licence: SIL Open Font License, Version 1.1 (full text: OFL-Cormorant-Garamond.txt)
+   Source: Fontsource package @fontsource/cormorant-garamond (https://fontsource.org/fonts/cormorant-garamond),
+           fetched as woff2 via https://cdn.jsdelivr.net/npm/@fontsource/cormorant-garamond/
+   Upstream: https://github.com/CatharsisFonts/Cormorant
+   Files: cormorant-garamond-latin-400-normal.woff2, -400-italic.woff2, -500-normal.woff2, -500-italic.woff2
+
+2. Jost (400 and 500, latin subset)
+   Copyright 2020 The Jost Project Authors (https://github.com/indestructible-type/Jost)
+   Licence: SIL Open Font License, Version 1.1 (full text: OFL-Jost.txt)
+   Source: Fontsource package @fontsource/jost (https://fontsource.org/fonts/jost),
+           fetched as woff2 via https://cdn.jsdelivr.net/npm/@fontsource/jost/
+   Upstream: https://github.com/indestructible-type/Jost
+   Files: jost-latin-400-normal.woff2, jost-latin-500-normal.woff2
+
+The fonts are used unmodified (only the Fontsource latin subsetting of the original families).
+The OFL notice and licence text above travel with the font files, as the licence requires.
+
+OTHER ASSETS
+
+- poster-*.svg are original vector artwork made for this sample (fallback backgrounds shown when WebGL is unavailable).
+- All 3D objects (table, plate, cloche, glass, candle, dish) are generated in code with Three.js (MIT licence, loaded from showcase/vendor/). No images, textures or models were downloaded.
+- The page icon is an inline SVG data URI.

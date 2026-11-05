@@ -1,0 +1,49 @@
+Olive & Sea, photo edition (sample design by Website Studio) - asset credits
+
+SCENERY: REAL 360-DEGREE PHOTOGRAPHS (Poly Haven, CC0 1.0, https://polyhaven.com/license, attribution optional)
+These are photographs of real places taken by Poly Haven photographers. They are used as illustrative scenery
+only: they are not the restaurant, and the site does not name or describe the real locations.
+Stored once for all sites in showcase/assets/polyhaven/pano/ (downloaded with showcase/tools/fetch_polyhaven.py).
+
+- pano `sundowner_deck`: Sundowner Deck, by Dario Barresi, https://polyhaven.com/a/sundowner_deck
+- pano `venice_sunset`: Venice Sunset, by Greg Zaal, https://polyhaven.com/a/venice_sunset
+- pano `the_sky_is_on_fire`: The Sky Is On Fire, by Greg Zaal, Rico Cilliers, https://polyhaven.com/a/the_sky_is_on_fire
+
+3D PROPS (Poly Haven scans, CC0 1.0)
+- model `outdoor_table_chair_set_01`: Outdoor Table Chair Set 01, by James Ray Cock, https://polyhaven.com/a/outdoor_table_chair_set_01
+- model `ceramic_vase_04`: Ceramic Vase 04, by James Ray Cock, https://polyhaven.com/a/ceramic_vase_04
+- model `ceramic_vase_01`: Ceramic Vase 01, by James Ray Cock, https://polyhaven.com/a/ceramic_vase_01
+- model `lemon`: Lemon, by Kuutti Siitonen, https://polyhaven.com/a/lemon
+- model `food_lime_01`: Food Lime 01, by Oliver Harries, https://polyhaven.com/a/food_lime_01
+
+Derived files in this folder (same CC0 licence as the sources):
+- assets/pano-sundowner-deck-6k.jpg, pano-venice-sunset-6k.jpg, pano-sky-on-fire-6k.jpg: the three panoramas
+  resized from their 8k JPGs to 6144x3072 (JPEG q78) for desktops: keeps the first station near the 6 MB budget, the
+  site under 20 MB, and each GPU upload shorter. Phones use the 4k JPGs from showcase/assets/polyhaven/pano/ directly,
+  except the deck: assets/pano-sundowner-deck-4k.jpg.
+- Retouch: in both sundowner_deck files (6k and 4k) a wall power socket and its cable on the central post are painted
+  out with the post's own wood from just above (no content invented, only removed).
+- assets/env-sundowner-deck-pmrem128.hdr (used on every tier; the 256 file stays in the folder unused) and
+  assets/env-sundowner-deck-pmrem256.hdr: the
+  `sundowner_deck` 1k HDR (downsampled to 512x256 first for the 128 file) prefiltered with three.js PMREMGenerator
+  (r160) into its CubeUV layout and saved as Radiance RGBE, rows in GL order. Lights the props without a PMREM run in
+  the visitor's browser.
+- assets/env-venice-sunset-pmrem256.hdr and assets/env-venice-sunset-pmrem128.hdr: the same bake of the
+  `venice_sunset` 1k HDR (carried over from the earlier Olive & Sea sample).
+- assets/poster-deck.jpg, poster-tables.jpg, poster-water.jpg, poster-dusk.jpg: rectilinear still views cut from the
+  4k panoramas above, used as the loading state and the no-WebGL fallback. poster-deck.jpg is cut from the retouched
+  deck photo (no socket); poster-water.jpg looks over open water, away from the skyline (no recognisable landmark).
+
+Changes made in code (not to the files): the table set's colour map is desaturated toward weathered grey on the deck
+and slightly on the waterfront; citrus peel roughness is raised (waxy, not wet).
+The `the_sky_is_on_fire` panorama has no props, so its HDR is not used.
+
+FONTS
+No font files. The page uses system fonts only (Palatino Linotype / Palatino / Book Antiqua / Georgia for headings,
+Segoe UI / system-ui for text).
+
+OTHER
+- Built in code with Three.js (MIT, loaded from showcase/vendor/): the ground-projected photo sphere shader, the
+  cross-dissolve, the film curve, grain and vignette pass, contact-shadow pools.
+- No string lights or candles in this edition: they could not be made to sit believably inside the photographs.
+- The page icon is an inline SVG data URI.

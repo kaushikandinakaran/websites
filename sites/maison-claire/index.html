@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maison Claire | French bistro and fine dining (sample design)</title>
+<meta name="description" content="Sample design by Website Studio: a candle-lit French bistro website where one laid table becomes a 3D scene you scroll through.">
+<meta name="theme-color" content="#121110">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23121110'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23d6b97e' stroke-width='1.6'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23f4eee2'/%3E%3C/svg%3E">
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{var c=document.createElement('canvas'),g=c.getContext('webgl2')||c.getContext('webgl');if(g){d.classList.add('gl-able');if(matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('rm');var e=g.getExtension('WEBGL_lose_context');if(e)e.loseContext();}}catch(x){}})();</script>
+<link rel="preload" href="assets/cormorant-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../vendor/lenis.css">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": { "three": "../../vendor/three.module.min.js", "three/addons/": "../../vendor/three-addons/" } }
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<canvas id="stage" class="stage" aria-hidden="true"></canvas>
+<div class="veil" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav__inner wrap">
+    <a class="brand" href="#table"><span class="brand__mark" aria-hidden="true">MC</span><span class="brand__name">Maison Claire</span></a>
+
+    <nav class="nav__menu" id="navMenu" aria-label="Primary" data-lenis-prevent>
+      <ul class="nav__links">
+        <li><a href="#cloche">The reveal</a></li>
+        <li><a href="#wine">The wine</a></li>
+        <li><a href="#menu">Tasting menu</a></li>
+        <li><a href="#reserve">Reserve</a></li>
+      </ul>
+    </nav>
+
+    <button class="motion-btn" id="motionBtn" type="button" aria-pressed="false">
+      <svg class="motion-btn__pause" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+      <svg class="motion-btn__play" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>
+      <span class="motion-btn__text">Pause motion</span>
+    </button>
+
+    <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
+      <span class="nav__toggle-text">Menu</span>
+      <span class="nav__toggle-bars" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <div id="journey" class="journey">
+
+    <!-- Station 1: the table -->
+    <section id="table" class="station station--hero station--l" tabindex="-1" aria-labelledby="hero-title" data-station="0">
+      <div class="poster poster--table" aria-hidden="true">
+        <img src="assets/poster-table.svg" alt="" width="800" height="600" loading="lazy" decoding="async">
+      </div>
+      <div class="station__stick">
+        <div class="wrap">
+          <div class="hero" data-rv-group>
+            <p class="kicker" data-rv>French bistro &amp; fine dining <span class="kicker__sep" aria-hidden="true"></span> Sample design</p>
+            <h1 id="hero-title" class="hero__title" data-rv>Maison <em>Claire</em></h1>
+            <p class="hero__lede" data-rv>One table, laid with care. Candlelight, silver and a quiet evening in the French manner.</p>
+            <div class="hero__cta" data-rv>
+              <a class="btn btn--primary" href="#reserve">Reserve a table</a>
+              <a class="btn btn--ghost" href="#menu">See the tasting menu</a>
+            </div>
+          </div>
+          <a class="scrollcue" href="#cloche" aria-label="Scroll to the reveal"><span class="scrollcue__line" aria-hidden="true"></span><span class="scrollcue__text">Scroll</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Station 2: the cloche -->
+    <section id="cloche" class="station station--r" tabindex="-1" aria-labelledby="cloche-title" data-station="1">
+      <div class="poster poster--cloche" aria-hidden="true">
+        <img src="assets/poster-cloche.svg" alt="" width="800" height="600" loading="lazy" decoding="async">
+      </div>
+      <div class="station__stick">
+        <div class="wrap">
+          <div class="panel" data-rv-group>
+            <p class="kicker" data-rv><span class="kicker__no">02</span> The reveal</p>
+            <h2 id="cloche-title" class="h2" data-rv>Every plate arrives <em>under silver.</em></h2>
+            <p data-rv>Lift the cloche and the evening begins. Seasonal French cooking, plated with restraint and served without hurry.</p>
+            <p class="note" data-rv>Illustrative dish. Your own signature plate goes here.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Station 3: the wine -->
+    <section id="wine" class="station station--l" tabindex="-1" aria-labelledby="wine-title" data-station="2">
+      <div class="poster poster--wine" aria-hidden="true">
+        <img src="assets/poster-wine.svg" alt="" width="800" height="600" loading="lazy" decoding="async">
+      </div>
+      <div class="station__stick">
+        <div class="wrap">
+          <div class="panel" data-rv-group>
+            <p class="kicker" data-rv><span class="kicker__no">03</span> The wine</p>
+            <h2 id="wine-title" class="h2" data-rv>A glass, <em>poured slowly.</em></h2>
+            <p data-rv>A short, considered list of French wines chosen to sit beside the food, poured at the table.</p>
+            <p class="note" data-rv>[Wine list to be confirmed by the restaurant]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Station 4: the tasting menu -->
+    <section id="menu" class="station station--menu" tabindex="-1" aria-labelledby="menu-title" data-station="3">
+      <div class="poster poster--menu" aria-hidden="true">
+        <img src="assets/poster-menu.svg" alt="" width="800" height="600" loading="lazy" decoding="async">
+      </div>
+      <div class="station__stick">
+        <div class="wrap">
+          <div class="menu-card" data-rv-group>
+            <p class="kicker kicker--ink" data-rv><span class="kicker__no">04</span> Tasting menu <span class="kicker__sep" aria-hidden="true"></span> Illustrative sample</p>
+            <h2 id="menu-title" class="h2" data-rv>Five courses, <em>unhurried.</em></h2>
+            <ol class="courses">
+              <li class="course" data-rv>
+                <span class="course__no" aria-hidden="true">I</span>
+                <div class="course__body"><h3>L'amuse-bouche</h3><p>A small seasonal bite to begin.</p></div>
+                <span class="course__price">[Price]</span>
+              </li>
+              <li class="course" data-rv>
+                <span class="course__no" aria-hidden="true">II</span>
+                <div class="course__body"><h3>L'entr&eacute;e</h3><p>Seasonal soup or a country terrine.</p></div>
+                <span class="course__price">[Price]</span>
+              </li>
+              <li class="course" data-rv>
+                <span class="course__no" aria-hidden="true">III</span>
+                <div class="course__body"><h3>Le poisson</h3><p>A fish course with a light sauce.</p></div>
+                <span class="course__price">[Price]</span>
+              </li>
+              <li class="course" data-rv>
+                <span class="course__no" aria-hidden="true">IV</span>
+                <div class="course__body"><h3>Le plat</h3><p>Roast meat or poultry with the season's garnish.</p></div>
+                <span class="course__price">[Price]</span>
+              </li>
+              <li class="course" data-rv>
+                <span class="course__no" aria-hidden="true">V</span>
+                <div class="course__body"><h3>Le dessert</h3><p>Cheese course, or a classic chocolate or fruit finish.</p></div>
+                <span class="course__price">[Price]</span>
+              </li>
+            </ol>
+            <p class="fine" data-rv>Sample menu for illustration only. Dishes, wine pairing and prices are placeholders for the restaurant to complete.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Station 5: reserve -->
+    <section id="reserve" class="station station--l station--reserve" tabindex="-1" aria-labelledby="reserve-title" data-station="4">
+      <div class="poster poster--reserve" aria-hidden="true">
+        <img src="assets/poster-reserve.svg" alt="" width="800" height="600" loading="lazy" decoding="async">
+      </div>
+      <div class="station__stick">
+        <div class="wrap">
+          <div class="panel panel--reserve" data-rv-group>
+            <p class="kicker" data-rv><span class="kicker__no">05</span> Reserve</p>
+            <h2 id="reserve-title" class="h2" data-rv>Your table is <em>waiting.</em></h2>
+            <p data-rv>Tell us when you would like to dine and we will keep a candle lit for you.</p>
+            <div class="hero__cta" data-rv>
+              <a class="btn btn--primary" href="#reserve">Reserve a table</a>
+              <span class="ph">[Reservation link]</span>
+            </div>
+            <dl class="details" data-rv>
+              <div><dt>Telephone</dt><dd>[Your phone number]</dd></div>
+              <div><dt>Address</dt><dd>[Street address]</dd></div>
+              <div><dt>Hours</dt><dd>[Opening hours]</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <a class="brand" href="#table"><span class="brand__mark" aria-hidden="true">MC</span><span class="brand__name">Maison Claire</span></a>
+      <p>A sample restaurant website: a French bistro, one laid table, a quiet evening.</p>
+    </div>
+    <nav aria-label="Footer">
+      <h2 class="footer__h">Explore</h2>
+      <ul class="footer__list">
+        <li><a href="#cloche">The reveal</a></li>
+        <li><a href="#wine">The wine</a></li>
+        <li><a href="#menu">Tasting menu</a></li>
+        <li><a href="#reserve">Reserve</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h2 class="footer__h">Visit</h2>
+      <ul class="footer__list footer__list--plain">
+        <li>[Street address]</li>
+        <li>[Opening hours]</li>
+        <li>[Your phone number]</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer__bar">
+    <p class="footer__credit">Sample design by Website Studio</p>
+    <a class="footer__top" href="#table">Back to the table</a>
+  </div>
+</footer>
+
+<noscript><style>.stage,.veil{display:none}</style></noscript>
+
+<script src="../../vendor/gsap.min.js"></script>
+<script src="../../vendor/ScrollTrigger.min.js"></script>
+<script src="../../vendor/lenis.min.js"></script>
+<script type="module" src="main.js"></script>
+</body>
+</html>

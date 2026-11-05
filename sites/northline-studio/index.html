@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Northline Studio — Architecture and Real Estate (sample design)</title>
+  <meta name="description" content="Sample design: Northline Studio, an invented architecture and real-estate studio. Editorial grid, 3D massing model, scroll-drawn plan.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23121212'/%3E%3Cpath d='M8 24V8l16 16V8' stroke='%23f3f1ec' stroke-width='2.5' fill='none'/%3E%3C/svg%3E">
+  <script>if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('js-pre');</script>
+  <link rel="stylesheet" href="../../vendor/lenis.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">{ "imports": { "three": "../../vendor/three.module.min.js" } }</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- NAVBAR -->
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a class="brand" href="#top" aria-label="Northline Studio, back to top">
+        <svg class="brand__mark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false">
+          <rect x="1" y="1" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M8 24V8l16 16V8" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+        <span class="brand__name">Northline <span class="brand__sub">Studio</span></span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <ul>
+          <li><a href="#practice">Practice</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--sm nav__cta" href="#contact">Enquire <span aria-hidden="true">&rarr;</span></a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+        <span class="nav__bars" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu" aria-hidden="true">
+    <div class="container menu__inner">
+      <p class="label">Menu</p>
+      <ul class="menu__list">
+        <li><a href="#practice"><span class="menu__n">01</span>Practice</a></li>
+        <li><a href="#services"><span class="menu__n">02</span>Services</a></li>
+        <li><a href="#process"><span class="menu__n">03</span>Process</a></li>
+        <li><a href="#projects"><span class="menu__n">04</span>Projects</a></li>
+        <li><a href="#contact"><span class="menu__n">05</span>Contact</a></li>
+      </ul>
+      <p class="label menu__foot">Sample design &middot; [Studio email]</p>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__top">
+          <p class="label">Architecture &amp; real estate</p>
+          <p class="label hero__top-r">Sample studio &middot; [City]</p>
+        </div>
+
+        <h1 id="hero-title" class="hero__title" data-split>Buildings that hold their <em>ground.</em></h1>
+
+        <div class="hero__body">
+          <p class="hero__lede" data-hero-fade>Northline is an architecture and development studio. We shape sites, volumes and interiors with a quiet hand, from the first sketch to the last door.</p>
+          <div class="hero__cta" data-hero-fade>
+            <a class="btn" href="#projects">View projects <span aria-hidden="true">&rarr;</span></a>
+            <a class="link" href="#process">How we work</a>
+          </div>
+        </div>
+
+        <figure class="hero__fig" id="heroFig">
+          <div class="hero__stage">
+            <canvas id="scene" tabindex="0" role="img" aria-label="Interactive 3D massing model of five building volumes. Use the left and right arrow keys to rotate it."></canvas>
+            <svg id="heroFallback" class="hero__fallback" viewBox="-400 -330 800 560" aria-hidden="true" focusable="false"></svg>
+          </div>
+          <figcaption class="label hero__cap">
+            <span>Fig. 01 &mdash; Massing study</span>
+            <span class="hero__tools"><span class="hero__cap-hint">Drag or arrow keys to rotate</span><button class="motion-btn" id="motionBtn" type="button" aria-pressed="false">Pause motion</button></span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="container hero__foot"><span class="label">Scroll</span><span class="hero__line" aria-hidden="true"></span></div>
+    </section>
+
+    <!-- PRACTICE -->
+    <section class="section practice" id="practice" tabindex="-1" aria-labelledby="practice-h">
+      <div class="container practice__grid">
+        <div class="section__tag">
+          <p class="label">01 &mdash; Practice</p>
+          <h2 id="practice-h" class="sr">Our practice</h2>
+        </div>
+        <p class="statement" id="statement">We begin with the land, the light and the people who will use the building, then we remove everything that does not help. What is left should feel inevitable, calm and built to last.</p>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section services" id="services" tabindex="-1" aria-labelledby="services-h">
+      <div class="container">
+        <div class="section__head">
+          <p class="label">02 &mdash; Services</p>
+          <h2 id="services-h" class="h2" data-split>Four ways we work with you.</h2>
+        </div>
+        <ul class="svc">
+          <li class="svc__row" data-reveal>
+            <span class="svc__n">01</span>
+            <h3 class="svc__t">Architecture</h3>
+            <p class="svc__d">New buildings and extensions, from feasibility and planning drawings to construction details.</p>
+            <span class="svc__a" aria-hidden="true">&rarr;</span>
+          </li>
+          <li class="svc__row" data-reveal>
+            <span class="svc__n">02</span>
+            <h3 class="svc__t">Interior architecture</h3>
+            <p class="svc__d">Spaces, materials and joinery designed together with the shell so they feel like one idea.</p>
+            <span class="svc__a" aria-hidden="true">&rarr;</span>
+          </li>
+          <li class="svc__row" data-reveal>
+            <span class="svc__n">03</span>
+            <h3 class="svc__t">Masterplanning</h3>
+            <p class="svc__d">Site strategy for groups of buildings: access, density, landscape and phasing.</p>
+            <span class="svc__a" aria-hidden="true">&rarr;</span>
+          </li>
+          <li class="svc__row" data-reveal>
+            <span class="svc__n">04</span>
+            <h3 class="svc__t">Development advisory</h3>
+            <p class="svc__d">Early guidance for owners and buyers: what a site can hold, and what it should.</p>
+            <span class="svc__a" aria-hidden="true">&rarr;</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROCESS: pinned, scroll-drawn plan -->
+    <section class="process" id="process" tabindex="-1" aria-labelledby="process-h">
+      <div class="process__pin">
+        <div class="container process__grid">
+          <div class="process__text">
+            <p class="label">03 &mdash; Process</p>
+            <h2 id="process-h" class="h2">A plan, drawn in four moves.</h2>
+            <ol class="steps" id="steps">
+              <li class="step is-active" data-step="0">
+                <span class="step__n">01</span>
+                <div><h3 class="step__t">Site</h3><p class="step__d">We start with the boundary, the sun path and what is already there.</p></div>
+              </li>
+              <li class="step" data-step="1">
+                <span class="step__n">02</span>
+                <div><h3 class="step__t">Structure</h3><p class="step__d">Walls and grid first. The skeleton decides how the rest can behave.</p></div>
+              </li>
+              <li class="step" data-step="2">
+                <span class="step__n">03</span>
+                <div><h3 class="step__t">Rooms</h3><p class="step__d">Spaces are named and sized around daily routines, not around furniture.</p></div>
+              </li>
+              <li class="step" data-step="3">
+                <span class="step__n">04</span>
+                <div><h3 class="step__t">Openings</h3><p class="step__d">Doors and windows come last: where we look out, and where we come in.</p></div>
+              </li>
+            </ol>
+            <div class="process__bar" aria-hidden="true"><span id="processBar"></span></div>
+          </div>
+
+          <figure class="plan">
+            <svg id="planSvg" viewBox="0 0 800 560" role="img" aria-label="Line drawing of a sample house floor plan with a living room, kitchen, bedroom and bathroom, drawn in four stages.">
+              <!-- 1. site -->
+              <g class="g-site">
+                <rect class="ln ln--thin" x="60" y="60" width="680" height="440"/>
+                <path class="draw ln ln--thin" pathLength="1" d="M160 100 H640 M160 92 V108 M640 92 V108"/>
+                <path class="draw ln ln--thin" pathLength="1" d="M700 120 V80 M692 90 L700 78 L708 90"/>
+                <text class="lbl fade" x="700" y="154" text-anchor="middle">N</text>
+                <text class="lbl fade" x="400" y="90" text-anchor="middle">[Width]</text>
+                <text class="lbl fade" x="76" y="488">[Plot boundary]</text>
+              </g>
+              <!-- 2. structure -->
+              <g class="g-wall">
+                <rect class="draw ln ln--wall" pathLength="1" x="160" y="140" width="480" height="300"/>
+                <path class="draw ln ln--wall" pathLength="1" d="M360 140 V200 M360 250 V300"/>
+                <path class="draw ln ln--wall" pathLength="1" d="M160 300 H230 M290 300 H480"/>
+                <path class="draw ln ln--wall" pathLength="1" d="M480 300 V440"/>
+                <path class="draw ln ln--wall" pathLength="1" d="M480 300 H540 M590 300 H640"/>
+              </g>
+              <!-- 3. rooms -->
+              <g class="g-room">
+                <rect class="room fade" x="364" y="144" width="272" height="152"/>
+                <rect class="room room--b fade" x="164" y="144" width="192" height="152"/>
+                <rect class="room room--b fade" x="164" y="304" width="312" height="132"/>
+                <rect class="room fade" x="484" y="304" width="152" height="132"/>
+                <text class="rm fade" x="500" y="226" text-anchor="middle">Living</text>
+                <text class="rm fade" x="260" y="226" text-anchor="middle">Kitchen</text>
+                <text class="rm fade" x="320" y="376" text-anchor="middle">Bedroom</text>
+                <text class="rm fade" x="560" y="376" text-anchor="middle">Bath</text>
+              </g>
+              <!-- 4. openings -->
+              <g class="g-open">
+                <path class="draw ln ln--acc" pathLength="1" d="M420 140 H580"/>
+                <path class="draw ln ln--acc" pathLength="1" d="M160 340 V400"/>
+                <path class="draw ln ln--acc" pathLength="1" d="M640 190 V250"/>
+                <path class="draw ln ln--door" pathLength="1" d="M230 300 V360 A60 60 0 0 0 290 300"/>
+                <path class="draw ln ln--door" pathLength="1" d="M360 200 H410 A50 50 0 0 1 360 250"/>
+                <path class="draw ln ln--door" pathLength="1" d="M540 300 V350 A50 50 0 0 0 590 300"/>
+                <text class="lbl lbl--acc fade" x="500" y="128" text-anchor="middle">[Window]</text>
+                <text class="lbl lbl--acc fade" x="724" y="488" text-anchor="end">[Scale 1:100]</text>
+              </g>
+            </svg>
+            <figcaption class="label plan__cap">Fig. 02 &mdash; Sample plan, not to scale</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS: sticky list -->
+    <section class="section projects" id="projects" tabindex="-1" aria-labelledby="projects-h">
+      <div class="container projects__grid">
+        <aside class="projects__side">
+          <p class="label">04 &mdash; Projects</p>
+          <h2 id="projects-h" class="h2">Selected work <span class="h2__note">(sample projects)</span></h2>
+          <ol class="plist" id="plist">
+            <li><a href="#proj-1" class="is-active" data-proj="0"><span class="plist__n">01</span><span class="plist__t">Ridge House</span></a></li>
+            <li><a href="#proj-2" data-proj="1"><span class="plist__n">02</span><span class="plist__t">Harbour Offices</span></a></li>
+            <li><a href="#proj-3" data-proj="2"><span class="plist__n">03</span><span class="plist__t">Courtyard Housing</span></a></li>
+            <li><a href="#proj-4" data-proj="3"><span class="plist__n">04</span><span class="plist__t">Gallery Annex</span></a></li>
+            <li><a href="#proj-5" data-proj="4"><span class="plist__n">05</span><span class="plist__t">Terrace Pavilion</span></a></li>
+          </ol>
+        </aside>
+
+        <div class="projects__main">
+          <article class="proj" id="proj-1" tabindex="-1" data-proj="0" aria-labelledby="proj-1-t">
+            <div class="proj__art">
+              <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Elevation drawing of a long house on a sloping ridge with a raised upper volume">
+                <rect class="a-bg" width="400" height="300"/>
+                <path class="a-ln" d="M0 214 L400 168"/>
+                <rect class="a-fill" x="70" y="150" width="190" height="52"/>
+                <rect class="a-acc" x="210" y="112" width="120" height="38"/>
+                <path class="a-ln" d="M110 150 V202 M150 150 V202 M190 150 V202 M230 112 V150 M270 112 V150 M300 112 V150"/>
+                <path class="a-ln" d="M60 202 V228 M240 202 V214"/>
+                <path class="a-ln a-ln--t" d="M20 262 H380"/>
+              </svg>
+            </div>
+            <div class="proj__meta"><span class="proj__n">01</span><h3 id="proj-1-t" class="proj__t">Ridge House</h3><p class="proj__d">Residential &middot; [Location] &middot; [Year]</p></div>
+          </article>
+
+          <article class="proj" id="proj-2" tabindex="-1" data-proj="1" aria-labelledby="proj-2-t">
+            <div class="proj__art">
+              <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Elevation drawing of a stepped office building beside water">
+                <rect class="a-bg" width="400" height="300"/>
+                <rect class="a-fill" x="60" y="130" width="120" height="100"/>
+                <rect class="a-fill" x="180" y="90" width="90" height="140"/>
+                <rect class="a-acc" x="270" y="170" width="80" height="60"/>
+                <path class="a-ln" d="M60 150 H180 M60 170 H180 M60 190 H180 M60 210 H180 M180 110 H270 M180 130 H270 M180 150 H270 M180 170 H270 M180 190 H270 M180 210 H270"/>
+                <path class="a-ln" d="M0 230 H400"/>
+                <path class="a-ln a-ln--t" d="M20 246 H120 M160 254 H300 M60 262 H200"/>
+              </svg>
+            </div>
+            <div class="proj__meta"><span class="proj__n">02</span><h3 id="proj-2-t" class="proj__t">Harbour Offices</h3><p class="proj__d">Workplace &middot; [Location] &middot; [Year]</p></div>
+          </article>
+
+          <article class="proj" id="proj-3" tabindex="-1" data-proj="2" aria-labelledby="proj-3-t">
+            <div class="proj__art">
+              <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Plan drawing of housing blocks arranged around a central courtyard">
+                <rect class="a-bg" width="400" height="300"/>
+                <rect class="a-fill" x="70" y="50" width="260" height="50"/>
+                <rect class="a-fill" x="70" y="200" width="260" height="50"/>
+                <rect class="a-fill" x="70" y="100" width="50" height="100"/>
+                <rect class="a-fill" x="280" y="100" width="50" height="100"/>
+                <rect class="a-acc" x="150" y="130" width="100" height="40"/>
+                <path class="a-ln" d="M120 100 H280 M120 200 H280"/>
+                <path class="a-ln" d="M110 50 V100 M150 50 V100 M190 50 V100 M230 50 V100 M270 50 V100 M110 200 V250 M150 200 V250 M190 200 V250 M230 200 V250 M270 200 V250"/>
+              </svg>
+            </div>
+            <div class="proj__meta"><span class="proj__n">03</span><h3 id="proj-3-t" class="proj__t">Courtyard Housing</h3><p class="proj__d">Residential &middot; [Location] &middot; [Year]</p></div>
+          </article>
+
+          <article class="proj" id="proj-4" tabindex="-1" data-proj="3" aria-labelledby="proj-4-t">
+            <div class="proj__art">
+              <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Elevation drawing of a low gallery building with a tall slit window and a copper-toned wing">
+                <rect class="a-bg" width="400" height="300"/>
+                <rect class="a-fill" x="50" y="110" width="200" height="120"/>
+                <rect class="a-ink" x="130" y="110" width="14" height="120"/>
+                <rect class="a-acc" x="250" y="150" width="100" height="80"/>
+                <path class="a-ln" d="M50 110 H250 M250 150 H350 M170 150 V230 M200 150 V230"/>
+                <path class="a-ln" d="M0 230 H400"/>
+                <path class="a-ln a-ln--t" d="M40 254 H360"/>
+              </svg>
+            </div>
+            <div class="proj__meta"><span class="proj__n">04</span><h3 id="proj-4-t" class="proj__t">Gallery Annex</h3><p class="proj__d">Culture &middot; [Location] &middot; [Year]</p></div>
+          </article>
+
+          <article class="proj" id="proj-5" tabindex="-1" data-proj="4" aria-labelledby="proj-5-t">
+            <div class="proj__art">
+              <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Elevation drawing of a light pavilion with a wide flat roof on slim columns">
+                <rect class="a-bg" width="400" height="300"/>
+                <rect class="a-ink" x="50" y="100" width="300" height="10"/>
+                <path class="a-ln" d="M80 110 V230 M160 110 V230 M240 110 V230 M320 110 V230"/>
+                <rect class="a-acc" x="160" y="170" width="80" height="60"/>
+                <path class="a-ln" d="M0 230 H400"/>
+                <path class="a-ln a-ln--t" d="M30 254 H370"/>
+              </svg>
+            </div>
+            <div class="proj__meta"><span class="proj__n">05</span><h3 id="proj-5-t" class="proj__t">Terrace Pavilion</h3><p class="proj__d">Hospitality &middot; [Location] &middot; [Year]</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta" id="contact" tabindex="-1" aria-labelledby="cta-h">
+      <div class="container cta__grid">
+        <p class="label cta__tag">05 &mdash; Contact</p>
+        <h2 id="cta-h" class="cta__title" data-split>Have a site in mind? Let&rsquo;s walk it together.</h2>
+        <div class="cta__side">
+          <p class="cta__p">Tell us where it is and what you hope it becomes. We reply with honest first thoughts, not a sales pitch.</p>
+          <a class="btn btn--light" href="#footer-contact">Start an enquiry <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__col footer__col--lead">
+        <p class="footer__lead">Quiet buildings,<br>carefully made.</p>
+      </div>
+      <div class="footer__col" id="footer-contact" tabindex="-1">
+        <h2 class="label">Studio</h2>
+        <ul>
+          <li>[Studio address]</li>
+          <li>[Phone number]</li>
+          <li>[Email address]</li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="label">Explore</h2>
+        <ul>
+          <li><a href="#practice">Practice</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="label">Follow</h2>
+        <ul>
+          <li>[Social link]</li>
+          <li>[Social link]</li>
+          <li>[Newsletter link]</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__word" aria-hidden="true"><span>Northline</span></div>
+    <div class="container footer__base">
+      <p>Northline Studio is an invented sample brand. &copy; [Year] [Studio legal name]</p>
+      <p>Sample design by Website Studio</p>
+    </div>
+  </footer>
+
+  <script src="../../vendor/gsap.min.js"></script>
+  <script src="../../vendor/ScrollTrigger.min.js"></script>
+  <script src="../../vendor/lenis.min.js"></script>
+  <script src="main.js"></script>
+  <script type="module" src="scene.js"></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember &amp; Oak | Wood-fire steakhouse and grill, photo tour (sample design)</title>
+<meta name="description" content="Sample design by Website Studio: a wood-fire steakhouse website toured through real 360-degree photographs of a fireside room, a stone cellar and a dining hall, with real scanned props in front.">
+<meta name="theme-color" content="#0e0c0a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='3' fill='%230e0c0a'/%3E%3Cpath d='M16 5c2 5 7 7 7 13a7 7 0 0 1-14 0c0-3 2-5 3-7 0 3 2 4 3 4-1-4 0-7 1-10z' fill='%23f07a32'/%3E%3C/svg%3E">
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{var c=document.createElement('canvas'),g=c.getContext('webgl2')||c.getContext('webgl');if(g){d.classList.add('gl-able');if(matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('rm');var e=g.getExtension('WEBGL_lose_context');if(e)e.loseContext();}}catch(x){}setTimeout(function(){if(!d.classList.contains('js-ready'))d.classList.add('reveal-all');},4000);})();</script>
+<link rel="stylesheet" href="../../vendor/lenis.css">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": { "three": "../../vendor/three.module.min.js", "three/addons/": "../../vendor/three-addons/" } }
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<canvas id="stage" class="stage" aria-hidden="true"></canvas>
+<div class="veil" aria-hidden="true"></div>
+<div class="loader" id="loader" aria-hidden="true"><span class="loader__label">Lighting the fire</span><span class="loader__bar"><i id="loaderBar"></i></span></div>
+
+<header class="nav" id="nav">
+  <div class="nav__inner wrap">
+    <a class="brand" href="#fire"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2c1.6 3.8 5.5 5.4 5.5 10.2a5.5 5.5 0 0 1-11 0c0-2.4 1.4-4 2.3-5.5 0 2.3 1.5 3.2 2.4 3.2-.8-3.1 0-5.6.8-7.9z" fill="currentColor"/></svg></span><span class="brand__name">Ember <span class="brand__amp">&amp;</span> Oak</span></a>
+
+    <nav class="nav__menu" id="navMenu" aria-label="Primary" data-lenis-prevent>
+      <ul class="nav__links">
+        <li><a href="#board">The cut</a></li>
+        <li><a href="#cellar">The cellar</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#reserve">Reserve</a></li>
+      </ul>
+    </nav>
+
+    <button class="motion-btn" id="motionBtn" type="button" aria-pressed="false">
+      <svg class="motion-btn__pause" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+      <svg class="motion-btn__play" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>
+      <span class="motion-btn__text">Pause motion</span>
+    </button>
+
+    <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
+      <span class="nav__toggle-text">Menu</span>
+      <span class="nav__toggle-bars" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <div id="journey" class="journey">
+
+    <!-- Station 1: the fire -->
+    <section id="fire" class="station station--hero station--l" tabindex="-1" aria-labelledby="hero-title" data-station="0">
+      <div class="poster poster--fire" aria-hidden="true"><img src="assets/poster-fire.svg" alt="" width="800" height="600" decoding="async"></div>
+      <div class="station__stick">
+        <div class="wrap">
+          <div class="panel panel--hero" data-rv-group>
+            <p class="kicker" data-rv>Wood-fire steakhouse &amp; grill <span class="kicker__sep" aria-hidden="true"></span> Sample design</p>
+            <h1 id="hero-title" class="hero__title" data-rv>Ember <span class="amp">&amp;</span> Oak</h1>
+            <p class="hero__lede" data-rv>Cooked over open flame and oak embers, in a room of brick, iron and firelight.</p>
+            <div class="cta-row" data-rv>
+              <a class="btn btn--primary" href="#reserve">Reserve a table</a>
+              <a class="btn btn--ghost" href="#menu">See the menu</a>
+            </div>
+          </div>
+        </div>
+        <a class="scrollcue" href="#board"><span class="scrollcue__line" aria-hidden="true"></span><span class="scrollcue__text">Scroll to the fire</span></a>
+      </div>
+    </section>
+
+    <!-- Station 2: the board -->
+    <section id="board" class="station station--r" tabindex="-1" aria-labelledby="board-title" data-station="1">
+      <div class="poster poster--board" aria-hidden="true"><img src="assets/poster-board.svg" alt="" width="800" height="600" loading="lazy" decoding="async"></div>
+      <div class="station__stick">
+        <div class="wrap">
+          <div class="panel" data-rv-group>
+            <p class="kicker" data-rv><span class="kicker__no">02</span> The cut</p>
+            <h2 id="board-title" class="h2" data-rv>Rested on oak, <em>carved to share.</em></h2>
+            <p data-rv>Steaks come off the grill, rest, and arrive sliced on a wooden board with salt, herbs and the fire still on them.</p>
+            <p class="note" data-rv>Sample scene: stock 360&deg; photographs and scanned props, not this restaurant and not its food. Replace with photography of your own cuts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Station 3: the cellar -->
+    <section id="cellar" class="station station--l" tabindex="-1" aria-labelledby="cellar-title" data-station="2">
+      <div class="poster poster--cellar" aria-hidden="true"><img src="assets/poster-cellar.svg" alt="" width="800" height="600" loading="lazy" decoding="async"></div>
+      <div class="station__stick">
+        <div class="wrap">
+          <div class="panel" data-rv-group>
+            <p class="kicker" data-rv><span class="kicker__no">03</span> The cellar</p>
+            <h2 id="cellar-title" class="h2" data-rv>Barrels, bottles <em>and patience.</em></h2>
+            <p data-rv>A short list of reds chosen to stand up to smoke and char, poured at the table.</p>
+            <p class="note" data-rv>[Wine list to be confirmed by the restaurant]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Station 4: the menu -->
+    <section id="menu" class="station station--menu" tabindex="-1" aria-labelledby="menu-title" data-station="3">
+      <div class="poster poster--table" aria-hidden="true"><img src="assets/poster-table.svg" alt="" width="800" height="600" loading="lazy" decoding="async"></div>
+      <div class="station__stick">
+        <div class="wrap">
+          <div class="menu-card" data-rv-group>
+            <p class="kicker" data-rv><span class="kicker__no">04</span> The menu <span class="kicker__sep" aria-hidden="true"></span> Illustrative sample</p>
+            <h2 id="menu-title" class="h2" data-rv>From the <em>fire.</em></h2>
+            <div class="menu-cols">
+              <div data-rv>
+                <h3 class="menu-h">Cuts from the grill</h3>
+                <ul class="dishes">
+                  <li class="dish"><span class="dish__name">Ribeye on the bone</span><span class="dish__dots" aria-hidden="true"></span><span class="dish__price">[Price]</span><span class="dish__desc">Cooked over oak embers, sliced to share.</span></li>
+                  <li class="dish"><span class="dish__name">Sirloin</span><span class="dish__dots" aria-hidden="true"></span><span class="dish__price">[Price]</span><span class="dish__desc">Charred crust, rested, with flaky salt.</span></li>
+                  <li class="dish"><span class="dish__name">Fillet</span><span class="dish__dots" aria-hidden="true"></span><span class="dish__price">[Price]</span><span class="dish__desc">Lean and tender, with a herb butter.</span></li>
+                  <li class="dish"><span class="dish__name">Cut for two</span><span class="dish__dots" aria-hidden="true"></span><span class="dish__price">[Price]</span><span class="dish__desc">A large steak carved at the table.</span></li>
+                </ul>
+              </div>
+              <div data-rv>
+                <h3 class="menu-h">Beside the fire</h3>
+                <ul class="dishes">
+                  <li class="dish"><span class="dish__name">Ember-roasted onions</span><span class="dish__dots" aria-hidden="true"></span><span class="dish__price">[Price]</span><span class="dish__desc">Cooked in their skins in the coals.</span></li>
+                  <li class="dish"><span class="dish__name">Fire-roasted vegetables</span><span class="dish__dots" aria-hidden="true"></span><span class="dish__price">[Price]</span><span class="dish__desc">Seasonal, with olive oil and herbs.</span></li>
+                  <li class="dish"><span class="dish__name">Potatoes from the grill</span><span class="dish__dots" aria-hidden="true"></span><span class="dish__price">[Price]</span><span class="dish__desc">Crisp outside, soft within.</span></li>
+                  <li class="dish"><span class="dish__name">Pepper or herb sauce</span><span class="dish__dots" aria-hidden="true"></span><span class="dish__price">[Price]</span><span class="dish__desc">On the side, made in the kitchen.</span></li>
+                </ul>
+              </div>
+            </div>
+            <p class="fine" data-rv>Sample menu for illustration only. Dishes, cuts, weights and prices are placeholders for the restaurant to complete. [Allergen and dietary information]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Station 5: reserve -->
+    <section id="reserve" class="station station--l station--reserve" tabindex="-1" aria-labelledby="reserve-title" data-station="4">
+      <div class="poster poster--reserve" aria-hidden="true"><img src="assets/poster-reserve.svg" alt="" width="800" height="600" loading="lazy" decoding="async"></div>
+      <div class="station__stick">
+        <div class="wrap">
+          <div class="panel panel--reserve" data-rv-group>
+            <p class="kicker" data-rv><span class="kicker__no">05</span> Reserve</p>
+            <h2 id="reserve-title" class="h2" data-rv>Pull up a chair <em>by the fire.</em></h2>
+            <p data-rv>Tell us when you are coming and how many of you there are, and we will keep a table near the embers.</p>
+            <div class="cta-row" data-rv>
+              <a class="btn btn--primary" href="#reserve-details">Reserve a table</a>
+              <span class="ph">[Reservation link]</span>
+            </div>
+            <dl class="details" id="reserve-details" tabindex="-1" data-rv>
+              <div><dt>Telephone</dt><dd>[Your phone number]</dd></div>
+              <div><dt>Address</dt><dd>[Street address]</dd></div>
+              <div><dt>Hours</dt><dd>[Opening hours]</dd></div>
+            </dl>
+            <p class="note" data-rv>[Testimonial from a guest]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <a class="brand" href="#fire"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2c1.6 3.8 5.5 5.4 5.5 10.2a5.5 5.5 0 0 1-11 0c0-2.4 1.4-4 2.3-5.5 0 2.3 1.5 3.2 2.4 3.2-.8-3.1 0-5.6.8-7.9z" fill="currentColor"/></svg></span><span class="brand__name">Ember <span class="brand__amp">&amp;</span> Oak</span></a>
+      <p>A sample restaurant website: a wood-fire steakhouse of brick, iron and oak.</p>
+    </div>
+    <nav aria-label="Footer">
+      <h2 class="footer__h">Explore</h2>
+      <ul class="footer__list">
+        <li><a href="#board">The cut</a></li>
+        <li><a href="#cellar">The cellar</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#reserve">Reserve</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h2 class="footer__h">Visit</h2>
+      <ul class="footer__list footer__list--plain">
+        <li>[Street address]</li>
+        <li>[Opening hours]</li>
+        <li>[Your phone number]</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer__bar">
+    <p class="footer__credit">Sample design by Website Studio. 360&deg; photographs and 3D props: Poly Haven (CC0), not photographs of this restaurant.</p>
+    <a class="footer__top" href="#fire">Back to the fire</a>
+  </div>
+</footer>
+
+<noscript><style>.stage,.veil,.loader{display:none}</style></noscript>
+
+<script src="../../vendor/gsap.min.js"></script>
+<script src="../../vendor/ScrollTrigger.min.js"></script>
+<script src="../../vendor/lenis.min.js"></script>
+<script type="module" src="main.js"></script>
+</body>
+</html>

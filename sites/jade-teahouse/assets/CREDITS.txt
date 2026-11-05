@@ -1,0 +1,31 @@
+Jade Teahouse (sample design by Website Studio) - asset credits
+
+3D assets: Poly Haven, all CC0 1.0 (https://polyhaven.com/license). Free for commercial use, no attribution required; listed for the record.
+Files are shared from showcase/assets/polyhaven/ (fetched with showcase/tools/fetch_polyhaven.py, 1k resolution).
+
+- model `chinese_screen_panels`: Chinese Screen Panels, by Kirill Sannikov, https://polyhaven.com/a/chinese_screen_panels
+- model `chinese_tea_table`: Chinese Tea Table, by Kirill Sannikov, https://polyhaven.com/a/chinese_tea_table   (used twice: tea table and side table)
+- model `tea_set_01`: Tea Set 01, by James Ray Cock, Rico Cilliers, Jurita Burger, https://polyhaven.com/a/tea_set_01   (teapot, lid, two cups, two saucers)
+- model `chinese_chandelier`: Chinese Chandelier, by Kirill Sannikov, https://polyhaven.com/a/chinese_chandelier
+- model `ceramic_vase_01`: Ceramic Vase 01, by James Ray Cock, https://polyhaven.com/a/ceramic_vase_01
+- texture `bamboo_wall`: Bamboo Wall, by Amal Kumar, https://polyhaven.com/a/bamboo_wall   (desktop only: phones get bamboo slats drawn on a canvas instead)
+- texture `beige_wall_001`: Beige Wall 001, by Dimitrios Savva, Rico Cilliers, https://polyhaven.com/a/beige_wall_001   (side-wall plaster; diffuse on both tiers, normal map on desktop only)
+- texture `old_wood_floor`: Old Wood Floor, by Guillaume Monsergent, https://polyhaven.com/a/old_wood_floor   (diffuse; normal map on desktop only)
+- hdri `warm_restaurant_night`: Warm Restaurant Night, by Greg Zaal, Jarod Guest, https://polyhaven.com/a/warm_restaurant_night
+
+Derived file in this folder:
+- assets/env-warm-restaurant-night-pmrem128.hdr: the `warm_restaurant_night` HDRI (1k), downsampled to 512x256 and prefiltered
+  with three.js PMREMGenerator (r160) into its CubeUV layout, saved as Radiance RGBE. Rows are in GL order (bottom row first).
+  Same CC0 licence as the source. Baking it once avoids compiling the PMREM blur shader in the visitor's browser.
+
+Procedural (made in code for this site, no external source): room shell, moon window and the bamboo beyond it,
+paper lanterns, bamboo steamer (canvas-drawn band, weave and liner textures), dumplings, steam, tea liquid and stream,
+light cone and dust, contact shadows.
+
+Fallback posters (assets/poster-*.svg): original drawings made for this site.
+
+Fonts: none downloaded. The page uses system fonts only (Palatino Linotype / Palatino / Book Antiqua / Georgia for
+display, Segoe UI / Helvetica Neue / system-ui for text).
+
+Libraries (shared, showcase/vendor/): three.js r160 and addons (MIT), GSAP and ScrollTrigger (GreenSock standard licence),
+Lenis (MIT).

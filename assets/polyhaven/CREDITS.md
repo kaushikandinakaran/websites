@@ -1,0 +1,90 @@
+# Poly Haven assets used (CC0)
+
+All CC0 1.0, https://polyhaven.com/license. Credit is optional; kept for the record.
+
+- model `brass_diya_lantern`: Brass Diya Lantern, by Bhargav Kubal, https://polyhaven.com/a/brass_diya_lantern
+- hdri `brown_photostudio_02`: Brown Photostudio 02, by Sergej Majboroda, https://polyhaven.com/a/brown_photostudio_02
+- texture `brown_leather`: Brown Leather, by Rob Tuytel, https://polyhaven.com/a/brown_leather
+- hdri `fireplace`: Fireplace, by Greg Zaal, https://polyhaven.com/a/fireplace
+- model `wooden_cutting_board`: Wooden Cutting Board, by Kuutti Siitonen, https://polyhaven.com/a/wooden_cutting_board
+- model `stone_fire_pit`: Stone Fire Pit, by Sebastian Platen, https://polyhaven.com/a/stone_fire_pit
+- model `wine_barrel_01`: Wine Barrel 01, by James Ray Cock, https://polyhaven.com/a/wine_barrel_01
+- model `WoodenTable_02`: Wooden Table 02, by Fran Calvente, https://polyhaven.com/a/WoodenTable_02
+- model `yellow_onion`: Yellow Onion, by Kuutti Siitonen, https://polyhaven.com/a/yellow_onion
+- texture `dark_brick_wall`: Dark Brick Wall, by Dario Barresi, Dimitrios Savva, https://polyhaven.com/a/dark_brick_wall
+- model `metal_jug`: Metal Jug, by Anzor Lezhava, https://polyhaven.com/a/metal_jug
+- texture `wood_table_worn`: Wood Table Worn, by Dimitrios Savva, Rico Cilliers, https://polyhaven.com/a/wood_table_worn
+- model `barrel_stove`: Barrel Stove, by MP, https://polyhaven.com/a/barrel_stove
+- texture `slate_floor`: Slate Floor, by Dimitrios Savva, https://polyhaven.com/a/slate_floor
+- model `wooden_axe`: Wooden Axe, by Ulan Cabanilla, https://polyhaven.com/a/wooden_axe
+- model `wooden_candlestick`: Wooden Candlestick, by Josh Dean, https://polyhaven.com/a/wooden_candlestick
+- model `hanging_industrial_lamp`: Hanging Industrial Lamp, by Kuutti Siitonen, https://polyhaven.com/a/hanging_industrial_lamp
+- model `wooden_barrels_01`: Wooden Barrels 01, by James Ray Cock, https://polyhaven.com/a/wooden_barrels_01
+- model `wine_bottles_01`: Wine Bottles 01, by Rico Cilliers, Jurita Burger, https://polyhaven.com/a/wine_bottles_01
+- hdri `warm_restaurant_night`: Warm Restaurant Night, by Greg Zaal, Jarod Guest, https://polyhaven.com/a/warm_restaurant_night
+- model `brass_pot_01`: Brass Pot 01, by Rico Cilliers, https://polyhaven.com/a/brass_pot_01
+- model `brass_pot_02`: Brass Pot 02, by Rico Cilliers, https://polyhaven.com/a/brass_pot_02
+- model `wooden_bowl_01`: Wooden Bowl 01, by Oliver Harries, https://polyhaven.com/a/wooden_bowl_01
+- model `brass_vase_03`: Brass Vase 03, by Rico Cilliers, https://polyhaven.com/a/brass_vase_03
+- model `wooden_spoon`: Wooden Spoon, by Ronnie Barter, https://polyhaven.com/a/wooden_spoon
+- model `tea_set_01`: Tea Set 01, by James Ray Cock, Rico Cilliers, Jurita Burger, https://polyhaven.com/a/tea_set_01
+- model `food_lime_01`: Food Lime 01, by Oliver Harries, https://polyhaven.com/a/food_lime_01
+- model `brass_pan_01`: Brass Pan 01, by Rico Cilliers, https://polyhaven.com/a/brass_pan_01
+- model `carved_wooden_plate`: Carved Wooden Plate, by Jan Martens, https://polyhaven.com/a/carved_wooden_plate
+- model `food_ginger_01`: Food Ginger 01, by Oliver Harries, https://polyhaven.com/a/food_ginger_01
+- model `wooden_bowl_02`: Wooden Bowl 02, by Kuutti Siitonen, https://polyhaven.com/a/wooden_bowl_02
+- model `wooden_lantern_01`: Wooden Lantern 01, by James Ray Cock, https://polyhaven.com/a/wooden_lantern_01
+- model `lantern_chandelier_01`: Lantern Chandelier 01, by Kirill Sannikov, https://polyhaven.com/a/lantern_chandelier_01
+- model `brass_goblets`: Brass Goblets, by Tina, https://polyhaven.com/a/brass_goblets
+- texture `clay_plaster`: Clay Plaster, by Amal Kumar, https://polyhaven.com/a/clay_plaster
+- texture `dark_wood`: Dark Wood, by Dario Barresi, Dimitrios Savva, Rico Cilliers, https://polyhaven.com/a/dark_wood
+- texture `red_plaster_weathered`: Red Plaster Weathered, by Amal Kumar, https://polyhaven.com/a/red_plaster_weathered
+- texture `rough_linen`: Rough Linen, by colormass, Rico Cilliers, https://polyhaven.com/a/rough_linen
+- model `chinese_screen_panels`: Chinese Screen Panels, by Kirill Sannikov, https://polyhaven.com/a/chinese_screen_panels
+- model `chinese_tea_table`: Chinese Tea Table, by Kirill Sannikov, https://polyhaven.com/a/chinese_tea_table
+- model `chinese_chandelier`: Chinese Chandelier, by Kirill Sannikov, https://polyhaven.com/a/chinese_chandelier
+- model `chinese_armchair`: Chinese Armchair, by Kirill Sannikov, https://polyhaven.com/a/chinese_armchair
+- model `ceramic_vase_01`: Ceramic Vase 01, by James Ray Cock, https://polyhaven.com/a/ceramic_vase_01
+- texture `bamboo_wall`: Bamboo Wall, by Amal Kumar, https://polyhaven.com/a/bamboo_wall
+- texture `old_wood_floor`: Old Wood Floor, by Guillaume Monsergent, https://polyhaven.com/a/old_wood_floor
+- hdri `brown_photostudio_05`: Brown Photostudio 05, by Sergej Majboroda, https://polyhaven.com/a/brown_photostudio_05
+- model `croissant`: Croissant, by Greg Zaal, Dario Barresi, https://polyhaven.com/a/croissant
+- model `carrot_cake`: Carrot Cake, by Greg Zaal, James Ray Cock, https://polyhaven.com/a/carrot_cake
+- texture `oak_veneer_01`: Oak Veneer 01, by Jenelle van Heerden, https://polyhaven.com/a/oak_veneer_01
+- texture `beige_wall_001`: Beige Wall 001, by Dimitrios Savva, Rico Cilliers, https://polyhaven.com/a/beige_wall_001
+- hdri `venice_sunset`: Venice Sunset, by Greg Zaal, https://polyhaven.com/a/venice_sunset
+- texture `brown_floor_tiles`: Brown Floor Tilles, by Rob Tuytel, https://polyhaven.com/a/brown_floor_tiles
+- model `outdoor_table_chair_set_01`: Outdoor Table Chair Set 01, by James Ray Cock, https://polyhaven.com/a/outdoor_table_chair_set_01
+- model `painted_wooden_chair_01`: Painted Wooden Chair 01, by Kuutti Siitonen, https://polyhaven.com/a/painted_wooden_chair_01
+- model `lemon`: Lemon, by Kuutti Siitonen, https://polyhaven.com/a/lemon
+- model `ceramic_vase_04`: Ceramic Vase 04, by James Ray Cock, https://polyhaven.com/a/ceramic_vase_04
+- model `potted_plant_02`: Potted Plant 02, by Rico Cilliers, https://polyhaven.com/a/potted_plant_02
+- pano `wooden_lounge`: Wooden Lounge, by Greg Zaal, https://polyhaven.com/a/wooden_lounge
+- pano `warm_restaurant`: Warm Restaurant, by Greg Zaal, Jarod Guest, https://polyhaven.com/a/warm_restaurant
+- pano `cabin`: Cabin, by Greg Zaal, https://polyhaven.com/a/cabin
+- pano `warm_bar`: Warm Bar, by Greg Zaal, Jarod Guest, https://polyhaven.com/a/warm_bar
+- pano `qwantani_dusk_1`: Qwantani Dusk 1, by Greg Zaal, Jarod Guest, https://polyhaven.com/a/qwantani_dusk_1
+- pano `outdoor_umbrellas`: Outdoor Umbrellas, by Sergej Majboroda, https://polyhaven.com/a/outdoor_umbrellas
+- pano `lythwood_terrace`: Lythwood Terrace, by Greg Zaal, https://polyhaven.com/a/lythwood_terrace
+- pano `courtyard`: Courtyard, by Greg Zaal, https://polyhaven.com/a/courtyard
+- pano `hotel_rooftop_balcony`: Hotel Rooftop Balcony, by Dimitrios Savva, Jarod Guest, https://polyhaven.com/a/hotel_rooftop_balcony
+- pano `sundowner_deck`: Sundowner Deck, by Dario Barresi, https://polyhaven.com/a/sundowner_deck
+- pano `chinese_garden`: Chinese Garden, by Andreas Mischok, https://polyhaven.com/a/chinese_garden
+- pano `fouriesburg_mountain_lookout`: Fouriesburg Mountain Lookout, by Dimitrios Savva, Jarod Guest, https://polyhaven.com/a/fouriesburg_mountain_lookout
+- pano `warm_reception_dinner`: Warm Reception Dinner, by Dimitrios Savva, Jarod Guest, https://polyhaven.com/a/warm_reception_dinner
+- pano `courtyard_night`: Courtyard Night, by Greg Zaal, https://polyhaven.com/a/courtyard_night
+- pano `comfy_cafe`: Comfy Café, by Sergej Majboroda, https://polyhaven.com/a/comfy_cafe
+- pano `newman_cafeteria`: Newman Cafeteria, by Savva Zakharov, https://polyhaven.com/a/newman_cafeteria
+- pano `medieval_cafe`: Medieval Cafe, by Dimitrios Savva, Jarod Guest, https://polyhaven.com/a/medieval_cafe
+- pano `castle_zavelstein_cellar`: Castle Zavelstein Cellar, by Andreas Mischok, https://polyhaven.com/a/castle_zavelstein_cellar
+- pano `boma`: Boma, by Greg Zaal, Jarod Guest, https://polyhaven.com/a/boma
+- pano `xiequ_yuan`: Xiequ Yuan, by Greg Zaal, https://polyhaven.com/a/xiequ_yuan
+- pano `the_sky_is_on_fire`: The Sky Is On Fire, by Greg Zaal, Rico Cilliers, https://polyhaven.com/a/the_sky_is_on_fire
+- pano `blue_lagoon_night`: Blue Lagoon Night, by Greg Zaal, https://polyhaven.com/a/blue_lagoon_night
+- pano `evening_museum_courtyard`: Evening Museum Courtyard, by Grzegorz Wronkowski, https://polyhaven.com/a/evening_museum_courtyard
+- pano `bush_restaurant`: Bush Restaurant, by Greg Zaal, https://polyhaven.com/a/bush_restaurant
+- pano `studio_country_hall`: Studio Country Hall, by Sergej Majboroda, https://polyhaven.com/a/studio_country_hall
+- model `wicker_basket_01`: Wicker Basket 01, by Kuutti Siitonen, https://polyhaven.com/a/wicker_basket_01
+- model `food_lychee_01`: Food Lychee 01, by Oliver Harries, https://polyhaven.com/a/food_lychee_01
+- model `chinese_stool`: Chinese Stool, by Kirill Sannikov, https://polyhaven.com/a/chinese_stool
+- model `wooden_table_02`: Wooden Table 02, by Serhii Khromov, https://polyhaven.com/a/wooden_table_02

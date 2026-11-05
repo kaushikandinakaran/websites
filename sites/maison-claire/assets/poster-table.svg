@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <radialGradient id="bg" cx="76%" cy="50%" r="62%"><stop offset="0" stop-color="#3b2f26"/><stop offset="1" stop-color="#121110"/></radialGradient>
+    <radialGradient id="cloth" cx="50%" cy="45%" r="55%"><stop offset="0" stop-color="#e9dcc2"/><stop offset="1" stop-color="#a99a82"/></radialGradient>
+    <radialGradient id="flame" cx="50%" cy="60%" r="50%"><stop offset="0" stop-color="#fff6d6"/><stop offset=".5" stop-color="#ffc766"/><stop offset="1" stop-color="#ff8a2a" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <g transform="translate(130 40) scale(.87)">
+  <circle cx="610" cy="300" r="236" fill="url(#cloth)"/>
+  <circle cx="610" cy="300" r="214" fill="none" stroke="#d6b97e" stroke-width="2" opacity=".8"/>
+  <circle cx="610" cy="318" r="120" fill="none" stroke="#d6b97e" stroke-width="11"/>
+  <circle cx="610" cy="318" r="98" fill="#f7f3ea"/>
+  <circle cx="610" cy="318" r="84" fill="none" stroke="#d6b97e" stroke-width="1.5"/>
+  <rect x="440" y="238" width="11" height="156" rx="5.5" fill="#c9a96a"/>
+  <rect x="768" y="238" width="0" height="0" fill="none"/>
+  <rect x="736" y="236" width="11" height="158" rx="5.5" fill="#c9a96a"/>
+  <rect x="762" y="236" width="11" height="158" rx="5.5" fill="#c9a96a" opacity=".0"/>
+  <circle cx="700" cy="150" r="30" fill="#7b1e32"/><circle cx="700" cy="150" r="38" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2"/>
+  <circle cx="610" cy="118" r="52" fill="#ffb55a" opacity=".2"/>
+  <circle cx="610" cy="126" r="16" fill="#f3ead6"/>
+  <path d="M610 84 C628 106 627 124 610 130 C593 124 592 106 610 84 Z" fill="url(#flame)"/>
+</g>
+</svg>

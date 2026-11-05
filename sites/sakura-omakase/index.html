@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sakura Omakase - Sushi Counter (Sample Design)</title>
+  <meta name="description" content="Sample design for Sakura Omakase, an invented Japanese sushi counter. A night-time 3D scene: scroll to glide along a lantern-lit counter.">
+  <meta name="theme-color" content="#0b0608">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23c8321b'/%3E%3Cpath d='M16 26C9 23 7 14 12 8l4 4 4-4c5 6 3 15-4 18z' fill='%23f6ecd8'/%3E%3C/svg%3E">
+  <script>
+    /* Runs before first paint: mark JS, probe WebGL silently, and arm the 4 s "show everything" fallback. */
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var c = document.createElement('canvas');
+        var gl = c.getContext('webgl2') || c.getContext('webgl');
+        if (!gl) d.classList.add('no-3d');
+        else { var x = gl.getExtension('WEBGL_lose_context'); if (x) x.loseContext(); } // release the probe context
+      } catch (e) { d.classList.add('no-3d'); }
+      setTimeout(function () { d.classList.add('rv-fallback'); }, 4000);
+    })();
+  </script>
+  <noscript><style>[data-rv]{opacity:1!important;transform:none!important}.poster{display:block!important}.stage{display:none!important}</style></noscript>
+  <link rel="stylesheet" href="../../vendor/lenis.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">{ "imports": { "three": "../../vendor/three.module.min.js", "three/addons/": "../../vendor/three-addons/" } }</script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Shared SVG parts for the no-WebGL poster backgrounds -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <radialGradient id="g-glow"><stop offset="0" stop-color="#ffb35c" stop-opacity=".95"/><stop offset=".35" stop-color="#ff7a3a" stop-opacity=".35"/><stop offset="1" stop-color="#ff5a2a" stop-opacity="0"/></radialGradient>
+      <radialGradient id="g-moon" cx=".4" cy=".38"><stop offset="0" stop-color="#fff6e0"/><stop offset="1" stop-color="#e9d6b0"/></radialGradient>
+      <radialGradient id="g-halo"><stop offset="0" stop-color="#cfd6ff" stop-opacity=".35"/><stop offset="1" stop-color="#cfd6ff" stop-opacity="0"/></radialGradient>
+      <linearGradient id="g-wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9b98a"/><stop offset="1" stop-color="#a47a4d"/></linearGradient>
+
+      <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05030f"/><stop offset=".42" stop-color="#190e2b"/><stop offset=".78" stop-color="#3b1731"/><stop offset="1" stop-color="#5d2330"/></linearGradient>
+      <linearGradient id="g-ground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#241326"/><stop offset=".3" stop-color="#150b1a"/><stop offset="1" stop-color="#07040a"/></linearGradient>
+      <linearGradient id="g-red" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8f2112"/><stop offset=".45" stop-color="#e0482b"/><stop offset="1" stop-color="#a02614"/></linearGradient>
+      <linearGradient id="g-hill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b1634"/><stop offset="1" stop-color="#150a1e"/></linearGradient>
+      <radialGradient id="g-bloom" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#ffd0dc"/><stop offset=".6" stop-color="#e98fab"/><stop offset="1" stop-color="#a64a6c"/></radialGradient>
+      <radialGradient id="g-floorglow"><stop offset="0" stop-color="#ffa050" stop-opacity=".5"/><stop offset="1" stop-color="#ffa050" stop-opacity="0"/></radialGradient>
+      <linearGradient id="g-shoji" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c88a52"/><stop offset=".5" stop-color="#ffd9a2"/><stop offset="1" stop-color="#e2a468"/></linearGradient>
+      <linearGradient id="g-vig" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05030a" stop-opacity=".55"/><stop offset=".25" stop-color="#05030a" stop-opacity="0"/><stop offset=".8" stop-color="#05030a" stop-opacity="0"/><stop offset="1" stop-color="#05030a" stop-opacity=".6"/></linearGradient>
+      <g id="s-stars" fill="#fff4e6"><circle cx="683" cy="91" r="1.6" opacity="0.35"/><circle cx="168" cy="288" r="0.8" opacity="0.7"/><circle cx="138" cy="273" r="1" opacity="0.35"/><circle cx="196" cy="236" r="1.6" opacity="0.35"/><circle cx="512" cy="60" r="1.6" opacity="0.35"/><circle cx="1178" cy="77" r="1" opacity="0.35"/><circle cx="832" cy="39" r="1" opacity="0.35"/><circle cx="1160" cy="82" r="1.2" opacity="0.9"/><circle cx="315" cy="290" r="0.8" opacity="0.7"/><circle cx="1167" cy="106" r="0.8" opacity="0.5"/><circle cx="782" cy="63" r="0.8" opacity="0.35"/><circle cx="441" cy="268" r="1.6" opacity="0.7"/><circle cx="973" cy="313" r="1.6" opacity="0.7"/><circle cx="633" cy="141" r="1" opacity="0.5"/><circle cx="187" cy="308" r="1.2" opacity="0.9"/><circle cx="723" cy="243" r="1.2" opacity="0.35"/><circle cx="261" cy="276" r="1.6" opacity="0.5"/><circle cx="720" cy="91" r="1.6" opacity="0.9"/><circle cx="100" cy="53" r="1.2" opacity="0.7"/><circle cx="737" cy="318" r="1.6" opacity="0.9"/><circle cx="160" cy="61" r="1.2" opacity="0.9"/><circle cx="153" cy="45" r="1.2" opacity="0.9"/><circle cx="602" cy="211" r="1.2" opacity="0.35"/><circle cx="965" cy="195" r="1" opacity="0.35"/><circle cx="1031" cy="44" r="1" opacity="0.7"/><circle cx="284" cy="140" r="1.6" opacity="0.9"/><circle cx="1036" cy="55" r="1" opacity="0.9"/><circle cx="842" cy="295" r="1.2" opacity="0.5"/><circle cx="901" cy="295" r="1.2" opacity="0.9"/><circle cx="754" cy="208" r="1" opacity="0.5"/><circle cx="189" cy="104" r="1" opacity="0.5"/><circle cx="497" cy="20" r="1.6" opacity="0.5"/><circle cx="558" cy="158" r="0.8" opacity="0.5"/><circle cx="878" cy="287" r="1.2" opacity="0.7"/><circle cx="277" cy="277" r="0.8" opacity="0.9"/><circle cx="1165" cy="214" r="1.6" opacity="0.9"/><circle cx="827" cy="67" r="1.6" opacity="0.9"/><circle cx="147" cy="111" r="0.8" opacity="0.5"/><circle cx="922" cy="97" r="0.8" opacity="0.7"/><circle cx="127" cy="66" r="0.8" opacity="0.5"/><circle cx="1118" cy="65" r="1.2" opacity="0.35"/><circle cx="164" cy="120" r="1.6" opacity="0.5"/><circle cx="536" cy="191" r="1.2" opacity="0.9"/><circle cx="271" cy="73" r="1.6" opacity="0.9"/><circle cx="1003" cy="261" r="1.2" opacity="0.35"/><circle cx="315" cy="66" r="1.2" opacity="0.7"/><circle cx="1000" cy="96" r="0.8" opacity="0.5"/><circle cx="1101" cy="199" r="1" opacity="0.35"/><circle cx="1101" cy="166" r="0.8" opacity="0.7"/><circle cx="1081" cy="201" r="1" opacity="0.7"/><circle cx="476" cy="286" r="1.2" opacity="0.5"/><circle cx="419" cy="136" r="1.6" opacity="0.5"/><circle cx="429" cy="279" r="1.6" opacity="0.7"/><circle cx="79" cy="28" r="1.2" opacity="0.9"/><circle cx="550" cy="113" r="1.2" opacity="0.9"/><circle cx="735" cy="200" r="0.8" opacity="0.5"/><circle cx="229" cy="130" r="1.6" opacity="0.5"/><circle cx="711" cy="118" r="1.6" opacity="0.35"/><circle cx="1001" cy="190" r="0.8" opacity="0.35"/><circle cx="815" cy="116" r="1.6" opacity="0.5"/><circle cx="908" cy="184" r="0.8" opacity="0.9"/><circle cx="968" cy="219" r="0.8" opacity="0.5"/><circle cx="368" cy="79" r="0.8" opacity="0.5"/><circle cx="973" cy="88" r="1.6" opacity="0.7"/><circle cx="339" cy="294" r="1" opacity="0.35"/><circle cx="49" cy="66" r="1" opacity="0.9"/><circle cx="418" cy="122" r="0.8" opacity="0.7"/><circle cx="455" cy="163" r="1" opacity="0.7"/><circle cx="551" cy="292" r="1.6" opacity="0.5"/><circle cx="144" cy="195" r="1.6" opacity="0.9"/></g>
+      <g id="s-tree">
+        <path d="M-14 0 C-12 -90 -22 -150 -50 -230 L-30 -234 C-10 -180 0 -140 6 -100 C18 -150 40 -190 80 -230 L92 -216 C50 -170 30 -120 18 0Z" fill="#150a14"/>
+        <g fill="url(#g-bloom)"><circle cx="-60" cy="-250" r="64"/><circle cx="10" cy="-290" r="76"/><circle cx="84" cy="-246" r="62"/><circle cx="-20" cy="-216" r="56"/><circle cx="52" cy="-200" r="46"/><circle cx="-100" cy="-206" r="40"/></g>
+        <g fill="#ffd9e2" opacity=".55"><circle cx="-20" cy="-300" r="28"/><circle cx="60" cy="-270" r="22"/><circle cx="-76" cy="-262" r="20"/></g>
+        <g fill="#7a2f4e" opacity=".35"><circle cx="-10" cy="-190" r="34"/><circle cx="64" cy="-176" r="26"/></g>
+      </g>
+      <g id="s-petals" fill="#f7b3c4"><use href="#s-petal" x="0" y="0" width="20" height="24"/><use href="#s-petal" x="90" y="60" width="14" height="17"/><use href="#s-petal" x="180" y="-20" width="18" height="22"/><use href="#s-petal" x="260" y="90" width="12" height="15"/><use href="#s-petal" x="340" y="30" width="16" height="19"/></g>
+      <symbol id="s-petal" viewBox="0 0 20 24"><path d="M10 23C3 20 .5 10 6 3l4 4 4-4c5.500 7 3.500 17-4 20z"/></symbol>
+      <symbol id="s-lantern" viewBox="0 0 60 100">
+        <circle cx="30" cy="52" r="46" fill="url(#g-glow)"/>
+        <path d="M30 0v14" stroke="#1a0d0f" stroke-width="2"/>
+        <rect x="19" y="14" width="22" height="6" rx="2" fill="#120a0c"/>
+        <path d="M19 20c-10 8-12 36-2 52h26c10-16 8-44-2-52z" fill="#e0482b"/>
+        <path d="M17 34h26M15.500 46h29M16.500 58h27" stroke="#8e1f0f" stroke-width="1.300" fill="none"/>
+        <rect x="19" y="72" width="22" height="6" rx="2" fill="#120a0c"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- The 3D scene: one fixed canvas behind everything. Decorative, content lives in the HTML. -->
+  <div class="stage" aria-hidden="true">
+    <canvas id="stage"></canvas>
+    <div class="vignette"></div>
+  </div>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="brand" href="#top">
+        <svg class="brand__mark" viewBox="0 0 32 32" width="30" height="30" aria-hidden="true" focusable="false">
+          <rect width="32" height="32" rx="5" fill="#c8321b"/>
+          <path d="M16 26C9 23 7 14 12 8l4 4 4-4c5 6 3 15-4 18z" fill="#f6ecd8"/>
+        </svg>
+        <span class="brand__name">Sakura Omakase</span>
+      </a>
+
+      <button class="motion-btn" id="motionBtn" type="button" aria-pressed="false">
+        <svg class="motion-btn__pause" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+        <svg class="motion-btn__play" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 5l11 7-11 7z"/></svg>
+        <span class="motion-btn__text">Pause motion</span>
+      </button>
+
+      <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
+        <span class="sr-only">Menu</span>
+        <span class="nav__bars" aria-hidden="true"><i></i><i></i></span>
+      </button>
+
+      <nav class="nav__menu" id="navMenu" aria-label="Primary" data-lenis-prevent>
+        <ul class="nav__links">
+          <li><a href="#counter">The counter</a></li>
+          <li><a href="#omakase">Omakase</a></li>
+          <li><a href="#tools">Chef's tools</a></li>
+        </ul>
+        <a class="btn btn--shu btn--sm" href="#reserve">Reserve a seat</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Decorative station rail -->
+  <ol class="rail" id="rail" aria-hidden="true">
+    <li class="is-active"><i></i><span>Arrival</span></li>
+    <li><i></i><span>Counter</span></li>
+    <li><i></i><span>Omakase</span></li>
+    <li><i></i><span>Tools</span></li>
+    <li><i></i><span>Reserve</span></li>
+  </ol>
+
+  <main id="main" tabindex="-1">
+
+    <!-- 01 ARRIVAL -->
+    <section class="station station--hero" id="arrival" data-station="0" tabindex="-1" aria-labelledby="hero-title">
+      <div class="poster poster--arrival" aria-hidden="true">
+        <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <rect width="1200" height="800" fill="url(#g-sky)"/>
+          <use href="#s-stars"/>
+          <circle cx="720" cy="250" r="330" fill="url(#g-halo)"/>
+          <circle cx="720" cy="250" r="104" fill="url(#g-moon)"/>
+          <g fill="#c9b184" opacity=".35"><circle cx="690" cy="226" r="16"/><circle cx="752" cy="274" r="22"/><circle cx="706" cy="290" r="9"/></g>
+          <path d="M0 540 Q140 450 300 505 T600 490 T900 510 T1200 470 V800 H0Z" fill="url(#g-hill)"/>
+          <path d="M0 585 Q200 520 420 565 T820 548 T1200 560 V800 H0Z" fill="#12091a"/>
+          <rect y="584" width="1200" height="216" fill="url(#g-ground)"/>
+          <rect x="672" y="590" width="96" height="210" fill="#cfd6ff" opacity=".07"/>
+          <ellipse cx="720" cy="660" rx="300" ry="42" fill="url(#g-floorglow)"/>
+          <use href="#s-tree" transform="translate(120 640) scale(1.15)"/>
+          <use href="#s-tree" transform="translate(1110 650) scale(1.05) scale(-1 1)"/>
+          <rect x="620" y="452" width="200" height="152" fill="#1c0d12"/>
+          <ellipse cx="720" cy="548" rx="150" ry="88" fill="url(#g-glow)" opacity=".65"/>
+          <rect x="632" y="574" width="176" height="12" fill="#d9b98a"/><rect x="632" y="586" width="176" height="18" fill="#150a0d"/><rect x="632" y="586" width="176" height="3" fill="#e8b45a"/>
+          <g>
+            <rect x="624" y="450" width="48" height="96" fill="#b32a16"/><rect x="673" y="450" width="48" height="96" fill="#c8321b"/><rect x="722" y="450" width="48" height="96" fill="#c8321b"/><rect x="771" y="450" width="48" height="96" fill="#b32a16"/>
+            <path d="M624 538h195" stroke="#5a0f06" stroke-width="12" opacity=".5"/>
+            <g fill="#f6ecd8" transform="translate(721 498)"><circle r="4"/><circle cy="-13" r="8"/><circle cx="12" cy="-4" r="8"/><circle cx="7.500" cy="11" r="8"/><circle cx="-7.500" cy="11" r="8"/><circle cx="-12" cy="-4" r="8"/></g>
+            <circle cx="721" cy="498" r="4" fill="#c8321b"/>
+          </g>
+          <rect x="612" y="444" width="216" height="8" fill="#e8b45a"/>
+          <path d="M584 340h28v264h-28z M828 340h28v264h-28z" fill="url(#g-red)"/>
+          <path d="M576 596h44v18h-44z M820 596h44v18h-44z" fill="#120a0c"/>
+          <rect x="556" y="404" width="328" height="22" fill="url(#g-red)"/>
+          <path d="M538 330 Q720 350 902 330 L898 346 Q720 366 542 346Z" fill="#c8321b"/>
+          <path d="M470 290 Q720 332 970 290 L952 320 Q720 362 488 320Z" fill="#150a0e"/>
+          <path d="M470 290 Q720 332 970 290" stroke="#5a3a40" stroke-width="2" fill="none"/>
+          <rect x="702" y="352" width="36" height="52" fill="#120a0c"/><rect x="708" y="358" width="24" height="40" fill="none" stroke="#e8b45a" stroke-width="2"/>
+          <use href="#s-lantern" x="396" y="470" width="72" height="120"/>
+          <use href="#s-lantern" x="976" y="470" width="72" height="120"/>
+          <use href="#s-lantern" x="654" y="370" width="46" height="76" opacity=".95"/>
+          <use href="#s-lantern" x="744" y="370" width="46" height="76" opacity=".95"/>
+          <use href="#s-petals" x="170" y="150"/><use href="#s-petals" x="720" y="560"/><use href="#s-petals" x="900" y="120"/>
+          <rect width="1200" height="800" fill="url(#g-vig)"/>
+        </svg>
+      </div>
+      <div class="panel panel--left panel--hero" data-rv>
+        <p class="kicker"><span class="kicker__num">01</span> Arrival &middot; Sample design</p>
+        <h1 class="display" id="hero-title">Sakura <em>Omakase</em></h1>
+        <p class="lead">A sushi counter after dark. Step through the curtain, take a seat, and leave the rest to the chef.</p>
+        <div class="actions">
+          <a class="btn btn--shu" href="#reserve">Reserve a seat</a>
+          <a class="btn btn--ghost" href="#omakase">See the omakase</a>
+        </div>
+        <p class="fine">Invented brand for demonstration. Scroll to glide through the scene.</p>
+      </div>
+      <div class="scrollcue" aria-hidden="true"><span>Scroll</span><i></i></div>
+    </section>
+
+    <!-- 02 THE COUNTER -->
+    <section class="station" id="counter" data-station="1" tabindex="-1" aria-labelledby="counter-title">
+      <div class="poster poster--counter" aria-hidden="true">
+        <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <rect width="1200" height="800" fill="#10080c"/>
+          <path d="M0 90 L640 300 L640 470 L0 700Z" fill="url(#g-shoji)"/>
+          <g stroke="#2a140c" stroke-width="5" fill="none"><path d="M0 90 L640 300 M0 700 L640 470"/><path d="M130 130V660 M260 172V600 M390 214V550 M520 256V510 M640 300V470"/><path d="M0 263 L640 336 M0 436 L640 372"/></g>
+          <path d="M0 640 L640 470 V486 L0 664Z" fill="#150a0d"/>
+          <g fill="#0d0709"><rect x="40" y="540" width="26" height="90" rx="10"/><rect x="150" y="520" width="22" height="80" rx="9"/><rect x="262" y="500" width="19" height="70" rx="8"/><rect x="368" y="486" width="16" height="60" rx="7"/></g>
+          <g fill="#c8321b"><rect x="98" y="534" width="24" height="92" rx="10"/><rect x="316" y="494" width="18" height="66" rx="8"/></g>
+          <path d="M0 800 V690 L1200 440 V800Z" fill="#150a0d"/>
+          <path d="M0 690 L1200 440 V470 L0 730Z" fill="url(#g-wood)"/>
+          <path d="M0 736 L1200 478" stroke="#c8321b" stroke-width="9"/>
+          <path d="M0 758 L1200 500" stroke="#e8b45a" stroke-width="2"/>
+          <g stroke="#8a5f38" stroke-width="1.500" opacity=".5"><path d="M0 700 L1200 450"/><path d="M0 712 L1200 458"/><path d="M0 722 L1200 465"/></g>
+          <g><ellipse cx="320" cy="620" rx="64" ry="14" fill="#2a140c" opacity=".5"/><rect x="262" y="598" width="116" height="18" rx="6" fill="#d9b98a"/><ellipse cx="294" cy="592" rx="20" ry="9" fill="#f6ecd8"/><ellipse cx="294" cy="586" rx="22" ry="8" fill="#c9302c"/><ellipse cx="346" cy="590" rx="20" ry="9" fill="#f6ecd8"/><ellipse cx="346" cy="584" rx="22" ry="8" fill="#ff7b45"/></g>
+          <use href="#s-lantern" x="640" y="40" width="170" height="283"/>
+          <use href="#s-lantern" x="840" y="110" width="110" height="183"/>
+          <use href="#s-lantern" x="970" y="150" width="72" height="120"/>
+          <use href="#s-lantern" x="1060" y="180" width="48" height="80"/>
+          <ellipse cx="560" cy="700" rx="360" ry="40" fill="url(#g-floorglow)"/>
+          <rect width="1200" height="800" fill="url(#g-vig)"/>
+        </svg>
+      </div>
+      <div class="panel panel--right" data-rv>
+        <p class="kicker"><span class="kicker__num">02</span> The counter</p>
+        <h2 class="title" id="counter-title">One counter, lit by paper lanterns.</h2>
+        <p class="hide-sm">A single wooden counter, a row of glowing lanterns, and the chef an arm's length away. Everything is made in front of you and handed over the moment it is ready.</p>
+        <ul class="points">
+          <li><strong>Omakase</strong><span>"I leave it to you." The chef chooses the order.</span></li>
+          <li><strong>Seasonal</strong><span>The selection follows what the market offers.</span></li>
+          <li><strong>Piece by piece</strong><span>Each course arrives as it is made.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 03 OMAKASE -->
+    <section class="station" id="omakase" data-station="2" tabindex="-1" aria-labelledby="omakase-title">
+      <div class="poster poster--omakase" aria-hidden="true">
+        <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <rect width="1200" height="800" fill="#12090d"/>
+          <rect y="0" width="1200" height="400" fill="url(#g-shoji)" opacity=".55"/>
+          <g stroke="#2a140c" stroke-width="6"><path d="M0 130H1200M0 270H1200M240 0V400M480 0V400M720 0V400M960 0V400"/></g>
+          <rect y="400" width="1200" height="400" fill="url(#g-wood)"/>
+          <rect y="400" width="1200" height="400" fill="#10070a" opacity=".42"/>
+          <circle cx="880" cy="470" r="340" fill="url(#g-glow)" opacity=".55"/>
+          <ellipse cx="880" cy="560" rx="360" ry="46" fill="#2a140c" opacity=".55"/>
+          <rect x="560" y="512" width="640" height="30" rx="12" fill="#d9b98a"/>
+          <rect x="600" y="540" width="46" height="18" fill="#a47a4d"/><rect x="1100" y="540" width="46" height="18" fill="#a47a4d"/>
+          <g>
+            <g transform="translate(640 470)"><ellipse cy="22" rx="46" ry="18" fill="#eee3cf"/><ellipse cy="6" rx="52" ry="20" fill="#f2b81e"/><rect x="-6" y="-14" width="14" height="38" rx="4" fill="#0b1c12"/></g>
+            <g transform="translate(744 470)"><ellipse cy="22" rx="46" ry="18" fill="#eee3cf"/><ellipse cy="6" rx="52" ry="20" fill="#ff7d52"/><ellipse cx="52" cy="10" rx="10" ry="5" fill="#e8452c"/></g>
+            <g transform="translate(848 470)"><ellipse cy="22" rx="46" ry="18" fill="#eee3cf"/><ellipse cy="6" rx="52" ry="20" fill="#b3202a"/><path d="M-30 4H30" stroke="#e9858a" stroke-width="3"/></g>
+            <g transform="translate(952 470)"><ellipse cy="22" rx="46" ry="18" fill="#eee3cf"/><ellipse cy="6" rx="52" ry="20" fill="#ff6a30"/><path d="M-30 0H30M-30 10H30" stroke="#ffe3cf" stroke-width="3"/></g>
+            <g transform="translate(1056 470)"><rect x="-26" y="-12" width="52" height="44" rx="8" fill="#0b1c12"/><circle cx="-8" cy="-12" r="6" fill="#ff5a1f"/><circle cx="6" cy="-14" r="6" fill="#ff7a3a"/><circle cx="0" cy="-6" r="6" fill="#ff5a1f"/></g>
+          </g>
+          <use href="#s-lantern" x="560" y="30" width="100" height="166"/>
+          <use href="#s-lantern" x="1040" y="20" width="110" height="183"/>
+          <rect width="1200" height="800" fill="url(#g-vig)"/>
+        </svg>
+      </div>
+      <div class="panel panel--left panel--menu" data-rv>
+        <p class="kicker"><span class="kicker__num">03</span> The omakase</p>
+        <h2 class="title" id="omakase-title">Chef's choice, one piece at a time.</h2>
+        <p class="note">Illustrative sample menu. Dishes and prices will be supplied by the restaurant.</p>
+        <div class="menu">
+          <div class="menu__group">
+            <h3 class="menu__h">Nigiri</h3>
+            <ul>
+              <li data-piece="0"><span class="menu__name">Sweet omelette <small>tamago</small></span><span class="menu__price">[Price]</span></li>
+              <li data-piece="1"><span class="menu__name">Shrimp <small>ebi</small></span><span class="menu__price">[Price]</span></li>
+              <li data-piece="2"><span class="menu__name">Tuna <small>maguro</small></span><span class="menu__price">[Price]</span></li>
+              <li data-piece="3"><span class="menu__name">Salmon <small>sake</small></span><span class="menu__price">[Price]</span></li>
+              <li data-piece="4"><span class="menu__name">White fish <small>hirame</small></span><span class="menu__price">[Price]</span></li>
+            </ul>
+          </div>
+          <div class="menu__group">
+            <h3 class="menu__h">Gunkan</h3>
+            <ul>
+              <li data-piece="5"><span class="menu__name">Salmon roe <small>ikura</small></span><span class="menu__price">[Price]</span></li>
+              <li data-piece="6"><span class="menu__name">Sea urchin <small>uni</small></span><span class="menu__price">[Price]</span></li>
+            </ul>
+            <h3 class="menu__h">To finish</h3>
+            <ul>
+              <li><span class="menu__name">Miso soup</span><span class="menu__price">[Price]</span></li>
+              <li><span class="menu__name">Seasonal sweet</span><span class="menu__price">[Price]</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 CHEF'S TOOLS -->
+    <section class="station" id="tools" data-station="3" tabindex="-1" aria-labelledby="tools-title">
+      <div class="poster poster--tools" aria-hidden="true">
+        <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <rect width="1200" height="800" fill="#12090d"/>
+          <rect y="0" width="1200" height="330" fill="url(#g-shoji)" opacity=".4"/>
+          <g stroke="#2a140c" stroke-width="6"><path d="M0 110H1200M300 0V330M600 0V330M900 0V330"/></g>
+          <rect y="330" width="1200" height="470" fill="url(#g-wood)"/>
+          <rect y="330" width="1200" height="470" fill="#10070a" opacity=".4"/>
+          <circle cx="380" cy="480" r="360" fill="url(#g-glow)" opacity=".5"/>
+          <ellipse cx="400" cy="610" rx="330" ry="40" fill="#2a140c" opacity=".55"/>
+          <rect x="130" y="500" width="520" height="52" rx="12" fill="#e6c99a"/>
+          <rect x="130" y="540" width="520" height="12" rx="6" fill="#a47a4d"/>
+          <rect x="230" y="438" width="250" height="70" rx="14" fill="#ff7a45"/><path d="M236 462H474M236 484H474" stroke="#ffe3cf" stroke-width="4" opacity=".8"/>
+          <rect x="500" y="474" width="70" height="26" rx="8" fill="#ff8a55"/>
+          <path d="M110 400 L560 372 L612 392 L110 418Z" fill="#dfe4e8"/><path d="M110 400 L560 372" stroke="#ffffff" stroke-width="2"/>
+          <rect x="30" y="394" width="100" height="22" rx="10" fill="#2a1a12"/><rect x="128" y="396" width="14" height="18" rx="4" fill="#e8b45a"/>
+          <ellipse cx="860" cy="560" rx="150" ry="34" fill="#d8b78a"/><ellipse cx="860" cy="540" rx="140" ry="30" fill="#e6c99a"/><ellipse cx="860" cy="528" rx="120" ry="24" fill="#eee3cf"/>
+          <path d="M724 540 Q860 600 996 540" stroke="#e8b45a" stroke-width="3" fill="none"/>
+          <rect x="1020" y="520" width="110" height="52" rx="8" fill="#cfa86a"/><g stroke="#5a4020" stroke-width="3"><path d="M1034 534H1116M1034 546H1116M1034 558H1116"/></g>
+          <rect width="1200" height="800" fill="url(#g-vig)"/>
+        </svg>
+      </div>
+      <div class="panel panel--right" data-rv>
+        <p class="kicker"><span class="kicker__num">04</span> The chef's tools</p>
+        <h2 class="title" id="tools-title">Quiet tools, practised hands.</h2>
+        <dl class="tools">
+          <div><dt>Yanagiba</dt><dd>A long, single-edged knife that slices fish in one clean pull.</dd></div>
+          <div><dt>Hangiri</dt><dd>A shallow wooden tub where the rice is seasoned and cooled.</dd></div>
+          <div><dt>Oroshi</dt><dd>A fine grater that turns wasabi root into paste.</dd></div>
+          <div><dt>Hashi</dt><dd>Chopsticks, or simply your fingers: nigiri is made to be eaten by hand.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- 05 RESERVE -->
+    <section class="station station--reserve" id="reserve" data-station="4" tabindex="-1" aria-labelledby="reserve-title">
+      <div class="poster poster--reserve" aria-hidden="true">
+        <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <rect width="1200" height="800" fill="url(#g-sky)"/>
+          <use href="#s-stars"/>
+          <circle cx="760" cy="300" r="400" fill="url(#g-halo)"/>
+          <circle cx="760" cy="300" r="150" fill="url(#g-moon)"/>
+          <g fill="#c9b184" opacity=".3"><circle cx="720" cy="262" r="22"/><circle cx="800" cy="330" r="30"/><circle cx="742" cy="350" r="12"/></g>
+          <path d="M0 520 Q200 440 420 500 T800 482 T1200 500 V800 H0Z" fill="url(#g-hill)"/>
+          <rect y="540" width="1200" height="260" fill="url(#g-ground)"/>
+          <path d="M730 540 L790 540 L1000 800 L520 800Z" fill="#cfd6ff" opacity=".06"/>
+          <g transform="translate(570 548) scale(-0.5 0.5)"><rect x="-4" y="-150" width="8" height="150" fill="#150a0e"/><use href="#s-lantern" x="-45" y="-215" width="90" height="150"/></g><g transform="translate(950 548) scale(0.5 0.5)"><rect x="-4" y="-150" width="8" height="150" fill="#150a0e"/><use href="#s-lantern" x="-45" y="-215" width="90" height="150"/></g><g transform="translate(460 606) scale(-0.75 0.75)"><rect x="-4" y="-150" width="8" height="150" fill="#150a0e"/><use href="#s-lantern" x="-45" y="-215" width="90" height="150"/></g><g transform="translate(1060 606) scale(0.75 0.75)"><rect x="-4" y="-150" width="8" height="150" fill="#150a0e"/><use href="#s-lantern" x="-45" y="-215" width="90" height="150"/></g><g transform="translate(320 690) scale(-1.05 1.05)"><rect x="-4" y="-150" width="8" height="150" fill="#150a0e"/><use href="#s-lantern" x="-45" y="-215" width="90" height="150"/></g><g transform="translate(1200 690) scale(1.05 1.05)"><rect x="-4" y="-150" width="8" height="150" fill="#150a0e"/><use href="#s-lantern" x="-45" y="-215" width="90" height="150"/></g><g transform="translate(160 790) scale(-1.4 1.4)"><rect x="-4" y="-150" width="8" height="150" fill="#150a0e"/><use href="#s-lantern" x="-45" y="-215" width="90" height="150"/></g><g transform="translate(1360 790) scale(1.4 1.4)"><rect x="-4" y="-150" width="8" height="150" fill="#150a0e"/><use href="#s-lantern" x="-45" y="-215" width="90" height="150"/></g>
+          <ellipse cx="760" cy="700" rx="380" ry="46" fill="url(#g-floorglow)" opacity=".7"/>
+          <use href="#s-tree" transform="translate(110 700) scale(1.5)"/>
+          <use href="#s-tree" transform="translate(1130 720) scale(1.4) scale(-1 1)"/>
+          <use href="#s-petals" x="150" y="120"/><use href="#s-petals" x="620" y="520"/><use href="#s-petals" x="930" y="200"/>
+          <rect width="1200" height="800" fill="url(#g-vig)"/>
+        </svg>
+      </div>
+      <div class="panel panel--left panel--cta" data-rv>
+        <p class="kicker"><span class="kicker__num">05</span> Reserve</p>
+        <h2 class="title" id="reserve-title">Take a seat at the counter.</h2>
+        <p>Reserve ahead to hold a place. The restaurant will add its booking details here.</p>
+        <div class="actions">
+          <a class="btn btn--shu btn--lg" href="#reserve">Request a seat</a>
+          <span class="ph">[Reservation link]</span>
+        </div>
+        <dl class="details">
+          <div><dt>Address</dt><dd class="ph">[Street address]</dd></div>
+          <div><dt>Hours</dt><dd class="ph">[Opening hours]</dd></div>
+          <div><dt>Phone</dt><dd class="ph">[Your phone number]</dd></div>
+          <div><dt>Guests say</dt><dd class="ph">[Testimonial from a guest]</dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="5" fill="#c8321b"/><path d="M16 26C9 23 7 14 12 8l4 4 4-4c5 6 3 15-4 18z" fill="#f6ecd8"/></svg>
+        <span>Sakura Omakase</span>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="#counter">The counter</a>
+        <a href="#omakase">Omakase</a>
+        <a href="#tools">Chef's tools</a>
+        <a href="#reserve">Reserve</a>
+        <a href="#top">Back to top</a>
+      </nav>
+      <p class="footer__fine">Sample design by Website Studio. Sakura Omakase is an invented name; all contact details and prices are placeholders.</p>
+    </div>
+  </footer>
+
+  <script src="../../vendor/lenis.min.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

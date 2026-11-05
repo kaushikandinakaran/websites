@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flour &amp; Fig | Artisan bakery and café (sample design)</title>
+<meta name="description" content="Sample design by Website Studio: an artisan bakery and café website where a sunlit bakery counter becomes a 3D scene you scroll through.">
+<meta name="theme-color" content="#f7f1e6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234a2140'/%3E%3Cpath d='M16 7c5 3 7 7 7 11a7 7 0 0 1-14 0c0-4 2-8 7-11z' fill='%23f7f1e6'/%3E%3C/svg%3E">
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{var c=document.createElement('canvas'),g=c.getContext('webgl2')||c.getContext('webgl');if(g){d.classList.add('gl-able');var e=g.getExtension('WEBGL_lose_context');if(e)e.loseContext();}}catch(x){}if(matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('rm');})();</script>
+<link rel="stylesheet" href="../../vendor/lenis.css">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": { "three": "../../vendor/three.module.min.js", "three/addons/": "../../vendor/three-addons/" } }
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<canvas id="stage" class="stage" aria-hidden="true"></canvas>
+<div class="loader" id="loader" aria-hidden="true"><span class="loader__text">Setting out the counter</span><span class="loader__track"><span class="loader__bar" id="loaderBar"></span></span></div>
+
+<header class="nav" id="nav">
+  <div class="nav__inner wrap">
+    <a class="brand" href="#morning"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3.5c4 2.4 5.6 5.6 5.6 8.8a5.6 5.6 0 0 1-11.2 0c0-3.2 1.6-6.4 5.6-8.8z" fill="currentColor"/><path d="M12 7.5v9" stroke="#f7f1e6" stroke-width="1.2" stroke-linecap="round"/></svg></span><span class="brand__name">Flour <i>&amp;</i> Fig</span></a>
+
+    <nav class="nav__menu" id="navMenu" aria-label="Primary" data-lenis-prevent>
+      <ul class="nav__links">
+        <li><a href="#pastry">Pastry</a></li>
+        <li><a href="#cake">Cakes</a></li>
+        <li><a href="#pour">Coffee &amp; tea</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#reserve">Visit</a></li>
+      </ul>
+    </nav>
+
+    <button class="motion-btn" id="motionBtn" type="button" aria-pressed="false">
+      <svg class="motion-btn__pause" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+      <svg class="motion-btn__play" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>
+      <span class="motion-btn__text">Pause motion</span>
+    </button>
+
+    <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
+      <span class="nav__toggle-text">Menu</span>
+      <span class="nav__toggle-bars" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <div id="journey" class="journey">
+
+    <!-- Station 1: morning at the counter -->
+    <section id="morning" class="station station--hero station--l" tabindex="-1" aria-labelledby="hero-title" data-station="0">
+      <div class="station__stick">
+        <div class="poster" aria-hidden="true"><img src="assets/poster-1.svg" alt="" width="1600" height="1000" decoding="async"></div>
+        <div class="wrap">
+          <div class="panel panel--hero" data-rv-group>
+            <p class="kicker" data-rv>Artisan bakery &amp; café <span class="dot" aria-hidden="true"></span> Sample design</p>
+            <h1 id="hero-title" class="display" data-rv>Flour <i>&amp;</i> Fig</h1>
+            <p class="lede" data-rv>Bread, pastry and a warm cup, set out on a wooden counter in the morning light.</p>
+            <div class="cta-row" data-rv>
+              <a class="btn btn--fig" href="#reserve">Reserve a table</a>
+              <a class="btn btn--line" href="#menu">See the menu</a>
+            </div>
+          </div>
+        </div>
+        <a class="scrollcue" href="#pastry"><span class="scrollcue__text">Scroll</span><span class="scrollcue__line" aria-hidden="true"></span><span class="sr-only"> to the pastry</span></a>
+      </div>
+    </section>
+
+    <!-- Station 2: the croissant -->
+    <section id="pastry" class="station station--r" tabindex="-1" aria-labelledby="pastry-title" data-station="1">
+      <div class="station__stick">
+        <div class="poster" aria-hidden="true"><img src="assets/poster-2.svg" alt="" width="1600" height="1000" loading="lazy" decoding="async"></div>
+        <div class="wrap">
+          <div class="panel" data-rv-group>
+            <p class="kicker" data-rv><span class="no">02</span> Pastry</p>
+            <h2 id="pastry-title" class="h2" data-rv>Flaky layers, <i>baked to a crackle.</i></h2>
+            <p data-rv>Croissants and pastries with deep gold layers that flake at a touch.</p>
+            <p class="note" data-rv>Illustrative pastry. Your own bakes go here.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Station 3: the cake -->
+    <section id="cake" class="station station--l" tabindex="-1" aria-labelledby="cake-title" data-station="2">
+      <div class="station__stick">
+        <div class="poster" aria-hidden="true"><img src="assets/poster-3.svg" alt="" width="1600" height="1000" loading="lazy" decoding="async"></div>
+        <div class="wrap">
+          <div class="panel" data-rv-group>
+            <p class="kicker" data-rv><span class="no">03</span> Cakes</p>
+            <h2 id="cake-title" class="h2" data-rv>Cake on the stand, <i>cut by the slice.</i></h2>
+            <p data-rv>Loaf cakes, ring cakes and fruit tarts, by the slice.</p>
+            <p class="note" data-rv>Illustrative cake. [Your cake list]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Station 4: the pour -->
+    <section id="pour" class="station station--r" tabindex="-1" aria-labelledby="pour-title" data-station="3">
+      <div class="station__stick">
+        <div class="poster" aria-hidden="true"><img src="assets/poster-4.svg" alt="" width="1600" height="1000" loading="lazy" decoding="async"></div>
+        <div class="wrap">
+          <div class="panel" data-rv-group>
+            <p class="kicker" data-rv><span class="no">04</span> Coffee &amp; tea</p>
+            <h2 id="pour-title" class="h2" data-rv>A slow pour, <i>a little steam.</i></h2>
+            <p data-rv>Coffee and loose-leaf tea, poured at the counter.</p>
+            <p class="note" data-rv>[Coffee and tea list to be confirmed]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Station 5: the menu -->
+    <section id="menu" class="station station--menu" tabindex="-1" aria-labelledby="menu-title" data-station="4">
+      <div class="station__stick">
+        <div class="poster" aria-hidden="true"><img src="assets/poster-5.svg" alt="" width="1600" height="1000" loading="lazy" decoding="async"></div>
+        <div class="wrap">
+          <div class="menu-card" data-rv-group>
+            <p class="kicker" data-rv><span class="no">05</span> Menu <span class="dot" aria-hidden="true"></span> Illustrative sample</p>
+            <h2 id="menu-title" class="h2" data-rv>From the counter</h2>
+            <div class="menu-grid">
+              <div class="menu-col" data-rv>
+                <h3 class="menu-h">Pastry</h3>
+                <ul class="items">
+                  <li><span>Butter croissant</span><span class="price">[Price]</span></li>
+                  <li><span>Chocolate pastry</span><span class="price">[Price]</span></li>
+                  <li><span>Fig and almond pastry</span><span class="price">[Price]</span></li>
+                  <li><span>Cinnamon bun</span><span class="price">[Price]</span></li>
+                </ul>
+              </div>
+              <div class="menu-col" data-rv>
+                <h3 class="menu-h">Cakes &amp; bread</h3>
+                <ul class="items">
+                  <li><span>Carrot cake, by the slice</span><span class="price">[Price]</span></li>
+                  <li><span>Seasonal fruit tart</span><span class="price">[Price]</span></li>
+                  <li><span>Country loaf</span><span class="price">[Price]</span></li>
+                  <li><span>Seeded rye</span><span class="price">[Price]</span></li>
+                </ul>
+              </div>
+              <div class="menu-col" data-rv>
+                <h3 class="menu-h">To drink</h3>
+                <ul class="items">
+                  <li><span>Espresso-based coffee</span><span class="price">[Price]</span></li>
+                  <li><span>Filter coffee</span><span class="price">[Price]</span></li>
+                  <li><span>Pot of loose-leaf tea</span><span class="price">[Price]</span></li>
+                  <li><span>Hot chocolate</span><span class="price">[Price]</span></li>
+                </ul>
+              </div>
+            </div>
+            <p class="fine" data-rv>Sample menu for illustration only. Items and prices are placeholders for the bakery to complete. [Allergen and dietary information]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Station 6: reserve by the window -->
+    <section id="reserve" class="station station--l station--reserve" tabindex="-1" aria-labelledby="reserve-title" data-station="5">
+      <div class="station__stick">
+        <div class="poster" aria-hidden="true"><img src="assets/poster-6.svg" alt="" width="1600" height="1000" loading="lazy" decoding="async"></div>
+        <div class="wrap">
+          <div class="panel panel--reserve" data-rv-group>
+            <p class="kicker" data-rv><span class="no">06</span> Visit</p>
+            <h2 id="reserve-title" class="h2" data-rv>A table <i>by the window.</i></h2>
+            <p data-rv>Tell us when you would like to come in, and how many of you there will be.</p>
+            <div class="cta-row" data-rv>
+              <a class="btn btn--fig" href="#reserve-details">Reserve a table</a>
+              <span class="ph">[Reservation link]</span>
+            </div>
+            <dl class="details" id="reserve-details" tabindex="-1" data-rv>
+              <div><dt>Telephone</dt><dd>[Your phone number]</dd></div>
+              <div><dt>Address</dt><dd>[Street address]</dd></div>
+              <div><dt>Hours</dt><dd>[Opening hours]</dd></div>
+            </dl>
+            <p class="quote" data-rv>[Testimonial from a guest]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <a class="brand brand--foot" href="#morning"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3.5c4 2.4 5.6 5.6 5.6 8.8a5.6 5.6 0 0 1-11.2 0c0-3.2 1.6-6.4 5.6-8.8z" fill="currentColor"/></svg></span><span class="brand__name">Flour <i>&amp;</i> Fig</span></a>
+      <p>A sample website for an artisan bakery and café: bread, pastry, cake and a warm cup by the window.</p>
+    </div>
+    <nav aria-label="Footer">
+      <h2 class="footer__h">Explore</h2>
+      <ul class="footer__list">
+        <li><a href="#pastry">Pastry</a></li>
+        <li><a href="#cake">Cakes</a></li>
+        <li><a href="#pour">Coffee &amp; tea</a></li>
+        <li><a href="#menu">Menu</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h2 class="footer__h">Visit</h2>
+      <ul class="footer__list footer__list--plain">
+        <li>[Street address]</li>
+        <li>[Opening hours]</li>
+        <li>[Your phone number]</li>
+        <li><a href="#reserve">Reserve a table</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer__bar">
+    <p class="footer__credit">Sample design by Website Studio. 3D assets: Poly Haven (CC0).</p>
+    <a class="footer__top" href="#morning">Back to the counter</a>
+  </div>
+</footer>
+
+<noscript><style>.stage,.loader{display:none}</style></noscript>
+
+<script src="../../vendor/gsap.min.js"></script>
+<script src="../../vendor/ScrollTrigger.min.js"></script>
+<script src="../../vendor/lenis.min.js"></script>
+<script type="module" src="main.js"></script>
+</body>
+</html>

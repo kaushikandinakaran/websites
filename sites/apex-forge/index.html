@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apex Forge - Sample Gym Design</title>
+<meta name="description" content="Sample design: Apex Forge, a strength and conditioning gym with superhero energy. Built by Website Studio.">
+<meta name="theme-color" content="#0d1117">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230d1117'/%3E%3Cpath d='M18 3 7 18h8l-2 11 12-17h-8z' fill='%23ff5a1f'/%3E%3C/svg%3E">
+<script>
+(function () {
+  var d = document.documentElement;
+  d.classList.add('js');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('motion-off');
+  else setTimeout(function () { if (!window.__apexReady) d.classList.add('motion-off'); }, 4000);
+})();
+</script>
+<noscript><style>.js [data-reveal]{opacity:1!important;transform:none!important}.js .hero__title .line>span{transform:none!important}</style></noscript>
+<link rel="stylesheet" href="../../vendor/lenis.css">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{ "imports": { "three": "../../vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="nav__bar wrap">
+    <a class="logo" href="#top">
+      <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 3 7 18h8l-2 11 12-17h-8z" fill="currentColor"/></svg>
+      <span>Apex<b>Forge</b></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#programs">Programs</a>
+      <a href="#method">The Method</a>
+      <a href="#membership">Membership</a>
+      <a href="#coaches">Coaches</a>
+    </nav>
+    <a class="btn btn--sm nav__cta" href="#join">Book a visit</a>
+    <button class="pause" id="pause" type="button" aria-pressed="false">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><g class="pause__bars"><rect x="3" y="2" width="3.5" height="12"/><rect x="9.5" y="2" width="3.5" height="12"/></g><path class="pause__play" d="M4 2l10 6-10 6z"/></svg>
+      <span class="pause__text">Pause motion</span>
+    </button>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="menu" id="menu" hidden>
+    <nav aria-label="Mobile">
+      <a href="#programs">Programs</a>
+      <a href="#method">The Method</a>
+      <a href="#membership">Membership</a>
+      <a href="#coaches">Coaches</a>
+      <a class="btn" href="#join">Book a visit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <!-- HERO -->
+  <section class="hero" id="top" tabindex="-1" aria-labelledby="hero-title">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow"><span class="bolt" aria-hidden="true"></span>Strength &amp; conditioning gym</p>
+        <h1 id="hero-title" class="hero__title" data-split>
+          <span class="line"><span>Forge</span></span>
+          <span class="line"><span class="accent">Your</span></span>
+          <span class="line"><span>Power</span></span>
+        </h1>
+        <p class="hero__lede">Coached strength training, conditioning and recovery under one roof. Built for people who are done with ordinary.</p>
+        <div class="hero__actions">
+          <a class="btn" href="#join">Book a visit</a>
+          <a class="btn btn--ghost" href="#programs">See programs</a>
+        </div>
+      </div>
+      <div class="hero__stage" id="stage">
+        <svg class="hero__fallback" viewBox="0 0 400 240" role="img" aria-label="Illustration of a dumbbell">
+          <defs>
+            <linearGradient id="fb-steel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a6678"/><stop offset=".5" stop-color="#2a313d"/><stop offset="1" stop-color="#171c25"/></linearGradient>
+            <linearGradient id="fb-fire" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8a3d"/><stop offset="1" stop-color="#e63946"/></linearGradient>
+          </defs>
+          <rect x="120" y="108" width="160" height="24" rx="6" fill="url(#fb-steel)"/>
+          <g fill="url(#fb-fire)"><rect x="82" y="64" width="34" height="112" rx="8"/><rect x="284" y="64" width="34" height="112" rx="8"/></g>
+          <g fill="url(#fb-steel)"><rect x="46" y="82" width="32" height="76" rx="7"/><rect x="322" y="82" width="32" height="76" rx="7"/></g>
+        </svg>
+        <canvas class="hero__canvas" id="stage-canvas" aria-hidden="true"></canvas>
+      </div>
+    </div>
+    <a class="hero__scroll" href="#giant" aria-label="Scroll to next section"><span></span></a>
+  </section>
+
+  <!-- GIANT SCROLLING TYPE -->
+  <section class="giant" id="giant" tabindex="-1" aria-label="Brand statement">
+    <div class="giant__row" data-dir="-1"><span aria-hidden="true">Stronger every rep &#8212; Stronger every rep &#8212; Stronger every rep &#8212;</span></div>
+    <div class="giant__row giant__row--solid" data-dir="1"><span aria-hidden="true">Earn the title &#8212; Earn the title &#8212; Earn the title &#8212;</span></div>
+    <p class="sr-only">Stronger every rep. Earn the title.</p>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section class="section programs" id="programs" tabindex="-1" aria-labelledby="programs-title">
+    <div class="wrap">
+      <header class="section__head" data-reveal>
+        <p class="eyebrow"><span class="bolt" aria-hidden="true"></span>Programs</p>
+        <h2 id="programs-title">Pick your <span class="accent">power.</span></h2>
+        <p class="section__lede">Four ways to train, each led by a coach. Start with one, mix them as you grow.</p>
+      </header>
+      <ul class="cards" role="list">
+        <li class="card" data-tilt data-reveal>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <defs>
+                <linearGradient id="i1a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb066"/><stop offset="1" stop-color="#e63946"/></linearGradient>
+                <linearGradient id="i1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b778a"/><stop offset="1" stop-color="#1c222c"/></linearGradient>
+              </defs>
+              <ellipse cx="60" cy="108" rx="34" ry="7" fill="#000" opacity=".35"/>
+              <path d="M40 40a20 20 0 0 1 40 0" fill="none" stroke="url(#i1b)" stroke-width="10" stroke-linecap="round"/>
+              <circle cx="60" cy="74" r="32" fill="url(#i1a)"/>
+              <ellipse cx="48" cy="60" rx="9" ry="14" fill="#fff" opacity=".22" transform="rotate(25 48 60)"/>
+              <circle cx="60" cy="74" r="12" fill="#0d1117" opacity=".25"/>
+            </svg>
+          </div>
+          <h3>Strength</h3>
+          <p>Barbell fundamentals, programmed in blocks, coached until the form is yours.</p>
+        </li>
+        <li class="card" data-tilt data-reveal>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <defs>
+                <linearGradient id="i2a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd066"/><stop offset="1" stop-color="#ff5a1f"/></linearGradient>
+                <linearGradient id="i2b" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e63946"/><stop offset="1" stop-color="#8f1d2a"/></linearGradient>
+              </defs>
+              <ellipse cx="60" cy="108" rx="30" ry="6" fill="#000" opacity=".35"/>
+              <path d="M70 8 28 66h26l-8 40 46-60H66z" fill="url(#i2b)" transform="translate(5 5)"/>
+              <path d="M70 8 28 66h26l-8 40 46-60H66z" fill="url(#i2a)"/>
+              <path d="M70 8 28 66h14L78 14z" fill="#fff" opacity=".28"/>
+            </svg>
+          </div>
+          <h3>Conditioning</h3>
+          <p>Intervals, circuits and engine work that builds stamina without the boredom.</p>
+        </li>
+        <li class="card" data-tilt data-reveal>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <defs>
+                <linearGradient id="i3a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9fb4d0"/><stop offset="1" stop-color="#3a4a63"/></linearGradient>
+                <linearGradient id="i3b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb066"/><stop offset="1" stop-color="#ff5a1f"/></linearGradient>
+              </defs>
+              <ellipse cx="60" cy="108" rx="34" ry="7" fill="#000" opacity=".35"/>
+              <path d="M60 10 100 24v32c0 28-18 44-40 54C38 100 20 84 20 56V24z" fill="url(#i3a)"/>
+              <path d="M60 10 100 24v32c0 28-18 44-40 54z" fill="#000" opacity=".22"/>
+              <path d="M60 28 84 36v20c0 16-10 28-24 36-14-8-24-20-24-36V36z" fill="url(#i3b)"/>
+              <path d="M60 28 36 36v20c0 8 2 14 6 20L60 40z" fill="#fff" opacity=".25"/>
+            </svg>
+          </div>
+          <h3>Mobility &amp; recovery</h3>
+          <p>Guided stretching, breathwork and reset sessions so you can train again tomorrow.</p>
+        </li>
+        <li class="card" data-tilt data-reveal>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <defs>
+                <linearGradient id="i4a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb066"/><stop offset="1" stop-color="#e63946"/></linearGradient>
+                <linearGradient id="i4b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6b778a"/><stop offset="1" stop-color="#1c222c"/></linearGradient>
+              </defs>
+              <ellipse cx="60" cy="108" rx="36" ry="7" fill="#000" opacity=".35"/>
+              <circle cx="60" cy="34" r="17" fill="url(#i4b)"/>
+              <path d="M24 100c0-22 14-38 36-38s36 16 36 38z" fill="url(#i4a)"/>
+              <path d="M24 100c0-18 8-32 20-37L56 100z" fill="#fff" opacity=".22"/>
+              <circle cx="54" cy="29" r="5" fill="#fff" opacity=".25"/>
+            </svg>
+          </div>
+          <h3>1:1 coaching</h3>
+          <p>A personal plan, a personal coach and check-ins that keep you honest.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- THE METHOD (pinned) -->
+  <section class="method" id="method" tabindex="-1" aria-labelledby="method-title">
+    <div class="method__pin">
+      <div class="wrap method__inner">
+        <header class="method__head">
+          <p class="eyebrow"><span class="bolt" aria-hidden="true"></span>The Method</p>
+          <h2 id="method-title">Three phases. <span class="accent">One you.</span></h2>
+          <div class="method__progress" aria-hidden="true"><i></i></div>
+        </header>
+        <ol class="phases">
+          <li class="phase is-active">
+            <span class="phase__num" aria-hidden="true">01</span>
+            <div><h3>Assess</h3><p>We test movement, strength and goals on day one, so the plan starts from where you actually are.</p></div>
+          </li>
+          <li class="phase">
+            <span class="phase__num" aria-hidden="true">02</span>
+            <div><h3>Build</h3><p>Progressive blocks of coached training. Heavier, faster, smarter, with every session logged.</p></div>
+          </li>
+          <li class="phase">
+            <span class="phase__num" aria-hidden="true">03</span>
+            <div><h3>Dominate</h3><p>Peak weeks, new targets and a community that pushes you past the last personal best.</p></div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP -->
+  <section class="section membership" id="membership" tabindex="-1" aria-labelledby="member-title">
+    <div class="wrap">
+      <header class="section__head" data-reveal>
+        <p class="eyebrow"><span class="bolt" aria-hidden="true"></span>Membership</p>
+        <h2 id="member-title">Choose your <span class="accent">tier.</span></h2>
+        <p class="section__lede">Plan names, inclusions and prices are to be confirmed by the gym.</p>
+      </header>
+      <div class="tiers">
+        <article class="tier" data-reveal>
+          <h3>Recruit</h3>
+          <p class="tier__price">[Price]</p>
+          <ul><li>Open gym access</li><li>Intro assessment</li><li>Community classes</li></ul>
+          <a class="btn btn--ghost" href="#join">Choose Recruit</a>
+        </article>
+        <article class="tier tier--hero" data-reveal>
+          <p class="tier__flag">[Featured plan]</p>
+          <h3>Hero</h3>
+          <p class="tier__price">[Price]</p>
+          <ul><li>Everything in Recruit</li><li>Coached programs</li><li>Recovery sessions</li><li>Progress tracking</li></ul>
+          <a class="btn" href="#join">Choose Hero</a>
+        </article>
+        <article class="tier" data-reveal>
+          <h3>Legend</h3>
+          <p class="tier__price">[Price]</p>
+          <ul><li>Everything in Hero</li><li>1:1 coaching</li><li>Custom plan</li><li>Priority booking</li></ul>
+          <a class="btn btn--ghost" href="#join">Choose Legend</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COACHES -->
+  <section class="section coaches" id="coaches" tabindex="-1" aria-labelledby="coaches-title">
+    <div class="wrap">
+      <header class="section__head" data-reveal>
+        <p class="eyebrow"><span class="bolt" aria-hidden="true"></span>Coaches &amp; community</p>
+        <h2 id="coaches-title">Led by <span class="accent">real people.</span></h2>
+      </header>
+      <div class="people">
+        <figure class="person" data-reveal>
+          <div class="person__img" role="img" aria-label="Placeholder portrait for a head coach"><span>[Coach photo]</span></div>
+          <figcaption><strong>[Coach name]</strong><span>Head coach &middot; [Credentials]</span></figcaption>
+        </figure>
+        <figure class="person" data-reveal>
+          <div class="person__img" role="img" aria-label="Placeholder portrait for a conditioning coach"><span>[Coach photo]</span></div>
+          <figcaption><strong>[Coach name]</strong><span>Conditioning coach &middot; [Credentials]</span></figcaption>
+        </figure>
+        <blockquote class="quote" data-reveal>
+          <p>[Testimonial from a member]</p>
+          <footer>[Member name]</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta" id="join" tabindex="-1" aria-labelledby="cta-title">
+    <div class="wrap cta__inner">
+      <h2 id="cta-title">Come and<br>see <span>the gym.</span></h2>
+      <div class="cta__side">
+        <p>Walk in, meet a coach and look around. [Trial offer, if any] [Contract terms]</p>
+        <a class="btn btn--dark" href="#join">Book a visit</a>
+        <p class="cta__small">Or call [Your phone number]</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="logo" href="#top">
+          <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 3 7 18h8l-2 11 12-17h-8z" fill="currentColor"/></svg>
+          <span>Apex<b>Forge</b></span>
+        </a>
+        <p>Strength, conditioning and recovery for people who want more.</p>
+      </div>
+      <nav aria-label="Footer: explore">
+        <h2>Explore</h2>
+        <a href="#programs">Programs</a>
+        <a href="#method">The Method</a>
+        <a href="#membership">Membership</a>
+        <a href="#coaches">Coaches</a>
+      </nav>
+      <div>
+        <h2>Visit</h2>
+        <p>[Your address]</p>
+        <p>[Opening hours]</p>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <p>[Your phone number]</p>
+        <p>[Your email address]</p>
+        <p>[Social media links]</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; Apex Forge (sample brand)</p>
+      <p>Sample design by Website Studio</p>
+    </div>
+  </div>
+  <div class="footer__word" aria-hidden="true">APEX FORGE</div>
+</footer>
+
+<script src="../../vendor/gsap.min.js"></script>
+<script src="../../vendor/ScrollTrigger.min.js"></script>
+<script src="../../vendor/lenis.min.js"></script>
+<script type="module" src="main.js"></script>
+</body>
+</html>

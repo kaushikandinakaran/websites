@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forno Rosso - Neapolitan Pizzeria (Sample Design)</title>
+  <meta name="description" content="Sample design for Forno Rosso, an invented Neapolitan pizzeria. Scroll through a handmade clay 3D kitchen: dough, toppings, a wood-fired oven, the menu and a reservation call to action.">
+  <meta name="theme-color" content="#c4421f">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23c4421f'/%3E%3Cpath d='M16 5c2 4 6 6 6 11a6 6 0 0 1-12 0c0-2 1-3 2-4 0 2 1 3 2 3 0-4-1-6 2-10z' fill='%23ffd9a0'/%3E%3C/svg%3E">
+  <script>
+    /* Progressive enhancement flags. Text never depends on JS or WebGL: see the 4 s reveal fallback. */
+    (function () {
+      var h = document.documentElement;
+      h.classList.add('js');
+      // cheap check only: creating a test WebGL context here would block the first paint while the GPU starts up.
+      // If the real context fails later, main.js keeps this layout and shows the posters.
+      if ('WebGL2RenderingContext' in window || 'WebGLRenderingContext' in window) h.classList.add('gl-able');
+      setTimeout(function () { if (!h.classList.contains('js-ready')) h.classList.add('reveal-all'); }, 4000);
+    })();
+  </script>
+  <noscript><style>.card{opacity:1!important;transform:none!important}.poster{display:block!important}</style></noscript>
+  <link rel="stylesheet" href="../../vendor/lenis.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">{ "imports": { "three": "../../vendor/three.module.min.js", "three/addons/": "../../vendor/three-addons/" } }</script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <canvas class="stage" id="stage" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="brand" href="#top">
+        <svg class="brand__mark" viewBox="0 0 32 32" width="30" height="30" aria-hidden="true" focusable="false">
+          <rect width="32" height="32" rx="10" fill="#c4421f"/>
+          <path d="M16 5c2 4 6 6 6 11a6 6 0 0 1-12 0c0-2 1-3 2-4 0 2 1 3 2 3 0-4-1-6 2-10z" fill="#ffd9a0"/>
+        </svg>
+        <span class="brand__name">Forno Rosso</span>
+      </a>
+
+      <button class="motion-btn" id="motionBtn" type="button" aria-pressed="false">
+        <svg class="motion-btn__pause" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.2"/><rect x="14" y="5" width="4" height="14" rx="1.2"/></svg>
+        <svg class="motion-btn__play" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>
+        <span class="motion-btn__text">Pause motion</span>
+      </button>
+
+      <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Menu">
+        <span class="nav__bars" aria-hidden="true"><i></i><i></i></span>
+      </button>
+
+      <nav class="nav__menu" id="navMenu" aria-label="Primary" data-lenis-prevent>
+        <ul class="nav__links">
+          <li><a href="#dough">Dough</a></li>
+          <li><a href="#toppings">Toppings</a></li>
+          <li><a href="#oven">Oven</a></li>
+          <li><a href="#menu">Menu</a></li>
+        </ul>
+        <a class="btn btn--primary btn--sm nav__cta" href="#reserve">Reserve</a>
+      </nav>
+    </div>
+  </header>
+
+  <ol class="rail" aria-hidden="true" id="rail"><li></li><li></li><li></li><li></li><li></li></ol>
+
+  <main id="main" tabindex="-1">
+    <div class="journey" id="journey">
+
+      <!-- 01 DOUGH -->
+      <section class="station st-dough" id="dough" tabindex="-1" aria-labelledby="hero-title">
+        <div class="poster poster--dough" aria-hidden="true">
+          <svg viewBox="0 0 1200 800" preserveAspectRatio="xMaxYMid slice" focusable="false">
+            <defs>
+              <radialGradient id="pd1" cx=".5" cy=".4" r=".7"><stop offset="0" stop-color="#fff8ee"/><stop offset="1" stop-color="#ecc9a0"/></radialGradient>
+              <linearGradient id="pd2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6dcbc"/><stop offset="1" stop-color="#e4a878"/></linearGradient>
+            </defs>
+            <rect width="1200" height="800" fill="url(#pd2)"/>
+            <path d="M0 520 Q600 470 1200 520 V800 H0z" fill="#fff3e0"/>
+            <ellipse cx="820" cy="600" rx="260" ry="46" fill="#7a3a1c" opacity=".18"/>
+            <ellipse cx="820" cy="520" rx="210" ry="150" fill="url(#pd1)"/>
+            <ellipse cx="780" cy="460" rx="90" ry="46" fill="#fff" opacity=".35"/>
+            <rect x="940" y="610" width="300" height="56" rx="28" fill="#c58b4e"/>
+            <rect x="900" y="620" width="60" height="36" rx="14" fill="#a8703a"/>
+            <circle cx="560" cy="580" r="56" fill="#d4381f"/><circle cx="640" cy="600" r="52" fill="#c4301a"/>
+            <g fill="#fff" opacity=".7"><circle cx="500" cy="660" r="4"/><circle cx="1010" cy="540" r="3"/><circle cx="1090" cy="580" r="5"/><circle cx="700" cy="690" r="3"/></g>
+          </svg>
+        </div>
+        <div class="station__sticky station__sticky--left">
+          <div class="card card--day" data-card>
+            <p class="eyebrow"><span class="eyebrow__dot" aria-hidden="true"></span>Neapolitan pizzeria &middot; Sample design</p>
+            <h1 id="hero-title" class="display">Forno <em>Rosso</em></h1>
+            <p class="lead">Soft dough, a roaring wood fire and a table close to the oven. Scroll, and watch one pizza get made from scratch.</p>
+            <div class="actions">
+              <a class="btn btn--primary" href="#reserve">Reserve a table</a>
+              <a class="btn btn--ghost" href="#menu">See the menu</a>
+            </div>
+            <p class="note">Forno Rosso is an invented sample brand made by Website Studio.</p>
+          </div>
+          <p class="cue" aria-hidden="true"><span class="cue__line"></span>Scroll to make a pizza</p>
+        </div>
+      </section>
+
+      <!-- 02 TOPPINGS -->
+      <section class="station st-toppings" id="toppings" tabindex="-1" aria-labelledby="top-title">
+        <div class="poster poster--toppings" aria-hidden="true">
+          <svg viewBox="0 0 1200 800" preserveAspectRatio="xMinYMid slice" focusable="false">
+            <defs><linearGradient id="pt1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#efc08f"/><stop offset="1" stop-color="#c9724b"/></linearGradient></defs>
+            <rect width="1200" height="800" fill="url(#pt1)"/>
+            <g transform="translate(420 0)">
+              <ellipse cx="0" cy="660" rx="200" ry="38" fill="#4a1a0a" opacity=".25"/>
+              <ellipse cx="0" cy="620" rx="190" ry="46" fill="#f0d9ae"/><ellipse cx="0" cy="606" rx="150" ry="32" fill="#f7e6c4"/>
+              <ellipse cx="0" cy="500" rx="150" ry="34" fill="#c4301a"/><ellipse cx="0" cy="496" rx="120" ry="24" fill="#d8472b"/>
+              <g fill="#fff3dc"><ellipse cx="-70" cy="380" rx="44" ry="20"/><ellipse cx="30" cy="370" rx="48" ry="21"/><ellipse cx="90" cy="400" rx="38" ry="17"/><ellipse cx="-10" cy="410" rx="40" ry="18"/></g>
+              <g fill="#6fae42"><path d="M-60 250 q30 -50 70 0 q-30 40 -70 0z"/><path d="M30 230 q40 -40 70 10 q-40 30 -70 -10z"/></g>
+              <path d="M0 250 V600" stroke="#fff8ee" stroke-width="2" stroke-dasharray="6 8" opacity=".6"/>
+            </g>
+          </svg>
+        </div>
+        <div class="station__sticky station__sticky--right">
+          <div class="card card--day" data-card>
+            <p class="eyebrow"><span class="eyebrow__num">02</span>Toppings</p>
+            <h2 class="display display--md" id="top-title">Few things, <em>nothing hiding.</em></h2>
+            <p class="lead">A good pizza is four honest layers. Watch them float apart, then fall back into place.</p>
+            <ol class="layers" id="layers">
+              <li><b>Dough</b><span>Soft, with a puffed crust.</span></li>
+              <li><b>Tomato</b><span>Bright and simply seasoned.</span></li>
+              <li><b>Mozzarella</b><span>Torn into soft pieces.</span></li>
+              <li><b>Basil</b><span>Added at the end.</span></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 OVEN -->
+      <section class="station st-oven" id="oven" tabindex="-1" aria-labelledby="oven-title">
+        <div class="poster poster--oven" aria-hidden="true">
+          <svg viewBox="0 0 1200 800" preserveAspectRatio="xMaxYMid slice" focusable="false">
+            <defs>
+              <radialGradient id="po1" cx=".5" cy=".75" r=".6"><stop offset="0" stop-color="#ffd27a"/><stop offset=".35" stop-color="#ff7a24"/><stop offset="1" stop-color="#3a140a"/></radialGradient>
+              <linearGradient id="po2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a160b"/><stop offset="1" stop-color="#1a0904"/></linearGradient>
+            </defs>
+            <rect width="1200" height="800" fill="url(#po2)"/>
+            <path d="M560 760 V420 a190 190 0 0 1 380 0 V760z" fill="#c4552b"/>
+            <path d="M610 760 V440 a140 140 0 0 1 280 0 V760z" fill="url(#po1)"/>
+            <path d="M720 760 q-40 -90 10 -170 q10 60 40 40 q-10 60 30 130z" fill="#ffe3a0" opacity=".9"/>
+            <g stroke="#7a2a12" stroke-width="3" opacity=".5"><path d="M560 520H610M890 520H940M560 600H610M890 600H940M560 680H610M890 680H940"/></g>
+            <g fill="#ffb35c"><circle cx="680" cy="330" r="4"/><circle cx="800" cy="300" r="3"/><circle cx="760" cy="250" r="3"/></g>
+          </svg>
+        </div>
+        <div class="station__sticky station__sticky--left">
+          <div class="card card--night" data-card>
+            <p class="eyebrow"><span class="eyebrow__num">03</span>The oven</p>
+            <h2 class="display display--md" id="oven-title">Straight <em>into the fire.</em></h2>
+            <p class="lead">A wood fire does the hard work: strong heat, a crust that puffs up and a few dark spots of char for flavour.</p>
+            <p class="note">Everything on this page is a stylised 3D model, not a photograph.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 MENU -->
+      <section class="station st-menu" id="menu" tabindex="-1" aria-labelledby="menu-title">
+        <div class="poster poster--menu" aria-hidden="true">
+          <svg viewBox="0 0 1200 800" preserveAspectRatio="xMinYMid slice" focusable="false">
+            <defs><linearGradient id="pm1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a1210"/><stop offset="1" stop-color="#1c0f16"/></linearGradient></defs>
+            <rect width="1200" height="800" fill="url(#pm1)"/>
+            <g fill="#ffd9a0"><circle cx="100" cy="90" r="6"/><circle cx="260" cy="130" r="6"/><circle cx="420" cy="100" r="6"/><circle cx="580" cy="140" r="6"/><circle cx="740" cy="104" r="6"/></g>
+            <ellipse cx="340" cy="600" rx="260" ry="40" fill="#000" opacity=".4"/>
+            <circle cx="340" cy="470" r="200" fill="#dba35c"/><circle cx="340" cy="470" r="150" fill="#b52a17"/>
+            <g fill="#fff3dc" opacity=".95"><circle cx="280" cy="420" r="30"/><circle cx="390" cy="410" r="32"/><circle cx="340" cy="500" r="30"/><circle cx="270" cy="510" r="24"/><circle cx="410" cy="520" r="24"/></g>
+            <g fill="#6fae42"><ellipse cx="330" cy="440" rx="28" ry="12" transform="rotate(-30 330 440)"/><ellipse cx="380" cy="480" rx="26" ry="11" transform="rotate(40 380 480)"/></g>
+          </svg>
+        </div>
+        <div class="menu-wrap">
+          <div class="menu-intro">
+            <div class="card card--night" data-card>
+              <p class="eyebrow"><span class="eyebrow__num">04</span>Menu</p>
+              <h2 class="display display--md" id="menu-title">Straight <em>from the oven.</em></h2>
+              <p class="lead">A short, simple list. Illustrative sample menu: the dishes and prices below are placeholders for the real restaurant to fill in.</p>
+            </div>
+          </div>
+          <div class="menu-list card card--night" data-card>
+            <h3 class="menu-h">Pizzas</h3>
+            <ul class="dishes">
+              <li><div><b>Margherita-style</b><span>Tomato, mozzarella, basil.</span></div><em class="price">[Price]</em></li>
+              <li><div><b>Marinara-style</b><span>Tomato, garlic, oregano. No cheese.</span></div><em class="price">[Price]</em></li>
+              <li><div><b>Four-cheese-style</b><span>A blend of melting cheeses.</span></div><em class="price">[Price]</em></li>
+              <li><div><b>Mushroom &amp; herb</b><span>Mushrooms, mozzarella, herbs.</span></div><em class="price">[Price]</em></li>
+              <li><div><b>Spicy sausage-style</b><span>Tomato, mozzarella, cured sausage, chilli.</span></div><em class="price">[Price]</em></li>
+              <li><div><b>Seasonal special</b><span>Toppings follow the season.</span></div><em class="price">[Price]</em></li>
+            </ul>
+            <h3 class="menu-h">To share &amp; to finish</h3>
+            <ul class="dishes dishes--small">
+              <li><div><b>Seasonal starter</b></div><em class="price">[Price]</em></li>
+              <li><div><b>Green salad</b></div><em class="price">[Price]</em></li>
+              <li><div><b>Dessert</b></div><em class="price">[Price]</em></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 RESERVE -->
+      <section class="station st-reserve" id="reserve" tabindex="-1" aria-labelledby="reserve-title">
+        <div class="poster poster--reserve" aria-hidden="true">
+          <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <defs><linearGradient id="pr1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c0f16"/><stop offset="1" stop-color="#5a2416"/></linearGradient></defs>
+            <rect width="1200" height="800" fill="url(#pr1)"/>
+            <path d="M0 120 Q300 220 600 120 T1200 120" stroke="#2a1a14" stroke-width="3" fill="none"/>
+            <g fill="#ffd9a0"><circle cx="75" cy="145" r="7"/><circle cx="225" cy="180" r="7"/><circle cx="375" cy="178" r="7"/><circle cx="525" cy="148" r="7"/><circle cx="675" cy="148" r="7"/><circle cx="825" cy="178" r="7"/><circle cx="975" cy="180" r="7"/><circle cx="1125" cy="145" r="7"/></g>
+            <ellipse cx="600" cy="420" rx="230" ry="150" fill="#000" opacity=".3"/>
+            <ellipse cx="600" cy="390" rx="210" ry="130" fill="#dba35c"/><ellipse cx="600" cy="390" rx="160" ry="95" fill="#b52a17"/>
+            <g fill="#f7dc9d"><ellipse cx="540" cy="370" rx="32" ry="18"/><ellipse cx="640" cy="360" rx="34" ry="18"/><ellipse cx="600" cy="420" rx="32" ry="17"/></g>
+          </svg>
+        </div>
+        <div class="station__sticky station__sticky--end">
+          <div class="card card--band card--night" data-card>
+            <div class="band__text">
+              <p class="eyebrow"><span class="eyebrow__num">05</span>Reserve</p>
+              <h2 class="display display--md" id="reserve-title">Save a table <em>by the fire.</em></h2>
+              <p class="lead">Tell us when you are coming and we will keep the oven hot.</p>
+              <div class="actions">
+                <a class="btn btn--primary" href="#reserve">Book a table</a>
+                <span class="ph">[Reservation link]</span>
+              </div>
+            </div>
+            <dl class="facts">
+              <div><dt>Address</dt><dd class="ph">[Street address]</dd></div>
+              <div><dt>Opening hours</dt><dd class="ph">[Opening hours]</dd></div>
+              <div><dt>Phone</dt><dd class="ph">[Your phone number]</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <p class="footer__name">Forno Rosso</p>
+        <p class="footer__small">Sample design by Website Studio. Forno Rosso is an invented brand and not a real restaurant.</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="footer__links">
+          <li><a href="#dough">Dough</a></li>
+          <li><a href="#toppings">Toppings</a></li>
+          <li><a href="#oven">Oven</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#reserve">Reserve</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- gsap.min.js, ScrollTrigger.min.js and lenis.min.js are loaded by main.js only when motion is allowed -->
+  <script type="module" src="main.js"></script>
+</body>
+</html>

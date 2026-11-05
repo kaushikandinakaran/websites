@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saffron Court - Indian Spice House (Sample Design)</title>
+  <meta name="description" content="Sample design for Saffron Court, an invented Indian spice house. The whole page is a 3D courtyard: scroll to fly through the gate, a ring of floating spice bowls, a lantern-lit market hall and a glowing tandoor to the thali menu.">
+  <meta name="theme-color" content="#1c0610">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231c0610'/%3E%3Cpath d='M8 27V15c0-5 4-9 8-12 4 3 8 7 8 12v12z' fill='none' stroke='%23e4c677' stroke-width='2'/%3E%3Ccircle cx='16' cy='17' r='3.4' fill='%23f5a524'/%3E%3C/svg%3E">
+  <script>
+    /* Mark JS early. If anything fails, content is still visible: nothing in CSS hides text. */
+    document.documentElement.classList.add('js');
+    setTimeout(function () { document.documentElement.classList.add('reveal-safe'); }, 4000);
+  </script>
+  <noscript><style>.reveal, .reveal-line > span { transform: none !important; clip-path: none !important; }</style></noscript>
+  <link rel="stylesheet" href="../../vendor/lenis.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">{ "imports": { "three": "../../vendor/three.module.min.js", "three/addons/": "../../vendor/three-addons/" } }</script></head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a class="brand" href="#top" aria-label="Saffron Court, back to top">
+        <svg class="brand__mark" viewBox="0 0 32 32" width="30" height="30" aria-hidden="true" focusable="false">
+          <path d="M6 29V15c0-5.5 4.6-9.6 10-13 5.4 3.4 10 7.5 10 13v14z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M16 11c2.4 2.6 3.4 4.4 3.4 6.2a3.4 3.4 0 0 1-6.8 0c0-1.8 1-3.6 3.4-6.2z" fill="#f5a524"/>
+        </svg>
+        <span class="brand__name">Saffron Court</span>
+      </a>
+
+      <button class="motion-btn" id="motionBtn" type="button" aria-pressed="false">
+        <svg class="motion-btn__pause" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+        <svg class="motion-btn__play" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 5l11 7-11 7z"/></svg>
+        <span class="motion-btn__text">Pause motion</span>
+      </button>
+
+      <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Menu">
+        <span class="nav__bars" aria-hidden="true"><i></i><i></i></span>
+      </button>
+
+      <nav class="nav__menu" id="navMenu" aria-label="Primary" data-lenis-prevent>
+        <ul class="nav__links">
+          <li><a href="#spice">Spice orbit</a></li>
+          <li><a href="#tandoor">Tandoor</a></li>
+          <li><a href="#menu">Thali menu</a></li>
+          <li><a href="#reserve">Reserve</a></li>
+        </ul>
+        <a class="btn btn--primary btn--sm nav__cta" href="#reserve">Reserve a table</a>
+      </nav>
+    </div>
+  </header>
+
+  <canvas id="scene" class="scene" aria-hidden="true"></canvas>
+
+  <div class="rail" aria-hidden="true">
+    <span class="rail__num" id="railNum">01</span>
+    <span class="rail__name" id="railName">The gate</span>
+    <i class="rail__track"><b id="railFill"></b></i>
+  </div>
+
+  <main id="main" tabindex="-1">
+
+    <!-- STATION 1: THE GATE -->
+    <section class="stn stn--left" id="gate" data-station="0" tabindex="-1" aria-labelledby="gate-title">
+      <div class="poster poster--gate" aria-hidden="true">
+        <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <defs>
+            <radialGradient id="pg-glow" cx="50%" cy="48%" r="45%"><stop offset="0" stop-color="#ffb347" stop-opacity=".85"/><stop offset=".5" stop-color="#c2561b" stop-opacity=".35"/><stop offset="1" stop-color="#1c0610" stop-opacity="0"/></radialGradient>
+            <linearGradient id="pg-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f040b"/><stop offset=".7" stop-color="#3a0e1e"/><stop offset="1" stop-color="#7a2a1a"/></linearGradient>
+          </defs>
+          <rect width="1200" height="800" fill="url(#pg-sky)"/>
+          <circle cx="170" cy="130" r="38" fill="#f1dca0"/><circle cx="186" cy="120" r="34" fill="#2a0a14"/>
+          <g fill="#f1dca0" opacity=".7"><circle cx="400" cy="90" r="2"/><circle cx="520" cy="150" r="1.6"/><circle cx="980" cy="110" r="2"/><circle cx="1090" cy="210" r="1.6"/><circle cx="780" cy="70" r="1.4"/></g>
+          <rect width="1200" height="800" fill="url(#pg-glow)"/>
+          <path d="M360 800V420c0-110 100-190 240-300 140 110 240 190 240 300v380z" fill="#5a1426" stroke="#c9a24b" stroke-width="3"/>
+          <path d="M440 800V440c0-80 70-140 160-220 90 80 160 140 160 220v360z" fill="#ffb347" opacity=".8"/>
+          <path d="M440 800V440c0-80 70-140 160-220 90 80 160 140 160 220v360z" fill="none" stroke="#e4c677" stroke-width="3"/>
+          <rect x="0" y="720" width="1200" height="80" fill="#240812"/>
+        </svg>
+      </div>
+      <div class="stn__inner container">
+        <div class="panel panel--hero">
+          <svg class="orn" viewBox="0 0 64 20" width="64" height="20" aria-hidden="true" focusable="false"><path d="M2 10h22M40 10h22" stroke="currentColor" stroke-width="1"/><path d="M32 1l6 9-6 9-6-9z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="32" cy="10" r="2" fill="currentColor"/></svg>
+          <p class="eyebrow">Indian spice house &middot; sample design</p>
+          <h1 class="display" id="gate-title"><span class="reveal-line"><span>Saffron</span></span> <span class="reveal-line"><span><em>Court</em></span></span></h1>
+          <p class="lead reveal">Step through the gate: floating spice bowls, a lantern-lit market hall and a clay oven glowing at the far end.</p>
+          <div class="actions reveal">
+            <a class="btn btn--primary" href="#reserve">Reserve a table</a>
+            <a class="btn btn--ghost" href="#spice">Walk in</a>
+          </div>
+          <p class="hint" aria-hidden="true"><span class="hint__line"></span>Scroll to walk through the court</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATION 2: THE SPICE ORBIT -->
+    <section class="stn stn--right" id="spice" data-station="1" tabindex="-1" aria-labelledby="spice-title">
+      <div class="poster poster--spice" aria-hidden="true">
+        <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <defs><radialGradient id="ps-glow" cx="42%" cy="48%" r="50%"><stop offset="0" stop-color="#ffb347" stop-opacity=".7"/><stop offset=".6" stop-color="#7a1c34" stop-opacity=".35"/><stop offset="1" stop-color="#1c0610" stop-opacity="0"/></radialGradient></defs>
+          <rect width="1200" height="800" fill="#240812"/><rect width="1200" height="800" fill="url(#ps-glow)"/>
+          <ellipse cx="500" cy="420" rx="330" ry="130" fill="none" stroke="#c9a24b" stroke-opacity=".4"/><ellipse cx="500" cy="420" rx="210" ry="80" fill="none" stroke="#c9a24b" stroke-opacity=".4"/>
+          <g>
+            <g transform="translate(250 380)"><ellipse rx="52" ry="14" cy="22" fill="#c9a24b"/><path d="M-40 18c10-50 70-50 80 0z" fill="#f2b01e"/></g>
+            <g transform="translate(420 520)"><ellipse rx="52" ry="14" cy="22" fill="#c9a24b"/><path d="M-40 18c10-50 70-50 80 0z" fill="#b3201a"/></g>
+            <g transform="translate(620 540)"><ellipse rx="52" ry="14" cy="22" fill="#c9a24b"/><path d="M-40 18c10-50 70-50 80 0z" fill="#6a9a3c"/></g>
+            <g transform="translate(760 400)"><ellipse rx="52" ry="14" cy="22" fill="#c9a24b"/><path d="M-40 18c10-50 70-50 80 0z" fill="#e8751a"/></g>
+            <g transform="translate(560 300)"><ellipse rx="52" ry="14" cy="22" fill="#c9a24b"/><path d="M-40 18c10-50 70-50 80 0z" fill="#a9772f"/></g>
+            <g transform="translate(380 290)"><ellipse rx="52" ry="14" cy="22" fill="#c9a24b"/><path d="M-40 18c10-50 70-50 80 0z" fill="#7a4a25"/></g>
+          </g>
+          <circle cx="500" cy="420" r="26" fill="#ffbf4d"/>
+        </svg>
+      </div>
+      <div class="stn__inner container">
+        <div class="panel">
+          <svg class="orn" viewBox="0 0 64 20" width="64" height="20" aria-hidden="true" focusable="false"><path d="M2 10h22M40 10h22" stroke="currentColor" stroke-width="1"/><path d="M32 1l6 9-6 9-6-9z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="32" cy="10" r="2" fill="currentColor"/></svg>
+          <p class="eyebrow">02 &middot; The spice orbit</p>
+          <h2 class="title" id="spice-title"><span class="reveal-line"><span>A courtyard of <em>spice</em></span></span></h2>
+          <p class="reveal">Every dish begins here. Brass bowls of spice drift around a single flame, each one bright, warm and layered.</p>
+          <ul class="swatches reveal" aria-label="Spices in the orbit">
+            <li><i style="--c:#f2b01e"></i>Turmeric</li>
+            <li><i style="--c:#c4301f"></i>Chilli</li>
+            <li><i style="--c:#7aa34a"></i>Cardamom</li>
+            <li><i style="--c:#c08a3c"></i>Cumin</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERLUDE: THE MARKET HALL -->
+    <section class="stn stn--hall" id="hall" tabindex="-1" aria-labelledby="hall-title">
+      <div class="poster poster--hall" aria-hidden="true">
+        <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <defs><radialGradient id="ph-glow" cx="50%" cy="52%" r="40%"><stop offset="0" stop-color="#ff9a3c" stop-opacity=".9"/><stop offset="1" stop-color="#1c0610" stop-opacity="0"/></radialGradient></defs>
+          <rect width="1200" height="800" fill="#1c0610"/><rect width="1200" height="800" fill="url(#ph-glow)"/>
+          <g fill="none" stroke="#c9a24b" stroke-width="3">
+            <path d="M120 800V380c0-170 200-260 480-380 280 120 480 210 480 380v420" stroke-opacity=".9"/>
+            <path d="M250 800V400c0-120 150-190 350-290 200 100 350 170 350 290v400" stroke-opacity=".75"/>
+            <path d="M370 800V420c0-90 110-140 230-210 120 70 230 120 230 210v380" stroke-opacity=".6"/>
+            <path d="M470 800V440c0-60 70-100 130-140 60 40 130 80 130 140v360" stroke-opacity=".45"/>
+          </g>
+        </svg>
+      </div>
+      <div class="stn__inner container">
+        <div class="panel panel--caption">
+          <p class="eyebrow">Between the court and the fire</p>
+          <h2 class="title title--sm" id="hall-title"><span class="reveal-line"><span>The <em>market</em> hall</span></span></h2>
+          <p class="reveal">Arches light one by one as you pass. Lanterns, diyas and the smell of something good ahead.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATION 3: THE TANDOOR -->
+    <section class="stn stn--left" id="tandoor" data-station="2" tabindex="-1" aria-labelledby="tandoor-title">
+      <div class="poster poster--tandoor" aria-hidden="true">
+        <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <defs><radialGradient id="pt-glow" cx="68%" cy="50%" r="40%"><stop offset="0" stop-color="#ff8a2a" stop-opacity=".95"/><stop offset=".5" stop-color="#b8420f" stop-opacity=".35"/><stop offset="1" stop-color="#1c0610" stop-opacity="0"/></radialGradient></defs>
+          <rect width="1200" height="800" fill="#1c0610"/><rect width="1200" height="800" fill="url(#pt-glow)"/>
+          <path d="M700 760c-120 0-170-80-160-190 10-90 70-130 70-190l-10-30h200l-10 30c0 60 60 100 70 190 10 110-40 190-160 190z" fill="#9a4a2b" stroke="#c9a24b" stroke-width="3"/>
+          <ellipse cx="700" cy="350" rx="95" ry="22" fill="#ffbf4d"/>
+          <path d="M700 340c-30-60-10-110 0-150 12 40 32 90 0 150z" fill="#ff8a2a"/>
+        </svg>
+      </div>
+      <div class="stn__inner container">
+        <div class="panel">
+          <svg class="orn" viewBox="0 0 64 20" width="64" height="20" aria-hidden="true" focusable="false"><path d="M2 10h22M40 10h22" stroke="currentColor" stroke-width="1"/><path d="M32 1l6 9-6 9-6-9z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="32" cy="10" r="2" fill="currentColor"/></svg>
+          <p class="eyebrow">03 &middot; The tandoor</p>
+          <h2 class="title" id="tandoor-title"><span class="reveal-line"><span>Where the <em>fire</em> waits</span></span></h2>
+          <p class="reveal">At the end of the hall a clay oven burns low and bright: skewers, flatbreads and a little char.</p>
+          <p class="reveal note note--extra">Ember glow, skewers and steam are part of the scene. Scroll on to see the thali.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATION 4: THE THALI MENU -->
+    <section class="stn stn--menu" id="menu" data-station="3" data-hold tabindex="-1" aria-labelledby="menu-title">
+      <div class="poster poster--menu" aria-hidden="true">
+        <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <defs><radialGradient id="pm-glow" cx="72%" cy="48%" r="38%"><stop offset="0" stop-color="#ffb347" stop-opacity=".55"/><stop offset="1" stop-color="#1c0610" stop-opacity="0"/></radialGradient></defs>
+          <rect width="1200" height="800" fill="#1c0610"/><rect width="1200" height="800" fill="url(#pm-glow)"/>
+          <circle cx="860" cy="400" r="250" fill="#167f7c" stroke="#c9a24b" stroke-width="4"/>
+          <circle cx="860" cy="400" r="215" fill="#c9a24b"/>
+          <g stroke="#8a6528" stroke-width="3">
+            <circle cx="860" cy="290" r="48" fill="#e0a21c"/><circle cx="955" cy="345" r="48" fill="#4d7a2e"/><circle cx="955" cy="455" r="48" fill="#d2561f"/><circle cx="860" cy="510" r="48" fill="#8a5a2b"/><circle cx="765" cy="455" r="48" fill="#efe3d0"/><circle cx="765" cy="345" r="48" fill="#f0dcb0"/>
+          </g>
+          <circle cx="860" cy="400" r="52" fill="#f1e4c8"/>
+        </svg>
+      </div>
+      <div class="stn__inner container">
+        <div class="menu-col">
+          <div class="panel menu-step" data-group="-1">
+            <svg class="orn" viewBox="0 0 64 20" width="64" height="20" aria-hidden="true" focusable="false"><path d="M2 10h22M40 10h22" stroke="currentColor" stroke-width="1"/><path d="M32 1l6 9-6 9-6-9z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="32" cy="10" r="2" fill="currentColor"/></svg>
+            <p class="eyebrow">04 &middot; The thali menu</p>
+            <h2 class="title" id="menu-title"><span class="reveal-line"><span>One plate, <em>many</em> bowls</span></span></h2>
+            <p class="reveal">A thali is a whole meal in small bowls. Scroll and each course lifts from the plate.</p>
+            <p class="reveal note">Illustrative sample menu. Dishes and prices are placeholders for the real kitchen.</p>
+          </div>
+
+          <article class="panel menu-step" data-group="0" aria-labelledby="g0">
+            <p class="eyebrow">I</p>
+            <h3 class="group-title" id="g0">From the tandoor</h3>
+            <ul class="dishes">
+              <li><span class="dish__name">Tandoori-style vegetables</span><span class="dish__price">[Price]</span><span class="dish__desc">Charred in the clay oven with a spiced marinade.</span></li>
+              <li><span class="dish__name">Paneer-style skewers</span><span class="dish__price">[Price]</span><span class="dish__desc">Cubes of cheese, peppers and onion.</span></li>
+              <li><span class="dish__name">Mint and coriander chutney</span><span class="dish__price">[Price]</span><span class="dish__desc">Bright, green and cooling.</span></li>
+            </ul>
+          </article>
+
+          <article class="panel menu-step" data-group="1" aria-labelledby="g1">
+            <p class="eyebrow">II</p>
+            <h3 class="group-title" id="g1">Curries and dals</h3>
+            <ul class="dishes">
+              <li><span class="dish__name">Slow-cooked lentils</span><span class="dish__price">[Price]</span><span class="dish__desc">Yellow dal with ghee and cumin.</span></li>
+              <li><span class="dish__name">Spinach curry</span><span class="dish__price">[Price]</span><span class="dish__desc">Greens, garlic and gentle heat.</span></li>
+              <li><span class="dish__name">Tomato-cream curry</span><span class="dish__price">[Price]</span><span class="dish__desc">Silky, rich and lightly sweet.</span></li>
+              <li><span class="dish__name">Chickpea masala</span><span class="dish__price">[Price]</span><span class="dish__desc">Warm spices and a squeeze of lime.</span></li>
+            </ul>
+          </article>
+
+          <article class="panel menu-step" data-group="2" aria-labelledby="g2">
+            <p class="eyebrow">III</p>
+            <h3 class="group-title" id="g2">Rice and breads</h3>
+            <ul class="dishes">
+              <li><span class="dish__name">Saffron rice</span><span class="dish__price">[Price]</span><span class="dish__desc">Fragrant basmati-style grains.</span></li>
+              <li><span class="dish__name">Flatbread, naan-style</span><span class="dish__price">[Price]</span><span class="dish__desc">Blistered in the tandoor.</span></li>
+              <li><span class="dish__name">Cooling yoghurt raita</span><span class="dish__price">[Price]</span><span class="dish__desc">Cucumber, mint and roasted cumin.</span></li>
+            </ul>
+          </article>
+
+          <article class="panel menu-step" data-group="3" aria-labelledby="g3">
+            <p class="eyebrow">IV</p>
+            <h3 class="group-title" id="g3">Sweet and spiced tea</h3>
+            <ul class="dishes">
+              <li><span class="dish__name">Cardamom milk pudding</span><span class="dish__price">[Price]</span><span class="dish__desc">Cool, creamy and lightly scented.</span></li>
+              <li><span class="dish__name">Spiced tea</span><span class="dish__price">[Price]</span><span class="dish__desc">Ginger, cinnamon and clove, poured hot.</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATION 5: RESERVE -->
+    <section class="stn stn--left" id="reserve" data-station="4" tabindex="-1" aria-labelledby="reserve-title">
+      <div class="poster poster--reserve" aria-hidden="true">
+        <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <defs><radialGradient id="pr-glow" cx="50%" cy="60%" r="55%"><stop offset="0" stop-color="#ff9a3c" stop-opacity=".5"/><stop offset="1" stop-color="#1c0610" stop-opacity="0"/></radialGradient></defs>
+          <rect width="1200" height="800" fill="#12040a"/><rect width="1200" height="800" fill="url(#pr-glow)"/>
+          <g fill="#ffbf4d"><rect x="150" y="150" width="34" height="50" rx="8"/><rect x="330" y="300" width="30" height="44" rx="8"/><rect x="900" y="180" width="36" height="52" rx="8"/><rect x="1020" y="360" width="28" height="42" rx="8"/><rect x="620" y="110" width="26" height="40" rx="8"/></g>
+        </svg>
+      </div>
+      <div class="stn__inner container">
+        <div class="panel panel--cta">
+          <svg class="orn" viewBox="0 0 64 20" width="64" height="20" aria-hidden="true" focusable="false"><path d="M2 10h22M40 10h22" stroke="currentColor" stroke-width="1"/><path d="M32 1l6 9-6 9-6-9z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="32" cy="10" r="2" fill="currentColor"/></svg>
+          <p class="eyebrow">05 &middot; Reserve</p>
+          <h2 class="title" id="reserve-title"><span class="reveal-line"><span>Your table is <em>waiting</em></span></span></h2>
+          <p class="reveal">Pass under the arches and let the lanterns lead you to a seat by the fire.</p>
+          <div class="actions reveal">
+            <a class="btn btn--primary btn--lg" href="#booking">Reserve a table</a>
+            <span class="placeholder">[Reservation link]</span>
+          </div>
+          <dl class="details reveal" id="booking" tabindex="-1">
+            <div><dt>Address</dt><dd class="placeholder">[Street address]</dd></div>
+            <div><dt>Hours</dt><dd class="placeholder">[Opening hours]</dd></div>
+            <div><dt>Telephone</dt><dd class="placeholder">[Your phone number]</dd></div>
+            <div><dt>Guest note</dt><dd class="placeholder">[Testimonial from a guest]</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <p class="footer__name">Saffron Court</p>
+        <p class="footer__line">An invented Indian spice house, made as a sample website.</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="footer__links">
+          <li><a href="#gate">The gate</a></li>
+          <li><a href="#spice">Spice orbit</a></li>
+          <li><a href="#tandoor">Tandoor</a></li>
+          <li><a href="#menu">Thali menu</a></li>
+          <li><a href="#reserve">Reserve</a></li>
+        </ul>
+      </nav>
+      <p class="footer__contact"><span class="placeholder">[Street address]</span> &middot; <span class="placeholder">[Your phone number]</span></p>
+    </div>
+    <p class="footer__credit container">Sample design by Website Studio</p>
+  </footer>
+
+  <script src="../../vendor/gsap.min.js" defer></script>
+  <script src="../../vendor/ScrollTrigger.min.js" defer></script>
+  <script src="../../vendor/lenis.min.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

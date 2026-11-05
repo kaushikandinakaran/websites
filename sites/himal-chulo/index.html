@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Himal Chulo | Indo-Nepali kitchen (sample design)</title>
+<meta name="description" content="Sample design by Website Studio: an Indo-Nepali kitchen website where the page is one warm, lantern-lit 3D room you walk through as you scroll.">
+<meta name="theme-color" content="#120d0a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23120d0a'/%3E%3Cpath d='M6 22 13 11l4 6 3-4 6 9z' fill='%236d8fb8'/%3E%3Ccircle cx='16' cy='24' r='3' fill='%23e8a33d'/%3E%3C/svg%3E">
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('rm');var c=document.createElement('canvas'),g=c.getContext('webgl2')||c.getContext('webgl');if(g){d.classList.add('gl-able');var e=g.getExtension('WEBGL_lose_context');if(e)e.loseContext();}}catch(x){}setTimeout(function(){d.classList.add('reveal-all');},4000);})();</script>
+<link rel="stylesheet" href="../../vendor/lenis.css">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": { "three": "../../vendor/three.module.min.js", "three/addons/": "../../vendor/three-addons/" } }
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="stage" aria-hidden="true">
+  <canvas id="stage"></canvas>
+</div>
+<div class="loader" id="loader" aria-hidden="true">
+  <span class="loader__bar"><i id="loaderBar"></i></span>
+  <span class="loader__text">Lighting the lanterns</span>
+</div>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="#arrival"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 32 32" width="30" height="30"><path d="M3 23 12 9l5 7 4-5 8 12z" fill="currentColor" opacity=".55"/><circle cx="16" cy="25" r="3.2" fill="#e8a33d"/></svg></span><span class="brand__name">Himal Chulo</span></a>
+
+    <nav class="nav__menu" id="navMenu" aria-label="Primary" data-lenis-prevent>
+      <ul class="nav__links">
+        <li><a href="#kitchen">Kitchen</a></li>
+        <li><a href="#table">The table</a></li>
+        <li><a href="#tea">Tea</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a class="nav__cta" href="#reserve">Reserve</a></li>
+      </ul>
+    </nav>
+
+    <button class="motion-btn" id="motionBtn" type="button" aria-pressed="false">
+      <svg class="motion-btn__pause" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+      <svg class="motion-btn__play" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>
+      <span class="motion-btn__text">Pause motion</span>
+    </button>
+
+    <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
+      <span class="nav__toggle-text">Menu</span>
+      <span class="nav__toggle-bars" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <!-- Station 1: arrival -->
+  <section id="arrival" class="station station--hero" tabindex="-1" aria-labelledby="hero-title" data-station="0">
+    <div class="poster poster--arrival" aria-hidden="true"></div>
+    <div class="panel panel--hero" data-rv-group>
+      <p class="kicker" data-rv>Indo-Nepali kitchen <span class="dot" aria-hidden="true"></span> Sample design</p>
+      <h1 id="hero-title" class="hero__title" data-rv>Himal <em>Chulo</em></h1>
+      <p class="lede" data-rv>Himalayan and Indian home cooking around a warm hearth. Momos from the steamer, dal and rice on brass, tea poured slowly.</p>
+      <div class="cta-row" data-rv>
+        <a class="btn btn--primary" href="#reserve">Reserve a table</a>
+        <a class="btn btn--ghost" href="#menu">See the menu</a>
+      </div>
+    </div>
+    <a class="scrollcue" href="#kitchen"><span class="scrollcue__text">Step inside</span><span class="scrollcue__line" aria-hidden="true"></span></a>
+  </section>
+
+  <!-- Station 2: the brass kitchen -->
+  <section id="kitchen" class="station station--l" tabindex="-1" aria-labelledby="kitchen-title" data-station="1">
+    <div class="poster poster--kitchen" aria-hidden="true"></div>
+    <div class="panel" data-rv-group>
+      <p class="kicker" data-rv><span class="num">02</span> The brass kitchen</p>
+      <h2 id="kitchen-title" class="h2" data-rv>Slow pots on a <em>clay hearth.</em></h2>
+      <p data-rv>Home cooking of the hills and the plains: lentils, greens and spice blends, cooked low and slow in brass.</p>
+    </div>
+  </section>
+
+  <!-- Station 3: the table -->
+  <section id="table" class="station station--r" tabindex="-1" aria-labelledby="table-title" data-station="2">
+    <div class="poster poster--table" aria-hidden="true"></div>
+    <div class="panel" data-rv-group>
+      <p class="kicker" data-rv><span class="num">03</span> The table</p>
+      <h2 id="table-title" class="h2" data-rv>Lift the lid on the <em>momos.</em></h2>
+      <p data-rv>A thali-style spread of rice, dal, greens and pickle, with a bamboo steamer opened at the table.</p>
+      <p class="note" data-rv>Illustrative dishes. Your own food photography goes here.</p>
+    </div>
+  </section>
+
+  <!-- Station 4: tea -->
+  <section id="tea" class="station station--l" tabindex="-1" aria-labelledby="tea-title" data-station="3">
+    <div class="poster poster--tea" aria-hidden="true"></div>
+    <div class="panel" data-rv-group>
+      <p class="kicker" data-rv><span class="num">04</span> Tea</p>
+      <h2 id="tea-title" class="h2" data-rv>Spiced milk tea, <em>poured slowly.</em></h2>
+      <p data-rv>The meal ends the way it began: warm, unhurried, and shared across the table.</p>
+    </div>
+  </section>
+
+  <!-- Station 5: menu -->
+  <section id="menu" class="station station--r station--menu" tabindex="-1" aria-labelledby="menu-title" data-station="4">
+    <div class="poster poster--menu" aria-hidden="true"></div>
+    <div class="panel panel--menu" data-rv-group>
+      <p class="kicker" data-rv><span class="num">05</span> Menu <span class="dot" aria-hidden="true"></span> Illustrative sample</p>
+      <h2 id="menu-title" class="h2" data-rv>From the <em>steamer and the pot.</em></h2>
+      <ul class="dishes">
+        <li class="dish" data-rv><div><h3>Steamed momos</h3><p>Pleated dumplings with a vegetable or meat filling and a tomato-sesame dip.</p></div><span class="price">[Price]</span></li>
+        <li class="dish" data-rv><div><h3>Thali-style set</h3><p>Rice, dal, seasonal greens, a vegetable curry and pickle on one brass plate.</p></div><span class="price">[Price]</span></li>
+        <li class="dish" data-rv><div><h3>Noodle soup</h3><p>A Himalayan-style broth with noodles and vegetables.</p></div><span class="price">[Price]</span></li>
+        <li class="dish" data-rv><div><h3>Dal and rice</h3><p>Yellow lentils tempered with cumin and garlic, with steamed rice.</p></div><span class="price">[Price]</span></li>
+        <li class="dish" data-rv><div><h3>Spiced milk tea</h3><p>Black tea simmered with milk, ginger and cardamom.</p></div><span class="price">[Price]</span></li>
+      </ul>
+      <p class="fine" data-rv>Sample menu for illustration only. Dishes and prices are placeholders for the restaurant to complete. [Allergen and dietary information]</p>
+    </div>
+  </section>
+
+  <!-- Station 6: reserve -->
+  <section id="reserve" class="station station--r station--reserve" tabindex="-1" aria-labelledby="reserve-title" data-station="5">
+    <div class="poster poster--reserve" aria-hidden="true"></div>
+    <div class="panel panel--reserve" data-rv-group>
+      <p class="kicker" data-rv><span class="num">06</span> Reserve</p>
+      <h2 id="reserve-title" class="h2" data-rv>A seat by <em>the lantern.</em></h2>
+      <p data-rv>Tell us when you are coming and we will keep the diya lit.</p>
+      <div class="cta-row" data-rv>
+        <a class="btn btn--primary" href="#reserve">Reserve a table</a>
+        <span class="ph">[Reservation link]</span>
+      </div>
+      <dl class="details" data-rv>
+        <div><dt>Telephone</dt><dd>[Your phone number]</dd></div>
+        <div><dt>Address</dt><dd>[Street address]</dd></div>
+        <div><dt>Hours</dt><dd>[Opening hours]</dd></div>
+      </dl>
+      <blockquote class="quote" data-rv><p>[Testimonial from a guest]</p></blockquote>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__grid">
+    <div class="footer__brand">
+      <a class="brand" href="#arrival"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 32 32" width="30" height="30"><path d="M3 23 12 9l5 7 4-5 8 12z" fill="currentColor" opacity=".55"/><circle cx="16" cy="25" r="3.2" fill="#e8a33d"/></svg></span><span class="brand__name">Himal Chulo</span></a>
+      <p>A sample restaurant website: an Indo-Nepali kitchen, a brass hearth and a lantern-lit table.</p>
+    </div>
+    <nav aria-label="Footer">
+      <h2 class="footer__h">Explore</h2>
+      <ul class="footer__list">
+        <li><a href="#kitchen">Kitchen</a></li>
+        <li><a href="#table">The table</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#reserve">Reserve</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h2 class="footer__h">Visit</h2>
+      <ul class="footer__list footer__list--plain">
+        <li>[Street address]</li>
+        <li>[Opening hours]</li>
+        <li>[Your phone number]</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bar">
+    <p class="footer__credit">Sample design by Website Studio. 3D assets: Poly Haven (CC0).</p>
+    <a class="footer__top" href="#arrival">Back to the door</a>
+  </div>
+</footer>
+
+<noscript><style>.stage,.loader{display:none}</style></noscript>
+
+<script src="../../vendor/gsap.min.js"></script>
+<script src="../../vendor/ScrollTrigger.min.js"></script>
+<script src="../../vendor/lenis.min.js"></script>
+<script type="module" src="main.js"></script>
+</body>
+</html>

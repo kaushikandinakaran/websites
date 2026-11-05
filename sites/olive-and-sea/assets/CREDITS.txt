@@ -1,0 +1,33 @@
+Olive & Sea (sample design by Website Studio) - asset credits
+
+3D ASSETS (Poly Haven, all CC0 1.0, https://polyhaven.com/license, attribution optional)
+Stored once for all sites in showcase/assets/polyhaven/ (downloaded with showcase/tools/fetch_polyhaven.py).
+
+- hdri `venice_sunset`: Venice Sunset, by Greg Zaal, https://polyhaven.com/a/venice_sunset
+- texture `brown_floor_tiles`: Brown Floor Tilles, by Rob Tuytel, https://polyhaven.com/a/brown_floor_tiles
+- texture `beige_wall_001`: Beige Wall 001, by Dimitrios Savva, Rico Cilliers, https://polyhaven.com/a/beige_wall_001
+- model `outdoor_table_chair_set_01`: Outdoor Table Chair Set 01, by James Ray Cock, https://polyhaven.com/a/outdoor_table_chair_set_01
+- model `painted_wooden_chair_01`: Painted Wooden Chair 01, by Kuutti Siitonen, https://polyhaven.com/a/painted_wooden_chair_01
+- model `lemon`: Lemon, by Kuutti Siitonen, https://polyhaven.com/a/lemon
+- model `food_lime_01`: Food Lime 01, by Oliver Harries, https://polyhaven.com/a/food_lime_01
+- model `ceramic_vase_04`: Ceramic Vase 04, by James Ray Cock, https://polyhaven.com/a/ceramic_vase_04
+- model `ceramic_vase_01`: Ceramic Vase 01, by James Ray Cock, https://polyhaven.com/a/ceramic_vase_01
+- model `potted_plant_02`: Potted Plant 02, by Rico Cilliers, https://polyhaven.com/a/potted_plant_02
+
+Derived files in this folder (same CC0 licence as the source):
+- assets/env-venice-sunset-pmrem256.hdr (desktop) and assets/env-venice-sunset-pmrem128.hdr (phones): the `venice_sunset`
+  HDRI (1k; downsampled to 512x256 first for the 128 file), prefiltered with three.js PMREMGenerator (r160) into its
+  CubeUV layout and saved as Radiance RGBE, rows in GL order. Baking once means the browser never runs the PMREM blur.
+  The original 1k HDRI is no longer requested by the page.
+
+Changes made in code (not to the files): the plaster texture is repainted lime-white at load, the painted chair is
+tinted blue, the floor tiles are warmed toward terracotta.
+
+FONTS
+No font files. The page uses system fonts only (Palatino Linotype / Palatino / Book Antiqua / Georgia for headings,
+Segoe UI / system-ui for text).
+
+OTHER
+- Built in code with Three.js (MIT, loaded from showcase/vendor/): walls, parapet, door and shutters, plates, bowls,
+  wine glasses, candle and hurricane glass, linen runner and napkins, cutlery, olives, string lights, the dusk sky grade.
+- The fallback posters are CSS gradients written for this sample. The page icon is an inline SVG data URI.

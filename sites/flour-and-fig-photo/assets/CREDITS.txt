@@ -1,0 +1,37 @@
+Flour & Fig, photo edition (sample design by Website Studio) - credits
+
+All photographs and 3D scans are from Poly Haven, CC0 1.0 public domain (https://polyhaven.com/license; credit optional,
+kept for the record). The panoramas are photographs of real places by Poly Haven photographers. They are used as
+stand-in scenery for a sample design: they are not the client's café, and the site does not name or describe them.
+
+360-degree photographs (scenery and lighting)
+- pano `studio_country_hall`: Studio Country Hall, by Sergej Majboroda, https://polyhaven.com/a/studio_country_hall
+  (stations 1-4: the café in morning light, the pastry, the cake, the pour)
+- pano `bush_restaurant`: Bush Restaurant, by Greg Zaal, https://polyhaven.com/a/bush_restaurant
+  (stations 5-6: the menu and the table by the windows)
+
+Derived files in this folder (same CC0 licence as their sources):
+- assets/pano/studio_country_hall_8k.jpg and bush_restaurant_8k.jpg (desktop), studio_country_hall_4k.jpg and
+  bush_restaurant_3k.jpg (phones): resized from Poly Haven's full-resolution tonemapped panoramas and saved at JPEG
+  quality 78. (bush_restaurant_6k.jpg and bush_restaurant_4k.jpg in the same folder are no longer requested.)
+- assets/env-country-hall-pmrem.hdr, assets/env-bush-restaurant-pmrem.hdr (desktop) and the -lo.hdr versions (phones):
+  each panorama's 1k HDR, downsampled to 512x256 (256x128 for -lo) and prefiltered with three.js PMREMGenerator (r160)
+  into its CubeUV layout, saved as Radiance RGBE (rows in GL order). Baking once avoids compiling the PMREM shader
+  in the visitor's browser.
+
+3D scans (shared folder showcase/assets/polyhaven/models/, 1k versions)
+- model `wooden_table_02`: Wooden Table 02, by Serhii Khromov, https://polyhaven.com/a/wooden_table_02 (the oak table)
+- model `croissant`: Croissant, by Greg Zaal, Dario Barresi, https://polyhaven.com/a/croissant (one on the board, three clones in the basket)
+- model `carrot_cake`: Carrot Cake, by Greg Zaal, James Ray Cock, https://polyhaven.com/a/carrot_cake
+- model `tea_set_01`: Tea Set 01, by James Ray Cock, Rico Cilliers, Jurita Burger, https://polyhaven.com/a/tea_set_01 (saucer, cup, teapot and lid)
+- model `wooden_cutting_board`: Wooden Cutting Board, by Kuutti Siitonen, https://polyhaven.com/a/wooden_cutting_board
+- model `wicker_basket_01`: Wicker Basket 01, by Kuutti Siitonen, https://polyhaven.com/a/wicker_basket_01 (desktop only)
+Phones, and the basket on desktops, load the scans without their normal and ARM maps.
+
+Procedural (made in code for this design, no external source): the stoneware cake plate (lathe), tea surface (meniscus and ripples), pour stream and its splash ring,
+steam, contact shadows, the film grade (vignette and grain), and the six fallback posters (assets/poster-1.svg ... poster-6.svg).
+
+Fonts: none downloaded. System font stacks only (Palatino Linotype / Book Antiqua / Georgia for display,
+Segoe UI / system-ui for text).
+
+Libraries (shared, showcase/vendor/): three.js r160 and addons (MIT), GSAP + ScrollTrigger (GreenSock standard licence), Lenis (MIT).

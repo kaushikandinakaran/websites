@@ -1,0 +1,47 @@
+Himal Chulo, photo edition (sample design by Website Studio) - asset credits
+
+360-DEGREE PHOTOGRAPHS (Poly Haven, all CC0 1.0, https://polyhaven.com/license - free for commercial use, credit optional)
+The photographs show real places taken by Poly Haven photographers. They are used as sample scenery only: they are
+not the restaurant, and the site does not name or describe the real places.
+The dusk photograph is shared from showcase/assets/polyhaven/pano/ (fetched with showcase/tools/fetch_polyhaven.py pano <id>):
+desktop loads the 8k JPG, phones and GPUs without 8k texture support the 4k JPG.
+The restaurant photograph is our own copy in assets/pano/ (warm_restaurant_night_6k.jpg for desktop, _4k.jpg for
+phones), resized from Poly Haven's 8k JPG, with one change: a green emergency-exit sign above a door was painted out
+by cloning the neighbouring brick course (so the photo does not read as one specific building).
+
+- pano `fouriesburg_mountain_lookout`: Fouriesburg Mountain Lookout, by Dimitrios Savva, Jarod Guest,
+  https://polyhaven.com/a/fouriesburg_mountain_lookout (the arrival at dusk)
+- pano `warm_restaurant_night`: Warm Restaurant Night, by Greg Zaal, Jarod Guest,
+  https://polyhaven.com/a/warm_restaurant_night (the room, the table, tea, menu and reserve stations)
+
+LIGHTING (made from the same photographs)
+- assets/env-fouriesburg-pmrem128.hdr: the 1k HDR of fouriesburg_mountain_lookout, prefiltered offline into three.js
+  CubeUV layout (cube size 128) so the page skips the runtime PMREM shader.
+- assets/env-warm-restaurant-night-pmrem128.hdr: the same for warm_restaurant_night (shared with sites/jade-teahouse).
+
+3D MODELS (Poly Haven, CC0 1.0), shared from showcase/assets/polyhaven/models/, 1k resolution
+- model `wooden_table_02`: Wooden Table 02, by Serhii Khromov, https://polyhaven.com/a/wooden_table_02
+  (the dining table; desaturated, darkened and made matte in code to match the room's wood. `WoodenTable_02` from the brief is a 30 cm stool, so this
+  dining-size table is used instead)
+- model `brass_diya_lantern`: Brass Diya Lantern, by Bhargav Kubal, https://polyhaven.com/a/brass_diya_lantern
+  (on the table; chain removed)
+- model `brass_pot_01`: Brass Pot 01, by Rico Cilliers, https://polyhaven.com/a/brass_pot_01 (scaled to 52 %; not on phones)
+- model `carved_wooden_plate`: Carved Wooden Plate, by Jan Martens, https://polyhaven.com/a/carved_wooden_plate (not on phones)
+- model `food_lime_01`: Food Lime 01, by Oliver Harries, https://polyhaven.com/a/food_lime_01 (loaded without its normal map)
+- model `tea_set_01`: Tea Set 01, by James Ray Cock, Rico Cilliers, Jurita Burger, https://polyhaven.com/a/tea_set_01
+  (teapot, lid, one cup and saucer only)
+
+MADE IN CODE (original to this sample, Three.js r160, MIT, loaded from showcase/vendor/)
+- Prayer-flag cloth (printed-cotton texture drawn on a canvas: abstract print marks, no real script or text) and a
+  marigold garland, the only additions to the dusk photograph.
+- Brass thali and katoris, rice, dal, greens, curry, pickle, bamboo momo steamer and pleated momos, tea stream,
+  steam, the diya flame glow, contact shadows. Food is illustrative, not photographic.
+- Film grain (SVG noise) and vignette in CSS.
+
+FONTS
+- None downloaded. The page uses system fonts only (Palatino Linotype / Book Antiqua / Georgia for display,
+  Segoe UI / system-ui for text).
+
+OTHER
+- Poster fallbacks (shown when WebGL is unavailable) are CSS gradients and inline SVG drawn for this sample.
+- The page icon is an inline SVG data URI.

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Checkout | Chiya Ghar</title>
+<meta name="description" content="Demo checkout. No payment is taken and nothing is sent.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#fbf4e8">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../../shared/base.css">
+<link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
+<script type="module" src="../../shared/core.js"></script>
+<script src="trays-checkout.js" defer></script>
+</head>
+<body data-page="checkout">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-header>
+  <div class="site-header__inner container">
+    <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true"></span><span data-site="name">Chiya Ghar</span></a>
+    <div class="site-header__actions">
+      <a class="btn btn--ghost btn--sm" href="menu.html">Back to menu</a>
+      <button class="cart-btn" type="button" data-cart-open aria-controls="cart-drawer" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-btn__text">Cart</span>
+        <span class="badge" data-cart-count>0</span><span class="vh" data-cart-count-label> items</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1" class="container checkout-page">
+  <h1 class="checkout-title">Checkout</h1>
+  <p class="demo-note">Demo checkout: no payment is taken, no order is sent, and card details are never stored.</p>
+
+  <div class="panel checkout-empty" data-checkout-empty hidden>
+    <h2>Your order is empty</h2>
+    <p>Add a few dishes first.</p>
+    <a class="btn btn--primary" href="menu.html">Go to the menu</a>
+  </div>
+
+  <div class="checkout" data-checkout-root>
+    <form id="checkout-form" class="form" data-checkout novalidate aria-label="Checkout">
+      <div class="error-summary" data-error-summary tabindex="-1" hidden></div>
+
+      <fieldset class="step">
+        <legend>1. Pickup or delivery</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="mode" id="mode-pickup" value="pickup" checked> Pickup</label>
+          <label class="choice"><input type="radio" name="mode" id="mode-delivery" value="delivery"> Delivery</label>
+        </div>
+        <div class="pickup-info" data-pickup-info>
+          <p><strong>Pickup at</strong> <span data-site="contact.address">[address]</span></p>
+        </div>
+        <fieldset class="form" data-delivery-fields hidden disabled>
+          <legend class="vh">Delivery address</legend>
+          <div class="field"><label for="c-address1">Street address</label><input id="c-address1" name="c-address1" type="text" autocomplete="address-line1" required></div>
+          <div class="form-row">
+            <div class="field"><label for="c-address2">Flat, floor <span class="optional">(optional)</span></label><input id="c-address2" name="c-address2" type="text" autocomplete="address-line2"></div>
+            <div class="field"><label for="c-postcode">Postcode</label><input id="c-postcode" name="c-postcode" type="text" autocomplete="postal-code" required></div>
+          </div>
+          <div class="field"><label for="c-instructions">Delivery notes <span class="optional">(optional)</span></label><input id="c-instructions" name="c-instructions" type="text" maxlength="140"></div>
+        </fieldset>
+        <p class="estimate" data-ready-estimate aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="step">
+        <legend>2. Your details</legend>
+        <p class="hint">No account or password needed.</p>
+        <div class="form-row">
+          <div class="field"><label for="c-name">Name</label><input id="c-name" name="c-name" type="text" autocomplete="name" minlength="2" required></div>
+          <div class="field"><label for="c-phone">Phone</label><input id="c-phone" name="c-phone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="c-phone-hint"><p class="hint" id="c-phone-hint">Only used if there is a problem with your order.</p></div>
+        </div>
+        <div class="field"><label for="c-email">Email <span class="optional">(optional, for a receipt)</span></label><input id="c-email" name="c-email" type="email" autocomplete="email"></div>
+      </fieldset>
+
+      <fieldset class="step">
+        <legend>3. Time</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="when" id="when-asap" value="asap" checked> As soon as possible</label>
+          <label class="choice"><input type="radio" name="when" id="when-later" value="later"> Schedule for later</label>
+        </div>
+        <p class="tray-note" data-tray-note hidden><strong>Party trays need notice.</strong> Choose a later time: [lead time: client to set]. The restaurant confirms every tray order.</p>
+        <div class="field" data-slot-wrap hidden>
+          <label for="c-slot">Choose a time</label>
+          <select id="c-slot" name="c-slot" data-slot-select required disabled data-err-required="Choose a time for your order."></select>
+        </div>
+      </fieldset>
+
+      <fieldset class="step">
+        <legend>4. Payment</legend>
+        <div class="wallets">
+          <button class="wallet" type="button" data-wallet="Apple Pay">Apple Pay <small>(demo)</small></button>
+          <button class="wallet" type="button" data-wallet="Google Pay">Google Pay <small>(demo)</small></button>
+        </div>
+        <p class="hint">Wallet buttons are demo only: they place the demo order without any payment.</p>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="pay" id="pay-later" value="later" checked> <span data-pay-later-label>Pay at pickup</span></label>
+          <label class="choice"><input type="radio" name="pay" id="pay-card" value="card"> Card (demo, nothing is charged)</label>
+        </div>
+        <fieldset class="form" data-card-fields hidden disabled>
+          <legend class="vh">Card details (demo)</legend>
+          <div class="field"><label for="c-ccname">Name on card</label><input id="c-ccname" name="c-ccname" type="text" autocomplete="cc-name" required></div>
+          <div class="field"><label for="c-ccnumber">Card number</label><input id="c-ccnumber" name="c-ccnumber" type="text" inputmode="numeric" autocomplete="cc-number" data-validate="card" required></div>
+          <div class="form-row">
+            <div class="field"><label for="c-ccexp">Expiry (MM/YY)</label><input id="c-ccexp" name="c-ccexp" type="text" inputmode="numeric" autocomplete="cc-exp" data-validate="exp" data-label="Expiry date" placeholder="MM/YY" required></div>
+            <div class="field"><label for="c-cccsc">Security code</label><input id="c-cccsc" name="c-cccsc" type="text" inputmode="numeric" autocomplete="cc-csc" data-validate="cvc" required></div>
+          </div>
+          <p class="demo-note">Demo: card fields are checked for format only, never sent and never stored.</p>
+        </fieldset>
+        <fieldset>
+          <legend class="legend">Tip <span class="optional">(optional, sample)</span></legend>
+          <div class="chips" data-tip-options></div>
+        </fieldset>
+      </fieldset>
+
+      <button class="btn btn--primary btn--block place-order" type="submit" data-place-order>Place order · <span data-place-total>$0.00</span></button>
+      <p class="small muted">Demo only. No payment is taken.</p>
+    </form>
+
+    <aside aria-labelledby="osum-title">
+      <details class="osum" data-summary-details>
+        <summary class="osum__toggle"><span id="osum-title">Order summary</span> <span data-summary-total>$0.00</span></summary>
+        <div class="osum__body">
+          <div data-order-summary></div>
+          <button class="btn btn--secondary btn--block" type="button" data-edit-order data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer">Edit order</button>
+        </div>
+      </details>
+    </aside>
+  </div>
+
+  <section class="panel confirm" data-confirmation hidden aria-labelledby="conf-h">
+    <h2 id="conf-h" data-conf-heading tabindex="-1">Thank you, your order is in</h2>
+    <dl class="confirm__facts">
+      <div><dt>Order number</dt><dd data-conf-number></dd></div>
+      <div><dt>Ready</dt><dd data-conf-time></dd></div>
+      <div><dt>How</dt><dd data-conf-mode></dd></div>
+      <div><dt>Name</dt><dd data-conf-name></dd></div>
+      <div><dt>Payment</dt><dd data-conf-pay></dd></div>
+    </dl>
+    <div data-conf-summary></div>
+    <p class="demo-note">Demo only: no order was sent and no payment was taken.</p>
+    <a class="btn btn--primary" href="menu.html">Back to menu</a>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__legal small">
+    <p><span data-site="name">Chiya Ghar</span> · <span data-site="contact.address">[address]</span> · <a href="tel:+15555550153" data-tel><span data-site="contact.phone">[phone]</span></a> · <span class="open-status" data-open-status>Opening hours</span></p>
+    <p>Design concept by Website Studio.</p>
+  </div>
+</footer>
+</body>
+</html>

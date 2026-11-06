@@ -341,7 +341,7 @@ addEventListener('storage', (e) => {
 
 /* ---------- markup builders ---------- */
 function imgHTML(img, cls, eager) {
-  if (!img || !img.src) return `<div class="${cls} dish__img--ph" aria-hidden="true"><span>[photo]</span></div>`;
+  if (!img || !img.src) return `<div class="${cls} dish__img--ph" aria-hidden="true"><span></span></div>`;
   const a = [`class="${cls}"`, `src="${esc(img.src)}"`, `alt="${esc(img.alt || '')}"`];
   if (img.srcset) a.push(`srcset="${esc(img.srcset)}"`, `sizes="${esc(img.sizes || '(min-width: 60em) 30vw, (min-width: 40em) 45vw, 92vw')}"`);
   if (img.width) a.push(`width="${Number(img.width)}"`);

@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lungta Momo Bar | Build your momo box. Order in 3 taps</title>
+<meta name="description" content="Sample restaurant website by Website Studio: a Kathmandu street-style momo bar. Build a momo box, order for pickup or delivery, or book a table.">
+<meta name="theme-color" content="#fbf7ef">
+<link rel="icon" href="data:,">
+<link rel="preload" as="image" href="images/lungta-momo-bar-01-steamed-momos-white-plate-800.webp" imagesrcset="images/lungta-momo-bar-01-steamed-momos-white-plate-400.webp 400w, images/lungta-momo-bar-01-steamed-momos-white-plate-800.webp 800w" imagesizes="(min-width: 64em) 340px, 60vw">
+<link rel="stylesheet" href="../../shared/base.css">
+<link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
+<script type="module" src="../../shared/core.js"></script>
+<script type="module" src="lungta.js"></script>
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-header>
+  <div class="site-header__inner container">
+    <a class="brand" href="index.html"><span class="brand__flags" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span data-site="name">Lungta Momo Bar</span></a>
+    <nav class="site-nav" id="site-nav" data-nav aria-label="Main">
+      <ul>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="#box">Momo box</a></li>
+        <li><a href="#visit">Hours &amp; location</a></li>
+        <li><a href="#reserve">Book a table</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <a class="btn btn--primary btn--sm header-order" href="menu.html">Order now</a>
+      <button class="cart-btn" type="button" data-cart-open aria-controls="cart-drawer" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16l-2 11H6L4 9Z"/><path d="M8 9c0-3 1.8-5 4-5s4 2 4 5"/></svg>
+        <span class="cart-btn__text vh">Order</span>
+        <span class="badge" data-cart-count>0</span><span class="vh" data-cart-count-label> items</span>
+      </button>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <span class="vh">Site navigation</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <div class="bunting" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+  <section class="hero" id="box" aria-labelledby="hero-title">
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <p class="sticker sticker--blue">Kathmandu street-style <span lang="ne">मोमो</span></p>
+        <h1 id="hero-title"><span class="h1__line">Build your</span> <span class="h1__line h1__line--hl">momo box.</span></h1>
+        <p class="lede">Pick a filling, pick a style, tap Add. Ready for pickup in about <span data-lg="pickup">15</span> minutes.</p>
+        <ol class="taps" role="list" aria-label="How ordering works: filling, style, add">
+          <li><span class="taps__n" aria-hidden="true">1</span> Filling</li>
+          <li><span class="taps__n" aria-hidden="true">2</span> Style</li>
+          <li><span class="taps__n" aria-hidden="true">3</span> Add</li>
+        </ol>
+        <p class="small hero__direct">Order direct and skip the app fees.</p>
+      </div>
+
+      <form class="boxer" id="boxer" data-boxer novalidate aria-labelledby="boxer-title">
+        <div class="boxer__plate">
+          <img src="images/lungta-momo-bar-01-steamed-momos-white-plate-800.webp" srcset="images/lungta-momo-bar-01-steamed-momos-white-plate-400.webp 400w, images/lungta-momo-bar-01-steamed-momos-white-plate-800.webp 800w" sizes="(min-width: 64em) 340px, 60vw" width="800" height="534" fetchpriority="high" decoding="async" alt="Six pleated steamed momo on a white plate with a small cup of orange-red dipping sauce">
+          <p class="boxer__price-tag" aria-hidden="true"><span data-box-price-tag>$11.00</span></p>
+        </div>
+        <h2 id="boxer-title" class="boxer__title">Your box</h2>
+        <fieldset class="pick">
+          <legend><span class="pick__n" aria-hidden="true">1</span> Filling</legend>
+          <div class="pick__chips" data-pick="Filling"></div>
+        </fieldset>
+        <fieldset class="pick">
+          <legend><span class="pick__n" aria-hidden="true">2</span> Style</legend>
+          <div class="pick__chips" data-pick="Style"></div>
+        </fieldset>
+        <details class="boxer__more">
+          <summary>Achar and size <span class="boxer__more-sum" data-box-more-sum>Tomato-sesame · 8 pieces</span></summary>
+          <fieldset class="pick">
+            <legend>Achar (dipping sauce)</legend>
+            <div class="pick__chips" data-pick="Achar"></div>
+          </fieldset>
+          <fieldset class="pick">
+            <legend>Size</legend>
+            <div class="pick__chips" data-pick="Size"></div>
+          </fieldset>
+        </details>
+        <button class="btn btn--primary btn--block boxer__add" type="submit">
+          <span>Add box</span><span class="boxer__add-price" data-box-price>$11.00</span>
+        </button>
+        <p class="boxer__status" data-box-status role="status" aria-live="polite"></p>
+        <noscript><p class="boxer__status">The box builder needs JavaScript. Call <a href="tel:+15555550100">[phone]</a> to order.</p></noscript>
+      </form>
+    </div>
+  </section>
+
+  <div class="marquee" data-marquee>
+    <button class="marquee__toggle" type="button" data-marquee-toggle aria-pressed="false"><span class="vh">Pause the scrolling list of momo styles</span></button>
+    <div class="marquee__track" aria-hidden="true">
+      <span>Steamed</span><span>Kothey</span><span>Jhol</span><span>Fried</span><span>Chilli</span><span>Half-moon</span><span>Timur achar</span><span>Chatpate</span><span>Chiya</span>
+      <span>Steamed</span><span>Kothey</span><span>Jhol</span><span>Fried</span><span>Chilli</span><span>Half-moon</span><span>Timur achar</span><span>Chatpate</span><span>Chiya</span>
+    </div>
+  </div>
+
+  <section class="infobar" aria-label="Opening status and contact">
+    <div class="container infobar__inner">
+      <p class="open-status" data-open-status>Opening hours</p>
+      <p><span class="vh">Address: </span><span data-site="contact.address">[address]</span></p>
+      <p><a href="tel:+15555550100" data-tel>Call <span data-site="contact.phone">[phone]</span></a></p>
+      <p><a href="#map" data-directions>Get directions</a></p>
+    </div>
+  </section>
+
+  <section class="section styles" id="styles" aria-labelledby="styles-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="sticker sticker--red">Five ways</p>
+          <h2 id="styles-title">One momo, five styles</h2>
+        </div>
+        <p class="muted styles__lede">Every style works with every filling. Pick yours in the box builder above, or in the cart.</p>
+      </div>
+      <ol class="style-cards" role="list">
+        <li class="style-card style-card--blue" data-n="01"><h3>Steamed</h3><p>Soft, juicy, classic. The one to start with.</p><p class="style-card__price">from $11</p></li>
+        <li class="style-card style-card--white" data-n="02"><h3>Kothey</h3><p>Pan-fried on one side: crisp bottom, soft top.</p><p class="style-card__price">+ $1</p></li>
+        <li class="style-card style-card--red" data-n="03"><h3>Jhol</h3><p>Sitting in a warm, tangy sesame-tomato broth.</p><p class="style-card__price">+ $2</p></li>
+        <li class="style-card style-card--green" data-n="04"><h3>Fried</h3><p>Deep-fried all over until golden and crunchy.</p><p class="style-card__price">+ $1</p></li>
+        <li class="style-card style-card--yellow" data-n="05"><h3>Chilli</h3><p>Fried, then wok-tossed with peppers and chilli sauce.</p><p class="style-card__price">+ $2</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="signature" aria-labelledby="sig-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="sticker sticker--green">Favourites</p>
+          <h2 id="sig-title">Grab and go</h2>
+        </div>
+        <a class="btn btn--secondary" href="menu.html">See the full menu</a>
+      </div>
+      <div data-signature data-limit="4"></div>
+    </div>
+  </section>
+
+  <section class="section street" id="street" aria-labelledby="street-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="sticker sticker--yellow">Beyond momo</p>
+          <h2 id="street-title">Noodles, grill, chaat, chiya</h2>
+        </div>
+      </div>
+      <ul class="bento" role="list">
+        <li class="bento__tile bento__tile--tall">
+          <a href="menu.html#cat-noodles">
+            <img src="images/lungta-momo-bar-06-stir-fried-noodles-wok-800.webp" srcset="images/lungta-momo-bar-06-stir-fried-noodles-wok-400.webp 400w, images/lungta-momo-bar-06-stir-fried-noodles-wok-800.webp 800w" sizes="(min-width: 56em) 30vw, 92vw" width="800" height="1023" loading="lazy" decoding="async" alt="Stir-fried noodles with carrot, greens, onion and egg in a black wok">
+            <span class="bento__label"><span class="bento__name">Chowmein</span><span class="bento__go">Noodles and soup</span></span>
+          </a>
+        </li>
+        <li class="bento__tile">
+          <a href="menu.html#cat-grill">
+            <img src="images/mustang-hearth-17-chicken-over-flame-800.webp" srcset="images/mustang-hearth-17-chicken-over-flame-400.webp 400w, images/mustang-hearth-17-chicken-over-flame-800.webp 800w" sizes="(min-width: 56em) 30vw, 92vw" width="800" height="533" loading="lazy" decoding="async" alt="Marinated chicken pieces grilling over an open flame">
+            <span class="bento__label"><span class="bento__name">Sekuwa</span><span class="bento__go">Grill</span></span>
+          </a>
+        </li>
+        <li class="bento__tile">
+          <a href="menu.html#cat-chaat">
+            <img src="images/lungta-momo-bar-08-pani-puri-green-pani-800.webp" srcset="images/lungta-momo-bar-08-pani-puri-green-pani-400.webp 400w, images/lungta-momo-bar-08-pani-puri-green-pani-800.webp 800w" sizes="(min-width: 56em) 30vw, 92vw" width="800" height="1200" loading="lazy" decoding="async" alt="Puri filled with chickpeas on a floral plate next to a bowl of green spiced water">
+            <span class="bento__label"><span class="bento__name">Pani puri and chatpate</span><span class="bento__go">Chaat</span></span>
+          </a>
+        </li>
+        <li class="bento__tile bento__tile--wide">
+          <a href="menu.html#cat-drinks">
+            <img src="images/lungta-momo-bar-10-masala-chai-glass-ginger-800.webp" srcset="images/lungta-momo-bar-10-masala-chai-glass-ginger-400.webp 400w, images/lungta-momo-bar-10-masala-chai-glass-ginger-800.webp 800w" sizes="(min-width: 56em) 60vw, 92vw" width="800" height="533" loading="lazy" decoding="async" alt="A glass of milky tea beside a piece of fresh ginger root">
+            <span class="bento__label"><span class="bento__name">Masala chiya <span lang="ne">चिया</span></span><span class="bento__go">Chiya and drinks</span></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="story" aria-labelledby="story-title">
+    <div class="container story">
+      <div class="story__media">
+        <img src="images/lungta-momo-bar-12-hands-making-dumplings-800.webp" srcset="images/lungta-momo-bar-12-hands-making-dumplings-400.webp 400w, images/lungta-momo-bar-12-hands-making-dumplings-800.webp 800w" sizes="(min-width: 56em) 45vw, 92vw" width="800" height="533" loading="lazy" decoding="async" alt="Hands folding dumplings at a table with a tray of raw dumplings, a bowl of filling and a bamboo steamer">
+      </div>
+      <div class="stack">
+        <h2 id="story-title">The momo counter</h2>
+        <p>[Owner story: client to supply. Two or three sentences about who folds the momo and why this bar exists.]</p>
+        <p class="placeholder">[Guest reviews: client to supply]</p>
+        <a class="btn btn--primary" href="#box">Build a box</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="visit" aria-labelledby="visit-title">
+    <div class="container visit">
+      <div class="stack">
+        <p class="sticker sticker--green">Visit</p>
+        <h2 id="visit-title">Hours &amp; location</h2>
+        <p class="open-status" data-open-status>Opening hours</p>
+        <div data-hours></div>
+      </div>
+      <div class="stack">
+        <address class="contact">
+          <span data-site="contact.address">[address]</span><br>
+          <a href="tel:+15555550100" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+          <span data-site="contact.email">[email]</span>
+        </address>
+        <div class="map-ph" id="map">[map]<br>Map: client to supply (no external embed)</div>
+        <a class="btn btn--secondary" href="#map" data-directions>Get directions</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="reserve" aria-labelledby="reserve-title">
+    <div class="container reserve">
+      <div class="stack">
+        <p class="sticker sticker--red">Eat in</p>
+        <h2 id="reserve-title">Book a table</h2>
+        <p class="muted">Counter stools and a few tables. Pick a time and we will hold your spot. For groups larger than 8, call <span data-site="contact.phone">[phone]</span>.</p>
+      </div>
+      <div>
+        <form id="reserve-form" class="form panel" data-reserve novalidate aria-labelledby="reserve-title">
+          <div class="error-summary" data-error-summary tabindex="-1" hidden></div>
+          <div class="form-row">
+            <div class="field"><label for="r-date">Date</label><input id="r-date" name="r-date" type="date" required></div>
+            <div class="field"><label for="r-time">Time</label><select id="r-time" name="r-time" required></select></div>
+            <div class="field"><label for="r-party">Party size</label><select id="r-party" name="r-party" required></select></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="r-name">Name</label><input id="r-name" name="r-name" type="text" autocomplete="name" minlength="2" required></div>
+            <div class="field"><label for="r-phone">Phone</label><input id="r-phone" name="r-phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+          </div>
+          <div class="field"><label for="r-email">Email <span class="optional">(optional)</span></label><input id="r-email" name="r-email" type="email" autocomplete="email"></div>
+          <div class="field"><label for="r-notes">Notes <span class="optional">(optional)</span></label><textarea id="r-notes" name="r-notes" maxlength="300" rows="3" aria-describedby="r-notes-hint"></textarea><p class="hint" id="r-notes-hint">Allergies, high chair, occasion.</p></div>
+          <button class="btn btn--primary btn--block" type="submit">Request table</button>
+          <p class="demo-note">Demo only: no booking is made and nothing is sent.</p>
+        </form>
+        <div class="panel confirm" data-reserve-confirm hidden>
+          <h3 data-reserve-confirm-heading tabindex="-1">Table request received</h3>
+          <p>Booking reference <strong data-reserve-ref></strong></p>
+          <p data-reserve-summary></p>
+          <p class="demo-note">Demo only: no booking was made and nothing was sent.</p>
+          <button class="btn btn--secondary" type="button" data-reserve-again>Make another booking</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="bunting bunting--footer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="container footer__grid">
+    <div class="stack">
+      <p class="footer__brand" data-site="name">Lungta Momo Bar</p>
+      <p class="open-status" data-open-status>Opening hours</p>
+      <address class="contact">
+        <span data-site="contact.address">[address]</span><br>
+        <a href="tel:+15555550100" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+        <span data-site="contact.email">[email]</span>
+      </address>
+    </div>
+    <nav aria-label="Footer">
+      <ul class="footer__links">
+        <li><a href="menu.html">Order now</a></li>
+        <li><a href="#box">Build a momo box</a></li>
+        <li><a href="#reserve">Book a table</a></li>
+        <li><a href="#visit">Hours &amp; location</a></li>
+      </ul>
+    </nav>
+    <div class="stack">
+      <p class="small">Prefer an app? Also on <span data-delivery-apps>[Delivery app 1] · [Delivery app 2]</span> (links: client to supply).</p>
+    </div>
+  </div>
+  <div class="container footer__legal small">
+    <p>Design concept by Website Studio.</p>
+    <p>&copy; <span data-year>2026</span> <span data-site="name">Lungta Momo Bar</span></p>
+  </div>
+</footer>
+
+<nav class="mbar" data-mobile-bar aria-label="Quick actions">
+  <a class="mbar__btn mbar__btn--primary" href="menu.html" data-mbar-order>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16l-2 11H6L4 9Z"/><path d="M8 9c0-3 1.8-5 4-5s4 2 4 5"/></svg>Order</a>
+  <button class="mbar__btn mbar__btn--primary" type="button" data-mbar-cart data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16l-2 11H6L4 9Z"/><path d="M8 9c0-3 1.8-5 4-5s4 2 4 5"/></svg><span data-mbar-cart-label>View order</span></button>
+  <a class="mbar__btn" href="#reserve">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>Book</a>
+  <a class="mbar__btn" href="tel:+15555550100" data-tel>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+</nav>
+<button class="to-top" type="button" data-to-top hidden>Back to top</button>
+</body>
+</html>

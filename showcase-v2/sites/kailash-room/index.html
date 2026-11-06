@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Kailash Room | Book a table for the evening</title>
+<meta name="description" content="Book a table, see the Sabha tasting menu, or order for pickup.">
+<meta name="theme-color" content="#0f1430">
+<link rel="icon" href="data:,">
+<link rel="preload" as="image" href="images/creamy-curry-spices-hero-800.webp" imagesrcset="images/creamy-curry-spices-hero-400.webp 400w, images/creamy-curry-spices-hero-800.webp 800w, images/creamy-curry-spices-hero-1600.webp 1600w" imagesizes="100vw" fetchpriority="high">
+<link rel="stylesheet" href="../../shared/base.css">
+<link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
+<script type="module" src="../../shared/core.js"></script>
+<script type="module" src="kr.js"></script>
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-header>
+  <div class="site-header__inner container">
+    <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true"></span><span data-site="name">The Kailash Room</span></a>
+    <nav class="site-nav" id="site-nav" data-nav aria-label="Main">
+      <ul>
+        <li><a href="#sabha">Tasting menu</a></li>
+        <li><a href="menu.html">Order online</a></li>
+        <li><a href="#visit">Hours &amp; location</a></li>
+        <li><a href="#reserve">Reservations</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <a class="btn btn--primary btn--sm header-book" href="#reserve">Book a table</a>
+      <button class="cart-btn" type="button" data-cart-open aria-controls="cart-drawer" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-btn__text vh">Cart</span>
+        <span class="badge" data-cart-count>0</span><span class="vh" data-cart-count-label> items</span>
+      </button>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+        <span class="vh">Site navigation</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero" aria-labelledby="hero-title">
+    <picture class="hero__media">
+      <img src="images/creamy-curry-spices-hero-800.webp"
+           srcset="images/creamy-curry-spices-hero-400.webp 400w, images/creamy-curry-spices-hero-800.webp 800w, images/creamy-curry-spices-hero-1600.webp 1600w"
+           sizes="100vw" width="1600" height="1066" fetchpriority="high" decoding="async"
+           alt="A creamy orange curry in a brass-handled pan, surrounded by star anise, cardamom, bay leaf and dried chilli on a dark blue surface">
+    </picture>
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <p class="hero__kicker"><span lang="ne">नमस्ते</span> <span class="hero__kicker-sep" aria-hidden="true">·</span> Evenings only, Tuesday to Sunday</p>
+        <h1 id="hero-title"><span class="hero__line">An evening of</span> <em>Himalayan spice</em> <span class="hero__line">and the tandoor.</span></h1>
+        <p class="hero__lede">Indo-Nepali cooking, served slowly. Reserve a table for the Sabha tasting menu or dine à la carte.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary btn--lg" href="#reserve">Book a table</a>
+          <a class="btn btn--quiet" href="menu.html">Order for pickup <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="hero__note open-status" data-open-status>Opening hours</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="infobar" aria-label="Opening status and contact">
+    <div class="container infobar__inner">
+      <p class="open-status" data-open-status>Opening hours</p>
+      <p><span class="vh">Address: </span><span data-site="contact.address">[address]</span></p>
+      <p><a href="tel:+15555550142" data-tel>Call <span data-site="contact.phone">[phone]</span></a></p>
+      <p><a href="#map" data-directions>Get directions</a></p>
+    </div>
+  </section>
+
+  <section class="reserve-sec" id="reserve" aria-labelledby="reserve-title">
+    <div class="container reserve">
+      <div class="reserve__intro">
+        <p class="eyebrow">Reservations</p>
+        <h2 id="reserve-title">Reserve your table</h2>
+        <p class="reserve__lede">Choose an evening, a time and your party. You will get a reference straight away.</p>
+        <ol class="reserve__steps" role="list">
+          <li><span class="numeral" aria-hidden="true">I</span><span>Pick the evening and time</span></li>
+          <li><span class="numeral" aria-hidden="true">II</span><span>Tell us who is coming</span></li>
+          <li><span class="numeral" aria-hidden="true">III</span><span>Receive your reference</span></li>
+        </ol>
+        <p class="small reserve__call">Parties of more than 8, or private dining: call <a href="tel:+15555550142" data-tel><span data-site="contact.phone">[phone]</span></a>.</p>
+      </div>
+      <div class="reserve__card">
+        <form id="reserve-form" class="form panel" data-reserve novalidate aria-labelledby="reserve-title">
+          <div class="error-summary" data-error-summary tabindex="-1" hidden></div>
+          <div class="form-row form-row--3">
+            <div class="field"><label for="r-date">Evening</label><input id="r-date" name="r-date" type="date" required></div>
+            <div class="field"><label for="r-time">Time</label><select id="r-time" name="r-time" required></select></div>
+            <div class="field"><label for="r-party">Guests</label><select id="r-party" name="r-party" required></select></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="r-name">Name</label><input id="r-name" name="r-name" type="text" autocomplete="name" minlength="2" required></div>
+            <div class="field"><label for="r-phone">Phone</label><input id="r-phone" name="r-phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+          </div>
+          <div class="field"><label for="r-email">Email <span class="optional">(optional)</span></label><input id="r-email" name="r-email" type="email" autocomplete="email"></div>
+          <div class="field"><label for="r-notes">Notes <span class="optional">(optional)</span></label><textarea id="r-notes" name="r-notes" maxlength="300" rows="2" aria-describedby="r-notes-hint"></textarea><p class="hint" id="r-notes-hint">Allergies, an occasion, the Sabha tasting menu.</p></div>
+          <button class="btn btn--primary btn--block btn--lg" type="submit">Request this table</button>
+          <p class="demo-note">Demo only: no booking is made and nothing is sent.</p>
+        </form>
+        <div class="panel confirm" data-reserve-confirm hidden>
+          <p class="eyebrow">Thank you</p>
+          <h3 data-reserve-confirm-heading tabindex="-1">Your table request is in</h3>
+          <p>Booking reference <strong data-reserve-ref></strong></p>
+          <p data-reserve-summary></p>
+          <p class="demo-note">Demo only: no booking was made and nothing was sent.</p>
+          <button class="btn btn--secondary" type="button" data-reserve-again>Make another booking</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section sabha" id="sabha" aria-labelledby="sabha-title">
+    <div class="container">
+      <div class="sabha__head">
+        <p class="eyebrow">The tasting menu</p>
+        <h2 id="sabha-title">Sabha <span class="sabha__sub">a gathering, in courses</span></h2>
+        <p class="sabha__lede">Two set menus, served to the whole table, dine-in only. Courses change with the kitchen; this is a sample.</p>
+      </div>
+      <div class="sabha__grid">
+        <article class="set-card" aria-labelledby="set-1">
+          <p class="set-card__count" aria-hidden="true">05</p>
+          <h3 id="set-1">Sabha</h3>
+          <p class="set-card__meta">Five courses <span aria-hidden="true">·</span> <strong>$78</strong> per guest</p>
+          <ol class="set-card__courses">
+            <li>Momo, timur achar</li>
+            <li>Chicken choila</li>
+            <li>Tandoori lamb chop, mint</li>
+            <li>Butter chicken, jimbu dal, saffron basmati, naan</li>
+            <li>Gulab jamun</li>
+          </ol>
+          <a class="btn btn--secondary" href="#reserve">Reserve for Sabha</a>
+        </article>
+        <article class="set-card set-card--veg" aria-labelledby="set-2">
+          <p class="set-card__count" aria-hidden="true">05</p>
+          <h3 id="set-2">Sabha, vegetarian</h3>
+          <p class="set-card__meta">Five courses <span aria-hidden="true">·</span> <strong>$68</strong> per guest</p>
+          <ol class="set-card__courses">
+            <li>Samosa, tamarind and mint</li>
+            <li>Vegetable momo, timur achar</li>
+            <li>Timur paneer tikka</li>
+            <li>Jimbu dal, saffron basmati, coriander naan</li>
+            <li>Gulab jamun</li>
+          </ol>
+          <a class="btn btn--secondary" href="#reserve">Reserve for Sabha</a>
+        </article>
+        <aside class="pairing" aria-labelledby="pair-title">
+          <img src="images/spiced-milk-tea-400.webp" srcset="images/spiced-milk-tea-400.webp 400w, images/spiced-milk-tea-800.webp 800w" sizes="(min-width: 60em) 18vw, 40vw"
+               width="400" height="600" loading="lazy" decoding="async" alt="Milky tea in a ceramic cup topped with cinnamon sticks, star anise and rose petals">
+          <div>
+            <p class="eyebrow">Chai pairing</p>
+            <h3 id="pair-title">Three teas through the meal</h3>
+            <p>A spiced masala chai, a plain milk chiya and a lighter tea with the sweet course. <strong>+$16</strong> per guest. [Tea list: client to confirm]</p>
+          </div>
+        </aside>
+      </div>
+      <p class="small muted sabha__foot">Sample prices. Tell us about allergies when you book; the kitchen confirms what it can adapt. [Allergy policy: client to supply]</p>
+    </div>
+  </section>
+
+  <section class="section signature" id="signature" aria-labelledby="sig-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Take the evening home</p>
+          <h2 id="sig-title">Signatures for pickup</h2>
+        </div>
+        <a class="btn btn--quiet" href="menu.html">Full pickup menu <span aria-hidden="true">→</span></a>
+      </div>
+      <div data-signature data-limit="4"></div>
+    </div>
+  </section>
+
+  <section class="section spice" id="spice" aria-labelledby="spice-title">
+    <div class="container spice__grid">
+      <figure class="spice__media">
+        <img src="images/whole-spices-dark-800.webp" srcset="images/whole-spices-dark-400.webp 400w, images/whole-spices-dark-800.webp 800w" sizes="(min-width: 56em) 45vw, 92vw"
+             width="800" height="533" loading="lazy" decoding="async" alt="Whole spices, cinnamon, cloves and nutmeg, on a dark textured surface">
+        <figcaption class="small">Whole spices</figcaption>
+      </figure>
+      <div class="spice__copy">
+        <p class="eyebrow">The spice shelf</p>
+        <h2 id="spice-title">Two Himalayan notes</h2>
+        <dl class="spice__list">
+          <div><dt>Timur</dt><dd>A Himalayan pepper, a relative of Sichuan pepper, with a citrus aroma and a gentle tingle. It lifts the achar, the choila and the paneer tikka.</dd></div>
+          <div><dt>Jimbu</dt><dd>A dried Himalayan herb of the onion family. Fried briefly in ghee, it gives the dal a soft, savoury, garlic-chive note.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section room" id="story" aria-labelledby="story-title">
+    <div class="container room__grid">
+      <div class="room__copy">
+        <p class="eyebrow">The room</p>
+        <h2 id="story-title">Candlelight, linen, an unhurried table</h2>
+        <p class="placeholder">[owner story: client to supply]</p>
+        <p class="placeholder">[Guest reviews: client to supply]</p>
+        <a class="btn btn--primary" href="#reserve">Book a table</a>
+      </div>
+      <figure class="room__media">
+        <img src="images/candlelit-dining-room-800.webp" srcset="images/candlelit-dining-room-400.webp 400w, images/candlelit-dining-room-800.webp 800w" sizes="(min-width: 56em) 55vw, 92vw"
+             width="800" height="533" loading="lazy" decoding="async" alt="A dim dining room with one table laid with a white cloth, tall candles and glasses">
+        <figcaption class="small">The room</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section visit-sec" id="visit" aria-labelledby="visit-title">
+    <div class="container visit">
+      <div class="stack">
+        <p class="eyebrow">Visit</p>
+        <h2 id="visit-title">Hours &amp; location</h2>
+        <p class="open-status" data-open-status>Opening hours</p>
+        <div data-hours></div>
+      </div>
+      <div class="stack">
+        <address class="contact">
+          <span data-site="contact.address">[address]</span><br>
+          <a href="tel:+15555550142" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+          <span data-site="contact.email">[email]</span>
+        </address>
+        <div class="map-ph" id="map">[map]<br>Map: client to supply (no external embed)</div>
+        <a class="btn btn--secondary" href="#map" data-directions>Get directions</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div class="stack">
+      <p class="footer__brand" data-site="name">The Kailash Room</p>
+      <p class="open-status" data-open-status>Opening hours</p>
+      <address class="contact">
+        <span data-site="contact.address">[address]</span><br>
+        <a href="tel:+15555550142" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+        <span data-site="contact.email">[email]</span>
+      </address>
+    </div>
+    <nav aria-label="Footer">
+      <ul class="footer__links">
+        <li><a href="#reserve">Book a table</a></li>
+        <li><a href="#sabha">Sabha tasting menu</a></li>
+        <li><a href="menu.html">Order for pickup</a></li>
+        <li><a href="#visit">Hours &amp; location</a></li>
+      </ul>
+    </nav>
+    <div class="stack">
+      <p class="small">Order direct for pickup. Also on <span data-delivery-apps>[Delivery app 1] · [Delivery app 2]</span> (links: client to supply).</p>
+    </div>
+  </div>
+  <div class="container footer__legal small">
+    <p>Design concept by Website Studio.</p>
+    <p>&copy; <span data-year>2026</span> <span data-site="name">The Kailash Room</span></p>
+  </div>
+</footer>
+
+<nav class="mbar" data-mobile-bar aria-label="Quick actions">
+  <a class="mbar__btn mbar__btn--primary mbar__btn--book" href="#reserve">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>Book</a>
+  <a class="mbar__btn" href="menu.html" data-mbar-order>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>Pickup</a>
+  <button class="mbar__btn" type="button" data-mbar-cart data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span data-mbar-cart-label>View order</span></button>
+  <a class="mbar__btn mbar__btn--icon" href="tel:+15555550142" data-tel aria-label="Call">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span class="mbar__lbl">Call</span></a>
+</nav>
+<button class="to-top" type="button" data-to-top hidden>Back to top</button>
+</body>
+</html>

@@ -38,20 +38,24 @@ h1 em{font-style:italic;color:var(--accent)}
 .filters button{font:inherit;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:99px;padding:9px 16px;cursor:pointer;min-height:44px}
 .filters button[aria-pressed="true"]{background:var(--text);color:#15110d;border-color:var(--text);font-weight:700}
 .grid{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr))}
-.card a{display:flex;flex-direction:column;height:100%;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s}
-.card a:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:0 18px 40px rgb(0 0 0/.45)}
+.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s}
+.card:hover,.card:focus-within{transform:translateY(-5px);border-color:var(--accent);box-shadow:0 18px 40px rgb(0 0 0/.45)}
+.card>a{display:flex;flex-direction:column;flex:1;text-decoration:none}
+.acts{display:flex;gap:8px;padding:0 20px 18px}
+.acts a{flex:1;text-align:center;text-decoration:none;font-size:.88rem;font-weight:600;padding:0 10px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:99px;color:var(--text)}
+.acts a:hover{border-color:var(--accent);background:rgb(232 163 23/.10)}
 .shot{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;background:#000}
 .shot .d{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .6s}
-.card a:hover .shot .d{transform:scale(1.04)}
+.card:hover .shot .d{transform:scale(1.04)}
 .shot .m{position:absolute;right:14px;bottom:-26px;width:21%;border-radius:14px;border:3px solid #0b0907;box-shadow:0 10px 26px rgb(0 0 0/.6);transition:transform .4s;height:auto;aspect-ratio:312/675;object-fit:cover}
-.card a:hover .shot .m{transform:translateY(-14px)}
+.card:hover .shot .m{transform:translateY(-14px)}
 .body{display:flex;flex-direction:column;gap:2px;padding:18px 20px 20px;flex:1}
 .kind{color:var(--accent);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
 .name{font:600 1.5rem/1.2 Georgia,serif;margin:.15em 0 .2em}
 .line{color:var(--muted);font-size:.95rem;flex:1}
 .foot{display:flex;align-items:center;justify-content:space-between;margin-top:16px}
 .chips{display:flex}.chips i{width:22px;height:22px;border-radius:50%;border:2px solid var(--surface);margin-right:-7px;display:block}
-.go{font-weight:700;font-size:.92rem}.go b{display:inline-block;transition:transform .25s}.card a:hover .go b{transform:translateX(5px)}
+.go{font-weight:700;font-size:.92rem}.go b{display:inline-block;transition:transform .25s}.card:hover .go b{transform:translateX(5px)}
 .grid--2d{grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr))}
 .how{margin-top:64px;padding:44px 0;border-top:1px solid var(--line);background:linear-gradient(180deg,transparent,rgb(232 163 23/.05))}
 .how h2{font:600 clamp(1.6rem,4vw,2.3rem) Georgia,serif;margin:0 0 22px}
@@ -73,8 +77,8 @@ footer a{color:var(--text)}
 <section class="hero"><div class="wrap">
 <p class="eyebrow">Sample designs · Showcase</p>
 <h1>Websites that turn <em>visitors</em> into orders.</h1>
-<p class="lede">Ten restaurant sites, each a different brand on the same proven path from hungry visitor to paid order or booked table. Plus five editorial and motion sites from our first round. Open any card, then try it on a phone.</p>
-<div class="cta"><a class="btn btn--p" href="#restaurants">See the restaurants</a><a class="btn btn--g" href="#editorial">The first five (2D)</a></div>
+<p class="lede">Ten restaurant sites, each a different brand on the same proven path from hungry visitor to paid order or booked table. Plus five editorial and motion sites from our first round. Open any card, or flip a site between laptop and phone view.</p>
+<div class="cta"><a class="btn btn--p" href="#restaurants">See the restaurants</a><a class="btn btn--g" href="preview.html?site=cinder-and-salt&view=phone">Try phone view</a><a class="btn btn--g" href="#editorial">The first five (2D)</a></div>
 <ul class="stats" aria-label="At a glance"><li><b>10</b><span>restaurant sites</span></li><li><b>5</b><span>editorial and motion sites</span></li><li><b>8</b><span>taps from landing to order, on a phone</span></li><li><b>164</b><span>stock photos, all credited</span></li></ul>
 </div></section>
 <div class="wrap" id="sites">
@@ -85,66 +89,81 @@ footer a{color:var(--text)}
 <li class="card" data-group="restaurants"><a href="sites/cinder-and-salt/index.html" aria-labelledby="t-cinder-and-salt">
 <span class="shot"><img class="d" src="hub/thumbs/cinder-and-salt-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"><img class="m" src="hub/thumbs/cinder-and-salt-m.jpg" alt="" width="312" height="675" loading="lazy" decoding="async"></span>
 <span class="body"><span class="kind">Wood-fire steakhouse</span><span class="name" id="t-cinder-and-salt">Cinder &amp; Salt</span><span class="line">Dark, ember and brass. A cuts table that orders itself.</span>
-<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#0d0b0a"></i><i style="background:#ec6a2c"></i><i style="background:#f1e9de"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#0d0b0a"></i><i style="background:#ec6a2c"></i><i style="background:#f1e9de"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a>
+<span class="acts"><a href="preview.html?site=cinder-and-salt&view=laptop" aria-label="Preview Cinder &amp; Salt on a laptop">Laptop view</a><a href="preview.html?site=cinder-and-salt&view=phone" aria-label="Preview Cinder &amp; Salt on a phone">Phone view</a></span></li>
 <li class="card" data-group="restaurants"><a href="sites/mustang-hearth/index.html" aria-labelledby="t-mustang-hearth">
 <span class="shot"><img class="d" src="hub/thumbs/mustang-hearth-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"><img class="m" src="hub/thumbs/mustang-hearth-m.jpg" alt="" width="312" height="675" loading="lazy" decoding="async"></span>
 <span class="body"><span class="kind">Indo-Nepali kitchen</span><span class="name" id="t-mustang-hearth">Mustang Hearth</span><span class="line">Saffron panel, block-print pattern; momo bar and thali strip.</span>
-<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#2a2420"></i><i style="background:#e8a317"></i><i style="background:#f6ecd8"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#2a2420"></i><i style="background:#e8a317"></i><i style="background:#f6ecd8"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a>
+<span class="acts"><a href="preview.html?site=mustang-hearth&view=laptop" aria-label="Preview Mustang Hearth on a laptop">Laptop view</a><a href="preview.html?site=mustang-hearth&view=phone" aria-label="Preview Mustang Hearth on a phone">Phone view</a></span></li>
 <li class="card" data-group="restaurants"><a href="sites/butter-and-bloom/index.html" aria-labelledby="t-butter-and-bloom">
 <span class="shot"><img class="d" src="hub/thumbs/butter-and-bloom-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"><img class="m" src="hub/thumbs/butter-and-bloom-m.jpg" alt="" width="312" height="675" loading="lazy" decoding="async"></span>
 <span class="body"><span class="kind">Bakery and café</span><span class="name" id="t-butter-and-bloom">Butter &amp; Bloom</span><span class="line">Cream, butter and rose; pre-order for your next open day.</span>
-<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#f7efe0"></i><i style="background:#f2c94c"></i><i style="background:#c97b84"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#f7efe0"></i><i style="background:#f2c94c"></i><i style="background:#c97b84"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a>
+<span class="acts"><a href="preview.html?site=butter-and-bloom&view=laptop" aria-label="Preview Butter &amp; Bloom on a laptop">Laptop view</a><a href="preview.html?site=butter-and-bloom&view=phone" aria-label="Preview Butter &amp; Bloom on a phone">Phone view</a></span></li>
 <li class="card" data-group="restaurants"><a href="sites/olio-terrace/index.html" aria-labelledby="t-olio-terrace">
 <span class="shot"><img class="d" src="hub/thumbs/olio-terrace-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"><img class="m" src="hub/thumbs/olio-terrace-m.jpg" alt="" width="312" height="675" loading="lazy" decoding="async"></span>
 <span class="body"><span class="kind">Mediterranean taverna</span><span class="name" id="t-olio-terrace">Olio Terrace</span><span class="line">Whitewash and Aegean blue; build a mezze table.</span>
-<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#f6f3ec"></i><i style="background:#1f5f8b"></i><i style="background:#c2693f"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#f6f3ec"></i><i style="background:#1f5f8b"></i><i style="background:#c2693f"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a>
+<span class="acts"><a href="preview.html?site=olio-terrace&view=laptop" aria-label="Preview Olio Terrace on a laptop">Laptop view</a><a href="preview.html?site=olio-terrace&view=phone" aria-label="Preview Olio Terrace on a phone">Phone view</a></span></li>
 <li class="card" data-group="restaurants"><a href="sites/jasmine-lane/index.html" aria-labelledby="t-jasmine-lane">
 <span class="shot"><img class="d" src="hub/thumbs/jasmine-lane-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"><img class="m" src="hub/thumbs/jasmine-lane-m.jpg" alt="" width="312" height="675" loading="lazy" decoding="async"></span>
 <span class="body"><span class="kind">Tea house and dim sum</span><span class="name" id="t-jasmine-lane">Jasmine Lane</span><span class="line">Ink and jade; steamer-basket menu and tea pairings.</span>
-<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#f5f0e6"></i><i style="background:#23614d"></i><i style="background:#b8371f"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#f5f0e6"></i><i style="background:#23614d"></i><i style="background:#b8371f"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a>
+<span class="acts"><a href="preview.html?site=jasmine-lane&view=laptop" aria-label="Preview Jasmine Lane on a laptop">Laptop view</a><a href="preview.html?site=jasmine-lane&view=phone" aria-label="Preview Jasmine Lane on a phone">Phone view</a></span></li>
 <li class="card" data-group="restaurants"><a href="sites/hoshi-counter/index.html" aria-labelledby="t-hoshi-counter">
 <span class="shot"><img class="d" src="hub/thumbs/hoshi-counter-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"><img class="m" src="hub/thumbs/hoshi-counter-m.jpg" alt="" width="312" height="675" loading="lazy" decoding="async"></span>
 <span class="body"><span class="kind">Sushi and omakase</span><span class="name" id="t-hoshi-counter">Hoshi Counter</span><span class="line">Near-black, huge type; book a seat or order takeaway.</span>
-<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#14110f"></i><i style="background:#efe8d8"></i><i style="background:#c8341c"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#14110f"></i><i style="background:#efe8d8"></i><i style="background:#c8341c"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a>
+<span class="acts"><a href="preview.html?site=hoshi-counter&view=laptop" aria-label="Preview Hoshi Counter on a laptop">Laptop view</a><a href="preview.html?site=hoshi-counter&view=phone" aria-label="Preview Hoshi Counter on a phone">Phone view</a></span></li>
 <li class="card" data-group="restaurants"><a href="sites/fornace-pizza/index.html" aria-labelledby="t-fornace-pizza">
 <span class="shot"><img class="d" src="hub/thumbs/fornace-pizza-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"><img class="m" src="hub/thumbs/fornace-pizza-m.jpg" alt="" width="312" height="675" loading="lazy" decoding="async"></span>
 <span class="body"><span class="kind">Neapolitan pizzeria</span><span class="name" id="t-fornace-pizza">Fornace Pizza</span><span class="line">Poster type, tomato and basil; the fastest path to an order.</span>
-<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#f4ebdc"></i><i style="background:#c8321e"></i><i style="background:#3a7a3a"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#f4ebdc"></i><i style="background:#c8321e"></i><i style="background:#3a7a3a"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a>
+<span class="acts"><a href="preview.html?site=fornace-pizza&view=laptop" aria-label="Preview Fornace Pizza on a laptop">Laptop view</a><a href="preview.html?site=fornace-pizza&view=phone" aria-label="Preview Fornace Pizza on a phone">Phone view</a></span></li>
 <li class="card" data-group="restaurants"><a href="sites/le-petit-marais/index.html" aria-labelledby="t-le-petit-marais">
 <span class="shot"><img class="d" src="hub/thumbs/le-petit-marais-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"><img class="m" src="hub/thumbs/le-petit-marais-m.jpg" alt="" width="312" height="675" loading="lazy" decoding="async"></span>
 <span class="body"><span class="kind">French bistro</span><span class="name" id="t-le-petit-marais">Le Petit Marais</span><span class="line">Burgundy and brass; menu du jour card, à emporter.</span>
-<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#4a1420"></i><i style="background:#b8913f"></i><i style="background:#f3e9d8"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#4a1420"></i><i style="background:#b8913f"></i><i style="background:#f3e9d8"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a>
+<span class="acts"><a href="preview.html?site=le-petit-marais&view=laptop" aria-label="Preview Le Petit Marais on a laptop">Laptop view</a><a href="preview.html?site=le-petit-marais&view=phone" aria-label="Preview Le Petit Marais on a phone">Phone view</a></span></li>
 <li class="card" data-group="restaurants"><a href="sites/casa-marigold/index.html" aria-labelledby="t-casa-marigold">
 <span class="shot"><img class="d" src="hub/thumbs/casa-marigold-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"><img class="m" src="hub/thumbs/casa-marigold-m.jpg" alt="" width="312" height="675" loading="lazy" decoding="async"></span>
 <span class="body"><span class="kind">Modern Mexican</span><span class="name" id="t-casa-marigold">Casa Marigold</span><span class="line">Marigold, teal and terracotta; taco-night builder.</span>
-<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#f2a900"></i><i style="background:#0f7a78"></i><i style="background:#c25a3a"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#f2a900"></i><i style="background:#0f7a78"></i><i style="background:#c25a3a"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a>
+<span class="acts"><a href="preview.html?site=casa-marigold&view=laptop" aria-label="Preview Casa Marigold on a laptop">Laptop view</a><a href="preview.html?site=casa-marigold&view=phone" aria-label="Preview Casa Marigold on a phone">Phone view</a></span></li>
 <li class="card" data-group="restaurants"><a href="sites/green-table/index.html" aria-labelledby="t-green-table">
 <span class="shot"><img class="d" src="hub/thumbs/green-table-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"><img class="m" src="hub/thumbs/green-table-m.jpg" alt="" width="312" height="675" loading="lazy" decoding="async"></span>
 <span class="body"><span class="kind">Brunch and bowls</span><span class="name" id="t-green-table">Green Table</span><span class="line">Sage, oat and citrus; build-your-bowl strip.</span>
-<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#dfe6d3"></i><i style="background:#f1ead8"></i><i style="background:#e8a317"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#dfe6d3"></i><i style="background:#f1ead8"></i><i style="background:#e8a317"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a>
+<span class="acts"><a href="preview.html?site=green-table&view=laptop" aria-label="Preview Green Table on a laptop">Laptop view</a><a href="preview.html?site=green-table&view=phone" aria-label="Preview Green Table on a phone">Phone view</a></span></li>
 </ul></section>
 <section class="sec" id="editorial" data-sec="editorial"><p class="eyebrow">Round one · 2D</p><h2>The first five</h2><p class="sub">Editorial layouts and motion for other kinds of business: fine dining, a spa, a gym, an architecture studio and a technology consultancy.</p>
 <ul class="grid grid--2d">
 <li class="card card--wide" data-group="editorial"><a href="sites-2d/ember-table/index.html" aria-labelledby="t-ember-table">
 <span class="shot shot--only"><img class="d" src="hub/thumbs/ember-table-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"></span>
 <span class="body"><span class="kind">Fine dining</span><span class="name" id="t-ember-table">Ember &amp; Table</span><span class="line">Candle-lit; a pinned horizontal menu and a steam effect.</span>
-<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#12100e"></i><i style="background:#f0793a"></i><i style="background:#f3ece0"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#12100e"></i><i style="background:#f0793a"></i><i style="background:#f3ece0"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a>
+<span class="acts"><a href="preview.html?site=ember-table&view=laptop" aria-label="Preview Ember &amp; Table on a laptop">Laptop view</a><a href="preview.html?site=ember-table&view=phone" aria-label="Preview Ember &amp; Table on a phone">Phone view</a></span></li>
 <li class="card card--wide" data-group="editorial"><a href="sites-2d/lumiere-spa/index.html" aria-labelledby="t-lumiere-spa">
 <span class="shot shot--only"><img class="d" src="hub/thumbs/lumiere-spa-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"></span>
 <span class="body"><span class="kind">Luxury salon and spa</span><span class="name" id="t-lumiere-spa">Lumière Salon &amp; Spa</span><span class="line">Calm, light-filled rituals for hair, skin, body and nails.</span>
-<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#f6f1e7"></i><i style="background:#b8975a"></i><i style="background:#2a2a2a"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#f6f1e7"></i><i style="background:#b8975a"></i><i style="background:#2a2a2a"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a>
+<span class="acts"><a href="preview.html?site=lumiere-spa&view=laptop" aria-label="Preview Lumière Salon &amp; Spa on a laptop">Laptop view</a><a href="preview.html?site=lumiere-spa&view=phone" aria-label="Preview Lumière Salon &amp; Spa on a phone">Phone view</a></span></li>
 <li class="card card--wide" data-group="editorial"><a href="sites-2d/apex-forge/index.html" aria-labelledby="t-apex-forge">
 <span class="shot shot--only"><img class="d" src="hub/thumbs/apex-forge-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"></span>
 <span class="body"><span class="kind">Strength gym</span><span class="name" id="t-apex-forge">Apex Forge</span><span class="line">High-energy gym with superhero attitude and a 3D scene.</span>
-<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#0d1117"></i><i style="background:#ff5a1f"></i><i style="background:#f5f5f5"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#0d1117"></i><i style="background:#ff5a1f"></i><i style="background:#f5f5f5"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a>
+<span class="acts"><a href="preview.html?site=apex-forge&view=laptop" aria-label="Preview Apex Forge on a laptop">Laptop view</a><a href="preview.html?site=apex-forge&view=phone" aria-label="Preview Apex Forge on a phone">Phone view</a></span></li>
 <li class="card card--wide" data-group="editorial"><a href="sites-2d/northline-studio/index.html" aria-labelledby="t-northline-studio">
 <span class="shot shot--only"><img class="d" src="hub/thumbs/northline-studio-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"></span>
 <span class="body"><span class="kind">Architecture and real estate</span><span class="name" id="t-northline-studio">Northline Studio</span><span class="line">Editorial grid with 3D massing models.</span>
-<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#121212"></i><i style="background:#f3f1ec"></i><i style="background:#8a8a8a"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#121212"></i><i style="background:#f3f1ec"></i><i style="background:#8a8a8a"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a>
+<span class="acts"><a href="preview.html?site=northline-studio&view=laptop" aria-label="Preview Northline Studio on a laptop">Laptop view</a><a href="preview.html?site=northline-studio&view=phone" aria-label="Preview Northline Studio on a phone">Phone view</a></span></li>
 <li class="card card--wide" data-group="editorial"><a href="sites-2d/nova-labs/index.html" aria-labelledby="t-nova-labs">
 <span class="shot shot--only"><img class="d" src="hub/thumbs/nova-labs-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"></span>
 <span class="body"><span class="kind">Technology consulting</span><span class="name" id="t-nova-labs">Nova Labs</span><span class="line">Dark glass interface with a 3D hero.</span>
-<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#07060f"></i><i style="background:#8b5cf6"></i><i style="background:#e8e6ff"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#07060f"></i><i style="background:#8b5cf6"></i><i style="background:#e8e6ff"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a>
+<span class="acts"><a href="preview.html?site=nova-labs&view=laptop" aria-label="Preview Nova Labs on a laptop">Laptop view</a><a href="preview.html?site=nova-labs&view=phone" aria-label="Preview Nova Labs on a phone">Phone view</a></span></li>
 </ul></section>
 </div>
 <section class="how" id="how"><div class="wrap"><h2>What every restaurant site does</h2>

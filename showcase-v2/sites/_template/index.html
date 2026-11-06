@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sample Kitchen | Order online or book a table (sample design)</title>
+<meta name="description" content="Sample restaurant website by Website Studio. Order for pickup or delivery, or book a table. Menu and prices are samples.">
+<meta name="theme-color" content="#faf8f5">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../../shared/base.css">
+<link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
+<script type="module" src="../../shared/core.js"></script>
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-header>
+  <div class="site-header__inner container">
+    <a class="brand" href="index.html"><span data-site="name">Sample Kitchen</span></a>
+    <nav class="site-nav" id="site-nav" data-nav aria-label="Main">
+      <ul>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="#story">Our story</a></li>
+        <li><a href="#visit">Hours &amp; location</a></li>
+        <li><a href="#reserve">Book a table</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <a class="btn btn--primary btn--sm header-order" href="menu.html">Order online</a>
+      <button class="cart-btn" type="button" data-cart-open aria-controls="cart-drawer" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-btn__text">Cart</span>
+        <span class="badge" data-cart-count>0</span><span class="vh" data-cart-count-label> items</span>
+      </button>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <span class="vh">Site navigation</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow"><span data-site="cuisine">Modern seasonal</span> kitchen</p>
+        <h1 id="hero-title" data-site="tagline">Seasonal plates, cooked to order.</h1>
+        <p class="lede">Order for pickup or delivery in a few taps, or book a table for tonight. [Short promise: client to edit]</p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary" href="menu.html">Order online</a>
+          <a class="btn btn--secondary" href="#reserve">Book a table</a>
+        </div>
+        <p class="small muted">Order direct with us and skip the app fees. [Wording: client to edit]</p>
+      </div>
+      <div class="hero__media">
+        <div class="hero__ph" role="img" aria-label="Placeholder for the hero food photo (photo to come)"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="infobar" aria-label="Opening status and contact">
+    <div class="container infobar__inner">
+      <p class="open-status" data-open-status>Opening hours</p>
+      <p><span class="vh">Address: </span><span data-site="contact.address">[address]</span></p>
+      <p><a href="tel:+15555550100" data-tel>Call <span data-site="contact.phone">[phone]</span></a></p>
+      <p><a href="#map" data-directions>Get directions</a></p>
+    </div>
+  </section>
+
+  <section class="section" id="signature" aria-labelledby="sig-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">From the kitchen</p>
+          <h2 id="sig-title">Signature dishes</h2>
+        </div>
+        <a class="btn btn--secondary" href="menu.html">See the full menu</a>
+      </div>
+      <div data-signature data-limit="4"></div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="story" aria-labelledby="story-title">
+    <div class="container story">
+      <div class="story__media"><div class="story__ph" role="img" aria-label="Placeholder for a photo of the dining room (photo to come)"></div></div>
+      <div class="stack">
+        <p class="eyebrow">Our story</p>
+        <h2 id="story-title">A neighbourhood kitchen</h2>
+        <p>[Your story: client to supply. Two or three sentences about who cooks here and what matters to you.]</p>
+        <p class="placeholder">[Guest reviews: client to supply]</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="visit" aria-labelledby="visit-title">
+    <div class="container visit">
+      <div class="stack">
+        <p class="eyebrow">Visit</p>
+        <h2 id="visit-title">Hours &amp; location</h2>
+        <p class="open-status" data-open-status>Opening hours</p>
+        <div data-hours></div>
+      </div>
+      <div class="stack">
+        <address class="contact">
+          <span data-site="contact.address">[address]</span><br>
+          <a href="tel:+15555550100" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+          <span data-site="contact.email">[email]</span>
+        </address>
+        <div class="map-ph" id="map">[map]<br>Map: client to supply (no external embed)</div>
+        <a class="btn btn--secondary" href="#map" data-directions>Get directions</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="reserve" aria-labelledby="reserve-title">
+    <div class="container reserve">
+      <div class="stack">
+        <p class="eyebrow">Reservations</p>
+        <h2 id="reserve-title">Book a table</h2>
+        <p class="muted">Pick a time and we will hold your table. For groups larger than 8, please call <span data-site="contact.phone">[phone]</span>.</p>
+      </div>
+      <div>
+        <form id="reserve-form" class="form panel" data-reserve novalidate aria-labelledby="reserve-title">
+          <div class="error-summary" data-error-summary tabindex="-1" hidden></div>
+          <div class="form-row">
+            <div class="field"><label for="r-date">Date</label><input id="r-date" name="r-date" type="date" required></div>
+            <div class="field"><label for="r-time">Time</label><select id="r-time" name="r-time" required></select></div>
+            <div class="field"><label for="r-party">Party size</label><select id="r-party" name="r-party" required></select></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="r-name">Name</label><input id="r-name" name="r-name" type="text" autocomplete="name" minlength="2" required></div>
+            <div class="field"><label for="r-phone">Phone</label><input id="r-phone" name="r-phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+          </div>
+          <div class="field"><label for="r-email">Email <span class="optional">(optional)</span></label><input id="r-email" name="r-email" type="email" autocomplete="email"></div>
+          <div class="field"><label for="r-notes">Notes <span class="optional">(optional)</span></label><textarea id="r-notes" name="r-notes" maxlength="300" rows="3" aria-describedby="r-notes-hint"></textarea><p class="hint" id="r-notes-hint">Allergies, high chair, occasion.</p></div>
+          <button class="btn btn--primary btn--block" type="submit">Request table</button>
+          <p class="demo-note">Demo only: no booking is made and nothing is sent.</p>
+        </form>
+        <div class="panel confirm" data-reserve-confirm hidden>
+          <h3 data-reserve-confirm-heading tabindex="-1">Table request received</h3>
+          <p>Booking reference <strong data-reserve-ref></strong></p>
+          <p data-reserve-summary></p>
+          <p class="demo-note">Demo only: no booking was made and nothing was sent.</p>
+          <button class="btn btn--secondary" type="button" data-reserve-again>Make another booking</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div class="stack">
+      <p class="footer__brand" data-site="name">Sample Kitchen</p>
+      <p class="open-status" data-open-status>Opening hours</p>
+      <address class="contact">
+        <span data-site="contact.address">[address]</span><br>
+        <a href="tel:+15555550100" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+        <span data-site="contact.email">[email]</span>
+      </address>
+    </div>
+    <nav aria-label="Footer">
+      <ul class="footer__links">
+        <li><a href="menu.html">Order online</a></li>
+        <li><a href="#reserve">Book a table</a></li>
+        <li><a href="#visit">Hours &amp; location</a></li>
+      </ul>
+    </nav>
+    <div class="stack">
+      <p class="small">Prefer an app? Also on <span data-delivery-apps>[Delivery app 1] · [Delivery app 2]</span> (links: client to supply).</p>
+    </div>
+  </div>
+  <div class="container footer__legal small">
+    <p>Sample design by Website Studio. Menu and prices are samples. Photos are stock or placeholders.</p>
+    <p>&copy; <span data-year>2026</span> <span data-site="name">Sample Kitchen</span> (sample business)</p>
+  </div>
+</footer>
+
+<nav class="mbar" data-mobile-bar aria-label="Quick actions">
+  <a class="mbar__btn mbar__btn--primary" href="menu.html" data-mbar-order>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>Order</a>
+  <button class="mbar__btn mbar__btn--primary" type="button" data-mbar-cart data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span data-mbar-cart-label>View order</span></button>
+  <a class="mbar__btn" href="#reserve">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>Book</a>
+  <a class="mbar__btn" href="tel:+15555550100" data-tel>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+</nav>
+<button class="to-top" type="button" data-to-top hidden>Back to top</button>
+</body>
+</html>

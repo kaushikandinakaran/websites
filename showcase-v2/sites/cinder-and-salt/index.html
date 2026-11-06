@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cinder &amp; Salt | Wood-fire steakhouse: order online or book a table (sample design)</title>
+<meta name="description" content="Sample steakhouse website by Website Studio. Steaks cooked over live fire for pickup or delivery, or book a table. Menu, prices and wording are samples.">
+<meta name="theme-color" content="#0d0b0a">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../../shared/base.css">
+<link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
+<script type="module" src="../../shared/core.js"></script>
+<script type="module" src="cinder.js"></script>
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header site-header--over" data-header>
+  <div class="site-header__inner container">
+    <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true"></span><span data-site="name">Cinder &amp; Salt</span></a>
+    <nav class="site-nav" id="site-nav" data-nav aria-label="Main">
+      <ul>
+        <li><a href="menu.html">Menu</a></li>
+        <li class="nav-wide"><a href="#cuts">The cuts</a></li>
+        <li class="nav-wide"><a href="#story">The fire</a></li>
+        <li><a href="#visit">Hours &amp; location</a></li>
+        <li><a href="#reserve">Book a table</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <a class="btn btn--primary btn--sm header-order" href="menu.html">Order online</a>
+      <button class="cart-btn" type="button" data-cart-open aria-controls="cart-drawer" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-btn__text">Order</span>
+        <span class="badge" data-cart-count>0</span><span class="vh" data-cart-count-label> items</span>
+      </button>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+        <span class="vh">Site navigation</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__media">
+      <img class="hero__img" src="images/01-ribeye-over-flame-800.webp"
+           srcset="images/01-ribeye-over-flame-800.webp 800w, images/01-ribeye-over-flame-1600.webp 1600w"
+           sizes="100vw" width="1600" height="1066" fetchpriority="high" decoding="async"
+           alt="A bone-in steak searing on a grill with flames rising behind it">
+    </div>
+    <div class="container hero__inner">
+      <p class="hero__chip"><span class="open-status" data-open-status>Opening hours</span></p>
+      <p class="eyebrow hero__eyebrow"><span data-site="cuisine">Wood-fire steakhouse</span> <span aria-hidden="true">·</span> <span>[neighbourhood]</span></p>
+      <h1 id="hero-title" class="hero__title" data-site="tagline">Live fire. Honest cuts.</h1>
+      <p class="hero__lede">Steaks cooked over live embers, ready for pickup or delivery tonight, or served at your table by the fire.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--primary btn--lg" href="menu.html">Order online</a>
+        <a class="btn btn--secondary btn--lg" href="#reserve">Book a table</a>
+      </div>
+      <ul class="hero__facts" role="list">
+        <li><span class="hero__fact-k">Pickup</span> about 25 min</li>
+        <li><span class="hero__fact-k">Delivery</span> about 50 min</li>
+        <li><span class="hero__fact-k">Find us</span> <span data-site="contact.address">[address]</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="infobar" aria-label="Opening status and contact">
+    <div class="container infobar__inner">
+      <p class="open-status" data-open-status>Opening hours</p>
+      <p><span class="vh">Address: </span><span data-site="contact.address">[address]</span></p>
+      <p><a href="tel:+15555550142" data-tel>Call <span data-site="contact.phone">[phone]</span></a></p>
+      <p><a href="#map" data-directions>Get directions</a></p>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>Striploin</span><span>Ribeye</span><span>Fillet</span><span>Hanger</span><span>T-bone for two</span><span>Tomahawk for two</span><span>Bone marrow</span><span>Lamb cutlets</span>
+      <span>Striploin</span><span>Ribeye</span><span>Fillet</span><span>Hanger</span><span>T-bone for two</span><span>Tomahawk for two</span><span>Bone marrow</span><span>Lamb cutlets</span>
+    </div>
+  </div>
+
+  <section class="section signature" id="signature" aria-labelledby="sig-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Order tonight</p>
+          <h2 id="sig-title">From the fire</h2>
+        </div>
+        <a class="link-arrow" href="menu.html">See the full menu <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <div data-signature data-limit="4"></div>
+    </div>
+  </section>
+
+  <section class="section cuts" id="cuts" aria-labelledby="cuts-title">
+    <div class="container">
+      <div class="cuts__head">
+        <p class="eyebrow">Steaks and cuts</p>
+        <h2 id="cuts-title">Choose your cut</h2>
+        <p class="muted">Every steak is cooked over the fire. Pick a cut, then choose doneness and sauces in your order.</p>
+      </div>
+      <div class="cuts__wrap" data-cuts>
+        <noscript><p>The cuts and ordering need JavaScript. See the <a href="menu.html">full menu</a> or call <a href="tel:+15555550142">[phone]</a>.</p></noscript>
+      </div>
+      <p class="small muted cuts__note">Weights are approximate samples [to confirm]. Sauces $4 each: green peppercorn or béarnaise.</p>
+    </div>
+  </section>
+
+  <section class="section story" id="story" aria-labelledby="story-title">
+    <div class="container story__grid">
+      <figure class="story__fig story__fig--a brighten">
+        <img src="images/06-tongs-over-flames-800.webp" srcset="images/06-tongs-over-flames-400.webp 400w, images/06-tongs-over-flames-800.webp 800w, images/06-tongs-over-flames-1600.webp 1600w"
+             sizes="(min-width: 60em) 52vw, 60vw" width="800" height="525" loading="lazy" decoding="async"
+             alt="A hand turning meat with steel tongs on a grill as a flame leaps up through the smoke">
+      </figure>
+      <div class="story__copy">
+        <p class="eyebrow">The fire</p>
+        <h2 id="story-title">Wood, salt and patience.</h2>
+        <p class="story__lede">Embers, good salt and a cook who knows when to wait. That is the whole idea.</p>
+        <p>[Your story: client to supply. Two or three sentences about who cooks here, where the beef comes from and what matters to you.]</p>
+        <ul class="trust" role="list">
+          <li class="placeholder">[Guest reviews: client to supply]</li>
+          <li class="placeholder">[Press mentions: client to supply]</li>
+          <li class="placeholder">[Beef supplier and farm: client to supply]</li>
+        </ul>
+      </div>
+      <figure class="story__fig story__fig--b brighten">
+        <img src="images/07-chef-slicing-steak-800.webp" srcset="images/07-chef-slicing-steak-400.webp 400w, images/07-chef-slicing-steak-800.webp 800w"
+             sizes="(min-width: 60em) 24vw, 60vw" width="800" height="1000" loading="lazy" decoding="async"
+             alt="A cook in black gloves slicing pink, medium-rare beef on a wooden board">
+      </figure>
+    </div>
+  </section>
+
+  <section class="room" aria-labelledby="room-title">
+    <figure class="room__media brighten">
+      <img src="images/05-brick-booth-800.webp" srcset="images/05-brick-booth-400.webp 400w, images/05-brick-booth-800.webp 800w, images/05-brick-booth-1600.webp 1600w"
+           sizes="100vw" width="1600" height="988" loading="lazy" decoding="async"
+           alt="Wooden booths against an exposed brick wall, lit low by two hanging lamps">
+    </figure>
+    <div class="container room__copy">
+      <p class="eyebrow">The dining room</p>
+      <h2 id="room-title">Low light, warm brick, a seat by the fire.</h2>
+      <p>A warm room for a long dinner, for two or for the whole group.</p>
+      <a class="btn btn--secondary" href="#reserve">Book a table</a>
+    </div>
+  </section>
+
+  <section class="section direct" aria-labelledby="direct-title">
+    <div class="container direct__inner">
+      <div>
+        <p class="eyebrow">Order direct</p>
+        <h2 id="direct-title">Straight from our grill to your door.</h2>
+        <p class="muted">Order with us and skip the app fees.</p>
+      </div>
+      <div class="direct__actions">
+        <a class="btn btn--primary btn--lg" href="menu.html">Start your order</a>
+        <p class="small muted">Prefer an app? Also on <span data-delivery-apps>[Delivery app 1] · [Delivery app 2]</span> (links: client to supply).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section visit" id="visit" aria-labelledby="visit-title">
+    <div class="container visit__grid">
+      <div class="stack">
+        <p class="eyebrow">Visit</p>
+        <h2 id="visit-title">Hours &amp; location</h2>
+        <p class="open-status" data-open-status>Opening hours</p>
+        <div data-hours></div>
+      </div>
+      <div class="stack">
+        <address class="contact">
+          <span data-site="contact.address">[address]</span><br>
+          <a href="tel:+15555550142" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+          <span data-site="contact.email">[email]</span>
+        </address>
+        <div class="map-ph" id="map">[map]<br>Map: client to supply (no external embed)</div>
+        <a class="btn btn--secondary" href="#map" data-directions>Get directions</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="reserve" id="reserve" aria-labelledby="reserve-title">
+    <div class="reserve__bg" aria-hidden="true">
+      <img src="images/04-dark-table-setting-800.webp" srcset="images/04-dark-table-setting-800.webp 800w, images/04-dark-table-setting-1600.webp 1600w"
+           sizes="100vw" width="1600" height="1066" loading="lazy" decoding="async" alt="">
+    </div>
+    <div class="container reserve__grid">
+      <div class="reserve__intro">
+        <p class="eyebrow">Reservations</p>
+        <h2 id="reserve-title">Book a table</h2>
+        <p>Pick a time and we will hold your table. For groups larger than 8, please call <span data-site="contact.phone">[phone]</span>.</p>
+      </div>
+      <div>
+        <form id="reserve-form" class="form panel" data-reserve novalidate aria-labelledby="reserve-title">
+          <div class="error-summary" data-error-summary tabindex="-1" hidden></div>
+          <div class="form-row">
+            <div class="field"><label for="r-date">Date</label><input id="r-date" name="r-date" type="date" required></div>
+            <div class="field"><label for="r-time">Time</label><select id="r-time" name="r-time" required></select></div>
+            <div class="field"><label for="r-party">Party size</label><select id="r-party" name="r-party" required></select></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="r-name">Name</label><input id="r-name" name="r-name" type="text" autocomplete="name" minlength="2" required></div>
+            <div class="field"><label for="r-phone">Phone</label><input id="r-phone" name="r-phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+          </div>
+          <div class="field"><label for="r-email">Email <span class="optional">(optional)</span></label><input id="r-email" name="r-email" type="email" autocomplete="email"></div>
+          <div class="field"><label for="r-notes">Notes <span class="optional">(optional)</span></label><textarea id="r-notes" name="r-notes" maxlength="300" rows="3" aria-describedby="r-notes-hint"></textarea><p class="hint" id="r-notes-hint">Allergies, a booth, an occasion.</p></div>
+          <button class="btn btn--primary btn--block btn--lg" type="submit">Request table</button>
+          <p class="demo-note">Demo only: no booking is made and nothing is sent.</p>
+        </form>
+        <div class="panel confirm" data-reserve-confirm hidden>
+          <h3 data-reserve-confirm-heading tabindex="-1">Table request received</h3>
+          <p>Booking reference <strong data-reserve-ref></strong></p>
+          <p data-reserve-summary></p>
+          <p class="demo-note">Demo only: no booking was made and nothing was sent.</p>
+          <button class="btn btn--secondary" type="button" data-reserve-again>Make another booking</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div class="stack">
+      <p class="footer__brand"><span class="brand__mark" aria-hidden="true"></span><span data-site="name">Cinder &amp; Salt</span></p>
+      <p class="open-status" data-open-status>Opening hours</p>
+      <address class="contact">
+        <span data-site="contact.address">[address]</span><br>
+        <a href="tel:+15555550142" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+        <span data-site="contact.email">[email]</span>
+      </address>
+    </div>
+    <div class="stack">
+      <p class="footer__h">Hours</p>
+      <ul class="footer__hours" role="list" data-footer-hours>
+        <li><span>Mon</span> Closed</li>
+        <li><span>Tue, Wed</span> 5–10 pm</li>
+        <li><span>Thu</span> 5–10:30 pm</li>
+        <li><span>Fri</span> 12–2:30 pm, 5–11:30 pm</li>
+        <li><span>Sat</span> 12–11:30 pm</li>
+        <li><span>Sun</span> 12–9 pm</li>
+      </ul>
+      <p class="small footer__note">Sample hours: client to confirm.</p>
+    </div>
+    <nav aria-label="Footer">
+      <p class="footer__h">Explore</p>
+      <ul class="footer__links">
+        <li><a href="menu.html">Order online</a></li>
+        <li><a href="#reserve">Book a table</a></li>
+        <li><a href="#cuts">The cuts</a></li>
+        <li><a href="#visit">Hours &amp; location</a></li>
+      </ul>
+    </nav>
+    <div class="stack">
+      <p class="footer__h">Delivery apps</p>
+      <p class="small">We prefer you order direct. Also on <span data-delivery-apps>[Delivery app 1] · [Delivery app 2]</span> (links: client to supply).</p>
+    </div>
+  </div>
+  <div class="container footer__legal small">
+    <p>Sample design by Website Studio. Menu, prices and wording are samples. Photos are stock.</p>
+    <p class="footer__credits">Photos: stock photographs from Pexels (Pexels License) by Mohamed Olwy, Miguel Rivera, Chris F, Min An, Patricia Beliga, Aaron Johnson, Nadin Sh, FOX, Eduardo Krajan, Hayden Walker, Jay Gleaton, Emre Vonal, Mahmoud Salem and Meryem. Full list with sources: <a href="../../photos/CREDITS.md">photos/CREDITS.md</a>. Photos are not of the client's food or rooms.</p>
+    <p>&copy; <span data-year>2026</span> <span data-site="name">Cinder &amp; Salt</span> (sample business)</p>
+  </div>
+</footer>
+
+<nav class="mbar" data-mobile-bar aria-label="Quick actions">
+  <a class="mbar__btn mbar__btn--primary" href="menu.html" data-mbar-order>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>Order</a>
+  <button class="mbar__btn mbar__btn--primary" type="button" data-mbar-cart data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span data-mbar-cart-label>View order</span></button>
+  <a class="mbar__btn" href="#reserve">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>Book</a>
+  <a class="mbar__btn" href="tel:+15555550142" data-tel>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+</nav>
+<button class="to-top" type="button" data-to-top hidden>Back to top</button>
+</body>
+</html>

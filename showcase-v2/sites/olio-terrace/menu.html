@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Menu | Olio Terrace: mezze, salads, grill (sample design)</title>
+<meta name="description" content="Olio Terrace sample menu: mezze, salads, grilled fish, octopus, chicken and lamb, sides and sweets, with prices and dietary tags. Order for pickup or delivery. Sample menu and prices.">
+<meta name="theme-color" content="#174a7e">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../../shared/base.css">
+<link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
+<script type="module" src="../../shared/core.js"></script>
+<script type="module" src="olio.js"></script>
+</head>
+<body data-page="menu">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-header>
+  <div class="site-header__inner container">
+    <a class="brand" href="index.html" aria-label="Olio Terrace, home">
+      <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 33C15 25 22 17 33 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><ellipse cx="15" cy="21" rx="6.5" ry="2.6" transform="rotate(-50 15 21)" fill="currentColor" opacity=".55"/><ellipse cx="24" cy="20" rx="6.5" ry="2.6" transform="rotate(25 24 20)" fill="currentColor" opacity=".55"/><ellipse cx="22" cy="11" rx="5.5" ry="2.2" transform="rotate(-55 22 11)" fill="currentColor" opacity=".55"/><circle cx="11" cy="30" r="3.4" class="brand__olive"/></svg>
+      <span class="brand__word"><span class="brand__olio">Olio</span> <span class="brand__terrace">Terrace</span></span>
+    </a>
+    <nav class="site-nav" id="site-nav" data-nav aria-label="Main">
+      <ul>
+        <li><a href="menu.html" aria-current="page">Menu</a></li>
+        <li><a href="index.html#mezze">Mezze table</a></li>
+        <li><a href="index.html#story">Our story</a></li>
+        <li><a href="index.html#visit">Visit</a></li>
+        <li><a href="index.html#reserve">Book a table</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <button class="cart-btn" type="button" data-cart-open aria-controls="cart-drawer" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-btn__text">Cart</span>
+        <span class="badge" data-cart-count>0</span><span class="vh" data-cart-count-label> items</span>
+      </button>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <span class="vh">Site navigation</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <div class="menu-hero">
+    <div class="container menu-hero__grid">
+      <div>
+        <p class="eyebrow">Order for pickup or delivery</p>
+        <h1>The menu, <em>to share</em></h1>
+        <p class="menu-hero__lede">Mezze for the middle of the table, salad, the grill and something sweet. Tap Add on anything, then view your order.</p>
+      </div>
+      <div class="menu-hero__meta">
+        <p class="open-status" data-open-status>Opening hours</p>
+        <p class="small">Sample menu and prices. Photos are stock and shown only where they match the dish. Tell us about allergies when you order.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container menu-head">
+    <div class="menu-tools">
+      <div class="field search">
+        <label for="menu-search">Search the menu</label>
+        <input id="menu-search" type="search" data-menu-search autocomplete="off" placeholder="Try octopus, feta or baklava">
+      </div>
+      <div class="chips" data-menu-filters role="group" aria-label="Filter by dietary tag"></div>
+      <p class="small muted" data-menu-status role="status"></p>
+    </div>
+  </div>
+  <nav class="catbar" data-menu-nav aria-label="Menu categories"></nav>
+  <div class="container menu-body">
+    <div data-menu></div>
+    <div class="menu-empty" data-menu-empty hidden>
+      <p>No dishes match. Try another word or remove a filter.</p>
+      <button class="btn btn--secondary" type="button" data-menu-clear>Clear search and filters</button>
+    </div>
+    <noscript><p class="menu-empty">The menu and ordering need JavaScript. Please call <a href="tel:+15555550144">[phone]</a> to order.</p></noscript>
+    <div class="menu-cta">
+      <p>Table set? Review your order and choose pickup or delivery.</p>
+      <button class="btn btn--primary" type="button" data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer">View order · <span data-cart-total>$0.00</span></button>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer__key" aria-hidden="true"></div>
+  <div class="container footer__grid">
+    <div class="footer__col">
+      <p class="footer__brand"><span class="brand__olio">Olio</span> <span class="brand__terrace">Terrace</span></p>
+      <p class="open-status" data-open-status>Opening hours</p>
+      <address class="contact">
+        <span data-site="contact.address">[address]</span><br>
+        <a href="tel:+15555550144" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+        <span data-site="contact.email">[email]</span>
+      </address>
+    </div>
+    <div class="footer__col">
+      <p class="footer__h">Hours <span class="footer__note">(sample)</span></p>
+      <ul class="hours-mini" data-hours-mini role="list"><li>See Hours &amp; location on the home page.</li></ul>
+    </div>
+    <nav class="footer__col" aria-label="Footer">
+      <p class="footer__h">Eat with us</p>
+      <ul class="footer__links">
+        <li><a href="menu.html">Order online</a></li>
+        <li><a href="index.html#reserve">Book a table</a></li>
+        <li><a href="index.html#visit">Hours &amp; location</a></li>
+      </ul>
+    </nav>
+    <div class="footer__col">
+      <p class="footer__h">Prefer an app?</p>
+      <p class="small">Also on <span data-delivery-apps>[Delivery app 1] · [Delivery app 2]</span> (links: client to supply). Ordering here directly is simplest for us.</p>
+    </div>
+  </div>
+  <div class="container footer__legal small">
+    <p>Sample design by Website Studio. Menu, prices and wording are samples. Photos are stock.</p>
+    <p class="footer__credits">Photo credits (stock, Pexels License): Piotr Baranowski (terrace and bay), Daniel Dorfer (white terrace), Fia by Marv (table under trees), Michelle Chadwick (waterfront tables), Jessica Lewis, thepaintedsquare (oil on salad), Karl Solano (salad), Ahmed Aqeely (mezze platter), Paolo Bici (octopus plate), S&oacute;c Năng Động (octopus on the grill), Alexey Demidov (red mullet), Zak Chapman (hummus), Ahmet &Ccedil;&ouml;t&uuml;r (calamari), Valeria Boltneva (dolmades), Nyara Aquino (chicken skewers), Jacob Yavin (baklava), Polina Tankilevitch (olives and bread). Photos show sample dishes, not this kitchen&rsquo;s food.</p>
+    <p>&copy; <span data-year>2026</span> <span data-site="name">Olio Terrace</span> (sample business)</p>
+  </div>
+</footer>
+
+<nav class="mbar" data-mobile-bar aria-label="Quick actions">
+  <a class="mbar__btn mbar__btn--primary" href="#main" data-mbar-order>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>Order</a>
+  <button class="mbar__btn mbar__btn--primary" type="button" data-mbar-cart data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span data-mbar-cart-label>View order</span></button>
+  <a class="mbar__btn" href="index.html#reserve">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>Book</a>
+  <a class="mbar__btn" href="tel:+15555550144" data-tel>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+</nav>
+<button class="to-top" type="button" data-to-top hidden>Back to top</button>
+</body>
+</html>

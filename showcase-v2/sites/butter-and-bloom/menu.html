@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Menu | Butter &amp; Bloom bakery and café (sample design)</title>
+<meta name="description" content="Bakery and café menu with prices, dietary tags and online ordering for pickup or delivery. Sample menu and prices.">
+<meta name="theme-color" content="#fbf6ee">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23fbf6ee'/%3E%3Cg fill='%23c98a8f'%3E%3Cellipse cx='16' cy='9' rx='4' ry='6'/%3E%3Cellipse cx='16' cy='23' rx='4' ry='6'/%3E%3Cellipse cx='9' cy='16' rx='6' ry='4'/%3E%3Cellipse cx='23' cy='16' rx='6' ry='4'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='4' fill='%23e9c46a'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/cormorant-garamond-latin-500-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../shared/base.css">
+<link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
+<script type="module" src="../../shared/core.js"></script>
+</head>
+<body data-page="menu">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-header>
+  <div class="site-header__inner container">
+    <a class="brand" href="index.html" aria-label="Butter &amp; Bloom, home">
+      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><g fill="currentColor" opacity=".9"><ellipse cx="16" cy="8.5" rx="4" ry="6"/><ellipse cx="16" cy="23.5" rx="4" ry="6"/><ellipse cx="8.5" cy="16" rx="6" ry="4"/><ellipse cx="23.5" cy="16" rx="6" ry="4"/></g><circle cx="16" cy="16" r="4.2" class="brand__core"/></svg>
+      <span class="brand__name" data-site="name">Butter &amp; Bloom</span>
+    </a>
+    <nav class="site-nav" id="site-nav" data-nav aria-label="Main">
+      <ul>
+        <li><a href="menu.html" aria-current="page">Menu</a></li>
+        <li><a href="index.html#preorder">Pre-order</a></li>
+        <li class="nav-opt"><a href="index.html#story">Our story</a></li>
+        <li class="nav-opt"><a href="index.html#visit">Hours &amp; location</a></li>
+        <li><a href="index.html#reserve">Book a table</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <button class="cart-btn" type="button" data-cart-open aria-controls="cart-drawer" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 8h13l-1.2 12H6.7L5.5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+        <span class="cart-btn__text">Bag</span>
+        <span class="badge" data-cart-count>0</span><span class="vh" data-cart-count-label> items</span>
+      </button>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+        <span class="vh">Site navigation</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <div class="menu-hero">
+  <div class="container menu-head">
+    <p class="eyebrow">Order for pickup or delivery</p>
+    <h1>The <em>menu</em></h1>
+    <p class="open-status" data-open-status>Opening hours</p>
+    <p class="menu-pre"><strong>Pre-order for your next open day</strong> <span>Add items now, then choose &ldquo;Schedule for later&rdquo; at checkout.</span></p>
+    <p class="muted small">Sample menu and prices. Tap Add on anything you like, then view your bag.</p>
+    <div class="menu-tools">
+      <div class="field search">
+        <label for="menu-search">Search the menu</label>
+        <input id="menu-search" type="search" data-menu-search autocomplete="off" placeholder="Try croissant or tart">
+      </div>
+      <div class="chips" data-menu-filters role="group" aria-label="Filter by dietary tag"></div>
+      <p class="small muted" data-menu-status role="status"></p>
+    </div>
+  </div>
+  </div>
+  <nav class="catbar" data-menu-nav aria-label="Menu categories"></nav>
+  <div class="container menu-body">
+    <div data-menu></div>
+    <div class="menu-empty" data-menu-empty hidden>
+      <p>Nothing matches. Try another word or remove a filter.</p>
+      <button class="btn btn--secondary" type="button" data-menu-clear>Clear search and filters</button>
+    </div>
+    <noscript><p class="menu-empty">The menu and ordering need JavaScript. Please call <a href="tel:+15555550142">[phone]</a> to order.</p></noscript>
+    <div class="menu-cta">
+      <p>Ready? Review your bag and choose pickup or delivery.</p>
+      <button class="btn btn--primary" type="button" data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer">View bag · <span data-cart-total>$0.00</span></button>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div class="stack">
+      <p class="footer__brand" data-site="name">Butter &amp; Bloom</p>
+      <p class="open-status" data-open-status>Opening hours</p>
+      <address class="contact">
+        <span data-site="contact.address">[address]</span><br>
+        <a href="tel:+15555550142" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+        <span data-site="contact.email">[email]</span>
+      </address>
+    </div>
+    <div class="stack">
+      <p class="footer__h">Hours <span class="footer__flag">(sample)</span></p>
+      <ul class="footer__hours">
+        <li><span>Tue – Thu</span><span>7:00 AM – 4:00 PM</span></li>
+        <li><span>Fri</span><span>7:00 AM – 5:00 PM</span></li>
+        <li><span>Sat</span><span>7:30 AM – 5:00 PM</span></li>
+        <li><span>Sun</span><span>8:00 AM – 2:00 PM</span></li>
+        <li><span>Mon</span><span>Closed</span></li>
+      </ul>
+    </div>
+    <nav aria-label="Footer">
+      <p class="footer__h">Order &amp; visit</p>
+      <ul class="footer__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#preorder">Pre-order</a></li>
+        <li><a href="index.html#reserve">Book a table</a></li>
+        <li><a href="index.html#visit">Hours &amp; location</a></li>
+      </ul>
+      <p class="small footer__apps">Prefer an app? Also on <span data-delivery-apps>[Delivery app 1] · [Delivery app 2]</span> (links: client to supply).</p>
+    </nav>
+  </div>
+  <div class="container footer__legal small">
+    <p>Sample design by Website Studio. Menu, prices and wording are samples. Photos are stock.</p>
+    <p class="footer__credits">Photos (Pexels, Pexels License): Cats Coming, Arda Kaykısız, Daniel Torobekov, Jonathan Borba, ROMAN ODINTSOV, Natalia Olivera, Kuiyibo Campos, Augustinus Martinus Noppé, Lum3n, cottonbro studio, Regina Ferraz, Amine Kübranur Çakıroğlu, Fabiola Ulate, solod_sha Content creator, eat kubba, Kandice Boyd-Roberts. Fonts: Cormorant Garamond and Jost (SIL Open Font License).</p>
+    <p>&copy; <span data-year>2026</span> <span data-site="name">Butter &amp; Bloom</span> (sample business)</p>
+  </div>
+</footer>
+
+<nav class="mbar" data-mobile-bar aria-label="Quick actions">
+  <a class="mbar__btn mbar__btn--primary" href="#main" data-mbar-order>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 8h13l-1.2 12H6.7L5.5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>Order</a>
+  <button class="mbar__btn mbar__btn--primary" type="button" data-mbar-cart data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 8h13l-1.2 12H6.7L5.5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span data-mbar-cart-label>View order</span></button>
+  <a class="mbar__btn" href="index.html#reserve">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>Book</a>
+  <a class="mbar__btn" href="tel:+15555550142" data-tel>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+</nav>
+<button class="to-top" type="button" data-to-top hidden>Back to top</button>
+</body>
+</html>

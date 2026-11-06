@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Butter &amp; Bloom | Bakery and café: order for pickup or book a table (sample design)</title>
+<meta name="description" content="Sample bakery and café website by Website Studio. Order pastries for pickup, pre-order for your next visit, or book a table. Menu and prices are samples.">
+<meta name="theme-color" content="#fbf6ee">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23fbf6ee'/%3E%3Cg fill='%23c98a8f'%3E%3Cellipse cx='16' cy='9' rx='4' ry='6'/%3E%3Cellipse cx='16' cy='23' rx='4' ry='6'/%3E%3Cellipse cx='9' cy='16' rx='6' ry='4'/%3E%3Cellipse cx='23' cy='16' rx='6' ry='4'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='4' fill='%23e9c46a'/%3E%3C/svg%3E">
+<link rel="preload" as="image" href="images/croissant-jam-800.webp" imagesrcset="images/croissant-jam-400.webp 400w, images/croissant-jam-800.webp 800w, images/croissant-jam-1600.webp 1333w" imagesizes="(min-width: 56em) 34vw, 78vw" fetchpriority="high">
+<link rel="preload" href="fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/cormorant-garamond-latin-500-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../shared/base.css">
+<link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
+<script type="module" src="../../shared/core.js"></script>
+<script src="motion.js" defer></script>
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-header>
+  <div class="site-header__inner container">
+    <a class="brand" href="index.html" aria-label="Butter &amp; Bloom, home">
+      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><g fill="currentColor" opacity=".9"><ellipse cx="16" cy="8.5" rx="4" ry="6"/><ellipse cx="16" cy="23.5" rx="4" ry="6"/><ellipse cx="8.5" cy="16" rx="6" ry="4"/><ellipse cx="23.5" cy="16" rx="6" ry="4"/></g><circle cx="16" cy="16" r="4.2" class="brand__core"/></svg>
+      <span class="brand__name" data-site="name">Butter &amp; Bloom</span>
+    </a>
+    <nav class="site-nav" id="site-nav" data-nav aria-label="Main">
+      <ul>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="#preorder">Pre-order</a></li>
+        <li class="nav-opt"><a href="#story">Our story</a></li>
+        <li class="nav-opt"><a href="#visit">Hours &amp; location</a></li>
+        <li><a href="#reserve">Book a table</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <a class="btn btn--primary btn--sm header-order" href="menu.html">Order online</a>
+      <button class="cart-btn" type="button" data-cart-open aria-controls="cart-drawer" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 8h13l-1.2 12H6.7L5.5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+        <span class="cart-btn__text">Bag</span>
+        <span class="badge" data-cart-count>0</span><span class="vh" data-cart-count-label> items</span>
+      </button>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+        <span class="vh">Site navigation</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__blob hero__blob--butter" aria-hidden="true"></div>
+    <div class="hero__blob hero__blob--rose" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <p class="hero__status"><span class="open-status" data-open-status>Opening hours</span></p>
+        <p class="eyebrow"><span data-site="cuisine">Bakery &amp; café</span> · [neighbourhood]</p>
+        <h1 id="hero-title">Pastry worth <em>waking&nbsp;up</em> for.</h1>
+        <p class="lede">Croissants, tarts and country loaves to order ahead for pickup, a box for your next visit, or a table for slow coffee.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary btn--lg" href="menu.html">Order online <span class="btn__sub">for pickup</span></a>
+          <a class="btn btn--secondary btn--lg" href="#reserve">Book a table</a>
+        </div>
+        <noscript><p class="nojs-note">Online ordering needs JavaScript. Please call <a href="tel:+15555550142">[phone]</a> to order.</p></noscript>
+        <p class="hero__fine small">Order direct with us and skip the app fees.</p>
+      </div>
+
+      <div class="hero__media">
+        <figure class="hero__arch">
+          <img class="hero__img" src="images/croissant-jam-800.webp"
+               srcset="images/croissant-jam-400.webp 400w, images/croissant-jam-800.webp 800w, images/croissant-jam-1600.webp 1333w"
+               sizes="(min-width: 56em) 34vw, 78vw" width="800" height="1200" fetchpriority="high" decoding="async"
+               alt="A golden croissant on a white plate beside a small glass pot of raspberry jam">
+        </figure>
+        <a class="hero__seal" href="#preorder">
+          <svg viewBox="0 0 120 120" aria-hidden="true" class="hero__seal-ring"><defs><path id="seal-path" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs><text><textPath href="#seal-path" textLength="270" lengthAdjust="spacing">PRE-ORDER · ORDER AHEAD · PICK UP · </textPath></text></svg>
+          <span class="hero__seal-core" aria-hidden="true">&rarr;</span>
+          <span class="vh">Pre-order for your next visit</span>
+        </a>
+        <div class="hero__card">
+          <p class="hero__card-name">Croissant &amp; jam</p>
+          <p class="hero__card-price">$5.50</p>
+          <button type="button" class="btn btn--primary btn--sm dish__add" data-add="croissant-jam"><span class="dish__add-label" aria-hidden="true">Add</span><span class="vh">Add Croissant and raspberry jam to order</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>Butter croissant</span><span>Cinnamon bun</span><span>Country sourdough</span><span>Summer berry tartlet</span><span>Vanilla éclair</span><span>Macarons</span><span>Flat white</span><span>Rainbow fruit tart</span>
+      <span>Butter croissant</span><span>Cinnamon bun</span><span>Country sourdough</span><span>Summer berry tartlet</span><span>Vanilla éclair</span><span>Macarons</span><span>Flat white</span><span>Rainbow fruit tart</span>
+    </div>
+  </div>
+
+  <section class="infobar" aria-label="Opening status and contact">
+    <div class="container infobar__inner">
+      <p class="open-status" data-open-status>Opening hours</p>
+      <p><span class="vh">Address: </span><span data-site="contact.address">[address]</span></p>
+      <p><a href="tel:+15555550142" data-tel>Call <span data-site="contact.phone">[phone]</span></a></p>
+      <p><a href="#map" data-directions>Get directions</a></p>
+    </div>
+  </section>
+
+  <section class="section favs" id="signature" aria-labelledby="sig-title">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow">From the counter</p>
+          <h2 id="sig-title">Today&rsquo;s <em>favourites</em></h2>
+        </div>
+        <a class="btn btn--secondary" href="menu.html">See the full menu</a>
+      </div>
+      <div data-signature data-limit="6"></div>
+    </div>
+  </section>
+
+  <section class="preorder" id="preorder" aria-labelledby="pre-title">
+    <div class="container preorder__inner">
+      <div class="preorder__copy" data-reveal>
+        <p class="eyebrow">Plan ahead</p>
+        <h2 id="pre-title">Pre-order for <em>your next open day</em></h2>
+        <p>Fill your bag today and collect it on our next open day, at a time that suits you.</p>
+        <ol class="steps">
+          <li><span class="steps__n" aria-hidden="true">1</span><span>Add pastries, a whole tart or a loaf.</span></li>
+          <li><span class="steps__n" aria-hidden="true">2</span><span>At checkout choose <strong>Schedule for later</strong>.</span></li>
+          <li><span class="steps__n" aria-hidden="true">3</span><span>Pick a time on your pickup day. Pay now or at pickup.</span></li>
+        </ol>
+        <p class="small preorder__note">Whole tarts and baskets: order by <span class="ph-mark">[cut-off time: client to confirm]</span> the day before. Closed Mondays (sample hours).</p>
+      </div>
+      <ul class="preorder__list" role="list">
+        <li class="pcard" data-reveal>
+          <img class="pcard__img" src="images/pastry-basket-400.webp" srcset="images/pastry-basket-400.webp 400w, images/pastry-basket-800.webp 800w" sizes="(min-width: 64em) 9rem, 6.5rem" width="400" height="267" loading="lazy" decoding="async" alt="A woven basket of croissants, almond-topped rings, nut swirls and chocolate-striped pastries">
+          <div class="pcard__body"><h3 class="pcard__name">Morning pastry basket</h3><p class="pcard__meta">To share · for the table or office</p></div>
+          <p class="pcard__price">$32.00</p>
+          <button type="button" class="btn btn--primary btn--sm dish__add" data-add="pastry-basket"><span class="dish__add-label" aria-hidden="true">Add</span><span class="vh">Add Morning pastry basket to order</span></button>
+        </li>
+        <li class="pcard" data-reveal>
+          <img class="pcard__img" src="images/fruit-tart-400.webp" srcset="images/fruit-tart-400.webp 400w, images/fruit-tart-800.webp 800w" sizes="(min-width: 64em) 9rem, 6.5rem" width="400" height="225" loading="lazy" decoding="async" alt="Top view of a tart covered in strawberries, melon, pineapple and kiwi">
+          <div class="pcard__body"><h3 class="pcard__name">Rainbow fruit tart, whole</h3><p class="pcard__meta">Serves about 8</p></div>
+          <p class="pcard__price">$42.00</p>
+          <button type="button" class="btn btn--primary btn--sm dish__add" data-add="fruit-tart"><span class="dish__add-label" aria-hidden="true">Add</span><span class="vh">Add Rainbow fruit tart to order</span></button>
+        </li>
+        <li class="pcard" data-reveal>
+          <img class="pcard__img" src="images/sourdough-400.webp" srcset="images/sourdough-400.webp 400w, images/sourdough-800.webp 800w" sizes="(min-width: 64em) 9rem, 6.5rem" width="400" height="266" loading="lazy" decoding="async" alt="A round sourdough loaf and thick slices on a linen cloth">
+          <div class="pcard__body"><h3 class="pcard__name">Country sourdough</h3><p class="pcard__meta">Whole loaf · sliced on request</p></div>
+          <p class="pcard__price">$9.00</p>
+          <button type="button" class="btn btn--primary btn--sm dish__add" data-add="sourdough"><span class="dish__add-label" aria-hidden="true">Add</span><span class="vh">Add Country sourdough to order</span></button>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section story" id="story" aria-labelledby="story-title">
+    <div class="container story__inner">
+      <div class="story__collage" data-reveal="fade">
+        <img class="story__img story__img--a" src="images/hands-dough-800.webp" srcset="images/hands-dough-800.webp 800w, images/hands-dough-1600.webp 1600w" sizes="(min-width: 56em) 52vw, 150vw" width="800" height="533" loading="lazy" decoding="async" alt="Flour-covered hands working dough in a glass bowl">
+        <img class="story__img story__img--b" src="images/cafe-interior-800.webp" srcset="images/cafe-interior-400.webp 400w, images/cafe-interior-800.webp 800w" sizes="(min-width: 56em) 22vw, 55vw" width="800" height="533" loading="lazy" decoding="async" alt="A bright café room with white walls, wooden tables, white chairs and hanging plants">
+      </div>
+      <div class="story__copy" data-reveal>
+        <p class="eyebrow">Our story</p>
+        <h2 id="story-title">Pastry, bread and <em>slow mornings</em></h2>
+        <p class="story__lede">A neighbourhood bakery and café for croissants, cake and a quiet coffee.</p>
+        <p><span class="ph-mark">[Your story: client to supply. Two or three sentences about who bakes here, when the ovens start and what matters to you.]</span></p>
+        <dl class="craft">
+          <div><dt>Butter</dt><dd><span class="ph-mark">[supplier: client to supply]</span></dd></div>
+          <div><dt>Flour</dt><dd><span class="ph-mark">[mill: client to supply]</span></dd></div>
+          <div><dt>Coffee</dt><dd><span class="ph-mark">[roaster: client to supply]</span></dd></div>
+        </dl>
+        <figure class="trust">
+          <blockquote><p class="placeholder">[Guest reviews: client to supply]</p></blockquote>
+          <figcaption class="small muted">Real reviews only, with the guest&rsquo;s permission.</figcaption>
+        </figure>
+        <p class="small"><span class="placeholder">[Press or awards: client to supply, only if real]</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section visit" id="visit" aria-labelledby="visit-title">
+    <div class="container visit__inner">
+      <div class="visit__hours" data-reveal>
+        <p class="eyebrow">Visit</p>
+        <h2 id="visit-title">Hours &amp; <em>location</em></h2>
+        <p class="open-status" data-open-status>Opening hours</p>
+        <div data-hours></div>
+      </div>
+      <div class="visit__where" data-reveal>
+        <address class="contact">
+          <span data-site="contact.address">[address]</span><br>
+          <a href="tel:+15555550142" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+          <span data-site="contact.email">[email]</span>
+        </address>
+        <div class="map-ph" id="map">[map]<br>Map: client to supply (no external embed)</div>
+        <a class="btn btn--secondary" href="#map" data-directions>Get directions</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reserve-sec" id="reserve" aria-labelledby="reserve-title">
+    <div class="container reserve">
+      <div class="reserve__intro" data-reveal>
+        <p class="eyebrow">Eat in</p>
+        <h2 id="reserve-title">Book a table</h2>
+        <p class="muted">Save a table for brunch, coffee and cake, or a birthday breakfast. For groups larger than 6, please call <span data-site="contact.phone">[phone]</span>.</p>
+        <img class="reserve__img" src="images/latte-croissant-800.webp" srcset="images/latte-croissant-400.webp 400w, images/latte-croissant-800.webp 800w" sizes="(min-width: 56em) 28vw, 92vw" width="800" height="534" loading="lazy" decoding="async" alt="A latte with leaf latte art in a brown cup beside a croissant on a wooden board">
+      </div>
+      <div>
+        <form id="reserve-form" class="form panel" data-reserve novalidate aria-labelledby="reserve-title">
+          <div class="error-summary" data-error-summary tabindex="-1" hidden></div>
+          <div class="form-row">
+            <div class="field"><label for="r-date">Date</label><input id="r-date" name="r-date" type="date" required></div>
+            <div class="field"><label for="r-time">Time</label><select id="r-time" name="r-time" required></select></div>
+            <div class="field"><label for="r-party">Party size</label><select id="r-party" name="r-party" required></select></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="r-name">Name</label><input id="r-name" name="r-name" type="text" autocomplete="name" minlength="2" required></div>
+            <div class="field"><label for="r-phone">Phone</label><input id="r-phone" name="r-phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+          </div>
+          <div class="field"><label for="r-email">Email <span class="optional">(optional)</span></label><input id="r-email" name="r-email" type="email" autocomplete="email"></div>
+          <div class="field"><label for="r-notes">Notes <span class="optional">(optional)</span></label><textarea id="r-notes" name="r-notes" maxlength="300" rows="3" aria-describedby="r-notes-hint"></textarea><p class="hint" id="r-notes-hint">Allergies, high chair, a birthday candle.</p></div>
+          <button class="btn btn--primary btn--block" type="submit">Request table</button>
+          <p class="demo-note">Demo only: no booking is made and nothing is sent.</p>
+        </form>
+        <div class="panel confirm" data-reserve-confirm hidden>
+          <h3 data-reserve-confirm-heading tabindex="-1">Table request received</h3>
+          <p>Booking reference <strong data-reserve-ref></strong></p>
+          <p data-reserve-summary></p>
+          <p class="demo-note">Demo only: no booking was made and nothing was sent.</p>
+          <button class="btn btn--secondary" type="button" data-reserve-again>Make another booking</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div class="stack">
+      <p class="footer__brand" data-site="name">Butter &amp; Bloom</p>
+      <p class="open-status" data-open-status>Opening hours</p>
+      <address class="contact">
+        <span data-site="contact.address">[address]</span><br>
+        <a href="tel:+15555550142" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+        <span data-site="contact.email">[email]</span>
+      </address>
+    </div>
+    <div class="stack">
+      <p class="footer__h">Hours <span class="footer__flag">(sample)</span></p>
+      <ul class="footer__hours">
+        <li><span>Tue – Thu</span><span>7:00 AM – 4:00 PM</span></li>
+        <li><span>Fri</span><span>7:00 AM – 5:00 PM</span></li>
+        <li><span>Sat</span><span>7:30 AM – 5:00 PM</span></li>
+        <li><span>Sun</span><span>8:00 AM – 2:00 PM</span></li>
+        <li><span>Mon</span><span>Closed</span></li>
+      </ul>
+    </div>
+    <nav aria-label="Footer">
+      <p class="footer__h">Order &amp; visit</p>
+      <ul class="footer__links">
+        <li><a href="menu.html">Order online</a></li>
+        <li><a href="#preorder">Pre-order</a></li>
+        <li><a href="#reserve">Book a table</a></li>
+        <li><a href="#visit">Hours &amp; location</a></li>
+      </ul>
+      <p class="small footer__apps">Prefer an app? Also on <span data-delivery-apps>[Delivery app 1] · [Delivery app 2]</span> (links: client to supply).</p>
+    </nav>
+  </div>
+  <div class="container footer__legal small">
+    <p>Sample design by Website Studio. Menu, prices and wording are samples. Photos are stock.</p>
+    <p class="footer__credits">Photos (Pexels, Pexels License): Cats Coming, Arda Kaykısız, Daniel Torobekov, Jonathan Borba, ROMAN ODINTSOV, Natalia Olivera, Kuiyibo Campos, Augustinus Martinus Noppé, Lum3n, cottonbro studio, Regina Ferraz, Amine Kübranur Çakıroğlu, Fabiola Ulate, solod_sha Content creator, eat kubba, Kandice Boyd-Roberts. Fonts: Cormorant Garamond and Jost (SIL Open Font License).</p>
+    <p>&copy; <span data-year>2026</span> <span data-site="name">Butter &amp; Bloom</span> (sample business)</p>
+  </div>
+</footer>
+
+<nav class="mbar" data-mobile-bar aria-label="Quick actions">
+  <a class="mbar__btn mbar__btn--primary" href="menu.html" data-mbar-order>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 8h13l-1.2 12H6.7L5.5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>Order</a>
+  <button class="mbar__btn mbar__btn--primary" type="button" data-mbar-cart data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 8h13l-1.2 12H6.7L5.5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span data-mbar-cart-label>View order</span></button>
+  <a class="mbar__btn" href="#reserve">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>Book</a>
+  <a class="mbar__btn" href="tel:+15555550142" data-tel>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+</nav>
+<button class="to-top" type="button" data-to-top hidden>Back to top</button>
+</body>
+</html>

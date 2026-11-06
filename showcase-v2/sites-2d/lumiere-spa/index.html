@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumière Salon &amp; Spa</title>
+<meta name="description" content="Sample design: Lumière, a luxury salon and spa. Hair, skin, body and nail rituals in a calm, light-filled space.">
+<meta name="theme-color" content="#F5F0E6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='11' fill='%23B8975A'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../vendor/lenis.css">
+<link rel="stylesheet" href="style.css">
+<script>
+document.documentElement.classList.add('js');
+/* safety: if the animation script never runs, show all content */
+setTimeout(function(){ if(!window.__lumiereReady) document.documentElement.classList.add('no-anim'); }, 3500);
+</script>
+<script type="importmap">{"imports":{"three":"../../vendor/three.module.min.js"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="#top" aria-label="Lumière, back to top">
+      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="10.5" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="16" cy="16" r="4" fill="var(--gold)"/></svg>
+      <span class="brand__word">Lumière</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#philosophy">Philosophy</a>
+      <a href="#rituals">Rituals</a>
+      <a href="#visit">The visit</a>
+      <a href="#words">Words</a>
+    </nav>
+    <button class="motion" id="motion" type="button" aria-pressed="false">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="5" y="4" width="3.2" height="12" rx="1"/><rect x="11.8" y="4" width="3.2" height="12" rx="1"/></svg>
+      <span class="motion__t">Pause motion</span>
+    </button>
+    <a class="btn btn--small nav__cta" href="#book">Book a visit</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="menu" id="menu" inert aria-hidden="true">
+  <nav aria-label="Mobile">
+    <a href="#philosophy"><span>01</span>Philosophy</a>
+    <a href="#rituals"><span>02</span>Rituals</a>
+    <a href="#visit"><span>03</span>The visit</a>
+    <a href="#words"><span>04</span>Words</a>
+    <a href="#book" class="menu__book">Book a visit</a>
+  </nav>
+  <p class="menu__note">Sample design by Website Studio</p>
+</div>
+
+<main id="main" tabindex="-1">
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="orbs" id="orbs" aria-hidden="true">
+      <div class="orbs__fallback">
+        <i style="--s:34vmin;--x:68%;--y:34%;--c1:#E6D9BE;--c2:#B8975A"></i>
+        <i style="--s:22vmin;--x:84%;--y:66%;--c1:#D5DECB;--c2:#7F9279"></i>
+        <i style="--s:14vmin;--x:56%;--y:78%;--c1:#F3E6CE;--c2:#CDAE74"></i>
+        <i style="--s:9vmin;--x:92%;--y:18%;--c1:#E9E0D0;--c2:#A9B7A0"></i>
+      </div>
+      <canvas id="orbs-canvas"></canvas>
+    </div>
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow"><span class="hair"></span>Salon &amp; Spa — Sample brand</p>
+        <h1 class="display" aria-label="Slow beauty, quietly perfected.">
+          <span class="mask" aria-hidden="true"><span class="mask__in">Slow beauty,</span></span>
+          <span class="mask" aria-hidden="true"><span class="mask__in"><em>quietly</em> perfected.</span></span>
+        </h1>
+        <p class="lede reveal">A sanctuary for hair, skin and body, where time is unhurried and every detail is considered. Arrive as you are. Leave lighter.</p>
+        <div class="hero__actions reveal">
+          <a class="btn" href="#book">Book a visit</a>
+          <a class="btn btn--ghost" href="#rituals">Explore the rituals</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero__foot wrap">
+      <ul class="tags" aria-label="Services">
+        <li>Hair</li><li>Skin</li><li>Body</li><li>Hands &amp; feet</li>
+      </ul>
+      <a class="scrollcue" href="#philosophy" aria-label="Scroll to philosophy"><span class="scrollcue__line"></span>Scroll</a>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Restore</span><i></i><span>Renew</span><i></i><span>Rest</span><i></i><span>Radiate</span><i></i>
+    </div>
+  </div>
+
+  <!-- PHILOSOPHY -->
+  <section class="section philosophy" id="philosophy">
+    <div class="shapes" aria-hidden="true">
+      <svg class="shape shape--arch" data-speed="-70" viewBox="0 0 200 300"><path d="M10 300V100a90 90 0 0 1 180 0v200z" fill="url(#gSage)"/><defs><linearGradient id="gSage" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9D3BF"/><stop offset="1" stop-color="#E4E9DA"/></linearGradient></defs></svg>
+      <svg class="shape shape--ring" data-speed="60" viewBox="0 0 200 200"><circle cx="100" cy="100" r="96" fill="none" stroke="#B8975A" stroke-width="1"/><circle cx="100" cy="100" r="72" fill="none" stroke="#B8975A" stroke-width="1" opacity=".5"/></svg>
+      <span class="shape shape--dot" data-speed="-40"></span>
+      <svg class="shape shape--leaf" data-speed="40" viewBox="0 0 120 220"><path d="M60 4C110 60 118 140 60 216 2 140 10 60 60 4z" fill="#EADFC8"/><path d="M60 24V200" stroke="#B8975A" stroke-width="1" fill="none"/></svg>
+    </div>
+    <div class="wrap philosophy__grid">
+      <p class="label">01 — Philosophy</p>
+      <div class="philosophy__body">
+        <h2 class="sr-only">Our philosophy</h2>
+        <p class="statement" data-split>
+          We believe that beauty is not added, it is uncovered, through attention, patience and the quiet confidence of skilled hands.
+        </p>
+        <div class="philosophy__cols">
+          <p class="reveal">Every visit begins with listening. Your stylists and therapists take time to understand your hair, your skin and your day, then shape a ritual that is entirely your own.</p>
+          <p class="reveal">Soft light, calm rooms and unhurried pacing. Nothing loud, nothing rushed, only the details that matter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RITUALS / ACCORDION -->
+  <section class="section rituals" id="rituals">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="label">02 — Rituals</p>
+        <h2 class="title"><span class="mask"><span class="mask__in">Four ways to be</span></span> <span class="mask"><span class="mask__in"><em>looked after.</em></span></span></h2>
+      </div>
+      <div class="rituals__grid">
+        <div class="acc" id="acc">
+          <div class="acc__item is-open">
+            <h3 class="acc__h">
+              <button class="acc__btn" id="acc-b1" aria-expanded="true" aria-controls="acc-p1" data-tone="0">
+                <span class="acc__num">I</span><span class="acc__name">Hair atelier</span><span class="acc__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="acc__panel" id="acc-p1"><div class="acc__clip">
+              <p>Cut, colour and finish shaped around the way you live. Soft, lived-in colour and precise cutting that grows out gracefully.</p>
+              <ul class="acc__list"><li>Signature cut and finish</li><li>Colour and gloss</li><li>Scalp and bond care</li></ul>
+              <p class="acc__meta">From [Price] · [Duration]</p>
+            </div></div>
+          </div>
+          <div class="acc__item">
+            <h3 class="acc__h">
+              <button class="acc__btn" id="acc-b2" aria-expanded="false" aria-controls="acc-p2" data-tone="1">
+                <span class="acc__num">II</span><span class="acc__name">Skin &amp; face</span><span class="acc__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="acc__panel" id="acc-p2" inert aria-hidden="true"><div class="acc__clip">
+              <p>Bespoke facials that begin with a conversation, not a menu. Gentle, effective care for a calm and luminous complexion.</p>
+              <ul class="acc__list"><li>Cleansing and renewal facial</li><li>Hydration ritual</li><li>Brow and lash care</li></ul>
+              <p class="acc__meta">From [Price] · [Duration]</p>
+            </div></div>
+          </div>
+          <div class="acc__item">
+            <h3 class="acc__h">
+              <button class="acc__btn" id="acc-b3" aria-expanded="false" aria-controls="acc-p3" data-tone="2">
+                <span class="acc__num">III</span><span class="acc__name">Body &amp; massage</span><span class="acc__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="acc__panel" id="acc-p3" inert aria-hidden="true"><div class="acc__clip">
+              <p>Slow, grounding massage and body treatments in warm, softly lit rooms. Release tension and settle into stillness.</p>
+              <ul class="acc__list"><li>Full-body massage</li><li>Aromatic body polish</li><li>Warm stone ritual</li></ul>
+              <p class="acc__meta">From [Price] · [Duration]</p>
+            </div></div>
+          </div>
+          <div class="acc__item">
+            <h3 class="acc__h">
+              <button class="acc__btn" id="acc-b4" aria-expanded="false" aria-controls="acc-p4" data-tone="3">
+                <span class="acc__num">IV</span><span class="acc__name">Hands &amp; feet</span><span class="acc__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="acc__panel" id="acc-p4" inert aria-hidden="true"><div class="acc__clip">
+              <p>Meticulous nail care with a restful finish. Careful preparation, refined colour and a moment to pause.</p>
+              <ul class="acc__list"><li>Manicure and pedicure</li><li>Nail strengthening care</li><li>Hand and foot massage</li></ul>
+              <p class="acc__meta">From [Price] · [Duration]</p>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="arches" id="arches" aria-hidden="true">
+          <div class="arch is-on" style="--a:#E6D9BE;--b:#CDAE74"><svg viewBox="0 0 120 120"><path d="M20 90C30 40 50 30 60 20c10 10 30 20 40 70" fill="none" stroke="currentColor" stroke-width=".8"/><path d="M40 90C45 55 55 45 60 38c5 7 15 17 20 52" fill="none" stroke="currentColor" stroke-width=".8"/></svg></div>
+          <div class="arch" style="--a:#D5DECB;--b:#8FA088"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="34" fill="none" stroke="currentColor" stroke-width=".8"/><circle cx="60" cy="60" r="22" fill="none" stroke="currentColor" stroke-width=".8"/><circle cx="60" cy="60" r="10" fill="none" stroke="currentColor" stroke-width=".8"/></svg></div>
+          <div class="arch" style="--a:#F1E4CE;--b:#C9B08A"><svg viewBox="0 0 120 120"><path d="M10 70c15-20 30-20 45 0s30 20 45 0M10 88c15-20 30-20 45 0s30 20 45 0M10 52c15-20 30-20 45 0s30 20 45 0" fill="none" stroke="currentColor" stroke-width=".8"/></svg></div>
+          <div class="arch" style="--a:#E4E9DA;--b:#A9B7A0"><svg viewBox="0 0 120 120"><path d="M60 20c22 22 22 58 0 80-22-22-22-58 0-80z" fill="none" stroke="currentColor" stroke-width=".8"/><path d="M60 20v80" stroke="currentColor" stroke-width=".8"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT / THREE MOVEMENTS -->
+  <section class="section visit" id="visit">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="label">03 — The visit</p>
+        <h2 class="title"><span class="mask"><span class="mask__in">A visit, in three</span></span> <span class="mask"><span class="mask__in"><em>quiet movements.</em></span></span></h2>
+      </div>
+      <ol class="steps">
+        <li class="step tilt">
+          <span class="step__n">01</span>
+          <h3>Arrive</h3>
+          <p>A warm welcome, a cup of tea and a short conversation about what you need today.</p>
+        </li>
+        <li class="step tilt">
+          <span class="step__n">02</span>
+          <h3>Unwind</h3>
+          <p>Your ritual unfolds in a calm, private space, at a pace set entirely by you.</p>
+        </li>
+        <li class="step tilt">
+          <span class="step__n">03</span>
+          <h3>Emerge</h3>
+          <p>A final touch, simple advice for home and a gentle return to the day, lighter than you came.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- WORDS (testimonial placeholder) -->
+  <section class="section words" id="words">
+    <div class="wrap words__in">
+      <p class="label">04 — Words</p>
+      <h2 class="sr-only">What our clients say</h2>
+      <figure>
+        <blockquote><p class="quote" data-split>[Testimonial from a client]</p></blockquote>
+        <figcaption>[Client name], [Service received]</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta" id="book" aria-labelledby="cta-h">
+    <div class="cta__glow" aria-hidden="true"></div>
+    <div class="wrap cta__in">
+      <p class="eyebrow eyebrow--light"><span class="hair"></span>Reservations</p>
+      <h2 id="cta-h" class="cta__title"><span class="mask"><span class="mask__in">Your hour of quiet</span></span> <span class="mask"><span class="mask__in"><em>begins here.</em></span></span></h2>
+      <div class="cta__actions">
+        <a class="btn btn--light" href="#contact">Book a visit</a>
+        <p class="cta__note">[Booking link or phone number]</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="contact">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="brand" href="#top" aria-label="Lumière, back to top">
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="10.5" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="16" cy="16" r="4" fill="var(--gold)"/></svg>
+          <span class="brand__word">Lumière</span>
+        </a>
+        <p>Salon &amp; spa. Unhurried rituals for hair, skin and body.</p>
+      </div>
+      <nav class="footer__col" aria-label="Footer">
+        <h3>Explore</h3>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#rituals">Rituals</a>
+        <a href="#visit">The visit</a>
+        <a href="#book">Book a visit</a>
+      </nav>
+      <div class="footer__col">
+        <h3>Find us</h3>
+        <p>[Your street address]</p>
+        <p>[Your city, postcode]</p>
+        <p>[Your phone number]</p>
+        <p>[Your email address]</p>
+      </div>
+      <div class="footer__col">
+        <h3>Hours</h3>
+        <p>[Opening hours, weekdays]</p>
+        <p>[Opening hours, weekends]</p>
+        <p>[Social links]</p>
+      </div>
+    </div>
+    <p class="footer__word" aria-hidden="true">Lumière</p>
+    <div class="footer__bottom">
+      <p>© [Year] Lumière. All rights reserved.</p>
+      <p>Sample design by Website Studio</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../../vendor/gsap.min.js"></script>
+<script src="../../vendor/ScrollTrigger.min.js"></script>
+<script src="../../vendor/lenis.min.js"></script>
+<script type="module" src="main.js"></script>
+</body>
+</html>

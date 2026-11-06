@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fornace | Neapolitan pizza: order online or book a table (sample design)</title>
+<meta name="description" content="Sample pizzeria website by Website Studio. Order Neapolitan pizza for pickup or delivery, build your own, or book a table. Menu and prices are samples.">
+<meta name="theme-color" content="#fbf6ec">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23c4281c'/%3E%3Ccircle cx='16' cy='16' r='9' fill='%23fbf6ec'/%3E%3C/svg%3E">
+<link rel="preload" as="image" href="images/hero-margherita-800.webp" imagesrcset="images/hero-margherita-400.webp 400w, images/hero-margherita-800.webp 800w, images/hero-margherita-1200.webp 1200w" imagesizes="(min-width: 56em) 34rem, 66vw" fetchpriority="high">
+<link rel="stylesheet" href="../../shared/base.css">
+<link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
+<script type="module" src="../../shared/core.js"></script>
+<script type="module" src="fornace.js"></script>
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-header>
+  <div class="site-header__inner container">
+    <a class="brand" href="index.html" aria-label="Fornace, home"><span class="brand__mark" aria-hidden="true"></span><span class="brand__word" data-site="name">Fornace</span></a>
+    <nav class="site-nav" id="site-nav" data-nav aria-label="Main">
+      <ul>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="#build">Build a pizza</a></li>
+        <li><a href="#visit">Hours</a></li>
+        <li><a href="#reserve">Book</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <a class="btn btn--primary btn--sm header-order" href="menu.html">Order online</a>
+      <button class="cart-btn" type="button" data-cart-open aria-controls="cart-drawer" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-btn__text">Cart</span>
+        <span class="badge" data-cart-count>0</span><span class="vh" data-cart-count-label> items</span>
+      </button>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <span class="vh">Site navigation</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero__inner">
+      <div class="hero__media">
+        <div class="hero__disc">
+          <img class="hero__img" src="images/hero-margherita-800.webp" srcset="images/hero-margherita-400.webp 400w, images/hero-margherita-800.webp 800w, images/hero-margherita-1200.webp 1200w" sizes="(min-width: 56em) 34rem, 66vw" width="1200" height="1500" alt="Top view of a margherita pizza cut into four, with tomato, melted mozzarella and basil" fetchpriority="high" decoding="async">
+        </div>
+        <svg class="hero__ring" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+          <defs><path id="ring-path" d="M100,100 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"/></defs>
+          <text><textPath href="#ring-path" textLength="548" lengthAdjust="spacing">PIZZA NAPOLETANA · PICKUP · DELIVERY · DINE IN · ORDER ONLINE ·</textPath></text>
+        </svg>
+        <p class="hero__sticker"><span class="hero__sticker-k">Pickup in</span> <strong>~<span data-fz="pickup">15</span></strong> <span class="hero__sticker-k">min</span></p>
+      </div>
+      <div class="hero__copy">
+        <p class="eyebrow"><span data-site="cuisine">Neapolitan pizza</span> · pickup, delivery, dine in</p>
+        <h1 id="hero-title" class="hero__title"><span class="hero__line">Fired fast.</span> <span class="hero__line hero__line--alt">Eaten faster.</span></h1>
+        <p class="lede">Soft, charred Neapolitan pizza, ready for pickup in about <span data-fz="pickup">15</span> minutes or at your door in about <span data-fz="delivery">35</span>. Order in a few taps, or book a table.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary btn--xl" href="menu.html">Order online <span aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn--secondary btn--xl" href="#reserve">Book a table</a>
+        </div>
+        <p class="hero__status"><span class="open-status chip-status" data-open-status>Opening hours</span></p>
+        <p class="small muted">Order direct with us and skip the app fees.</p>
+        <noscript><p class="demo-note">Online ordering needs JavaScript. Please call <a href="tel:+15555550100">[phone]</a> to order.</p></noscript>
+      </div>
+    </div>
+  </section>
+
+  <section class="speed" aria-label="Order times and contact">
+    <div class="container speed__inner">
+      <div class="speed__item"><p class="speed__k">Pickup</p><p class="speed__v">~<span data-fz="pickup">15</span><small> min</small></p></div>
+      <div class="speed__item"><p class="speed__k">Delivery</p><p class="speed__v">~<span data-fz="delivery">35</span><small> min</small></p></div>
+      <div class="speed__item speed__item--wide">
+        <p class="speed__k">Delivery fee <span data-fz="fee">$2.50</span> · minimum order <span data-fz="min">$15.00</span></p>
+        <p class="speed__note">Times are sample estimates. <a href="tel:+15555550100" data-tel>Call <span data-site="contact.phone">[phone]</span></a> · <a href="#map" data-directions>Directions</a></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>Margherita</span><span>Marinara</span><span>Burrata e basilico</span><span>'Nduja e burrata</span><span>Crudo e burrata</span><span>Mortadella e pistacchio</span><span>Arancini</span><span>Tiramisu</span>
+      <span>Margherita</span><span>Marinara</span><span>Burrata e basilico</span><span>'Nduja e burrata</span><span>Crudo e burrata</span><span>Mortadella e pistacchio</span><span>Arancini</span><span>Tiramisu</span>
+    </div>
+  </div>
+
+  <section class="section favs" id="signature" aria-labelledby="sig-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow eyebrow--red">Out of the oven</p>
+          <h2 id="sig-title" class="display-h">Fan favourites</h2>
+        </div>
+        <a class="btn btn--secondary" href="menu.html">See the full menu</a>
+      </div>
+      <div data-signature data-limit="4"></div>
+    </div>
+  </section>
+
+  <section class="build" id="build" aria-labelledby="build-title">
+    <div class="container build__inner">
+      <div class="build__head">
+        <p class="eyebrow eyebrow--light">Your pizza, your way</p>
+        <h2 id="build-title" class="display-h">Build your pizza<br>in three steps</h2>
+        <p class="build__lede">Add a base pizza, then pick everything in your basket. Each choice shows its price before you check out.</p>
+      </div>
+      <ol class="build__steps" role="list">
+        <li class="build__step">
+          <p class="build__num" aria-hidden="true">1</p>
+          <h3>Base</h3>
+          <ul class="build__opts" role="list"><li>Rossa (tomato)</li><li>Bianca (no tomato)</li></ul>
+        </li>
+        <li class="build__step">
+          <p class="build__num" aria-hidden="true">2</p>
+          <h3>Cheese</h3>
+          <ul class="build__opts" role="list"><li>Fior di latte</li><li>Buffalo mozzarella <span>+$2.00</span></li><li>No cheese</li></ul>
+        </li>
+        <li class="build__step">
+          <p class="build__num" aria-hidden="true">3</p>
+          <h3>Two toppings</h3>
+          <ul class="build__opts" role="list"><li>Spicy 'nduja <span>+$2.50</span></li><li>Prosciutto crudo <span>+$3.00</span></li><li>Mushrooms <span>+$1.50</span></li><li>Black olives <span>+$1.00</span></li><li>Rocket <span>+$1.00</span></li><li>Aubergine <span>+$1.50</span></li><li>Burrata <span>+$3.50</span></li></ul>
+        </li>
+      </ol>
+      <div class="build__cta">
+        <div class="build__pie" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div>
+          <p class="build__price">From <strong>$11.00</strong></p>
+          <button class="btn btn--light btn--xl" type="button" data-add="build-your-own" data-fz-open-cart><span>Start my pizza</span><span class="vh"> (adds Build your own pizza to your order, then choose base, cheese and toppings)</span></button>
+          <p class="build__hint">Your basket opens so you can choose.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section story" id="story" aria-labelledby="story-title">
+    <div class="container story__grid">
+      <figure class="story__fig story__fig--a">
+        <img src="images/dough-800.webp" srcset="images/dough-400.webp 400w, images/dough-800.webp 800w, images/dough-1600.webp 1600w" sizes="(min-width: 56em) 36rem, 92vw" width="800" height="450" alt="Floured hands pressing out a round of pizza dough on a marble counter" loading="lazy" decoding="async">
+        <figcaption>Stretch</figcaption>
+      </figure>
+      <figure class="story__fig story__fig--b">
+        <img src="images/oven-800.webp" srcset="images/oven-400.webp 400w, images/oven-800.webp 800w, images/oven-1600.webp 1600w" sizes="(min-width: 56em) 26rem, 92vw" width="800" height="533" alt="A pizza baking on the floor of a wood-fired oven beside burning logs" loading="lazy" decoding="async">
+        <figcaption>Fire</figcaption>
+      </figure>
+      <div class="story__copy stack">
+        <p class="eyebrow eyebrow--red">Our story</p>
+        <h2 id="story-title" class="display-h">Dough, fire, done.</h2>
+        <p class="story__lede">A Neapolitan pizzeria built around a hot oven: soft in the middle, blistered at the edge. [How the dough is made and baked: client to confirm]</p>
+        <p>[Your story: client to supply. Who runs the oven, where the recipe comes from, and what matters to you.]</p>
+        <div class="trust">
+          <p class="placeholder">[Guest reviews: client to supply]</p>
+          <p class="placeholder">[Press or awards, if any: client to supply]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section visit" id="visit" aria-labelledby="visit-title">
+    <div class="container visit__grid">
+      <div class="visit__hours stack">
+        <p class="eyebrow eyebrow--red">Visit</p>
+        <h2 id="visit-title" class="display-h">Hours &amp; location</h2>
+        <p class="open-status" data-open-status>Opening hours</p>
+        <div data-hours></div>
+      </div>
+      <div class="visit__where stack">
+        <address class="contact">
+          <span data-site="contact.address">[address]</span><br>
+          <a href="tel:+15555550100" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+          <span data-site="contact.email">[email]</span>
+        </address>
+        <div class="map-ph" id="map">[map]<br>Map: client to supply (no external embed)</div>
+        <div class="visit__actions">
+          <a class="btn btn--secondary" href="#map" data-directions>Get directions</a>
+          <a class="btn btn--primary" href="menu.html">Order for pickup</a>
+        </div>
+        <p class="small muted">Also on <span data-delivery-apps>[Delivery app 1] · [Delivery app 2]</span> (links: client to supply). Ordering here is quicker.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reserve" id="reserve" aria-labelledby="reserve-title">
+    <div class="container reserve__grid">
+      <div class="stack reserve__intro">
+        <p class="eyebrow eyebrow--red">Eat in</p>
+        <h2 id="reserve-title" class="display-h">Book a table</h2>
+        <p class="muted">Pick a time and we will hold your table. Groups larger than 8, please call <span data-site="contact.phone">[phone]</span>.</p>
+      </div>
+      <div>
+        <form id="reserve-form" class="form panel" data-reserve novalidate aria-labelledby="reserve-title">
+          <div class="error-summary" data-error-summary tabindex="-1" hidden></div>
+          <div class="form-row">
+            <div class="field"><label for="r-date">Date</label><input id="r-date" name="r-date" type="date" required></div>
+            <div class="field"><label for="r-time">Time</label><select id="r-time" name="r-time" required></select></div>
+            <div class="field"><label for="r-party">Party size</label><select id="r-party" name="r-party" required></select></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="r-name">Name</label><input id="r-name" name="r-name" type="text" autocomplete="name" minlength="2" required></div>
+            <div class="field"><label for="r-phone">Phone</label><input id="r-phone" name="r-phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+          </div>
+          <div class="field"><label for="r-email">Email <span class="optional">(optional)</span></label><input id="r-email" name="r-email" type="email" autocomplete="email"></div>
+          <div class="field"><label for="r-notes">Notes <span class="optional">(optional)</span></label><textarea id="r-notes" name="r-notes" maxlength="300" rows="3" aria-describedby="r-notes-hint"></textarea><p class="hint" id="r-notes-hint">Allergies, high chair, birthday.</p></div>
+          <button class="btn btn--primary btn--block btn--xl" type="submit">Request table</button>
+          <p class="demo-note">Demo only: no booking is made and nothing is sent.</p>
+        </form>
+        <div class="panel confirm" data-reserve-confirm hidden>
+          <h3 data-reserve-confirm-heading tabindex="-1">Table request received</h3>
+          <p>Booking reference <strong data-reserve-ref></strong></p>
+          <p data-reserve-summary></p>
+          <p class="demo-note">Demo only: no booking was made and nothing was sent.</p>
+          <button class="btn btn--secondary" type="button" data-reserve-again>Make another booking</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div class="stack">
+      <p class="footer__brand"><span class="brand__mark" aria-hidden="true"></span><span data-site="name">Fornace</span></p>
+      <p class="open-status" data-open-status>Opening hours</p>
+      <address class="contact">
+        <span data-site="contact.address">[address]</span><br>
+        <a href="tel:+15555550100" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+        <span data-site="contact.email">[email]</span>
+      </address>
+    </div>
+    <nav aria-label="Footer">
+      <ul class="footer__links">
+        <li><a href="menu.html">Order online</a></li>
+        <li><a href="#build">Build a pizza</a></li>
+        <li><a href="#reserve">Book a table</a></li>
+        <li><a href="#visit">Hours &amp; location</a></li>
+      </ul>
+    </nav>
+    <div class="stack">
+      <p class="footer__big">Hot in ~<span data-fz="pickup">15</span> min.</p>
+      <p class="small">Prefer an app? Also on <span data-delivery-apps>[Delivery app 1] · [Delivery app 2]</span> (links: client to supply).</p>
+    </div>
+  </div>
+  <div class="container footer__legal small">
+    <p>Sample design by Website Studio. Menu, prices and wording are samples. Photos are stock.</p>
+    <p>Photos: Moussa Idrissi, Giona Mason, Katie Barget, Doğukan Melik Sevindik, Dhally Romy, Rene Strgar, Gian Larracas, Nadin Sh, Anna Guerrero, Valeria Boltneva and Arian Fernandez on Pexels (Pexels License).</p>
+    <p>&copy; <span data-year>2026</span> <span data-site="name">Fornace</span> (sample business)</p>
+  </div>
+</footer>
+
+<nav class="mbar" data-mobile-bar aria-label="Quick actions">
+  <a class="mbar__btn mbar__btn--primary" href="menu.html" data-mbar-order>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>Order</a>
+  <button class="mbar__btn mbar__btn--primary" type="button" data-mbar-cart data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span data-mbar-cart-label>View order</span></button>
+  <a class="mbar__btn" href="#reserve">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>Book</a>
+  <a class="mbar__btn" href="tel:+15555550100" data-tel>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+</nav>
+<button class="to-top" type="button" data-to-top hidden>Back to top</button>
+</body>
+</html>

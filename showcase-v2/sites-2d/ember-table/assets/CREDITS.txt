@@ -1,0 +1,2 @@
+No external images, fonts or icons are used. All visuals are CSS gradients, inline SVG and a Three.js particle scene.
+Fonts: system font stacks only.

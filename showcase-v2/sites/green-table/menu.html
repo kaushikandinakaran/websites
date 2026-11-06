@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Menu | Green Table brunch and bowls (sample design)</title>
+<meta name="description" content="Full brunch and bowls menu with prices, dietary tags and online ordering for pickup or delivery. Sample menu and prices.">
+<meta name="theme-color" content="#f4f0e6">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../../shared/base.css">
+<link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
+<script type="module" src="../../shared/core.js"></script>
+<script src="green.js" defer></script>
+</head>
+<body data-page="menu">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-header>
+  <div class="site-header__inner container">
+    <a class="brand" href="index.html" aria-label="Green Table, home">
+      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#2f4b3b"/><path d="M16 1a15 15 0 0 1 15 15H16Z" fill="#f2c230"/><path d="M9 19c4-8 10-9 14-9-1 6-5 12-14 9Z" fill="#cfdcc6"/></svg>
+      <span class="brand__word">green table</span>
+    </a>
+    <nav class="site-nav" id="site-nav" data-nav aria-label="Main">
+      <ul>
+        <li><a href="menu.html" aria-current="page">Menu</a></li>
+        <li><a href="index.html#bowls">Build a bowl</a></li>
+        <li><a href="index.html#club">Club</a></li>
+        <li><a href="index.html#visit">Visit</a></li>
+        <li><a href="index.html#reserve">Book</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <button class="cart-btn" type="button" data-cart-open aria-controls="cart-drawer" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-btn__text">Cart</span>
+        <span class="badge" data-cart-count>0</span><span class="vh" data-cart-count-label> items</span>
+      </button>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <span class="vh">Site navigation</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <div class="menu-hero">
+    <div class="container menu-head">
+      <p class="eyebrow">Order for pickup or delivery</p>
+      <div class="menu-head__row">
+        <h1>The menu</h1>
+        <p class="open-status" data-open-status>Opening hours</p>
+      </div>
+      <p class="muted small">Sample menu and prices. Tap Add on any dish, then view your order. Bowl dressings and milk swaps are picked in the cart.</p>
+      <div class="menu-tools">
+        <div class="field search">
+          <label for="menu-search">Search the menu</label>
+          <input id="menu-search" type="search" data-menu-search autocomplete="off" placeholder="Try tofu, eggs or matcha">
+        </div>
+        <div class="chips" data-menu-filters role="group" aria-label="Filter by dietary tag"></div>
+        <p class="small muted" data-menu-status role="status"></p>
+      </div>
+    </div>
+  </div>
+  <nav class="catbar" data-menu-nav aria-label="Menu categories"></nav>
+  <div class="container menu-body">
+    <div data-menu></div>
+    <div class="menu-empty" data-menu-empty hidden>
+      <p>No dishes match. Try another word or remove a filter.</p>
+      <button class="btn btn--line" type="button" data-menu-clear>Clear search and filters</button>
+    </div>
+    <noscript><p class="menu-empty">The menu and ordering need JavaScript. Please call <a href="tel:+15555550142">[phone]</a> to order.</p></noscript>
+    <p class="small muted menu-note">Dietary tags are a guide; allergens <span class="ph">[to confirm with the kitchen]</span>.</p>
+    <div class="menu-cta">
+      <p>Ready? Review your order and choose pickup or delivery.</p>
+      <button class="btn btn--citrus" type="button" data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer">View order · <span data-cart-total>$0.00</span></button>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div class="footer__col">
+      <p class="footer__brand"><span data-site="name">Green Table</span></p>
+      <p class="open-status" data-open-status>Opening hours</p>
+      <address class="contact">
+        <span data-site="contact.address">[address]</span><br>
+        <a href="tel:+15555550142" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+        <span data-site="contact.email">[email]</span>
+      </address>
+    </div>
+    <div class="footer__col">
+      <p class="footer__h">Hours</p>
+      <ul class="footer__hours" role="list" data-gt-hours><li>Mon–Fri 7:30 AM – 3:30 PM</li><li>Sat–Sun 8:30 AM – 4:00 PM</li></ul>
+      <p class="footer__note">Sample hours, to confirm.</p>
+    </div>
+    <nav class="footer__col" aria-label="Footer">
+      <p class="footer__h">Order and book</p>
+      <ul class="footer__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#reserve">Book a table</a></li>
+        <li><a href="index.html#club">Green Table Club</a></li>
+        <li><a href="index.html#visit">Hours and location</a></li>
+      </ul>
+    </nav>
+    <div class="footer__col">
+      <p class="footer__h">Delivery apps</p>
+      <p class="footer__note">Prefer an app? Also on <span data-delivery-apps>[Delivery app 1] · [Delivery app 2]</span> (links: client to supply).</p>
+    </div>
+  </div>
+  <div class="container footer__legal">
+    <p>Sample design by Website Studio. Menu, prices and wording are samples. Photos are stock.</p>
+    <p class="footer__credits">Photo credits (Pexels): Rasul Yarichev, Nadja M, Amar Preciado, Pramod Tiwari, Nicola Barts, Ella Olsson, NastyaSensei, Huzaifa Bukhari, Polina Tankilevitch, Not My Real Name, Tansholpan Barney, Macourt Media, Ethan Tran, Alyona Nagel.</p>
+    <p>&copy; <span data-year>2026</span> <span data-site="name">Green Table</span> (sample business)</p>
+  </div>
+</footer>
+
+<nav class="mbar" data-mobile-bar aria-label="Quick actions">
+  <a class="mbar__btn mbar__btn--primary" href="#main" data-mbar-order>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>Order</a>
+  <button class="mbar__btn mbar__btn--primary" type="button" data-mbar-cart data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span data-mbar-cart-label>View order</span></button>
+  <a class="mbar__btn" href="index.html#reserve">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>Book</a>
+  <a class="mbar__btn" href="tel:+15555550142" data-tel>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+</nav>
+<button class="to-top" type="button" data-to-top hidden>Back to top</button>
+</body>
+</html>

@@ -1,0 +1,4 @@
+Nova Labs sample site: no third-party images, fonts or media.
+All visuals are CSS gradients, inline SVG and a Three.js scene generated at runtime.
+Fonts: system font stack only.
+Libraries (local, ../../vendor/): GSAP + ScrollTrigger, Lenis, Three.js.

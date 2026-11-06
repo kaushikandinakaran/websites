@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le Petit Marais | French bistro: order à emporter or book a table (sample design)</title>
+<meta name="description" content="Sample French bistro website by Website Studio. Order à emporter for pickup or delivery, choose the menu du jour, or book a table. Menu and prices are samples.">
+<meta name="theme-color" content="#f5eee1">
+<link rel="icon" href="data:,">
+<link rel="preload" as="image" href="images/moules-800.webp" imagesrcset="images/moules-400.webp 400w, images/moules-800.webp 800w" imagesizes="(min-width: 40em) 19rem, 100vw" fetchpriority="high">
+<link rel="stylesheet" href="../../shared/base.css">
+<link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
+<script type="module" src="../../shared/core.js"></script>
+<script type="module" src="motion.js"></script>
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-header>
+  <div class="site-header__inner container">
+    <a class="brand" href="index.html">
+      <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="20" cy="20" r="15.5" fill="none" stroke="currentColor" stroke-width=".6"/><text x="20" y="25.5" text-anchor="middle" font-size="15" font-style="italic" fill="currentColor">pm</text></svg>
+      <span class="brand__word" data-site="name">Le Petit Marais</span>
+    </a>
+    <nav class="site-nav" id="site-nav" data-nav aria-label="Main">
+      <ul>
+        <li><a href="menu.html">La carte</a></li>
+        <li><a href="#prix-fixe">Menu du jour</a></li>
+        <li><a href="#visit">Visit</a></li>
+        <li><a href="#reserve">Book a table</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <a class="btn btn--primary btn--sm header-order" href="menu.html">Order online</a>
+      <button class="cart-btn" type="button" data-cart-open aria-controls="cart-drawer" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-btn__text vh">Your order</span>
+        <span class="badge" data-cart-count>0</span><span class="vh" data-cart-count-label> items</span>
+      </button>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+        <span class="vh">Site navigation</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__band">
+      <div class="container hero__copy">
+        <p class="eyebrow hero__eyebrow"><span data-site="cuisine">French bistro</span> <span class="dot" aria-hidden="true">·</span> sur place <span class="amp">&amp;</span> à emporter</p>
+        <h1 id="hero-title">Bistro classics, <em>at our table or yours.</em></h1>
+        <p class="lede">Order <i lang="fr">à emporter</i> for pickup or delivery in a few taps, or book a table with us.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--cream btn--lg" href="menu.html">Order online <span class="btn__sub" lang="fr">à emporter</span></a>
+          <a class="btn btn--outline-light btn--lg" href="#reserve">Book a table</a>
+        </div>
+        <p class="hero__status open-status" data-open-status>Opening hours</p>
+      </div>
+    </div>
+    <div class="container hero__plates">
+      <figure class="plate plate--a">
+        <img src="images/moules-800.webp" srcset="images/moules-400.webp 400w, images/moules-800.webp 800w" sizes="(min-width: 40em) 19rem, 100vw" width="800" height="533" alt="A bowl of steamed mussels with chopped parsley, fries on the side" fetchpriority="high" decoding="async">
+        <figcaption>Moules marinières</figcaption>
+      </figure>
+      <figure class="plate plate--b">
+        <picture><source media="(max-width: 39.99em)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><img src="images/creme-brulee-800.webp" srcset="images/creme-brulee-400.webp 400w, images/creme-brulee-800.webp 800w" sizes="(min-width: 40em) 21rem, 1px" width="800" height="1422" alt="A cook torching the sugar crust of a crème brûlée in a speckled dish" loading="eager" decoding="async"></picture>
+        <figcaption>Crème brûlée</figcaption>
+      </figure>
+      <figure class="plate plate--c">
+        <img src="images/onion-soup-800.webp" srcset="images/onion-soup-400.webp 400w, images/onion-soup-800.webp 800w" sizes="(min-width: 40em) 19rem, 1px" width="800" height="601" alt="Onion soup with a browned cheese crust, a spoon lifting the first bite, seen from above" loading="lazy" decoding="async">
+        <figcaption>Soupe à l'oignon</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="infobar" aria-label="Opening status and contact">
+    <div class="container infobar__inner">
+      <p class="open-status" data-open-status>Opening hours</p>
+      <p><span class="vh">Address: </span><span data-site="contact.address">[address]</span></p>
+      <p><a href="tel:+15555550100" data-tel>Call <span data-site="contact.phone">[phone]</span></a></p>
+      <p><a href="#map" data-directions>Get directions</a></p>
+    </div>
+  </section>
+
+  <section class="section classics" id="signature" aria-labelledby="sig-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Les classiques</p>
+        <h2 id="sig-title">Signature dishes</h2>
+        <p class="section-head__note">Tap Add and they go straight into your order, for pickup, delivery or the table.</p>
+      </div>
+      <div data-signature data-limit="4"></div>
+      <p class="classics__more"><a class="link-rule" href="menu.html">See the whole carte</a></p>
+    </div>
+  </section>
+
+  <section class="prixfixe" id="prix-fixe" aria-labelledby="pf-title">
+    <div class="container prixfixe__inner">
+      <div class="prixfixe__aside">
+        <p class="eyebrow eyebrow--light">Prix fixe</p>
+        <h2 id="pf-title">The menu du jour</h2>
+        <p>Three courses, one price, chosen by you. Order it <i lang="fr">à emporter</i> or ask for it at the table.</p>
+        <figure class="prixfixe__photo reveal">
+          <img src="images/saucing-800.webp" srcset="images/saucing-400.webp 400w, images/saucing-800.webp 800w" sizes="(min-width: 56em) 30vw, 92vw" width="800" height="533" loading="lazy" decoding="async" alt="A cook spooning sauce over plated dishes in a dim kitchen">
+        </figure>
+      </div>
+      <article class="carte" aria-labelledby="carte-title">
+        <p class="carte__sample">Sample menu</p>
+        <h3 class="carte__title" id="carte-title">Menu du jour</h3>
+        <p class="carte__sub">Entrée, plat, dessert</p>
+        <div class="carte__course">
+          <h4 class="carte__k">Entrée</h4>
+          <ul role="list">
+            <li>Soupe à l'oignon gratinée</li>
+            <li>Velouté du jour</li>
+            <li>Escargots au beurre persillé <span class="carte__supp">+ $4.00</span></li>
+          </ul>
+          <p class="carte__pair"><span class="carte__glass" aria-hidden="true"></span>With a chilled glass of dry white</p>
+        </div>
+        <div class="carte__course">
+          <h4 class="carte__k">Plat</h4>
+          <ul role="list">
+            <li>Poulet à l'orange</li>
+            <li>Daube de bœuf</li>
+            <li>Moules marinières, frites</li>
+          </ul>
+          <p class="carte__pair"><span class="carte__glass" aria-hidden="true"></span>With a supple red from the list</p>
+        </div>
+        <div class="carte__course">
+          <h4 class="carte__k">Dessert</h4>
+          <ul role="list">
+            <li>Crème brûlée</li>
+            <li>Tarte aux prunes</li>
+            <li>Tarte amandine</li>
+          </ul>
+          <p class="carte__pair"><span class="carte__glass" aria-hidden="true"></span>With a small glass of something sweet</p>
+        </div>
+        <div class="carte__foot">
+          <p class="carte__price"><span class="vh">Price: </span>$42.00</p>
+          <button class="btn btn--primary carte__add" type="button" data-add="menu-du-jour"><span class="dish__add-label" aria-hidden="true">Add</span><span aria-hidden="true"> to order</span><span class="vh">Add Menu du jour, three courses to order</span></button>
+        </div>
+        <p class="carte__note">Choose your three courses in your order after adding. Pairings are suggestions.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section accords" id="accords" aria-labelledby="acc-title">
+    <div class="container accords__inner">
+      <figure class="accords__media reveal">
+        <img src="images/wine-glass-800.webp" srcset="images/wine-glass-400.webp 400w, images/wine-glass-800.webp 800w" sizes="(min-width: 56em) 26vw, 70vw" width="800" height="1000" loading="lazy" decoding="async" alt="A glass of red wine lit from behind against a black background">
+      </figure>
+      <div class="accords__copy">
+        <p class="eyebrow">Les accords</p>
+        <h2 id="acc-title">A glass for every plate</h2>
+        <p class="accords__lede">Tell us what you are eating and we will pour something that suits it. A few starting points:</p>
+        <dl class="pairs">
+          <div class="pair"><dt>Steak frites</dt><dd>a structured, peppery red</dd></div>
+          <div class="pair"><dt>Moules marinières</dt><dd>a crisp, dry white</dd></div>
+          <div class="pair"><dt>Poulet à l'orange</dt><dd>a round, aromatic white</dd></div>
+          <div class="pair"><dt>Crème brûlée</dt><dd>a small glass of sweet white</dd></div>
+        </dl>
+        <p class="accords__note small">Pairing suggestions only. [Wine list and prices: client to supply]</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section story" id="story" aria-labelledby="story-title">
+    <div class="container story__inner">
+      <div class="story__copy">
+        <p class="eyebrow">Notre histoire</p>
+        <h2 id="story-title">The story of the house</h2>
+        <p class="story__lede">A neighbourhood bistro for long lunches, unhurried dinners and the classics to take home.</p>
+        <p>The carte stays short, and the menu du jour changes with the kitchen's choice of the day.</p>
+        <ul class="trust" role="list">
+          <li class="placeholder">[Guest reviews: client to supply]</li>
+          <li class="placeholder">[Press mentions: client to supply]</li>
+        </ul>
+      </div>
+      <figure class="story__media reveal">
+        <img src="images/terrace-800.webp" srcset="images/terrace-800.webp 800w, images/terrace-1600.webp 1600w" sizes="(min-width: 56em) 40vw, 92vw" width="800" height="505" loading="lazy" decoding="async" alt="Black and white photo of wicker bistro chairs and small round tables outside a café window">
+        <figcaption>Stock photograph.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section visit" id="visit" aria-labelledby="visit-title">
+    <div class="container visit__inner">
+      <div class="visit__hours">
+        <p class="eyebrow">Visit</p>
+        <h2 id="visit-title">Hours &amp; location</h2>
+        <p class="open-status" data-open-status>Opening hours</p>
+        <div data-hours></div>
+      </div>
+      <div class="visit__where">
+        <address class="contact">
+          <span class="contact__k">Address</span>
+          <span data-site="contact.address">[address]</span>
+          <span class="contact__k">Telephone</span>
+          <a href="tel:+15555550100" data-tel><span data-site="contact.phone">[phone]</span></a>
+          <span class="contact__k">Email</span>
+          <span data-site="contact.email">[email]</span>
+        </address>
+        <div class="map-ph" id="map">[map]<br>Map: client to supply (no external embed)</div>
+        <a class="btn btn--secondary" href="#map" data-directions>Get directions</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="reserve" id="reserve" aria-labelledby="reserve-title">
+    <div class="reserve__bg" aria-hidden="true">
+      <img src="images/candles-800.webp" srcset="images/candles-800.webp 800w, images/candles-1600.webp 1600w" sizes="100vw" width="800" height="533" loading="lazy" decoding="async" alt="">
+    </div>
+    <div class="container reserve__inner">
+      <div class="reserve__copy">
+        <p class="eyebrow eyebrow--light">Réservations</p>
+        <h2 id="reserve-title">Book a table</h2>
+        <p>Choose a time and we will hold your table. For more than 8 guests, please call <span data-site="contact.phone">[phone]</span>.</p>
+      </div>
+      <div class="reserve__form">
+        <noscript><p class="menu-empty">Booking and ordering need JavaScript. Please call <a href="tel:+15555550100">[phone]</a> to book a table or order.</p></noscript>
+        <form id="reserve-form" class="form panel" data-reserve novalidate aria-labelledby="reserve-title">
+          <div class="error-summary" data-error-summary tabindex="-1" hidden></div>
+          <div class="form-row">
+            <div class="field"><label for="r-date">Date</label><input id="r-date" name="r-date" type="date" required></div>
+            <div class="field"><label for="r-time">Time</label><select id="r-time" name="r-time" required></select></div>
+            <div class="field"><label for="r-party">Guests</label><select id="r-party" name="r-party" required></select></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="r-name">Name</label><input id="r-name" name="r-name" type="text" autocomplete="name" minlength="2" required></div>
+            <div class="field"><label for="r-phone">Phone</label><input id="r-phone" name="r-phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+          </div>
+          <div class="field"><label for="r-email">Email <span class="optional">(optional)</span></label><input id="r-email" name="r-email" type="email" autocomplete="email"></div>
+          <div class="field"><label for="r-notes">Notes <span class="optional">(optional)</span></label><textarea id="r-notes" name="r-notes" maxlength="300" rows="3" aria-describedby="r-notes-hint"></textarea><p class="hint" id="r-notes-hint">Allergies, a high chair, an occasion.</p></div>
+          <button class="btn btn--primary btn--block" type="submit">Request a table</button>
+          <p class="demo-note">Demo only: no booking is made and nothing is sent.</p>
+        </form>
+        <div class="panel confirm" data-reserve-confirm hidden>
+          <h3 data-reserve-confirm-heading tabindex="-1">Table request received</h3>
+          <p>Booking reference <strong data-reserve-ref></strong></p>
+          <p data-reserve-summary></p>
+          <p class="demo-note">Demo only: no booking was made and nothing was sent.</p>
+          <button class="btn btn--secondary" type="button" data-reserve-again>Make another booking</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div class="footer__id">
+      <p class="footer__brand" data-site="name">Le Petit Marais</p>
+      <p class="footer__tag">Bistro français · sur place &amp; à emporter</p>
+      <p class="open-status" data-open-status>Opening hours</p>
+      <address class="contact">
+        <span data-site="contact.address">[address]</span><br>
+        <a href="tel:+15555550100" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+        <span data-site="contact.email">[email]</span>
+      </address>
+    </div>
+    <nav aria-label="Footer">
+      <p class="footer__h">Order &amp; visit</p>
+      <ul class="footer__links">
+        <li><a href="menu.html">Order online</a></li>
+        <li><a href="#prix-fixe">Menu du jour</a></li>
+        <li><a href="#reserve">Book a table</a></li>
+        <li><a href="#visit">Hours &amp; location</a></li>
+      </ul>
+    </nav>
+    <div>
+      <p class="footer__h">Delivery apps</p>
+      <p class="small footer__direct">Order direct with us and skip the app fees.</p>
+      <p class="small">Prefer an app? We are also on <span data-delivery-apps>[Delivery app 1] · [Delivery app 2]</span> (links: client to supply).</p>
+    </div>
+  </div>
+  <div class="container footer__legal small">
+    <p>Sample design by Website Studio. Menu, prices and wording are samples. Photos are stock.</p>
+    <p class="footer__credits">Photos (Pexels, stock): Skyler Ewing, cottonbro studio, Marta Siedlecka, Yente Van Eynde, Abdul Rehman, Maria Isabelle Warren, Eugenia Remark, Nadin Sh, Deane Bayas, Matias Mango, Mohamed Olwy, Asya Vlasova, José Pérez (Artesano).</p>
+    <p>&copy; <span data-year>2026</span> <span data-site="name">Le Petit Marais</span> (sample business)</p>
+  </div>
+</footer>
+
+<nav class="mbar" data-mobile-bar aria-label="Quick actions">
+  <a class="mbar__btn mbar__btn--primary" href="menu.html" data-mbar-order>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>Order</a>
+  <button class="mbar__btn mbar__btn--primary" type="button" data-mbar-cart data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span data-mbar-cart-label>View order</span></button>
+  <a class="mbar__btn" href="#reserve">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>Book</a>
+  <a class="mbar__btn" href="tel:+15555550100" data-tel>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+</nav>
+<button class="to-top" type="button" data-to-top hidden>Back to top</button>
+</body>
+</html>

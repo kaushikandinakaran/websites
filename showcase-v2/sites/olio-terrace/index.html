@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Olio Terrace | Mezze and grill by the sea. Order online or book a table (sample design)</title>
+<meta name="description" content="Sample website by Website Studio for an invented Mediterranean seaside taverna. Order mezze and grilled fish for pickup or delivery, or book a terrace table. Menu and prices are samples.">
+<meta name="theme-color" content="#f8f6f1">
+<link rel="icon" href="data:,">
+<link rel="preload" as="image" media="(min-width: 60em)" href="images/01-taverna-bay-view-800.webp" imagesrcset="images/01-taverna-bay-view-400.webp 400w, images/01-taverna-bay-view-800.webp 800w, images/01-taverna-bay-view-1200.webp 1200w" imagesizes="(min-width: 60em) 46vw, 100vw" fetchpriority="high">
+<link rel="stylesheet" href="../../shared/base.css">
+<link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
+<script type="module" src="../../shared/core.js"></script>
+<script type="module" src="olio.js"></script>
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-header>
+  <div class="site-header__inner container">
+    <a class="brand" href="index.html" aria-label="Olio Terrace, home">
+      <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 33C15 25 22 17 33 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><ellipse cx="15" cy="21" rx="6.5" ry="2.6" transform="rotate(-50 15 21)" fill="currentColor" opacity=".55"/><ellipse cx="24" cy="20" rx="6.5" ry="2.6" transform="rotate(25 24 20)" fill="currentColor" opacity=".55"/><ellipse cx="22" cy="11" rx="5.5" ry="2.2" transform="rotate(-55 22 11)" fill="currentColor" opacity=".55"/><circle cx="11" cy="30" r="3.4" class="brand__olive"/></svg>
+      <span class="brand__word"><span class="brand__olio">Olio</span> <span class="brand__terrace">Terrace</span></span>
+    </a>
+    <nav class="site-nav" id="site-nav" data-nav aria-label="Main">
+      <ul>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="#mezze">Mezze table</a></li>
+        <li><a href="#story">Our story</a></li>
+        <li><a href="#visit">Visit</a></li>
+        <li><a href="#reserve">Book a table</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <a class="btn btn--primary btn--sm header-order" href="menu.html">Order online</a>
+      <button class="cart-btn" type="button" data-cart-open aria-controls="cart-drawer" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-btn__text">Cart</span>
+        <span class="badge" data-cart-count>0</span><span class="vh" data-cart-count-label> items</span>
+      </button>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+        <span class="vh">Site navigation</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <p class="hero__chip"><span class="open-status" data-open-status>Opening hours</span></p>
+        <p class="eyebrow hero__eyebrow"><span data-site="cuisine">Mediterranean seaside taverna</span></p>
+        <h1 id="hero-title" class="hero__title">Long tables, <em>salt air,</em> plates to share.</h1>
+        <p class="hero__lede">Mezze, grilled octopus and whole fish, warm pita and syrupy baklava. Order for pickup or delivery in a few taps, or book a table on the terrace.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary btn--lg" href="menu.html">Order online</a>
+          <a class="btn btn--secondary btn--lg" href="#reserve">Book a table</a>
+        </div>
+        <ul class="hero__facts" role="list">
+          <li><span class="hero__fact-k">Pickup</span> about <span data-site="timing.pickupMinutes">20</span> min</li>
+          <li><span class="hero__fact-k">Delivery</span> about <span data-site="timing.deliveryMinutes">45</span> min</li>
+          <li><span class="hero__fact-k">No app</span> order direct</li>
+        </ul>
+      </div>
+      <div class="hero__media">
+        <figure class="hero__arch">
+          <img class="hero__img" src="images/01-taverna-bay-view-800.webp"
+               srcset="images/01-taverna-bay-view-400.webp 400w, images/01-taverna-bay-view-800.webp 800w, images/01-taverna-bay-view-1200.webp 1200w"
+               sizes="(min-width: 60em) 46vw, 66vw" width="1200" height="800" decoding="async"
+               alt="A shaded stone terrace with red, blue and green wooden chairs at stone tables, looking out over a turquoise bay and mountains">
+        </figure>
+        <aside class="postcard" aria-label="Start with the mezze platter">
+          <img class="postcard__img" src="images/07-mezze-tray-800.webp" srcset="images/07-mezze-tray-400.webp 400w, images/07-mezze-tray-800.webp 800w" sizes="(min-width: 60em) 7rem, 92vw" width="800" height="533" loading="eager" fetchpriority="high" decoding="async"
+               alt="A round platter of hummus, aubergine dip, labneh, a chopped aubergine salad and stuffed vine leaves">
+          <div class="postcard__body">
+            <p class="postcard__k">Start here</p>
+            <p class="postcard__name">Mezze platter for two</p>
+            <div class="postcard__foot">
+              <span class="postcard__price" data-price-of="mezze-platter">$26.00</span>
+              <button type="button" class="btn btn--primary btn--sm dish__add" data-add="mezze-platter"><span class="dish__add-label" aria-hidden="true">Add</span><span class="vh">Add Mezze platter for two to order</span></button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="infobar" aria-label="Opening status and contact">
+    <div class="container infobar__inner">
+      <p class="open-status" data-open-status>Opening hours</p>
+      <p><span class="vh">Address: </span><span data-site="contact.address">[address]</span></p>
+      <p><a href="tel:+15555550144" data-tel>Call <span data-site="contact.phone">[phone]</span></a></p>
+      <p><a href="#map" data-directions>Get directions</a></p>
+    </div>
+  </section>
+
+  <section class="section signature" id="signature" aria-labelledby="sig-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">House favourites</p>
+          <h2 id="sig-title">From the grill <em>and the sea</em></h2>
+        </div>
+        <a class="link-arrow" href="menu.html">See the full menu <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <div data-signature data-limit="4"></div>
+      <noscript><p class="menu-empty">The menu and ordering need JavaScript. Please call <a href="tel:+15555550144">[phone]</a> to order, or see the <a href="menu.html">menu</a>.</p></noscript>
+    </div>
+  </section>
+
+  <section class="sea" id="mezze" aria-labelledby="mezze-title">
+    <div class="sea__wave" aria-hidden="true"></div>
+    <div class="container sea__grid">
+      <div class="sea__intro">
+        <p class="eyebrow">Build a mezze table</p>
+        <h2 id="mezze-title">Pick a few. <em>Share everything.</em></h2>
+        <ol class="sea__steps" role="list">
+          <li><span class="sea__n" aria-hidden="true">1</span><span>Choose a few small plates (mezze or a salad) for the middle of the table. The platter counts as five.</span></li>
+          <li><span class="sea__n" aria-hidden="true">2</span><span>Add a main from the grill: fish, octopus, chicken or lamb.</span></li>
+          <li><span class="sea__n" aria-hidden="true">3</span><span>Pick it up, have it delivered, or eat it here.</span></li>
+        </ol>
+        <div class="tally" data-tally>
+          <p class="tally__k">Your table so far</p>
+          <p class="tally__v"><span data-tally-mezze>0</span> small plates <span class="tally__sep" aria-hidden="true">&middot;</span> order total <span data-cart-total>$0.00</span></p>
+          <ul class="tally__plates" aria-hidden="true" data-tally-plates><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+          <button class="btn btn--light" type="button" data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer">View your order</button>
+        </div>
+      </div>
+      <div class="sea__list" data-mezze-builder>
+        <noscript><p class="small">The mezze list needs JavaScript. <a href="menu.html#cat-mezze">See the mezze on the menu</a> or call <a href="tel:+15555550144">[phone]</a> to order.</p></noscript>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>Hummus</span><span>Charred octopus</span><span>Dolmades</span><span>Whole red mullet</span><span>Taverna salad</span><span>Grilled small octopus</span><span>Pistachio baklava</span><span>Crisp calamari</span>
+      <span>Hummus</span><span>Charred octopus</span><span>Dolmades</span><span>Whole red mullet</span><span>Taverna salad</span><span>Grilled small octopus</span><span>Pistachio baklava</span><span>Crisp calamari</span>
+    </div>
+  </div>
+
+  <section class="section story" id="story" aria-labelledby="story-title">
+    <div class="container story__grid">
+      <figure class="story__main">
+        <img class="zoomable" src="images/04-waterfront-tables-800.webp" srcset="images/04-waterfront-tables-400.webp 400w, images/04-waterfront-tables-800.webp 800w, images/04-waterfront-tables-1200.webp 1200w"
+             sizes="(min-width: 60em) 40vw, 45vw" width="800" height="533" loading="lazy" decoding="async"
+             alt="Two small tables with blue gingham cloths and blue wooden chairs on a stone harbour wall, a hillside village reflected in the calm water">
+      </figure>
+      <div class="story__copy">
+        <p class="eyebrow">Our story</p>
+        <h2 id="story-title">Olive oil, the grill and <em>an unhurried lunch.</em></h2>
+        <p class="story__lede">[Your story: client to supply. Two or three sentences about who cooks here, where the recipes come from, and why the table is meant to be shared.]</p>
+        <ul class="beliefs" role="list">
+          <li><span class="beliefs__k">Oil first</span> Plates finished with olive oil. <span class="ph-note">[Producer: client to supply]</span></li>
+          <li><span class="beliefs__k">The grill</span> Fish, octopus and meat cooked over charcoal. <span class="ph-note">[to confirm]</span></li>
+          <li><span class="beliefs__k">Shared</span> Small plates that arrive as they are ready.</li>
+        </ul>
+      </div>
+      <figure class="story__hands">
+        <img class="zoomable" src="images/05-oil-on-salad-400.webp" srcset="images/05-oil-on-salad-400.webp 400w, images/05-oil-on-salad-800.webp 800w"
+             sizes="(min-width: 60em) 20rem, 60vw" width="400" height="267" loading="lazy" decoding="async"
+             alt="A hand pouring olive oil from a glass bottle over a bowl of salad with olives and tomatoes">
+        <figcaption>The finishing pour <span class="ph-note">(stock photo)</span></figcaption>
+      </figure>
+    </div>
+    <div class="container trust">
+      <p class="trust__slot"><span class="trust__k">Guest reviews</span> [Guest reviews: client to supply]</p>
+      <p class="trust__slot"><span class="trust__k">In the press</span> [Press mentions: client to supply, only if real]</p>
+      <p class="trust__slot"><span class="trust__k">Your photos</span> [Photos of the real dishes and terrace: client to supply]</p>
+    </div>
+  </section>
+
+  <section class="section visit" id="visit" aria-labelledby="visit-title">
+    <div class="container visit__grid">
+      <figure class="visit__media">
+        <img class="zoomable" src="images/03-table-under-trees-800.webp" srcset="images/03-table-under-trees-400.webp 400w, images/03-table-under-trees-800.webp 800w"
+             sizes="(min-width: 60em) 34vw, 92vw" width="800" height="533" loading="lazy" decoding="async"
+             alt="A single table with a patterned cloth set on sand between two whitewashed tree trunks, the sea behind">
+      </figure>
+      <div class="visit__hours">
+        <p class="eyebrow">Visit</p>
+        <h2 id="visit-title">Hours &amp; location</h2>
+        <p class="open-status" data-open-status>Opening hours</p>
+        <div data-hours></div>
+      </div>
+      <div class="visit__where">
+        <address class="contact">
+          <span class="contact__k">Find us</span>
+          <span data-site="contact.address">[address]</span><br>
+          <a href="tel:+15555550144" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+          <span data-site="contact.email">[email]</span>
+        </address>
+        <div class="map-ph" id="map">[map]<br>Map: client to supply (no external embed)</div>
+        <a class="btn btn--secondary" href="#map" data-directions>Get directions</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="reserve-band" id="reserve" aria-labelledby="reserve-title">
+    <div class="reserve-band__media" aria-hidden="true">
+      <img class="zoomable" src="images/02-white-terrace-sea-800.webp" srcset="images/02-white-terrace-sea-400.webp 400w, images/02-white-terrace-sea-800.webp 800w, images/02-white-terrace-sea-1600.webp 1600w"
+           sizes="100vw" width="800" height="533" loading="lazy" decoding="async" alt="">
+    </div>
+    <div class="container reserve">
+      <div class="reserve__intro">
+        <p class="eyebrow">Reservations</p>
+        <h2 id="reserve-title">Book a table</h2>
+        <p>Pick a time and we will hold your table. For groups larger than 10, please call <span data-site="contact.phone">[phone]</span>.</p>
+        <p class="small">Terrace or indoor seating: add a note. <span class="ph-note">[Seating options: client to confirm]</span></p>
+      </div>
+      <div class="reserve__card">
+        <form id="reserve-form" class="form" data-reserve novalidate aria-labelledby="reserve-title">
+          <div class="error-summary" data-error-summary tabindex="-1" hidden></div>
+          <div class="form-row">
+            <div class="field"><label for="r-date">Date</label><input id="r-date" name="r-date" type="date" required></div>
+            <div class="field"><label for="r-time">Time</label><select id="r-time" name="r-time" required></select></div>
+            <div class="field"><label for="r-party">Guests</label><select id="r-party" name="r-party" required></select></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="r-name">Name</label><input id="r-name" name="r-name" type="text" autocomplete="name" minlength="2" required></div>
+            <div class="field"><label for="r-phone">Phone</label><input id="r-phone" name="r-phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+          </div>
+          <div class="field"><label for="r-email">Email <span class="optional">(optional)</span></label><input id="r-email" name="r-email" type="email" autocomplete="email"></div>
+          <div class="field"><label for="r-notes">Notes <span class="optional">(optional)</span></label><textarea id="r-notes" name="r-notes" maxlength="300" rows="3" aria-describedby="r-notes-hint"></textarea><p class="hint" id="r-notes-hint">Terrace if possible, allergies, high chair, an occasion.</p></div>
+          <button class="btn btn--primary btn--block btn--lg" type="submit">Request table</button>
+          <p class="demo-note">Demo only: no booking is made and nothing is sent.</p>
+        </form>
+        <div class="confirm" data-reserve-confirm hidden>
+          <h3 data-reserve-confirm-heading tabindex="-1">Table request received</h3>
+          <p>Booking reference <strong data-reserve-ref></strong></p>
+          <p data-reserve-summary></p>
+          <p class="demo-note">Demo only: no booking was made and nothing was sent.</p>
+          <button class="btn btn--secondary" type="button" data-reserve-again>Make another booking</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer__key" aria-hidden="true"></div>
+  <div class="container footer__grid">
+    <div class="footer__col">
+      <p class="footer__brand"><span class="brand__olio">Olio</span> <span class="brand__terrace">Terrace</span></p>
+      <p class="open-status" data-open-status>Opening hours</p>
+      <address class="contact">
+        <span data-site="contact.address">[address]</span><br>
+        <a href="tel:+15555550144" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+        <span data-site="contact.email">[email]</span>
+      </address>
+    </div>
+    <div class="footer__col">
+      <p class="footer__h">Hours <span class="footer__note">(sample)</span></p>
+      <ul class="hours-mini" data-hours-mini role="list"><li>See Hours &amp; location above.</li></ul>
+    </div>
+    <nav class="footer__col" aria-label="Footer">
+      <p class="footer__h">Eat with us</p>
+      <ul class="footer__links">
+        <li><a href="menu.html">Order online</a></li>
+        <li><a href="#reserve">Book a table</a></li>
+        <li><a href="#visit">Hours &amp; location</a></li>
+      </ul>
+    </nav>
+    <div class="footer__col">
+      <p class="footer__h">Prefer an app?</p>
+      <p class="small">Also on <span data-delivery-apps>[Delivery app 1] · [Delivery app 2]</span> (links: client to supply). Ordering here directly is simplest for us.</p>
+    </div>
+  </div>
+  <div class="container footer__legal small">
+    <p>Sample design by Website Studio. Menu, prices and wording are samples. Photos are stock.</p>
+    <p class="footer__credits">Photo credits (stock, Pexels License): Piotr Baranowski (terrace and bay), Daniel Dorfer (white terrace), Fia by Marv (table under trees), Michelle Chadwick (waterfront tables), Jessica Lewis, thepaintedsquare (oil on salad), Karl Solano (salad), Ahmed Aqeely (mezze platter), Paolo Bici (octopus plate), S&oacute;c Năng Động (octopus on the grill), Alexey Demidov (red mullet), Zak Chapman (hummus), Ahmet &Ccedil;&ouml;t&uuml;r (calamari), Valeria Boltneva (dolmades), Nyara Aquino (chicken skewers), Jacob Yavin (baklava), Polina Tankilevitch (olives and bread). Photos show sample dishes, not this kitchen&rsquo;s food.</p>
+    <p>&copy; <span data-year>2026</span> <span data-site="name">Olio Terrace</span> (sample business)</p>
+  </div>
+</footer>
+
+<nav class="mbar" data-mobile-bar aria-label="Quick actions">
+  <a class="mbar__btn mbar__btn--primary" href="menu.html" data-mbar-order>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>Order</a>
+  <button class="mbar__btn mbar__btn--primary" type="button" data-mbar-cart data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span data-mbar-cart-label>View order</span></button>
+  <a class="mbar__btn" href="#reserve">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>Book</a>
+  <a class="mbar__btn" href="tel:+15555550144" data-tel>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+</nav>
+<button class="to-top" type="button" data-to-top hidden>Back to top</button>
+</body>
+</html>

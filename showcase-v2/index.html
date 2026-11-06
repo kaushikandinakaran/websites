@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Website Studio · Showcase</title>
+<meta name="description" content="Fifteen sample websites by Website Studio: ten restaurant sites built to turn visitors into orders and bookings, plus five editorial and motion sites.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23171310'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23e8a317'/%3E%3C/svg%3E">
+<style>
+:root{--bg:#0f0d0b;--bg2:#171310;--surface:#1c1713;--text:#f4ede2;--muted:#b8ab99;--accent:#e8a317;--accent2:#ec6a2c;--line:#312a22;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}img{max-width:100%}
+.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:#111;padding:8px 14px;border-radius:8px;z-index:20}.skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.top{position:sticky;top:0;z-index:10;background:rgb(15 13 11/.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:60px;gap:16px}
+.brand{font:700 1.02rem Georgia,serif;letter-spacing:.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand i{width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffd37a,var(--accent) 55%,#a86b00);display:block}
+.top nav{display:flex;gap:6px;flex-wrap:wrap}.top nav a{text-decoration:none;color:var(--muted);padding:8px 12px;border-radius:99px;font-size:.92rem}.top nav a:hover{color:var(--text);background:var(--surface)}
+.hero{position:relative;overflow:hidden;padding:84px 0 54px}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto -10%;height:120%;background:radial-gradient(60% 50% at 78% 12%,rgb(232 163 23/.20),transparent 70%),radial-gradient(50% 45% at 12% 0%,rgb(236 106 44/.16),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative}
+.eyebrow{display:inline-flex;gap:10px;align-items:center;color:var(--accent);letter-spacing:.16em;text-transform:uppercase;font-size:.78rem;font-weight:700;margin:0}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--accent)}
+h1{font:600 clamp(2.4rem,7vw,5rem)/1.02 Georgia,"Times New Roman",serif;margin:.35em 0 .3em;max-width:15ch;letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--accent)}
+.lede{color:var(--muted);max-width:60ch;font-size:1.12rem;margin:0}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 0}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border-radius:99px;text-decoration:none;font-weight:700;border:1px solid var(--line)}
+.btn--p{background:var(--accent);color:#1a1205;border-color:var(--accent)}.btn--p:hover{background:#ffbb33}
+.btn--g:hover{background:var(--surface)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:52px 0 0;padding:0;list-style:none}
+.stats li{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.stats b{display:block;font:600 2.1rem/1 Georgia,serif;color:var(--accent)}.stats span{color:var(--muted);font-size:.9rem}
+.sec{padding:56px 0 8px}
+.sec h2{font:600 clamp(1.7rem,4vw,2.5rem)/1.1 Georgia,serif;margin:.2em 0 .25em}
+.sec p.sub{color:var(--muted);margin:0 0 6px;max-width:64ch}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0}
+.filters button{font:inherit;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:99px;padding:9px 16px;cursor:pointer;min-height:44px}
+.filters button[aria-pressed="true"]{background:var(--text);color:#15110d;border-color:var(--text);font-weight:700}
+.grid{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr))}
+.card a{display:flex;flex-direction:column;height:100%;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s}
+.card a:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:0 18px 40px rgb(0 0 0/.45)}
+.shot{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;background:#000}
+.shot .d{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .6s}
+.card a:hover .shot .d{transform:scale(1.04)}
+.shot .m{position:absolute;right:14px;bottom:-26px;width:21%;border-radius:14px;border:3px solid #0b0907;box-shadow:0 10px 26px rgb(0 0 0/.6);transition:transform .4s;height:auto;aspect-ratio:312/675;object-fit:cover}
+.card a:hover .shot .m{transform:translateY(-14px)}
+.body{display:flex;flex-direction:column;gap:2px;padding:18px 20px 20px;flex:1}
+.kind{color:var(--accent);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.name{font:600 1.5rem/1.2 Georgia,serif;margin:.15em 0 .2em}
+.line{color:var(--muted);font-size:.95rem;flex:1}
+.foot{display:flex;align-items:center;justify-content:space-between;margin-top:16px}
+.chips{display:flex}.chips i{width:22px;height:22px;border-radius:50%;border:2px solid var(--surface);margin-right:-7px;display:block}
+.go{font-weight:700;font-size:.92rem}.go b{display:inline-block;transition:transform .25s}.card a:hover .go b{transform:translateX(5px)}
+.grid--2d{grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr))}
+.how{margin-top:64px;padding:44px 0;border-top:1px solid var(--line);background:linear-gradient(180deg,transparent,rgb(232 163 23/.05))}
+.how h2{font:600 clamp(1.6rem,4vw,2.3rem) Georgia,serif;margin:0 0 22px}
+.feat{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));padding:0;margin:0;list-style:none}
+.feat li{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
+.feat b{display:block;margin-bottom:6px;color:var(--text)}.feat span{color:var(--muted);font-size:.93rem}
+.feat .n{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#1a1205;font-weight:800;margin-bottom:10px}
+.note{margin:26px 0 0;color:var(--muted);font-size:.92rem;max-width:80ch}
+footer{border-top:1px solid var(--line);padding:26px 0 56px;color:var(--muted);font-size:.9rem}
+footer a{color:var(--text)}
+[hidden]{display:none!important}
+@media (max-width:640px){.hero{padding-top:54px}.top nav a{padding:8px 9px;font-size:.86rem}.shot .m{width:24%}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style></head><body>
+<a class="skip" href="#sites">Skip to the sites</a>
+<header class="top"><div class="wrap"><a class="brand" href="#top"><i></i>Website Studio</a>
+<nav aria-label="Sections"><a href="#restaurants">Restaurants</a><a href="#editorial">Editorial</a><a href="#how">How they sell</a></nav></div></header>
+<main id="top">
+<section class="hero"><div class="wrap">
+<p class="eyebrow">Sample designs · Showcase</p>
+<h1>Websites that turn <em>visitors</em> into orders.</h1>
+<p class="lede">Ten restaurant sites, each a different brand on the same proven path from hungry visitor to paid order or booked table. Plus five editorial and motion sites from our first round. Open any card, then try it on a phone.</p>
+<div class="cta"><a class="btn btn--p" href="#restaurants">See the restaurants</a><a class="btn btn--g" href="#editorial">The first five (2D)</a></div>
+<ul class="stats" aria-label="At a glance"><li><b>10</b><span>restaurant sites</span></li><li><b>5</b><span>editorial and motion sites</span></li><li><b>8</b><span>taps from landing to order, on a phone</span></li><li><b>164</b><span>stock photos, all credited</span></li></ul>
+</div></section>
+<div class="wrap" id="sites">
+<div class="filters" role="group" aria-label="Filter the sites"><button type="button" data-f="all" aria-pressed="true">All 15</button><button type="button" data-f="restaurants" aria-pressed="false">Restaurants (10)</button><button type="button" data-f="editorial" aria-pressed="false">Editorial (5)</button></div>
+<p class="sr" id="status" role="status" style="position:absolute;left:-999px">Showing 15 sites</p>
+<section class="sec" id="restaurants" data-sec="restaurants" style="padding-top:34px"><p class="eyebrow">Version 2</p><h2>Ten restaurants, built to sell</h2><p class="sub">One-tap Order and Book, a sticky bar on phones, a real photo menu, a cart with a visible total, and a short demo checkout. The small phone on each card is the real mobile layout.</p>
+<ul class="grid">
+<li class="card" data-group="restaurants"><a href="sites/cinder-and-salt/index.html" aria-labelledby="t-cinder-and-salt">
+<span class="shot"><img class="d" src="hub/thumbs/cinder-and-salt-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"><img class="m" src="hub/thumbs/cinder-and-salt-m.jpg" alt="" width="312" height="675" loading="lazy" decoding="async"></span>
+<span class="body"><span class="kind">Wood-fire steakhouse</span><span class="name" id="t-cinder-and-salt">Cinder &amp; Salt</span><span class="line">Dark, ember and brass. A cuts table that orders itself.</span>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#0d0b0a"></i><i style="background:#ec6a2c"></i><i style="background:#f1e9de"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<li class="card" data-group="restaurants"><a href="sites/mustang-hearth/index.html" aria-labelledby="t-mustang-hearth">
+<span class="shot"><img class="d" src="hub/thumbs/mustang-hearth-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"><img class="m" src="hub/thumbs/mustang-hearth-m.jpg" alt="" width="312" height="675" loading="lazy" decoding="async"></span>
+<span class="body"><span class="kind">Indo-Nepali kitchen</span><span class="name" id="t-mustang-hearth">Mustang Hearth</span><span class="line">Saffron panel, block-print pattern; momo bar and thali strip.</span>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#2a2420"></i><i style="background:#e8a317"></i><i style="background:#f6ecd8"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<li class="card" data-group="restaurants"><a href="sites/butter-and-bloom/index.html" aria-labelledby="t-butter-and-bloom">
+<span class="shot"><img class="d" src="hub/thumbs/butter-and-bloom-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"><img class="m" src="hub/thumbs/butter-and-bloom-m.jpg" alt="" width="312" height="675" loading="lazy" decoding="async"></span>
+<span class="body"><span class="kind">Bakery and café</span><span class="name" id="t-butter-and-bloom">Butter &amp; Bloom</span><span class="line">Cream, butter and rose; pre-order for your next open day.</span>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#f7efe0"></i><i style="background:#f2c94c"></i><i style="background:#c97b84"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<li class="card" data-group="restaurants"><a href="sites/olio-terrace/index.html" aria-labelledby="t-olio-terrace">
+<span class="shot"><img class="d" src="hub/thumbs/olio-terrace-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"><img class="m" src="hub/thumbs/olio-terrace-m.jpg" alt="" width="312" height="675" loading="lazy" decoding="async"></span>
+<span class="body"><span class="kind">Mediterranean taverna</span><span class="name" id="t-olio-terrace">Olio Terrace</span><span class="line">Whitewash and Aegean blue; build a mezze table.</span>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#f6f3ec"></i><i style="background:#1f5f8b"></i><i style="background:#c2693f"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<li class="card" data-group="restaurants"><a href="sites/jasmine-lane/index.html" aria-labelledby="t-jasmine-lane">
+<span class="shot"><img class="d" src="hub/thumbs/jasmine-lane-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"><img class="m" src="hub/thumbs/jasmine-lane-m.jpg" alt="" width="312" height="675" loading="lazy" decoding="async"></span>
+<span class="body"><span class="kind">Tea house and dim sum</span><span class="name" id="t-jasmine-lane">Jasmine Lane</span><span class="line">Ink and jade; steamer-basket menu and tea pairings.</span>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#f5f0e6"></i><i style="background:#23614d"></i><i style="background:#b8371f"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<li class="card" data-group="restaurants"><a href="sites/hoshi-counter/index.html" aria-labelledby="t-hoshi-counter">
+<span class="shot"><img class="d" src="hub/thumbs/hoshi-counter-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"><img class="m" src="hub/thumbs/hoshi-counter-m.jpg" alt="" width="312" height="675" loading="lazy" decoding="async"></span>
+<span class="body"><span class="kind">Sushi and omakase</span><span class="name" id="t-hoshi-counter">Hoshi Counter</span><span class="line">Near-black, huge type; book a seat or order takeaway.</span>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#14110f"></i><i style="background:#efe8d8"></i><i style="background:#c8341c"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<li class="card" data-group="restaurants"><a href="sites/fornace-pizza/index.html" aria-labelledby="t-fornace-pizza">
+<span class="shot"><img class="d" src="hub/thumbs/fornace-pizza-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"><img class="m" src="hub/thumbs/fornace-pizza-m.jpg" alt="" width="312" height="675" loading="lazy" decoding="async"></span>
+<span class="body"><span class="kind">Neapolitan pizzeria</span><span class="name" id="t-fornace-pizza">Fornace Pizza</span><span class="line">Poster type, tomato and basil; the fastest path to an order.</span>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#f4ebdc"></i><i style="background:#c8321e"></i><i style="background:#3a7a3a"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<li class="card" data-group="restaurants"><a href="sites/le-petit-marais/index.html" aria-labelledby="t-le-petit-marais">
+<span class="shot"><img class="d" src="hub/thumbs/le-petit-marais-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"><img class="m" src="hub/thumbs/le-petit-marais-m.jpg" alt="" width="312" height="675" loading="lazy" decoding="async"></span>
+<span class="body"><span class="kind">French bistro</span><span class="name" id="t-le-petit-marais">Le Petit Marais</span><span class="line">Burgundy and brass; menu du jour card, à emporter.</span>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#4a1420"></i><i style="background:#b8913f"></i><i style="background:#f3e9d8"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<li class="card" data-group="restaurants"><a href="sites/casa-marigold/index.html" aria-labelledby="t-casa-marigold">
+<span class="shot"><img class="d" src="hub/thumbs/casa-marigold-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"><img class="m" src="hub/thumbs/casa-marigold-m.jpg" alt="" width="312" height="675" loading="lazy" decoding="async"></span>
+<span class="body"><span class="kind">Modern Mexican</span><span class="name" id="t-casa-marigold">Casa Marigold</span><span class="line">Marigold, teal and terracotta; taco-night builder.</span>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#f2a900"></i><i style="background:#0f7a78"></i><i style="background:#c25a3a"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<li class="card" data-group="restaurants"><a href="sites/green-table/index.html" aria-labelledby="t-green-table">
+<span class="shot"><img class="d" src="hub/thumbs/green-table-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"><img class="m" src="hub/thumbs/green-table-m.jpg" alt="" width="312" height="675" loading="lazy" decoding="async"></span>
+<span class="body"><span class="kind">Brunch and bowls</span><span class="name" id="t-green-table">Green Table</span><span class="line">Sage, oat and citrus; build-your-bowl strip.</span>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#dfe6d3"></i><i style="background:#f1ead8"></i><i style="background:#e8a317"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+</ul></section>
+<section class="sec" id="editorial" data-sec="editorial"><p class="eyebrow">Round one · 2D</p><h2>The first five</h2><p class="sub">Editorial layouts and motion for other kinds of business: fine dining, a spa, a gym, an architecture studio and a technology consultancy.</p>
+<ul class="grid grid--2d">
+<li class="card card--wide" data-group="editorial"><a href="sites-2d/ember-table/index.html" aria-labelledby="t-ember-table">
+<span class="shot shot--only"><img class="d" src="hub/thumbs/ember-table-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"></span>
+<span class="body"><span class="kind">Fine dining</span><span class="name" id="t-ember-table">Ember &amp; Table</span><span class="line">Candle-lit; a pinned horizontal menu and a steam effect.</span>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#12100e"></i><i style="background:#f0793a"></i><i style="background:#f3ece0"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<li class="card card--wide" data-group="editorial"><a href="sites-2d/lumiere-spa/index.html" aria-labelledby="t-lumiere-spa">
+<span class="shot shot--only"><img class="d" src="hub/thumbs/lumiere-spa-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"></span>
+<span class="body"><span class="kind">Luxury salon and spa</span><span class="name" id="t-lumiere-spa">Lumière Salon &amp; Spa</span><span class="line">Calm, light-filled rituals for hair, skin, body and nails.</span>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#f6f1e7"></i><i style="background:#b8975a"></i><i style="background:#2a2a2a"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<li class="card card--wide" data-group="editorial"><a href="sites-2d/apex-forge/index.html" aria-labelledby="t-apex-forge">
+<span class="shot shot--only"><img class="d" src="hub/thumbs/apex-forge-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"></span>
+<span class="body"><span class="kind">Strength gym</span><span class="name" id="t-apex-forge">Apex Forge</span><span class="line">High-energy gym with superhero attitude and a 3D scene.</span>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#0d1117"></i><i style="background:#ff5a1f"></i><i style="background:#f5f5f5"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<li class="card card--wide" data-group="editorial"><a href="sites-2d/northline-studio/index.html" aria-labelledby="t-northline-studio">
+<span class="shot shot--only"><img class="d" src="hub/thumbs/northline-studio-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"></span>
+<span class="body"><span class="kind">Architecture and real estate</span><span class="name" id="t-northline-studio">Northline Studio</span><span class="line">Editorial grid with 3D massing models.</span>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#121212"></i><i style="background:#f3f1ec"></i><i style="background:#8a8a8a"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+<li class="card card--wide" data-group="editorial"><a href="sites-2d/nova-labs/index.html" aria-labelledby="t-nova-labs">
+<span class="shot shot--only"><img class="d" src="hub/thumbs/nova-labs-d.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"></span>
+<span class="body"><span class="kind">Technology consulting</span><span class="name" id="t-nova-labs">Nova Labs</span><span class="line">Dark glass interface with a 3D hero.</span>
+<span class="foot"><span class="chips" aria-hidden="true"><i style="background:#07060f"></i><i style="background:#8b5cf6"></i><i style="background:#e8e6ff"></i></span><span class="go">Open site <b aria-hidden="true">&rarr;</b></span></span></span></a></li>
+</ul></section>
+</div>
+<section class="how" id="how"><div class="wrap"><h2>What every restaurant site does</h2>
+<ul class="feat">
+<li><span class="n">1</span><b>Order in one tap</b><span>Order and Book in the header; a sticky Order / Book / Call bar on phones.</span></li>
+<li><span class="n">2</span><b>A real, photo-led menu</b><span>HTML text (not a PDF), search, filter chips, prices and photos.</span></li>
+<li><span class="n">3</span><b>Open now, at a glance</b><span>Status, hours, address and directions near the top.</span></li>
+<li><span class="n">4</span><b>Short checkout</b><span>Cart total always visible; pickup or delivery; no account; demo payment.</span></li>
+<li><span class="n">5</span><b>Book a table</b><span>Three fields and a confirmation, with clear error messages.</span></li>
+</ul>
+<p class="note">Everything here is a sample design. Business names, menus, prices, hours and wording are invented; address and phone are placeholders. Photos are stock photographs, not the client's food. Demo checkout only: no payment is taken and no order is sent.</p></div></section>
+</main>
+<footer><div class="wrap"><p>Sample designs by Website Studio. Photos: stock photographs from Pexels (Pexels License), credited in <a href="photos/CREDITS.md">photos/CREDITS.md</a>. Looking for the earlier 3D and photo-scene sites? <a href="../version-1.html">Version 1</a>.</p></div></footer>
+<script>
+(function(){
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var cards=[].slice.call(document.querySelectorAll('.card'));
+  var heads=[].slice.call(document.querySelectorAll('[data-sec]'));
+  function apply(f){
+    btns.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.f===f));});
+    cards.forEach(function(c){c.hidden=!(f==='all'||c.dataset.group===f);});
+    heads.forEach(function(h){h.hidden=!(f==='all'||h.dataset.sec===f);});
+    var s=document.getElementById('status'); if(s){var n=cards.filter(function(c){return !c.hidden}).length; s.textContent='Showing '+n+' sites';}
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){apply(b.dataset.f);});});
+})();
+</script>
+</body></html>

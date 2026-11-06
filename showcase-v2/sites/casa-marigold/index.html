@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Casa Marigold | Modern Mexican: order online or book a table (sample design)</title>
+<meta name="description" content="Sample restaurant website by Website Studio: Casa Marigold, a modern Mexican kitchen. Order tacos, mole and margaritas for pickup or delivery, or book a table. Menu and prices are samples.">
+<meta name="theme-color" content="#f6b21b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23f6b21b'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23b4441f'/%3E%3C/svg%3E">
+<link rel="preload" as="image" href="images/02-tacos-table-spread-800.webp" imagesrcset="images/02-tacos-table-spread-800.webp 800w, images/02-tacos-table-spread-1600.webp 1600w" imagesizes="(min-width: 56em) 46vw, 100vw" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff2" href="fonts/zilla-slab-latin-700-normal.woff2" crossorigin>
+<link rel="stylesheet" href="../../shared/base.css">
+<link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
+<script type="module" src="../../shared/core.js"></script>
+<script src="casa.js" defer></script>
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-header>
+  <div class="site-header__inner container">
+    <a class="brand" href="index.html" aria-label="Casa Marigold, home">
+      <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><circle cx="20" cy="7" r="6"/><circle cx="31.3" cy="13.5" r="6"/><circle cx="31.3" cy="26.5" r="6"/><circle cx="20" cy="33" r="6"/><circle cx="8.7" cy="26.5" r="6"/><circle cx="8.7" cy="13.5" r="6"/></g><circle cx="20" cy="20" r="7.5" class="brand__eye"/></svg>
+      <span class="brand__name" data-site="name">Casa Marigold</span>
+    </a>
+    <nav class="site-nav" id="site-nav" data-nav aria-label="Main">
+      <ul>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="#taco-night">Taco night</a></li>
+        <li><a href="#story">Story</a></li>
+        <li><a href="#visit">Visit</a></li>
+        <li><a href="#reserve">Book</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <a class="btn btn--primary btn--sm header-order" href="menu.html">Order online</a>
+      <button class="cart-btn" type="button" data-cart-open aria-controls="cart-drawer" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-btn__text">Cart</span>
+        <span class="badge" data-cart-count>0</span><span class="vh" data-cart-count-label> items</span>
+      </button>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <span class="vh">Site navigation</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <noscript><p class="nojs-note container">Ordering and booking need JavaScript. Please call <a href="tel:+15555550142">[phone]</a> to order or book.</p></noscript>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__inner container">
+      <div class="hero__copy">
+        <p class="hero__chip"><span class="open-status" data-open-status>Opening hours</span></p>
+        <h1 id="hero-title" class="hero__title"><span class="hero__line">Tacos,</span> <span class="hero__line">mole &amp;</span> <span class="hero__line hero__line--hi">margaritas.</span></h1>
+        <p class="hero__lede"><span data-site="tagline">Bright Mexican food, ready when you are.</span> Order for pickup or delivery in a few taps, or book a table for tonight.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--ink btn--lg" href="menu.html">Order online</a>
+          <a class="btn btn--outline btn--lg" href="#reserve">Book a table</a>
+        </div>
+        <p class="hero__note">Order direct with us and skip the app fees.</p>
+      </div>
+      <div class="hero__media">
+        <div class="hero__arch">
+          <img class="hero__img" src="images/02-tacos-table-spread-800.webp" srcset="images/02-tacos-table-spread-800.webp 800w, images/02-tacos-table-spread-1600.webp 1600w" sizes="(min-width: 56em) 46vw, 100vw" width="1600" height="1066" alt="A hand holding up two soft tacos with pickled onion and crema over a wooden table of tacos and limes" fetchpriority="high" decoding="async">
+        </div>
+        <span class="hero__sun" aria-hidden="true"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="infobar" aria-label="Opening status and contact">
+    <div class="container infobar__inner">
+      <p class="open-status" data-open-status>Opening hours</p>
+      <p><span class="vh">Address: </span><span data-site="contact.address">[address]</span></p>
+      <p><a href="tel:+15555550142" data-tel>Call <span data-site="contact.phone">[phone]</span></a></p>
+      <p><a href="#map" data-directions>Get directions</a></p>
+    </div>
+  </section>
+
+  <section class="section favs" id="signature" aria-labelledby="sig-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow eyebrow--terra">Los favoritos</p>
+          <h2 id="sig-title">Our favourites</h2>
+        </div>
+        <a class="btn btn--outline" href="menu.html">See the full menu</a>
+      </div>
+      <div data-signature data-limit="4"></div>
+    </div>
+  </section>
+
+  <section class="taco-night" id="taco-night" aria-labelledby="tn-title">
+    <div class="container">
+      <div class="tn__head reveal">
+        <p class="eyebrow eyebrow--light">Build your taco night</p>
+        <h2 id="tn-title">Three steps to a full table</h2>
+        <p class="tn__lede">Pick your tacos, add a side, grab something cold. Every tile adds straight to your order.</p>
+      </div>
+      <div class="tn__grid">
+        <ol class="tn__steps">
+          <li class="tn__step">
+            <h3 class="tn__step-title"><span class="tn__num" aria-hidden="true">1</span> Pick your tacos</h3>
+            <ul class="tiles" role="list">
+              <li class="tile tile--marigold"><p class="tile__name">Crispy</p><p class="tile__desc">Fried filling, pickled onion</p><div class="tile__foot"><span class="tile__price" data-price-of="crispy-chicken-tacos">$13.00</span><button type="button" class="tile__add" data-add="crispy-chicken-tacos"><span aria-hidden="true">Add</span><span class="vh">Add Crispy tacos to order</span></button></div></li>
+              <li class="tile tile--cream"><p class="tile__name">Red pulled meat</p><p class="tile__desc">Pickled red onion, crema</p><div class="tile__foot"><span class="tile__price" data-price-of="cochinita-tacos">$14.00</span><button type="button" class="tile__add" data-add="cochinita-tacos"><span aria-hidden="true">Add</span><span class="vh">Add Red pulled-meat tacos to order</span></button></div></li>
+              <li class="tile tile--teal"><p class="tile__name">Salsa verde</p><p class="tile__desc">Pulled meat, radish</p><div class="tile__foot"><span class="tile__price" data-price-of="verde-chicken-tacos">$12.00</span><button type="button" class="tile__add" data-add="verde-chicken-tacos"><span aria-hidden="true">Add</span><span class="vh">Add Salsa verde tacos to order</span></button></div></li>
+              <li class="tile tile--ink"><p class="tile__name">Battered</p><p class="tile__desc">Creamy slaw, green sauce</p><div class="tile__foot"><span class="tile__price" data-price-of="fish-tacos">$15.00</span><button type="button" class="tile__add" data-add="fish-tacos"><span aria-hidden="true">Add</span><span class="vh">Add Battered tacos with slaw to order</span></button></div></li>
+            </ul>
+          </li>
+          <li class="tn__step">
+            <h3 class="tn__step-title"><span class="tn__num" aria-hidden="true">2</span> Add a side</h3>
+            <ul class="tiles tiles--row" role="list">
+              <li class="tile tile--cream"><p class="tile__name">Guacamole</p><div class="tile__foot"><span class="tile__price" data-price-of="guacamole">$11.00</span><button type="button" class="tile__add" data-add="guacamole"><span aria-hidden="true">Add</span><span class="vh">Add Molcajete guacamole to order</span></button></div></li>
+              <li class="tile tile--cream"><p class="tile__name">Elote</p><div class="tile__foot"><span class="tile__price" data-price-of="elote">$7.00</span><button type="button" class="tile__add" data-add="elote"><span aria-hidden="true">Add</span><span class="vh">Add Elote to order</span></button></div></li>
+              <li class="tile tile--cream"><p class="tile__name">Rice &amp; beans</p><div class="tile__foot"><span class="tile__price" data-price-of="rice-beans">$5.50</span><button type="button" class="tile__add" data-add="rice-beans"><span aria-hidden="true">Add</span><span class="vh">Add Red rice and black beans to order</span></button></div></li>
+            </ul>
+          </li>
+          <li class="tn__step">
+            <h3 class="tn__step-title"><span class="tn__num" aria-hidden="true">3</span> Something cold</h3>
+            <ul class="tiles tiles--row" role="list">
+              <li class="tile tile--cream"><p class="tile__name">Margarita <small>21+</small></p><div class="tile__foot"><span class="tile__price" data-price-of="margarita">$11.00</span><button type="button" class="tile__add" data-add="margarita"><span aria-hidden="true">Add</span><span class="vh">Add Lime margarita to order</span></button></div></li>
+              <li class="tile tile--cream"><p class="tile__name">Agua de jamaica</p><div class="tile__foot"><span class="tile__price" data-price-of="jamaica">$4.50</span><button type="button" class="tile__add" data-add="jamaica"><span aria-hidden="true">Add</span><span class="vh">Add Agua de jamaica to order</span></button></div></li>
+              <li class="tile tile--cream"><p class="tile__name">Horchata</p><div class="tile__foot"><span class="tile__price" data-price-of="horchata">$4.50</span><button type="button" class="tile__add" data-add="horchata"><span aria-hidden="true">Add</span><span class="vh">Add Horchata to order</span></button></div></li>
+            </ul>
+          </li>
+        </ol>
+        <aside class="tray" aria-labelledby="tray-title">
+          <p class="tray__kicker" id="tray-title">Your taco night</p>
+          <p class="tray__count"><span class="tray__big" data-cart-count>0</span><span class="vh" data-cart-count-label> items</span> <span class="tray__unit" aria-hidden="true">in your order</span></p>
+          <p class="tray__total">Subtotal <strong data-cart-total>$0.00</strong></p>
+          <p class="tray__hint" data-tray-hint>Tap Add on any tile to start.</p>
+          <button class="btn btn--marigold btn--block" type="button" data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer">View order &amp; check out</button>
+          <a class="tray__link" href="menu.html">Or browse the full menu</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="hands" aria-labelledby="hands-title">
+    <div class="hands__media">
+      <img src="images/05-hands-chip-guacamole-800.webp" srcset="images/05-hands-chip-guacamole-400.webp 400w, images/05-hands-chip-guacamole-800.webp 800w" sizes="(min-width: 56em) 50vw, 100vw" width="800" height="533" loading="lazy" decoding="async" alt="Hands dipping a tortilla chip into a glass bowl of chunky guacamole on a red cloth, with lime halves and an avocado">
+    </div>
+    <div class="hands__copy reveal">
+      <p class="eyebrow eyebrow--ink">Para la mesa</p>
+      <h2 id="hands-title">Chips in. Guac out.</h2>
+      <p>Molcajete guacamole, elote and a citrus ceviche: plates built for passing around.</p>
+      <a class="btn btn--ink" href="menu.html#cat-share">Order sharing plates</a>
+    </div>
+  </section>
+
+  <section class="section story" id="story" aria-labelledby="story-title">
+    <div class="container story__grid">
+      <div class="story__photos reveal">
+        <img class="story__img story__img--a" src="images/06-hands-mashing-guacamole-800.webp" srcset="images/06-hands-mashing-guacamole-400.webp 400w, images/06-hands-mashing-guacamole-800.webp 800w, images/06-hands-mashing-guacamole-1600.webp 1600w" sizes="(min-width: 56em) 44vw, 92vw" width="800" height="533" loading="lazy" decoding="async" alt="Hands mixing guacamole in a glass bowl on a red runner, with avocado halves, limes and chopped cilantro">
+      </div>
+      <div class="story__copy reveal">
+        <p class="eyebrow eyebrow--light">Our story</p>
+        <h2 id="story-title">A loud, sunny kitchen on your block</h2>
+        <p>Casa Marigold is a bright, colourful room for tacos, mole and something cold. Come hungry, bring friends and order a little of everything for the middle of the table.</p>
+        <ul class="trust" role="list" aria-label="Guest reviews (placeholders)">
+          <li class="trust__slot">[Guest review 1: client to supply]</li>
+          <li class="trust__slot">[Guest review 2: client to supply]</li>
+          <li class="trust__slot">[Press or award: client to supply, only if real]</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section visit" id="visit" aria-labelledby="visit-title">
+    <div class="container visit__grid">
+      <div class="visit__hours">
+        <p class="eyebrow eyebrow--terra">Visit</p>
+        <h2 id="visit-title">Hours &amp; location</h2>
+        <p class="open-status" data-open-status>Opening hours</p>
+        <div data-hours></div>
+      </div>
+      <div class="visit__where">
+        <address class="contact">
+          <span data-site="contact.address">[address]</span><br>
+          <a href="tel:+15555550142" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+          <span data-site="contact.email">[email]</span>
+        </address>
+        <div class="map-ph" id="map">[map]<br>Map: client to supply (no external embed)</div>
+        <a class="btn btn--outline" href="#map" data-directions>Get directions</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reserve" id="reserve" aria-labelledby="reserve-title">
+    <div class="container reserve__grid">
+      <div class="reserve__intro">
+        <p class="eyebrow eyebrow--ink">Reservations</p>
+        <h2 id="reserve-title">Book a table</h2>
+        <p>Pick a time and we will hold your table. For groups larger than 8, please call <span data-site="contact.phone">[phone]</span>.</p>
+      </div>
+      <div>
+        <form id="reserve-form" class="form panel" data-reserve novalidate aria-labelledby="reserve-title">
+          <div class="error-summary" data-error-summary tabindex="-1" hidden></div>
+          <div class="form-row">
+            <div class="field"><label for="r-date">Date</label><input id="r-date" name="r-date" type="date" required></div>
+            <div class="field"><label for="r-time">Time</label><select id="r-time" name="r-time" required></select></div>
+            <div class="field"><label for="r-party">Party size</label><select id="r-party" name="r-party" required></select></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="r-name">Name</label><input id="r-name" name="r-name" type="text" autocomplete="name" minlength="2" required></div>
+            <div class="field"><label for="r-phone">Phone</label><input id="r-phone" name="r-phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+          </div>
+          <div class="field"><label for="r-email">Email <span class="optional">(optional)</span></label><input id="r-email" name="r-email" type="email" autocomplete="email"></div>
+          <div class="field"><label for="r-notes">Notes <span class="optional">(optional)</span></label><textarea id="r-notes" name="r-notes" maxlength="300" rows="3" aria-describedby="r-notes-hint"></textarea><p class="hint" id="r-notes-hint">Allergies, high chair, birthday.</p></div>
+          <button class="btn btn--primary btn--block btn--lg" type="submit">Request table</button>
+          <p class="demo-note">Demo only: no booking is made and nothing is sent.</p>
+        </form>
+        <div class="panel confirm" data-reserve-confirm hidden>
+          <h3 data-reserve-confirm-heading tabindex="-1">Table request received</h3>
+          <p>Booking reference <strong data-reserve-ref></strong></p>
+          <p data-reserve-summary></p>
+          <p class="demo-note">Demo only: no booking was made and nothing was sent.</p>
+          <button class="btn btn--outline" type="button" data-reserve-again>Make another booking</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div class="footer__col">
+      <p class="footer__brand" data-site="name">Casa Marigold</p>
+      <p class="open-status" data-open-status>Opening hours</p>
+      <address class="contact">
+        <span data-site="contact.address">[address]</span><br>
+        <a href="tel:+15555550142" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+        <span data-site="contact.email">[email]</span>
+      </address>
+    </div>
+    <div class="footer__col">
+      <p class="footer__h">Hours <span class="footer__sample">(sample)</span></p>
+      <ul class="footer__hours" role="list" data-hours-compact><li>See the hours table above.</li></ul>
+    </div>
+    <nav class="footer__col" aria-label="Footer">
+      <p class="footer__h">Go</p>
+      <ul class="footer__links">
+        <li><a href="menu.html">Order online</a></li>
+        <li><a href="#reserve">Book a table</a></li>
+        <li><a href="#visit">Hours &amp; location</a></li>
+      </ul>
+      <p class="small footer__apps">Prefer an app? Also on <span data-delivery-apps>[Delivery app 1] · [Delivery app 2]</span> (links: client to supply).</p>
+    </nav>
+  </div>
+  <div class="container footer__legal small">
+    <p>Sample design by Website Studio. Menu, prices and wording are samples. Photos are stock.</p>
+    <p class="footer__credits">Photos (Pexels): Roman Odintsov, alleksana, RDNE Stock project, Amar Preciado, Nano Erdozain, Julias Torten und Törtchen, Kaboompics, Daniela Velarde, Snappr, Shameel Mukkath, Çiğdem Bilgin, Roy Muriithi.</p>
+    <p>&copy; <span data-year>2026</span> <span data-site="name">Casa Marigold</span> (sample business)</p>
+  </div>
+</footer>
+
+<nav class="mbar" data-mobile-bar aria-label="Quick actions">
+  <a class="mbar__btn mbar__btn--primary" href="menu.html" data-mbar-order>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>Order</a>
+  <button class="mbar__btn mbar__btn--primary" type="button" data-mbar-cart data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span data-mbar-cart-label>View order</span></button>
+  <a class="mbar__btn" href="#reserve">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg><span class="mbar__txt">Book</span></a>
+  <a class="mbar__btn" href="tel:+15555550142" data-tel>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span class="mbar__txt">Call</span></a>
+</nav>
+<button class="to-top" type="button" data-to-top hidden>Back to top</button>
+</body>
+</html>

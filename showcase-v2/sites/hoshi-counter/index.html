@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hoshi | Sushi and omakase counter: book a seat or order takeaway (sample design)</title>
+<meta name="description" content="Sample sushi restaurant website by Website Studio. Book a seat at the omakase counter or order takeaway sushi boxes for pickup or delivery. Menu and prices are samples.">
+<meta name="theme-color" content="#0e0d0c">
+<link rel="icon" href="data:,">
+<link rel="preload" as="image" href="images/02-salmon-tuna-nigiri-black-800.webp" imagesrcset="images/02-salmon-tuna-nigiri-black-400.webp 400w, images/02-salmon-tuna-nigiri-black-800.webp 800w, images/02-salmon-tuna-nigiri-black-1600.webp 1600w" imagesizes="100vw" fetchpriority="high">
+<noscript><style>#reserve-form { display: none !important; }</style></noscript>
+<link rel="stylesheet" href="../../shared/base.css">
+<link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
+<script type="module" src="../../shared/core.js"></script>
+<script type="module" src="hoshi.js"></script>
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-header>
+  <div class="site-header__inner container">
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><span class="brand__word" data-site="name">Hoshi</span></a>
+    <nav class="site-nav" id="site-nav" data-nav aria-label="Main">
+      <ul>
+        <li><a href="#omakase">Omakase</a></li>
+        <li><a href="menu.html">Takeaway</a></li>
+        <li><a href="#story">Philosophy</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <a class="btn btn--primary btn--sm header-book" href="#reserve">Book a seat</a>
+      <a class="btn btn--secondary btn--sm header-order" href="menu.html">Order<span class="hide-mid"> takeaway</span></a>
+      <button class="cart-btn" type="button" data-cart-open aria-controls="cart-drawer" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"><path d="M5 8h14l-1.2 12H6.2L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-btn__text">Bag</span>
+        <span class="badge" data-cart-count>0</span><span class="vh" data-cart-count-label> items</span>
+      </button>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 9h16M4 15h16"/></svg>
+        <span class="vh">Site navigation</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero dark" aria-labelledby="hero-title">
+    <div class="container hero__top">
+      <p class="eyebrow hero__eyebrow">Omakase counter <span class="rule" aria-hidden="true"></span> Takeaway sushi</p>
+      <p class="hero__status"><span class="open-status" data-open-status>Opening hours</span></p>
+    </div>
+    <h1 id="hero-title" class="hero__title"><span class="hero__line">Sit close.</span> <span class="hero__line hero__line--in">Eat slowly<span class="title-dot" aria-hidden="true"></span><span class="vh">.</span></span></h1>
+    <figure class="hero__band">
+      <img class="hero__img" src="images/02-salmon-tuna-nigiri-black-800.webp"
+           srcset="images/02-salmon-tuna-nigiri-black-400.webp 400w, images/02-salmon-tuna-nigiri-black-800.webp 800w, images/02-salmon-tuna-nigiri-black-1600.webp 1600w"
+           sizes="100vw" width="1600" height="1174" fetchpriority="high" decoding="async"
+           alt="Three pieces of nigiri, salmon, tuna and salmon, each topped with grated wasabi, resting on a black reflective surface">
+    </figure>
+    <div class="container hero__base">
+      <div class="hero__copy">
+        <p class="hero__lede">Evenings at the counter for the chef&rsquo;s omakase. Takeaway boxes of nigiri and sashimi, lunch and dinner.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary btn--lg" href="#reserve">Book a seat</a>
+          <a class="btn btn--secondary btn--lg" href="menu.html">Order takeaway</a>
+        </div>
+        <p class="hero__direct small">Order direct with us and skip the app fees.</p>
+      </div>
+      <ul class="hero__sits" role="list" aria-label="Counter sittings">
+        <li><a class="hero__sit" href="#reserve-form" data-book-set="omakase"><span class="hero__num" aria-hidden="true">01</span><span class="hero__sitname">Omakase</span><span class="hero__sitmeta">about 2 hours · $145 per guest (sample)</span></a></li>
+        <li><a class="hero__sit" href="#reserve-form" data-book-set="nigiri"><span class="hero__num" aria-hidden="true">02</span><span class="hero__sitname">Nigiri sitting</span><span class="hero__sitmeta">about 1 hour · $85 per guest (sample)</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="infobar" aria-label="Opening status and contact">
+    <div class="container infobar__inner">
+      <p class="open-status" data-open-status>Opening hours</p>
+      <p><span class="vh">Address: </span><span data-site="contact.address">[address]</span></p>
+      <p><a href="tel:+15555550166" data-tel>Call&nbsp;<span data-site="contact.phone">[phone]</span></a></p>
+      <p><a href="#map" data-directions>Get directions</a></p>
+    </div>
+  </section>
+
+  <section class="section omakase" id="omakase" aria-labelledby="omakase-title">
+    <div class="container">
+      <div class="omakase__head">
+        <p class="eyebrow">At the counter, evenings</p>
+        <h2 id="omakase-title">Two ways to sit with&nbsp;us.</h2>
+        <p class="omakase__intro">Every seat faces the chef. Pieces are shaped and placed in front of you, one by one, at the moment they are best.</p>
+      </div>
+      <div class="omakase__grid">
+        <article class="setcard reveal">
+          <p class="setcard__num" aria-hidden="true">01</p>
+          <h3 class="setcard__name">Omakase</h3>
+          <p class="setcard__desc">The chef&rsquo;s full sequence: small dishes, sashimi, nigiri, a hand roll, soup and something sweet. About two hours.</p>
+          <ul class="setcard__list">
+            <li>Seasonal small dishes</li>
+            <li>Sashimi course</li>
+            <li>Nigiri, served piece by piece</li>
+            <li>Hand roll, miso soup, sweet</li>
+          </ul>
+          <div class="setcard__foot">
+            <p class="setcard__price"><span class="setcard__amt">$145</span> per guest <span class="setcard__note">(sample)</span></p>
+            <a class="btn btn--primary" href="#reserve-form" data-book-set="omakase">Book omakase</a>
+          </div>
+        </article>
+        <article class="setcard reveal">
+          <p class="setcard__num" aria-hidden="true">02</p>
+          <h3 class="setcard__name">Nigiri sitting</h3>
+          <p class="setcard__desc">A shorter sitting at the counter: ten pieces of nigiri, a hand roll and miso soup. About one hour.</p>
+          <ul class="setcard__list">
+            <li>Ten pieces of nigiri</li>
+            <li>Negitoro hand roll</li>
+            <li>Miso soup</li>
+          </ul>
+          <div class="setcard__foot">
+            <p class="setcard__price"><span class="setcard__amt">$85</span> per guest <span class="setcard__note">(sample)</span></p>
+            <a class="btn btn--primary" href="#reserve-form" data-book-set="nigiri">Book nigiri sitting</a>
+          </div>
+        </article>
+        <figure class="omakase__photo reveal">
+          <img src="images/04-long-counter-800.webp"
+               srcset="images/04-long-counter-400.webp 400w, images/04-long-counter-800.webp 800w, images/04-long-counter-1600.webp 1600w"
+               sizes="(min-width: 64em) 36vw, 92vw" width="1600" height="1066" loading="lazy" decoding="async"
+               alt="A long wooden sushi counter set with wine glasses and napkins, two chefs preparing behind it under spotlights">
+          <figcaption>Stock photo, for illustration. <span class="ph">[Photo of the counter: client to supply]</span></figcaption>
+        </figure>
+      </div>
+      <p class="omakase__fine small">Both sittings are dine-in only and change with the market. Takeaway is a separate menu. Prices are samples.</p>
+    </div>
+  </section>
+
+  <section class="section reserve-sec" id="reserve" aria-labelledby="reserve-title">
+    <div class="container reserve">
+      <div class="reserve__copy">
+        <p class="eyebrow">Reservations</p>
+        <h2 id="reserve-title">Reserve a counter&nbsp;seat</h2>
+        <p class="reserve__lede">Choose your sitting, an evening and a time. We will hold your seats and confirm by phone.</p>
+        <ul class="reserve__facts" role="list">
+          <li><span class="reserve__k">Seatings</span><span>Evenings only, every 30 minutes. Omakase starts at least 2 hours before closing.</span></li>
+          <li><span class="reserve__k">Groups</span><span>Up to 6 online; larger groups, call <span data-site="contact.phone">[phone]</span></span></li>
+          <li><span class="reserve__k">Dietary</span><span>Tell us in the notes</span></li>
+        </ul>
+      </div>
+      <div class="reserve__panel">
+        <form id="reserve-form" class="form panel" data-reserve novalidate aria-labelledby="reserve-title">
+          <div class="error-summary" data-error-summary tabindex="-1" hidden></div>
+          <fieldset class="sitting">
+            <legend>Sitting</legend>
+            <div class="sitting__opts">
+              <label class="sitting__opt"><input type="radio" name="r-sitting" id="sit-omakase" value="omakase" checked><span class="sitting__name">Omakase</span><span class="sitting__meta">about 2 hours · $145 <span class="sitting__s">(sample)</span></span></label>
+              <label class="sitting__opt"><input type="radio" name="r-sitting" id="sit-nigiri" value="nigiri"><span class="sitting__name">Nigiri sitting</span><span class="sitting__meta">about 1 hour · $85 <span class="sitting__s">(sample)</span></span></label>
+            </div>
+            <p class="sitting__selected" data-sitting-selected aria-live="polite">Selected: Omakase</p>
+          </fieldset>
+          <div class="form-row">
+            <div class="field"><label for="r-date">Date</label><input id="r-date" name="r-date" type="date" required></div>
+            <div class="field"><label for="r-time">Time</label><select id="r-time" name="r-time" required aria-describedby="r-time-note"></select><p class="hint time-note" id="r-time-note" data-time-note aria-live="polite"></p></div>
+            <div class="field"><label for="r-party">Guests</label><select id="r-party" name="r-party" required></select></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="r-name">Name</label><input id="r-name" name="r-name" type="text" autocomplete="name" minlength="2" required></div>
+            <div class="field"><label for="r-phone">Phone</label><input id="r-phone" name="r-phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+          </div>
+          <div class="field"><label for="r-email">Email <span class="optional">(optional)</span></label><input id="r-email" name="r-email" type="email" autocomplete="email"></div>
+          <div class="field"><label for="r-notes">Notes <span class="optional">(optional)</span></label><textarea id="r-notes" name="r-notes" maxlength="300" rows="3" aria-describedby="r-notes-hint"></textarea><p class="hint" id="r-notes-hint">Allergies, an occasion. Your sitting is added here for the chef.</p></div>
+          <button class="btn btn--primary btn--block btn--lg" type="submit">Request seats</button>
+          <p class="demo-note">Demo only: no booking is made and nothing is sent.</p>
+        </form>
+        <noscript><p class="panel nojs">Online booking needs JavaScript. Please call <a href="tel:+15555550166">[phone]</a> to book a seat.</p></noscript>
+        <div class="panel confirm" data-reserve-confirm hidden>
+          <span class="mark mark--lg" aria-hidden="true"></span>
+          <h3 data-reserve-confirm-heading tabindex="-1">Seats requested</h3>
+          <p>Booking reference <strong data-reserve-ref></strong></p>
+          <p data-reserve-summary></p>
+          <p data-sitting-conf></p>
+          <p class="demo-note">Demo only: no booking was made and nothing was sent.</p>
+          <button class="btn btn--secondary" type="button" data-reserve-again>Make another booking</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section takeaway" id="takeaway" aria-labelledby="sig-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">To take home</p>
+          <h2 id="sig-title">Takeaway boxes</h2>
+          <p class="section-head__lede">Boxed at the counter when you order, lunch and dinner. Pickup in about 25 minutes, or local delivery.</p>
+        </div>
+        <a class="btn btn--secondary" href="menu.html">Full takeaway menu</a>
+      </div>
+      <div data-signature data-limit="4"></div>
+      <noscript><p class="nojs">Online ordering needs JavaScript. Please call <a href="tel:+15555550166">[phone]</a> to order takeaway.</p></noscript>
+    </div>
+  </section>
+
+  <section class="section story dark" id="story" aria-labelledby="story-title">
+    <div class="container story__inner">
+      <div class="story__copy">
+        <p class="eyebrow">Philosophy</p>
+        <h2 id="story-title">Rice first. Then fish. Then&nbsp;timing.</h2>
+        <p class="story__lede">A short counter, a small menu, and a chef who would rather serve you one perfect piece than ten good ones.</p>
+        <ol class="tenets" role="list">
+          <li class="reveal"><span class="tenets__k" aria-hidden="true">I</span><div><h3>Rice</h3><p>Seasoned with vinegar and served warm, so each piece holds together and falls apart at the right moment. <span class="ph">[to confirm]</span></p></div></li>
+          <li class="reveal"><span class="tenets__k" aria-hidden="true">II</span><div><h3>Fish</h3><p>Bought for the day and cut to order. When something is not right, it is not on the menu. <span class="ph">[Sourcing: client to confirm]</span></p></div></li>
+          <li class="reveal"><span class="tenets__k" aria-hidden="true">III</span><div><h3>Timing</h3><p>At the counter, a piece is placed in front of you and should be eaten within seconds. Takeaway is boxed as late as possible.</p></div></li>
+        </ol>
+        <div class="trust">
+          <p class="placeholder">[Guest reviews: client to supply]</p>
+          <p class="placeholder">[Press mentions: client to supply]</p>
+        </div>
+      </div>
+      <figure class="story__media reveal">
+        <img src="images/05-chef-slicing-roll-800.webp"
+             srcset="images/05-chef-slicing-roll-400.webp 400w, images/05-chef-slicing-roll-800.webp 800w"
+             sizes="(min-width: 56em) 42vw, 92vw" width="800" height="534" loading="lazy" decoding="async"
+             alt="Gloved hands slicing a salmon-topped roll with a long knife, small bowls of wasabi and ginger beside it">
+        <figcaption>Stock photo, for illustration. <span class="ph">[Photo of the chef: client to supply]</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section visit" id="visit" aria-labelledby="visit-title">
+    <div class="container visit__inner">
+      <div class="visit__hours">
+        <p class="eyebrow">Visit</p>
+        <h2 id="visit-title">Hours &amp; location</h2>
+        <p class="open-status" data-open-status>Opening hours</p>
+        <div data-hours></div>
+        <p class="small muted">Takeaway runs through all opening hours; the counter seats in the evening.</p>
+      </div>
+      <div class="visit__where">
+        <address class="contact">
+          <span data-site="contact.address">[address]</span><br>
+          <a href="tel:+15555550166" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+          <span data-site="contact.email">[email]</span>
+        </address>
+        <div class="map-ph" id="map">[map]<br>Map: client to supply (no external embed)</div>
+        <a class="btn btn--secondary" href="#map" data-directions>Get directions</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div class="footer__id">
+      <p class="footer__brand"><span class="mark" aria-hidden="true"></span><span data-site="name">Hoshi</span></p>
+      <p class="open-status" data-open-status>Opening hours</p>
+      <address class="contact">
+        <span data-site="contact.address">[address]</span><br>
+        <a href="tel:+15555550166" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+        <span data-site="contact.email">[email]</span>
+      </address>
+    </div>
+    <div>
+      <p class="footer__h">Hours <span class="footer__note">(sample hours)</span></p>
+      <dl class="hours-compact" data-hours-compact></dl>
+    </div>
+    <nav aria-label="Footer">
+      <p class="footer__h">Go to</p>
+      <ul class="footer__links">
+        <li><a href="#reserve">Book a seat</a></li>
+        <li><a href="menu.html">Order takeaway</a></li>
+        <li><a href="#omakase">Omakase</a></li>
+        <li><a href="#visit">Hours &amp; location</a></li>
+      </ul>
+      <p class="small footer__apps">Prefer an app? Also on <span data-delivery-apps>[Delivery app 1] · [Delivery app 2]</span> (links: client to supply).</p>
+    </nav>
+  </div>
+  <div class="container footer__legal small">
+    <p>Sample design by Website Studio. Menu, prices and wording are samples. Photos are stock.</p>
+    <p class="footer__credits">Photos (Pexels licence): Rajesh TP, Jacob Yavin, Mony Cruz, Airam Dato-on, Ivan S, Jonathan Borba, Ryutaro Tsukata, Olga Lioncat, Schena Maria Karlec, Duong Quách, Valeria Boltneva, Chevanon Photography, Yana Oleksiuk, Noemí Jiménez, Charles Chen.</p>
+    <p>&copy; <span data-year>2026</span> <span data-site="name">Hoshi</span> (sample business)</p>
+  </div>
+</footer>
+
+<nav class="mbar" data-mobile-bar aria-label="Quick actions">
+  <a class="mbar__btn mbar__btn--book" href="#reserve">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><rect x="4" y="5" width="16" height="15"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>Book a seat</a>
+  <a class="mbar__btn mbar__btn--primary" href="menu.html" data-mbar-order>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M5 8h14l-1.2 12H6.2L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>Order</a>
+  <button class="mbar__btn mbar__btn--primary" type="button" data-mbar-cart data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M5 8h14l-1.2 12H6.2L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span data-mbar-cart-label>View order</span></button>
+  <a class="mbar__btn mbar__btn--call" href="tel:+15555550166" data-tel>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span class="vh">Call</span></a>
+</nav>
+<button class="to-top" type="button" data-to-top hidden>Back to top</button>
+</body>
+</html>

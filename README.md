@@ -1,5 +1,34 @@
 # Website Studio: client presentation showcase
 
+This repository holds two rounds of sample websites for client presentations.
+
+| Version | What | Open |
+|---|---|---|
+| **Version 2** (start here) | Ten conversion-focused restaurant sites (cart, menu, booking, demo checkout) plus the five editorial 2D sites from round one, behind one presentation hub | `showcase-v2/` (see [showcase-v2/README.md](showcase-v2/README.md)) |
+| Version 1 | Twenty sample sites: aesthetic pages, whole-page 3D restaurants, and real-photo scene sites | [version-1.html](version-1.html) |
+
+## Live link (GitHub Pages)
+
+Once Pages is switched on (Settings, Pages, Deploy from branch `main`, folder `/ (root)`), the showcase is at:
+
+**https://kaushikandinakaran.github.io/websites/**
+
+The root `index.html` forwards to the Version 2 hub. GitHub Pages is free for public repositories; a private repository needs a paid plan.
+
+## Run it locally
+
+Pages load JavaScript modules, so serve over HTTP (double-clicking `index.html` will not work). You need Python 3.9 or newer and a modern browser; nothing to `pip install`.
+
+```bash
+python serve.py 8800       # then open http://localhost:8800/ (forwards to Version 2)
+# or, only Version 2:
+python showcase-v2/serve.py 8810   # http://localhost:8810/
+```
+
+---
+
+# Version 1: details
+
 Twenty sample websites made for a client presentation. They show what Website Studio can produce: different looks, industries and styles, from clean editorial pages to whole-page 3D scenes you scroll through.
 
 Everything here is a **sample design**. Business names, copy and menus are invented. Anything that would need real client content (prices, reviews, awards, addresses) is a visible `[placeholder]`, never a made-up fact.
@@ -8,7 +37,7 @@ It is plain HTML, CSS and JavaScript. There is no build step and no framework. A
 
 ## What is in it
 
-A hub page (`index.html`) links to all 20 sites, which live in `sites/<name>/`.
+The Version 1 hub page (`version-1.html`) links to all 20 sites, which live in `sites/<name>/`.
 
 ### Round 1: five aesthetic sites (editorial layouts, light motion, small 3D touches)
 

@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mustang Hearth | Momos, thalis and tandoor. Order online or book a table (sample design)</title>
+<meta name="description" content="Sample restaurant website by Website Studio: an Indo-Nepali kitchen. Order momos, thalis and tandoor dishes for pickup or delivery, or book a table. Menu, prices and wording are samples.">
+<meta name="theme-color" content="#16120f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%2316120f'/%3E%3Cpath d='M6 31 15.5 15l5.5 8 4.5-6L34 31Z' fill='none' stroke='%23e8a238' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M20 5c3 3.6 3.4 6.4 0 9.4-3.4-3-3-5.8 0-9.4Z' fill='%23e8a238'/%3E%3C/svg%3E">
+<link rel="preload" as="image" href="images/momos-dark-hero-800.webp" imagesrcset="images/momos-dark-hero-800.webp 800w, images/momos-dark-hero-1600.webp 1600w" imagesizes="(min-width: 56em) 44vw, 100vw" fetchpriority="high">
+<link rel="stylesheet" href="../../shared/base.css">
+<link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
+<script type="module" src="../../shared/core.js"></script>
+<script src="mh.js" defer></script>
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-header>
+  <div class="site-header__inner container">
+    <a class="brand" href="index.html">
+      <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M5 31 15.5 14l5.5 8 4.5-6L35 31Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path class="brand__flame" d="M20 4c3 3.6 3.4 6.4 0 9.4-3.4-3-3-5.8 0-9.4Z"/></svg>
+      <span data-site="name">Mustang Hearth</span>
+    </a>
+    <nav class="site-nav" id="site-nav" data-nav aria-label="Main">
+      <ul>
+        <li><a href="menu.html">Menu</a></li>
+        <li class="nav-wide"><a href="#story">Our story</a></li>
+        <li><a href="#visit">Hours &amp; location</a></li>
+        <li><a href="#reserve">Book a table</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <a class="btn btn--primary btn--sm header-order" href="menu.html">Order online</a>
+      <button class="cart-btn" type="button" data-cart-open aria-controls="cart-drawer" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-btn__text">Cart</span>
+        <span class="badge" data-cart-count>0</span><span class="vh" data-cart-count-label> items</span>
+      </button>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <span class="vh">Site navigation</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__media">
+      <img class="hero__img" src="images/momos-dark-hero-800.webp"
+           srcset="images/momos-dark-hero-800.webp 800w, images/momos-dark-hero-1600.webp 1600w"
+           sizes="(min-width: 56em) 44vw, 100vw" width="1600" height="1066" fetchpriority="high" decoding="async"
+           alt="Five pleated momos on a dark plate beside a bowl of red tomato achar and a bowl of yoghurt dip">
+    </div>
+    <div class="hero__copy">
+      <p class="eyebrow hero__eyebrow"><span data-site="cuisine">Indo-Nepali</span> kitchen<span class="hero__more"><span class="hero__dot" aria-hidden="true"></span> momo bar &amp; tandoor</span></p>
+      <h1 id="hero-title"><span class="hero__line">Hand-folded <em>momos.</em></span> <span class="hero__line">Fire from the <em>tandoor.</em></span></h1>
+      <p class="hero__lede">Order for pickup in about 20 minutes, or book a table by the lanterns.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--primary btn--lg" href="menu.html">Order online</a>
+        <a class="btn btn--line btn--lg" href="#reserve">Book a table</a>
+      </div>
+      <ul class="hero__facts" role="list" aria-label="Opening status and contact">
+        <li class="hero__status"><p class="open-status" data-open-status>Opening hours</p></li>
+        <li><span class="vh">Address: </span><span data-site="contact.address">[address]</span> · <a href="#map" data-directions>Directions</a></li>
+        <li><a href="tel:+15555550142" data-tel>Call <span data-site="contact.phone">[phone]</span></a></li>
+      </ul>
+      <p class="hero__direct">Order direct with us and skip the app fees.</p>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>Jhol momo</span><span>Dal makhani</span><span>Tandoori chicken</span><span>Masala chai</span><span>Chilli-soy momo</span><span>Mustang thali</span><span>Sekuwa</span><span>Tandoor naan</span>
+      <span>Jhol momo</span><span>Dal makhani</span><span>Tandoori chicken</span><span>Masala chai</span><span>Chilli-soy momo</span><span>Mustang thali</span><span>Sekuwa</span><span>Tandoor naan</span>
+    </div>
+  </div>
+
+  <section class="section momos" id="momos" aria-labelledby="momo-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">The momo bar</p>
+          <h2 id="momo-title">Pleated by hand, <em>steamed to order</em></h2>
+        </div>
+        <p class="section-head__aside">Four ways with the dumpling of the Himalaya. Choose your filling in your order: chicken or vegetable.</p>
+      </div>
+      <ul class="bento" role="list">
+        <li class="bento__tile bento__tile--xl reveal">
+          <img class="bento__img" src="images/momos-on-slate-800.webp" srcset="images/momos-on-slate-400.webp 400w, images/momos-on-slate-800.webp 800w" sizes="(min-width: 56em) 46vw, 92vw" width="800" height="533" loading="lazy" decoding="async" alt="Five dumplings with dots of dark glaze and herbs on a black slate plate, chopsticks alongside">
+          <div class="bento__cap">
+            <h3>Chilli-soy momo</h3>
+            <p>Finished with a dark chilli-soy glaze and fresh herbs.</p>
+            <div class="bento__foot"><span class="bento__price" data-price-of="chilli-soy-momo">$14.00</span>
+              <button type="button" class="btn btn--primary btn--sm" data-add="chilli-soy-momo"><span aria-hidden="true">Add</span><span class="vh">Add Chilli-soy momo to order</span></button></div>
+          </div>
+        </li>
+        <li class="bento__tile reveal">
+          <img class="bento__img" src="images/jhol-momo-800.webp" srcset="images/jhol-momo-400.webp 400w, images/jhol-momo-800.webp 800w" sizes="(min-width: 56em) 23vw, 92vw" width="800" height="527" loading="lazy" decoding="async" alt="Pleated dumplings in a pale broth in a glass bowl, with two small bowls of chutney">
+          <div class="bento__cap">
+            <h3>Jhol momo</h3>
+            <div class="bento__foot"><span class="bento__price" data-price-of="jhol-momo">$14.50</span>
+              <button type="button" class="btn btn--primary btn--sm" data-add="jhol-momo"><span aria-hidden="true">Add</span><span class="vh">Add Jhol momo to order</span></button></div>
+          </div>
+        </li>
+        <li class="bento__tile reveal">
+          <img class="bento__img" src="images/steaming-dumplings-800.webp" srcset="images/steaming-dumplings-400.webp 400w, images/steaming-dumplings-800.webp 800w" sizes="(min-width: 56em) 23vw, 92vw" width="800" height="531" loading="lazy" decoding="async" alt="Steam rising from pleated dumplings on a white plate">
+          <div class="bento__cap">
+            <h3>Steamed momo</h3>
+            <div class="bento__foot"><span class="bento__price" data-price-of="steam-momo">$13.00</span>
+              <button type="button" class="btn btn--primary btn--sm" data-add="steam-momo"><span aria-hidden="true">Add</span><span class="vh">Add Steamed momo to order</span></button></div>
+          </div>
+        </li>
+        <li class="bento__tile bento__tile--wide bento__tile--craft reveal">
+          <img class="bento__img" src="images/hands-folding-dumpling-800.webp" srcset="images/hands-folding-dumpling-400.webp 400w, images/hands-folding-dumpling-800.webp 800w" sizes="(min-width: 56em) 46vw, 92vw" width="800" height="533" loading="lazy" decoding="async" alt="Gloved hands pleating a dumpling over a floured counter, bamboo steamers at each side">
+          <div class="bento__cap">
+            <p class="bento__kicker">Also on the menu</p>
+            <h3>The house momo plate &amp; more</h3>
+            <a class="btn btn--line btn--sm" href="menu.html#cat-momos">All momos</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section signature" id="signature" aria-labelledby="sig-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">House favourites</p>
+          <h2 id="sig-title">From the clay oven and the copper pot</h2>
+        </div>
+        <a class="btn btn--secondary" href="menu.html">See the full menu</a>
+      </div>
+      <div data-signature data-limit="4"></div>
+    </div>
+  </section>
+
+  <section class="thali" id="thali" aria-labelledby="thali-title">
+    <div class="thali__media reveal">
+      <img src="images/thali-gold-platter-800.webp" srcset="images/thali-gold-platter-800.webp 800w, images/thali-gold-platter-1600.webp 1600w" sizes="(min-width: 56em) 44vw, 100vw" width="800" height="600" loading="lazy" decoding="async" alt="A brass thali tray with two bowls of curry, a stuffed flatbread, sliced onion, lime and a green chilli">
+    </div>
+    <div class="thali__body">
+      <p class="eyebrow">Build your thali</p>
+      <h2 id="thali-title">A whole meal on one brass tray</h2>
+      <div class="thali__buy"><span class="thali__from">Mustang thali from <strong data-price-of="thali">$21.00</strong></span>
+        <button type="button" class="btn btn--primary" data-add="thali"><span aria-hidden="true">Add a thali</span><span class="vh">Add Mustang thali to order</span></button></div>
+      <ol class="thali__steps" role="list">
+        <li class="thali__step">
+          <span class="thali__num" aria-hidden="true">1</span>
+          <div>
+            <h3>Choose your curry</h3>
+            <p class="thali__note">Pick it in the cart after you add a thali.</p>
+            <ul class="thali__picks" role="list" aria-label="Curry choices and prices">
+              <li class="thali__pick"><span class="thali__pick-name">Vegetable</span><span class="thali__pick-price">included</span></li>
+              <li class="thali__pick"><span class="thali__pick-name">Chicken</span><span class="thali__pick-price">+ $2.00</span></li>
+              <li class="thali__pick"><span class="thali__pick-name">Lamb</span><span class="thali__pick-price">+ $5.00</span></li>
+            </ul>
+          </div>
+        </li>
+        <li class="thali__step">
+          <span class="thali__num" aria-hidden="true">2</span>
+          <div><h3>Choose your bread</h3><p>Stuffed kulcha, tandoori roti or garlic naan (+ $1.00).</p></div>
+        </li>
+        <li class="thali__step">
+          <span class="thali__num" aria-hidden="true">3</span>
+          <div><h3>Dal, onion, lime and green chilli come with it</h3><p>Pick the curry and bread in your order, then collect in about 20 minutes or have it delivered.</p></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section story" id="story" aria-labelledby="story-title">
+    <div class="container story__grid">
+      <figure class="story__media reveal">
+        <img src="images/table-spread-800.webp" srcset="images/table-spread-800.webp 800w, images/table-spread-1600.webp 1600w" sizes="(min-width: 56em) 50vw, 92vw" width="800" height="533" loading="lazy" decoding="async" alt="A shared table laid on a patterned cloth with rice, flatbreads in a basket and several curries">
+      </figure>
+      <div class="story__copy reveal">
+        <p class="eyebrow">Our story</p>
+        <h2 id="story-title">Food of the hills and the plains, <em>at one table</em></h2>
+        <p>Momos pleated by hand, dal that simmers through the afternoon, breads slapped onto the wall of a clay oven. Sample copy: <span class="ph-note">[Your story: client to supply. Who cooks here and where the recipes come from.]</span></p>
+        <ul class="trust" role="list">
+          <li class="trust__slot">[Guest reviews: client to supply]</li>
+          <li class="trust__slot">[Press or awards: client to supply, if any]</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section visit" id="visit" aria-labelledby="visit-title">
+    <div class="container visit__grid">
+      <div class="visit__hours reveal">
+        <p class="eyebrow">Visit</p>
+        <h2 id="visit-title">Hours &amp; location</h2>
+        <p class="open-status" data-open-status>Opening hours</p>
+        <div data-hours></div>
+      </div>
+      <div class="visit__where reveal">
+        <address class="contact">
+          <span data-site="contact.address">[address]</span><br>
+          <a href="tel:+15555550142" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+          <span data-site="contact.email">[email]</span>
+        </address>
+        <div class="map-ph" id="map">[map]<br>Map: client to supply (no external embed)</div>
+        <a class="btn btn--secondary" href="#map" data-directions>Get directions</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reserve" id="reserve" aria-labelledby="reserve-title">
+    <div class="container reserve__grid">
+      <div class="reserve__intro">
+        <p class="eyebrow">Reservations</p>
+        <h2 id="reserve-title">Book a table <em>by the lanterns</em></h2>
+        <p>Pick a time and we will hold your table. For groups larger than 8, please call <a href="tel:+15555550142" data-tel><span data-site="contact.phone">[phone]</span></a>.</p>
+        <div class="diya">
+          <img class="diya__poster" src="images/brass-diya-800.webp" srcset="images/brass-diya-400.webp 400w, images/brass-diya-800.webp 800w" sizes="(min-width: 56em) 30vw, 92vw" width="800" height="600" loading="lazy" decoding="async" alt="A lit brass oil lamp glowing in the dark">
+        </div>
+      </div>
+      <div>
+        <form id="reserve-form" class="form panel" data-reserve novalidate aria-labelledby="reserve-title">
+          <div class="error-summary" data-error-summary tabindex="-1" hidden></div>
+          <div class="form-row">
+            <div class="field"><label for="r-date">Date</label><input id="r-date" name="r-date" type="date" required></div>
+            <div class="field"><label for="r-time">Time</label><select id="r-time" name="r-time" required></select></div>
+            <div class="field"><label for="r-party">Party size</label><select id="r-party" name="r-party" required></select></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="r-name">Name</label><input id="r-name" name="r-name" type="text" autocomplete="name" minlength="2" required></div>
+            <div class="field"><label for="r-phone">Phone</label><input id="r-phone" name="r-phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+          </div>
+          <div class="field"><label for="r-email">Email <span class="optional">(optional)</span></label><input id="r-email" name="r-email" type="email" autocomplete="email"></div>
+          <div class="field"><label for="r-notes">Notes <span class="optional">(optional)</span></label><textarea id="r-notes" name="r-notes" maxlength="300" rows="3" aria-describedby="r-notes-hint"></textarea><p class="hint" id="r-notes-hint">Allergies, high chair, occasion.</p></div>
+          <button class="btn btn--primary btn--block btn--lg" type="submit">Request table</button>
+          <p class="demo-note">Demo only: no booking is made and nothing is sent.</p>
+        </form>
+        <div class="panel confirm" data-reserve-confirm hidden>
+          <h3 data-reserve-confirm-heading tabindex="-1">Table request received</h3>
+          <p>Booking reference <strong data-reserve-ref></strong></p>
+          <p data-reserve-summary></p>
+          <p class="demo-note">Demo only: no booking was made and nothing was sent.</p>
+          <button class="btn btn--secondary" type="button" data-reserve-again>Make another booking</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div class="stack">
+      <p class="footer__brand" data-site="name">Mustang Hearth</p>
+      <p class="footer__tag">Momos, thalis &amp; tandoor</p>
+      <p class="open-status" data-open-status>Opening hours</p>
+    </div>
+    <div class="stack">
+      <p class="footer__h">Find us</p>
+      <address class="contact">
+        <span data-site="contact.address">[address]</span><br>
+        <a href="tel:+15555550142" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+        <span data-site="contact.email">[email]</span>
+      </address>
+    </div>
+    <div class="stack">
+      <p class="footer__h">Hours <span class="footer__sample">(sample)</span></p>
+      <p>Tue–Fri 11:30–2:30 &amp; 5–10 (Fri to 11)<br>Sat 12–11 · Sun 12–9:30<br>Mon closed</p>
+    </div>
+    <nav aria-label="Footer">
+      <p class="footer__h">Order &amp; visit</p>
+      <ul class="footer__links">
+        <li><a href="menu.html">Order online</a></li>
+        <li><a href="#reserve">Book a table</a></li>
+        <li><a href="#visit">Hours &amp; location</a></li>
+      </ul>
+      <p class="small footer__apps">Prefer an app? Also on <span data-delivery-apps>[Delivery app 1] · [Delivery app 2]</span> (links: client to supply).</p>
+    </nav>
+  </div>
+  <div class="container footer__legal small">
+    <p>Sample design by Website Studio. Menu, prices and wording are samples. Photos are stock.</p>
+    <p class="footer__credits">Photos: stock, Pexels License, by Ansh Rajput, Manish M, krishna prasad, khezez (خزاز), Mikhail Nilov, Tahir Xəlfəquliyev, Momo King, Natalie Bond, bishop tamrakar, Anil Sharma, Kunal Lakhotia, Pinaki Panda, Jack Baghel, Prabal Pratap Singh and Sajal Niraula (full list with links: photos/CREDITS.md).</p>
+    <p>&copy; <span data-year>2026</span> <span data-site="name">Mustang Hearth</span> (sample business)</p>
+  </div>
+</footer>
+
+<nav class="mbar" data-mobile-bar aria-label="Quick actions">
+  <a class="mbar__btn mbar__btn--primary" href="menu.html" data-mbar-order>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>Order</a>
+  <button class="mbar__btn mbar__btn--primary" type="button" data-mbar-cart data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span data-mbar-cart-label>View order</span></button>
+  <a class="mbar__btn" href="#reserve">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>Book</a>
+  <a class="mbar__btn" href="tel:+15555550142" data-tel>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+</nav>
+<button class="to-top" type="button" data-to-top hidden>Back to top</button>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jasmine Lane | Tea house and dim sum: order online or book a table (sample design)</title>
+<meta name="description" content="Sample tea house and dim sum website by Website Studio. Order steamed baskets and loose-leaf tea for pickup or delivery, or book a table. Menu and prices are samples.">
+<meta name="theme-color" content="#f5f0e6">
+<noscript><style>.signature .steamers, .pairs { display: none; }</style></noscript>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23b8371f'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%23f5f0e6' stroke-width='2.5'/%3E%3C/svg%3E">
+<link rel="preload" as="image" href="images/soup-dumpling-spoon-800.webp" imagesrcset="images/soup-dumpling-spoon-400.webp 400w, images/soup-dumpling-spoon-800.webp 800w, images/soup-dumpling-spoon-1600.webp 1125w" imagesizes="(min-width: 56em) 27vw, 92vw" fetchpriority="high">
+<link rel="stylesheet" href="../../shared/base.css">
+<link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
+<script type="module" src="../../shared/core.js"></script>
+<script type="module" src="jasmine.js"></script>
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-header>
+  <div class="site-header__inner container">
+    <a class="brand" href="index.html"><span class="seal" aria-hidden="true">茶</span><span data-site="name">Jasmine Lane</span></a>
+    <nav class="site-nav" id="site-nav" data-nav aria-label="Main">
+      <ul>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="#pairings">Tea pairings</a></li>
+        <li class="nav-wide"><a href="#story">Our story</a></li>
+        <li><a href="#visit">Hours &amp; location</a></li>
+        <li><a href="#reserve">Book a table</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <a class="btn btn--primary btn--sm header-order" href="menu.html">Order online</a>
+      <button class="cart-btn" type="button" data-cart-open aria-controls="cart-drawer" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="9" rx="8" ry="2.6"/><path d="M4 9v5.5c0 1.5 3.6 2.7 8 2.7s8-1.2 8-2.7V9"/><path d="M9 4.5c.5-.8 0-1.5.5-2.3M13 4.5c.5-.8 0-1.5.5-2.3"/></svg>
+        <span class="cart-btn__text">Order</span>
+        <span class="badge" data-cart-count>0</span><span class="vh" data-cart-count-label> items</span>
+      </button>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M5 8h14M5 16h14"/></svg>
+        <span class="vh">Site navigation</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <p class="hero__vert" aria-hidden="true">茶 · 點心</p>
+        <p class="eyebrow"><span data-site="cuisine">Tea house and dim sum</span></p>
+        <h1 id="hero-title" data-site="tagline">Slow tea, steaming baskets, a quieter kind of lunch.</h1>
+        <p class="lede">Order dumplings and loose-leaf tea for pickup or delivery in a few taps, or book a table and stay for another pot.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--light btn--lg" href="menu.html">Order online</a>
+          <a class="btn btn--outline-light btn--lg" href="#reserve">Book a table</a>
+        </div>
+        <p class="hero__status open-status" data-open-status>Opening hours</p>
+        <div class="chit">
+          <p class="chit__label">Start with</p>
+          <p class="chit__line"><span class="chit__name">Soup dumplings</span><span class="chit__dots" aria-hidden="true"></span><span class="chit__price" data-price-of="xiao-long-bao">$11.00</span></p>
+          <button type="button" class="chit__add dish__add" data-add="xiao-long-bao"><span class="dish__add-label" aria-hidden="true">Add</span><span class="vh">Add soup dumplings to order</span></button>
+        </div>
+        <p class="hero__direct small">Order direct with us and skip the app fees.</p>
+      </div>
+      <div class="hero__media">
+        <figure class="scroll scroll--main">
+          <img class="scroll__img" src="images/soup-dumpling-spoon-800.webp"
+               srcset="images/soup-dumpling-spoon-400.webp 400w, images/soup-dumpling-spoon-800.webp 800w, images/soup-dumpling-spoon-1600.webp 1125w"
+               sizes="(min-width: 56em) 27vw, 92vw" width="800" height="1422" fetchpriority="high" decoding="async"
+               alt="A soup dumpling held up on a white spoon above a bamboo steamer of dumplings">
+        </figure>
+        <figure class="scroll scroll--side">
+          <img class="scroll__img" src="images/teapot-lantern-400.webp"
+               srcset="images/teapot-lantern-400.webp 400w, images/teapot-lantern-800.webp 800w"
+               sizes="14vw" width="400" height="320" loading="lazy" decoding="async"
+               alt="Amber tea in a celadon cup beside a clay teapot, lit by a small oil lamp">
+        </figure>
+        <span class="hero__stamp" aria-hidden="true">點心</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="infobar" aria-label="Opening status and contact">
+    <div class="container infobar__inner">
+      <p class="open-status" data-open-status>Opening hours</p>
+      <p><span class="vh">Address: </span><span data-site="contact.address">[address]</span></p>
+      <p><a href="tel:+15555550134" data-tel>Call <span data-site="contact.phone">[phone]</span></a></p>
+      <p><a href="#map" data-directions>Get directions</a></p>
+    </div>
+  </section>
+
+  <section class="section signature" id="signature" aria-labelledby="sig-title">
+    <div class="container">
+      <div class="lane-head">
+        <span class="lane-head__num" aria-hidden="true">一</span>
+        <div>
+          <p class="eyebrow">From the steamer</p>
+          <h2 id="sig-title">House favourites</h2>
+          <p class="lane-head__lede">Four baskets to start with. Add them here, pick a tea, and choose pickup or delivery at the end.</p>
+        </div>
+        <a class="btn btn--secondary" href="menu.html">See the full menu</a>
+      </div>
+      <div class="steamers" data-signature data-limit="4"></div>
+      <noscript><p class="menu-empty">The menu and ordering need JavaScript. Please call <a href="tel:+15555550134">[phone]</a> to order.</p></noscript>
+    </div>
+  </section>
+
+  <section class="section pairings" id="pairings" aria-labelledby="pair-title">
+    <div class="container">
+      <div class="lane-head lane-head--dark">
+        <span class="lane-head__num" aria-hidden="true">二</span>
+        <div>
+          <p class="eyebrow">Tea and dim sum</p>
+          <h2 id="pair-title">One pot, one basket</h2>
+          <p class="lane-head__lede">Our suggestions for what to pour with what. Add one, or both.</p>
+        </div>
+      </div>
+      <ol class="pairs" data-pairings role="list">
+        <li class="pairs__fallback">Pairings load with the menu. <a href="menu.html">See the tea list on the menu</a>.</li>
+      </ol>
+      <p class="pairs__note small">Pairings are serving suggestions. Hot-water refills for your pot: [policy to confirm].</p>
+    </div>
+  </section>
+
+  <section class="section story" id="story" aria-labelledby="story-title">
+    <div class="container story__inner">
+      <div class="story__media">
+        <img class="story__img story__img--main" src="images/hands-pouring-tea-800.webp"
+             srcset="images/hands-pouring-tea-400.webp 400w, images/hands-pouring-tea-800.webp 800w"
+             sizes="(min-width: 56em) 40vw, 92vw" width="800" height="534" loading="lazy" decoding="async"
+             alt="Hands pouring tea from a black cast-iron kettle into a white teapot on a wooden tea tray">
+        <img class="story__img story__img--inset" src="images/tea-set-red-table-400.webp"
+             srcset="images/tea-set-red-table-400.webp 400w, images/tea-set-red-table-800.webp 800w"
+             sizes="(min-width: 56em) 18vw, 46vw" width="400" height="300" loading="lazy" decoding="async"
+             alt="A blue and white porcelain tea set on a carved red lacquer table scattered with blossom petals">
+      </div>
+      <div class="story__copy">
+        <div class="lane-head lane-head--stack">
+          <span class="lane-head__num" aria-hidden="true">三</span>
+          <div>
+            <p class="eyebrow">Our story</p>
+            <h2 id="story-title">A tea house on a quiet lane</h2>
+          </div>
+        </div>
+        <p class="story__lead">Tea first, then the baskets: a slow, unhurried table.</p>
+        <p>A calm room for tea and dim sum. Come in for a pot and a few baskets, or take them home for a quiet lunch.</p>
+        <ul class="trust" role="list">
+          <li class="placeholder">[Guest reviews: client to supply]</li>
+          <li class="placeholder">[Press or awards: client to supply, only if real]</li>
+          <li class="placeholder">[Tea sourcing note: client to confirm]</li>
+        </ul>
+        <div class="story__ctas">
+          <a class="btn btn--primary" href="menu.html">Order online</a>
+          <a class="btn btn--ghost" href="#reserve">Book a table</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section visit" id="visit" aria-labelledby="visit-title">
+    <div class="container visit__inner">
+      <div>
+        <div class="lane-head lane-head--stack">
+          <span class="lane-head__num" aria-hidden="true">四</span>
+          <div>
+            <p class="eyebrow">Visit</p>
+            <h2 id="visit-title">Hours &amp; location</h2>
+          </div>
+        </div>
+        <p class="open-status visit__status" data-open-status>Opening hours</p>
+        <div class="visit__hours" data-hours></div>
+      </div>
+      <div class="visit__where">
+        <address class="contact">
+          <span data-site="contact.address">[address]</span><br>
+          <a href="tel:+15555550134" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+          <span data-site="contact.email">[email]</span>
+        </address>
+        <div class="map-ph" id="map">[map]<br>Map: client to supply (no external embed)</div>
+        <a class="btn btn--secondary" href="#map" data-directions>Get directions</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reserve" id="reserve" aria-labelledby="reserve-title">
+    <div class="container reserve__inner">
+      <div class="reserve__intro">
+        <div class="lane-head lane-head--stack">
+          <span class="lane-head__num" aria-hidden="true">五</span>
+          <div>
+            <p class="eyebrow">Reservations</p>
+            <h2 id="reserve-title">Book a table</h2>
+          </div>
+        </div>
+        <p class="muted">Pick a time and we will hold your table. For groups larger than 8, please call <span data-site="contact.phone">[phone]</span>.</p>
+        <p class="reserve__quote" aria-hidden="true">請慢用</p>
+      </div>
+      <div>
+        <form id="reserve-form" class="form panel" data-reserve novalidate aria-labelledby="reserve-title">
+          <div class="error-summary" data-error-summary tabindex="-1" hidden></div>
+          <div class="form-row">
+            <div class="field"><label for="r-date">Date</label><input id="r-date" name="r-date" type="date" required></div>
+            <div class="field"><label for="r-time">Time</label><select id="r-time" name="r-time" required></select></div>
+            <div class="field"><label for="r-party">Party size</label><select id="r-party" name="r-party" required></select></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="r-name">Name</label><input id="r-name" name="r-name" type="text" autocomplete="name" minlength="2" required></div>
+            <div class="field"><label for="r-phone">Phone</label><input id="r-phone" name="r-phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+          </div>
+          <div class="field"><label for="r-email">Email <span class="optional">(optional)</span></label><input id="r-email" name="r-email" type="email" autocomplete="email"></div>
+          <div class="field"><label for="r-notes">Notes <span class="optional">(optional)</span></label><textarea id="r-notes" name="r-notes" maxlength="300" rows="3" aria-describedby="r-notes-hint"></textarea><p class="hint" id="r-notes-hint">Allergies, high chair, occasion.</p></div>
+          <button class="btn btn--primary btn--block" type="submit">Request table</button>
+          <p class="demo-note">Demo only: no booking is made and nothing is sent.</p>
+        </form>
+        <div class="panel confirm" data-reserve-confirm hidden>
+          <h3 data-reserve-confirm-heading tabindex="-1">Table request received</h3>
+          <p>Booking reference <strong data-reserve-ref></strong></p>
+          <p data-reserve-summary></p>
+          <p class="demo-note">Demo only: no booking was made and nothing was sent.</p>
+          <button class="btn btn--secondary" type="button" data-reserve-again>Make another booking</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div class="footer__col">
+      <p class="footer__brand"><span class="seal seal--sm" aria-hidden="true">茶</span><span data-site="name">Jasmine Lane</span></p>
+      <p class="open-status" data-open-status>Opening hours</p>
+      <address class="contact">
+        <span data-site="contact.address">[address]</span><br>
+        <a href="tel:+15555550134" data-tel><span data-site="contact.phone">[phone]</span></a><br>
+        <span data-site="contact.email">[email]</span>
+      </address>
+    </div>
+    <div class="footer__col">
+      <h2 class="footer__h">Hours <span class="footer__h-note">(sample)</span></h2>
+      <ul class="footer__hours" data-hours-compact role="list"><li><a href="#visit">See opening hours</a></li></ul>
+    </div>
+    <nav class="footer__col" aria-label="Footer">
+      <h2 class="footer__h">Visit and order</h2>
+      <ul class="footer__links">
+        <li><a href="menu.html">Order online</a></li>
+        <li><a href="#reserve">Book a table</a></li>
+        <li><a href="#visit">Hours &amp; location</a></li>
+      </ul>
+    </nav>
+    <div class="footer__col">
+      <h2 class="footer__h">Prefer an app?</h2>
+      <p class="small">Also on <span data-delivery-apps>[Delivery app 1] · [Delivery app 2]</span> (links: client to supply).</p>
+    </div>
+  </div>
+  <div class="container footer__legal small">
+    <p>Sample design by Website Studio. Menu, prices and wording are samples. Photos are stock.</p>
+    <p class="footer__credits">Photo credits: stock photographs from Pexels (Pexels License) by Change C.C, Ivan S, Mackenzie Ryder, Mikhail Nilov, Nano Erdozain, Pavel Danilyuk, Pew Nguyen, ROMAN ODINTSOV, SAIF SIDDIQUE, Sherine, TBD Tuyên, YI REN and Yuen Tou Zan.</p>
+    <p>&copy; <span data-year>2026</span> <span data-site="name">Jasmine Lane</span> (sample business)</p>
+  </div>
+</footer>
+
+<nav class="mbar" data-mobile-bar aria-label="Quick actions">
+  <a class="mbar__btn mbar__btn--primary" href="menu.html" data-mbar-order>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="9" rx="8" ry="2.6"/><path d="M4 9v5.5c0 1.5 3.6 2.7 8 2.7s8-1.2 8-2.7V9"/></svg>Order</a>
+  <button class="mbar__btn mbar__btn--primary" type="button" data-mbar-cart data-cart-open aria-haspopup="dialog" aria-controls="cart-drawer" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="9" rx="8" ry="2.6"/><path d="M4 9v5.5c0 1.5 3.6 2.7 8 2.7s8-1.2 8-2.7V9"/></svg><span data-mbar-cart-label>View order</span></button>
+  <a class="mbar__btn" href="#reserve">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>Book</a>
+  <a class="mbar__btn" href="tel:+15555550134" data-tel>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+</nav>
+<button class="to-top" type="button" data-to-top hidden>Back to top</button>
+</body>
+</html>
